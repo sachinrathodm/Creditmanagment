@@ -33,15 +33,7 @@
 
                     <form action="../../index.html" runat="server">
                       
-                      <div class="input-group mb-3" style="margin:5px">
-                        
-                          <asp:TextBox ID="TextBox1" class="form-control" placeholder="First name" runat="server" />
-                        <div class="input-group-append">
-                                <div class="input-group-text">
-                          <asp:TextBox ID="TextBox2" class="form-control" placeholder="Last name" runat="server" />
-                       </div></div>
-                      </div>
-
+                      
                         <div class="input-group mb-3" >
                             <%--<input type="text" class="form-control" placeholder="First name">--%>
                             <asp:TextBox ID="txtFirstname_YS" class="form-control" placeholder="First name" runat="server" />
