@@ -141,7 +141,7 @@
                             <div class="col-8">
                                 <div class="icheck-primary">
                                     <%--<input type="checkbox" id="agreeTerms" name="terms" value="agree">--%>
-                                    <asp:CheckBox ID="chkagreeTerms" runat="server" name="terms" value="agree" />
+                                    <asp:CheckBox ID="chkagreeTerms" runat="server" value="agree" />
                                     <%--<asp:CheckBox ID="CheckBox1" runat="server" value="agree" />--%>
                                   <label for="agreeTerms">
                                         I agree to the <a href="#">terms</a>

@@ -631,7 +631,7 @@
                     <!-- /.container-fluid -->
                 </section>
 
-                <!-- Main content -->
+                <%--<!-- Main content -->
                 <section class="content">
 
                     <!-- Default box -->
@@ -662,7 +662,7 @@
                     <!-- /.card -->
 
                 </section>
-                <!-- /.content -->
+                <!-- /.content -->--%>
             </div>
             <!-- /.content-wrapper -->
 
