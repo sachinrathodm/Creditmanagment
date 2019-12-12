@@ -1685,9 +1685,9 @@ function parseOffset(offset, popperOffsets, referenceOffsets, basePlacement) {
 
   // Loop trough the offsets arrays and execute the operations
   ops.forEach((op, index) => {
-    op.forEach((frag, index) => {
+    op.forEach((frag, index2) => {
       if (isNumeric(frag)) {
-        offsets[index] += frag * (op[index - 1] === '-' ? -1 : 1);
+        offsets[index] += frag * (op[index2 - 1] === '-' ? -1 : 1);
       }
     });
   });

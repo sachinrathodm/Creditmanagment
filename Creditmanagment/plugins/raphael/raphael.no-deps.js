@@ -5170,7 +5170,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
         this.forEach(function(shape, index){
             var g = shape.glow(glowConfig);
             if(g != null){
-                g.forEach(function(shape2, index){
+                g.forEach(function(shape2, index2){
                     ret.push(shape2);
                 });
             }
