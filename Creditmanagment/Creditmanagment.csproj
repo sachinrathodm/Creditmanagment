@@ -253,7 +253,6 @@
     <Content Include="pages\examples\project_edit.html" />
     <Content Include="pages\examples\recover-password.html" />
     <Content Include="pages\examples\register.html" />
-    <Content Include="pages\examples\Registration.aspx" />
     <Content Include="pages\forms\advanced.html" />
     <Content Include="pages\forms\editors.html" />
     <Content Include="pages\forms\general.html" />
@@ -1841,13 +1840,6 @@
     </Compile>
     <Compile Include="indexhome.aspx.designer.cs">
       <DependentUpon>indexhome.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pages\examples\Registration.aspx.cs">
-      <DependentUpon>Registration.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pages\examples\Registration.aspx.designer.cs">
-      <DependentUpon>Registration.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
