@@ -1,13 +1,11 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs" Inherits="Creditmanagment.pages.examples.LoginPage" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ForgotPasswordPage.aspx.cs" Inherits="Creditmanagment.pages.examples.ForgotPasswordPage" %>
 
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<!DOCTYPE html>
+<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 3 | Log in</title>
+    <title>AdminLTE 3 | Forgot Password</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -25,14 +23,14 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="../../index.html"><b>Credit </b>Managment</a>
+            <a href="../../index.html"><b>Admin</b>LTE</a>
         </div>
         <!-- /.login-logo -->
-        <div class="card mr-5 ml-5">
+        <div class="card">
             <div class="card-body login-card-body">
-                <p class="login-box-msg">Sign in to start your session</p>
+                <p class="login-box-msg">You forgot your password? Here you can easily retrieve a new password.</p>
 
-                <form runat="server" method="post">
+                <form action="recover-password.html" method="post" runat="server">
                     <div class="input-group mb-3">
                         <asp:TextBox ID="txtEmail_YS" runat="server" type="email" class="form-control" placeholder="Email"></asp:TextBox>
                         <%--<input type="email" class="form-control" placeholder="Email">--%>
@@ -42,46 +40,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="input-group mb-3">
-                        <asp:TextBox ID="TextBox1" runat="server" type="password" class="form-control" placeholder="Password"></asp:TextBox>
-                        <%--<input type="password" class="form-control" placeholder="Password">--%>
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-lock"></span>
-                            </div>
-                        </div>
-                    </div>
                     <div class="row">
-                        <div class="col-8">
-                            <%--<div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember">
-                Remember Me
-              </label>
-            </div>--%>
-                            <div class="input-group-append col-7">
-                                <div class="icheck-primary d-inline m-2">
-                                    <asp:CheckBox ID="chkAgree_YS" runat="server" value="agree" />
-                                    <label for="chkAgree_YS">
-                                        Remember Me <a href="#">terms</a>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-4">
-                            <%--<button type="submit" class="btn btn-primary btn-block">Sign In</button>--%>
-                            <asp:Button ID="btnLogin_YS" class="btn btn-primary btn-block" UseSubmitBehavior="false" runat="server" Text="Sign In" />
-
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary btn-block">Request new password</button>
                         </div>
                         <!-- /.col -->
                     </div>
                 </form>
 
-                <!-- /.social-auth-links -->
-
-                <p class="mb-1">
-                    <a href="ForgotPasswordPage.aspx">I forgot my password</a>
+                <p class="mt-3 mb-1">
+                    <a href="LoginPage.aspx">Login</a>
                 </p>
                 <p class="mb-0">
                     <a href="Registration.aspx" class="text-center">Register a new membership</a>

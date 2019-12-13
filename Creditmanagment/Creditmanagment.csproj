@@ -239,6 +239,7 @@
     <Content Include="pages\examples\contacts.html" />
     <Content Include="pages\examples\e_commerce.html" />
     <Content Include="pages\examples\forgot-password.html" />
+    <Content Include="pages\examples\ForgotPasswordPage.aspx" />
     <Content Include="pages\examples\invoice-print.html" />
     <Content Include="pages\examples\invoice.html" />
     <Content Include="pages\examples\language-menu.html" />
@@ -1843,6 +1844,13 @@
     </Compile>
     <Compile Include="indexhome.aspx.designer.cs">
       <DependentUpon>indexhome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\examples\ForgotPasswordPage.aspx.cs">
+      <DependentUpon>ForgotPasswordPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\examples\ForgotPasswordPage.aspx.designer.cs">
+      <DependentUpon>ForgotPasswordPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\examples\LoginPage.aspx.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>

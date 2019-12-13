@@ -28,10 +28,10 @@
                 <a href="../../index.html"><b>Credit Managment</b></a>
             </div>
 
-            <div class="card ml-5 mr-5">
+            <div class="card ml-5 mr-5 aspNetHidden">
                 <div class="card-body register-card-body">
                     <p class="login-box-msg">Register a new membership</p>
-                  
+
                     <div class="input-group mb-3">
                         <%--<asp:RadioButton ID="rdStoreKeeper_YS" GroupName="a" AutoPostback="true" Checked="true" UseSubmitBehavior="false"  value="StoreKeeper" runat="server" OnCheckedChanged="rdStoreKeeper_YS_CheckedChanged" />
                                     StoreKeeper
@@ -83,15 +83,16 @@
                     </div>
 
                     <div class="m-2">
-                        <asp:Label runat="server" for="exampleInputFile">File input</asp:Label>
+                        <asp:Label ID="lblinputfile" runat="server" for="InputFile_YS">File input</asp:Label>
                         <div class="input-group">
                             <div class="custom-file">
-                                <asp:FileUpload ID="exampleInputFile" name="exampleInputFile" class="custom-file-input" runat="server" />
-                                <asp:Label ID="Label2" runat="server" class="custom-file-label" for="exampleInputFile">Choose Photo</asp:Label>
+                                <asp:FileUpload ID="InputFile_YS" class="custom-file-input" runat="server" />
+                                <asp:Label ID="ltrinputfile" runat="server" class="custom-file-label" for="InputFile_YS">Choose Photo</asp:Label>
                                 <%--<label class="custom-file-label" for="exampleInputFile">Choose file</label>--%>
                             </div>
                             <div class="input-group-append">
-                                <span class="input-group-text" id="">Upload</span>
+                                <asp:Label ID="lblUpload_YS" runat="server" class="input-group-text">Upload</asp:Label>
+                                <%--<span class="input-group-text" id="">Upload</span>--%>
                             </div>
                         </div>
                     </div>
@@ -103,29 +104,10 @@
                     </div>
 
                     <div class="input-group-append">
-                        <div class="m-2" style="text-align: left; width: 200px">
-                            <asp:TextBox ID="txtBirthdaate_YS" class="form-control" placeholder="Birth Date" runat="server" />
-                        </div>
-                        <div style="width: 200px;" class="m-2">
-                            <asp:TextBox ID="txtAdharcardno" class="form-control" placeholder="Adhar card number" runat="server" />
+                        <div style="width: 360px;" class="ml-2 mr-2 mt-2 mb-0">
+                            <asp:TextBox ID="txtAdharcardno_YS" class="form-control" placeholder="Adhar card number" runat="server" />
                         </div>
                     </div>
-
-                    <div class="m-2">
-                        <!-- Date dd/mm/yyyy -->
-                        <div class="form-group">
-                            <label>Date Of Birth</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
-                                </div>
-                                <asp:TextBox ID="txtBirthDate_YS" runat="server" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask> </asp:TextBox>
-                                <%--<input type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>--%>
-                            </div>
-                            <!-- /.input group -->
-                        </div>
-                    </div>
-
                     <div class="input-group-append">
                         <div class="m-2" style="text-align: left; width: 200px">
                             <asp:TextBox ID="txtStorename_YS" class="form-control" placeholder="Store name" runat="server" />
@@ -148,12 +130,27 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div class="ml-2 mr-2 mb-2 mt-0">
+                        <!-- Date dd/mm/yyyy -->
+                        <%--<div class="form-group">--%>
+                        <asp:Label ID="lblBirthDate_YS" runat="server" Text="Label">Date Of Birth</asp:Label>
+                        <%--<label>Date Of Birth</label>--%>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <asp:Label ID="ltrBirthdate_YS" runat="server" class="input-group-text"><i class="far fa-calendar-alt"></i></asp:Label>
+                                <%--<span class="input-group-text"><i class="far fa-calendar-alt"></i></span>--%>
+                            </div>
+                            <asp:TextBox ID="txtBirthDate_YS" runat="server" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask> </asp:TextBox>
+                            <%--<input type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>--%>
+                        </div>
+                        <!-- /.input group -->
+                    </div>
+                </div>
+                 <div class="row">
                         <div class="input-group-append col-7">
                             <div class="icheck-primary d-inline m-2">
-                                <asp:CheckBox ID="checkboxPrimary3" runat="server" value="agree" />
-
-                                <label for="checkboxPrimary3">
+                                <asp:CheckBox ID="chkAgree" runat="server" value="agree" />
+                                <label for="chkAgree">
                                     I agree to the <a href="#">terms</a>
                                 </label>
                             </div>
@@ -162,15 +159,20 @@
                             <asp:Button ID="btnRegister_YS" class="btn btn-primary btn-block" UseSubmitBehavior="false" runat="server" Text="Register" />
                         </div>
                     </div>
-
-                    <div class="social-auth-links text-center">
-                    </div>
-
-                    <a href="LoginPage.aspx" class="text-center">I already have a membership</a>
+  
                 </div>
-                <!-- /.form-box -->
+
+                <div class="social-auth-links text-center">
+                  <asp:Label ID="lblismember_YS" runat="server">
+                  <a href="LoginPage.aspx" class="text-center">I already have a membership</a>
+                </asp:Label>
+                </div>
+                
+
             </div>
-            <!-- /.card -->
+            <!-- /.form-box -->
+        </div>
+        <!-- /.card -->
         </div>
     </form>
     <!-- /.register-box -->
