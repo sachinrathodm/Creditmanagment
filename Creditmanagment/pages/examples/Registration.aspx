@@ -90,7 +90,7 @@
                         <div class="input-group">
                             <div class="custom-file">
                                 <asp:FileUpload ID="exampleInputFile" name="exampleInputFile" class="custom-file-input" runat="server" />
-                                <asp:Label ID="Label2" runat="server" class="custom-file-label" for="exampleInputFile">Choose file</asp:Label>
+                                <asp:Label ID="Label2" runat="server" class="custom-file-label" for="exampleInputFile">Choose Photo</asp:Label>
                                 <%--<label class="custom-file-label" for="exampleInputFile">Choose file</label>--%>
                             </div>
                             <div class="input-group-append">
