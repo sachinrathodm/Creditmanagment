@@ -13,33 +13,6 @@ namespace Creditmanagment.pages.examples {
     public partial class Registration {
         
         /// <summary>
-        /// hello control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label hello;
-        
-        /// <summary>
-        /// rdStoreKeeper_YS control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdStoreKeeper_YS;
-        
-        /// <summary>
-        /// rdCustomers_YS control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdCustomers_YS;
-        
-        /// <summary>
         /// txtFirstname_YS control.
         /// </summary>
         /// <remarks>
