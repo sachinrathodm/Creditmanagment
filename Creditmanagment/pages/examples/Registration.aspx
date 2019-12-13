@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>AdminLTE 3 | Registration Page</title>
-
+   
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -24,7 +24,7 @@
 <body class="hold-transition register-page">
     <div class="register-box">
         <div class="register-logo">
-            <a href="../../index.html"><b>Admin</b>LTE</a>
+            <a href="../../index.html"><b>Credit Managment</b></a>
         </div>
 
         <div class="card">
@@ -190,4 +190,3 @@
     <script src="../../dist/js/adminlte.min.js"></script>
 </body>
 </html>
-
