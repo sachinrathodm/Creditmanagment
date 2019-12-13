@@ -17,7 +17,8 @@ namespace Creditmanagment.pages.examples
 
     protected void rdStoreKeeper_YS_CheckedChanged(object sender, EventArgs e)
     {
-
+      txtStorecategory_YS.Visible = false;
+      txtStorename_YS.Visible = false;
     }
   }
 

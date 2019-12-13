@@ -44,12 +44,12 @@
                             <asp:Label runat="server" class="btn bg-olive active" ID="hello">
                                 <asp:RadioButton ID="rdStoreKeeper_YS" GroupName="a" AutoPostBack="true" value="StoreKeeper" runat="server" OnCheckedChanged="rdStoreKeeper_YS_CheckedChanged" />
                                 StoreKeeper
-                                    </asp:Label>
+                            </asp:Label>
                             <asp:Label runat="server" class="btn bg-olive active" ID="Label1">
                                 <asp:RadioButton ID="rdCustomers_YS" GroupName="a" AutoPostBack="true" value="Cusomers" runat="server" OnCheckedChanged="rdStoreKeeper_YS_CheckedChanged" />
-                             Customers 
-                              </asp:Label>
-                            
+                                Customers 
+                            </asp:Label>
+
                             <%-- <asp:RadioButtonList CausesValidation="false"  ID="RadioButtonList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged1">
                                  <asp:ListItem></asp:ListItem>
                                  <asp:ListItem></asp:ListItem>
@@ -67,7 +67,7 @@
                         </div>
                     </div>
 
-                    
+
                     <div class="input-group-append">
                         <div class="m-2" style="text-align: left; width: 200px">
                             <asp:TextBox ID="txtMobileno_YS" class="form-control" placeholder="Mobile no" runat="server" />
@@ -85,31 +85,32 @@
                         </div>
                     </div>
 
-               <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                       <asp:FileUpload ID="exampleInputFile" class="custom-file-input" runat="server" />
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                      <div class="input-group-append">
-                        <span class="input-group-text" id="">Upload</span>
-                      </div>
+                    <div class="form-group">
+                      <asp:Label runat="server" for="exampleInputFile">File input</asp:Label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <asp:FileUpload ID="exampleInputFile" name="exampleInputFile" class="custom-file-input" runat="server" />
+                                <asp:Label ID="Label2" runat="server" class="custom-file-label" for="exampleInputFile">Choose file</asp:Label>
+                                <%--<label class="custom-file-label" for="exampleInputFile">Choose file</label>--%>
+                            </div>
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="">Upload</span>
+                            </div>
+                        </div>
                     </div>
-                  </div>
 
 
-                 
 
 
-                   <div class="input-group-append">
-                                              <div style="width: 200px;" class="m-2">
+
+                    <div class="input-group-append">
+                        <div style="width: 200px;" class="m-2">
                             <asp:TextBox ID="TextBox2" TextMode="Password" class="form-control" placeholder="Retype password" runat="server" />
                         </div>
                     </div>
 
 
-                  <div class="input-group-append">
+                    <div class="input-group-append">
                         <div class="m-2" style="text-align: left; width: 200px">
                             <asp:TextBox ID="txtStorename_YS" class="form-control" placeholder="Store name" runat="server" />
                         </div>
@@ -157,7 +158,21 @@
         </div>
     </form>
     <!-- /.register-box -->
-
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- bs-custom-file-input -->
+<script src="../../plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        bsCustomFileInput.init();
+    });
+</script>
     <!-- Bootstrap 4 -->
     <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
