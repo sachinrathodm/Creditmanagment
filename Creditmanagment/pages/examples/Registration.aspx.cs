@@ -13,17 +13,8 @@ namespace Creditmanagment.pages.examples
     protected void Page_Load(object sender, EventArgs e)
     {
 
-     
     }
 
-    protected void rdStoreKeeper_YS_CheckedChanged(object sender, EventArgs e)
-    {
-      if (rdCustomers_YS.Checked)
-      {
-        txtStorename_YS.Visible = false;
-        txtStorecategory_YS.Visible = false;
-      }
-    }
   }
 
 }
