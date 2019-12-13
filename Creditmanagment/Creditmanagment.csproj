@@ -1835,6 +1835,7 @@
     <Compile Include="BlankPage.Master.designer.cs">
       <DependentUpon>BlankPage.Master</DependentUpon>
     </Compile>
+    <Compile Include="CommanFile.cs" />
     <Compile Include="indexhome.aspx.cs">
       <DependentUpon>indexhome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
