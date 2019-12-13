@@ -25,7 +25,7 @@
 
 .login-box,
 .register-box {
-  width: 360px;
+  width: 500px;
 
   @media (max-width: map-get($grid-breakpoints, sm)) {
     margin-top: 20px;

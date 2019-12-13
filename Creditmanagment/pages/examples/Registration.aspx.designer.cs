@@ -13,24 +13,6 @@ namespace Creditmanagment.pages.examples {
     public partial class Registration {
         
         /// <summary>
-        /// TextBox1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
-        
-        /// <summary>
-        /// TextBox2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
-        
-        /// <summary>
         /// txtFirstname_YS control.
         /// </summary>
         /// <remarks>
@@ -103,15 +85,6 @@ namespace Creditmanagment.pages.examples {
         protected global::System.Web.UI.WebControls.TextBox txtRetypepassword_YS;
         
         /// <summary>
-        /// txtAddress_YS control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAddress_YS;
-        
-        /// <summary>
         /// txtHelplineno_YS control.
         /// </summary>
         /// <remarks>
@@ -130,13 +103,13 @@ namespace Creditmanagment.pages.examples {
         protected global::System.Web.UI.WebControls.DropDownList ddtVouchermode_YS;
         
         /// <summary>
-        /// chkagreeTerms_YS control.
+        /// checkboxPrimary3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkagreeTerms_YS;
+        protected global::System.Web.UI.WebControls.CheckBox checkboxPrimary3;
         
         /// <summary>
         /// btnRegister_YS control.

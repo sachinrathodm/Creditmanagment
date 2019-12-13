@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +11,12 @@ namespace Creditmanagment.pages.examples
   {
     protected void Page_Load(object sender, EventArgs e)
     {
+      btnRegister_YS.Click += BtnRegister_YS_Click;
+    }
 
+    private void BtnRegister_YS_Click(object sender, EventArgs e)
+    {
+      
     }
   }
 }
