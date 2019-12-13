@@ -31,13 +31,12 @@
             <div class="card-body register-card-body">
                 <p class="login-box-msg">Register a new membership</p>
 
-                <form method="get" runat="server">
-                    <form runat="server">
+                    <form  runat="server">
                         <div class="input-group mb-3">
                             <div class="btn-group btn-group-toggle input-group mb-3 mr-5 ml-5" data-toggle="buttons">
                                 <asp:Label runat="server" class="btn bg-olive active" ID="hello">
                                     <%--<input type="radio" name="options" id="rdStoreKeeper_YS" autocomplete="off" checked runat="server"> StoreKeeper--%>
-                                    <asp:RadioButton ID="rdStoreKeeper_YS" GroupName="a" Checked="true" runat="server" OnCheckedChanged="rdStoreKeeper_YS_CheckedChanged" />
+                                    <asp:RadioButton ID="rdStoreKeeper_YS" GroupName="a" Checked="true" runat="server" />
                                     StoreKeeper
                                 </asp:Label>
                                 <asp:Label runat="server" class="btn bg-olive active">
