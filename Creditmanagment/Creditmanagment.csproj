@@ -245,6 +245,7 @@
     <Content Include="pages\examples\legacy-user-menu.html" />
     <Content Include="pages\examples\lockscreen.html" />
     <Content Include="pages\examples\login.html" />
+    <Content Include="pages\examples\LoginPage.aspx" />
     <Content Include="pages\examples\pace.html" />
     <Content Include="pages\examples\profile.html" />
     <Content Include="pages\examples\projects.html" />
@@ -1842,6 +1843,13 @@
     </Compile>
     <Compile Include="indexhome.aspx.designer.cs">
       <DependentUpon>indexhome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\examples\LoginPage.aspx.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\examples\LoginPage.aspx.designer.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\examples\Registration.aspx.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
