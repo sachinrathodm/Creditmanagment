@@ -76,24 +76,6 @@ namespace Creditmanagment.pages.examples {
         protected global::System.Web.UI.WebControls.TextBox txtLastname_YS;
         
         /// <summary>
-        /// txtStorename_YS control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStorename_YS;
-        
-        /// <summary>
-        /// txtStorecategory_YS control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStorecategory_YS;
-        
-        /// <summary>
         /// txtMobileno_YS control.
         /// </summary>
         /// <remarks>
@@ -128,6 +110,42 @@ namespace Creditmanagment.pages.examples {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRetypepassword_YS;
+        
+        /// <summary>
+        /// exampleInputFile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload exampleInputFile;
+        
+        /// <summary>
+        /// TextBox2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        
+        /// <summary>
+        /// txtStorename_YS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtStorename_YS;
+        
+        /// <summary>
+        /// txtStorecategory_YS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtStorecategory_YS;
         
         /// <summary>
         /// txtHelplineno_YS control.

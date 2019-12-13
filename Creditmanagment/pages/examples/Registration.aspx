@@ -28,7 +28,7 @@
                 <a href="../../index.html"><b>Credit Managment</b></a>
             </div>
 
-            <div class="card">
+            <div class="card ml-5 mr-5">
                 <div class="card-body register-card-body">
                     <p class="login-box-msg">Register a new membership</p>
 
@@ -40,7 +40,7 @@
 
                          Customers  --%>
 
-                        <div>
+                        <div class="ml-5 mr-5">
                             <asp:Label runat="server" class="btn bg-olive active" ID="hello">
                                 <asp:RadioButton ID="rdStoreKeeper_YS" GroupName="a" AutoPostBack="true" value="StoreKeeper" runat="server" OnCheckedChanged="rdStoreKeeper_YS_CheckedChanged" />
                                 StoreKeeper
@@ -49,8 +49,7 @@
                                 <asp:RadioButton ID="rdCustomers_YS" GroupName="a" AutoPostBack="true" value="Cusomers" runat="server" OnCheckedChanged="rdStoreKeeper_YS_CheckedChanged" />
                              Customers 
                               </asp:Label>
-                          
-                              
+                            
                             <%-- <asp:RadioButtonList CausesValidation="false"  ID="RadioButtonList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged1">
                                  <asp:ListItem></asp:ListItem>
                                  <asp:ListItem></asp:ListItem>
@@ -60,43 +59,70 @@
                     </div>
 
                     <div class="input-group-append">
-                        <div class="m-2" style="text-align: left; width: 155px">
+                        <div class="m-2" style="text-align: left; width: 200px">
                             <asp:TextBox ID="txtFirstname_YS" class="form-control" placeholder="First name" runat="server" />
                         </div>
-                        <div class="m-2" style="width: 155px;">
+                        <div class="m-2" style="width: 200px;">
                             <asp:TextBox ID="txtLastname_YS" class="form-control" placeholder="Last name" runat="server" />
                         </div>
                     </div>
 
+                    
                     <div class="input-group-append">
-                        <div class="m-2" style="text-align: left; width: 155px">
-                            <asp:TextBox ID="txtStorename_YS" class="form-control" placeholder="Store name" runat="server" />
-                        </div>
-                        <div style="width: 155px;" class="m-2">
-                            <asp:TextBox ID="txtStorecategory_YS" class="form-control" placeholder="Store category" runat="server" />
-                        </div>
-                    </div>
-                    <div class="input-group-append">
-                        <div class="m-2" style="text-align: left; width: 155px">
+                        <div class="m-2" style="text-align: left; width: 200px">
                             <asp:TextBox ID="txtMobileno_YS" class="form-control" placeholder="Mobile no" runat="server" />
                         </div>
-                        <div style="width: 155px;" class="m-2">
+                        <div style="width: 200px;" class="m-2">
                             <asp:TextBox ID="txtEmail_YS" class="form-control" placeholder="Email" runat="server" />
                         </div>
                     </div>
                     <div class="input-group-append">
-                        <div class="m-2" style="text-align: left; width: 155px">
+                        <div class="m-2" style="text-align: left; width: 200px">
                             <asp:TextBox ID="txtPassword_YS" TextMode="Password" class="form-control" placeholder="Password" runat="server" />
                         </div>
-                        <div style="width: 155px;" class="m-2">
+                        <div style="width: 200px;" class="m-2">
                             <asp:TextBox ID="txtRetypepassword_YS" TextMode="Password" class="form-control" placeholder="Retype password" runat="server" />
                         </div>
                     </div>
+
+               <div class="form-group">
+                    <label for="exampleInputFile">File input</label>
+                    <div class="input-group">
+                      <div class="custom-file">
+                       <asp:FileUpload ID="exampleInputFile" class="custom-file-input" runat="server" />
+                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                      </div>
+                      <div class="input-group-append">
+                        <span class="input-group-text" id="">Upload</span>
+                      </div>
+                    </div>
+                  </div>
+
+
+                 
+
+
+                   <div class="input-group-append">
+                                              <div style="width: 200px;" class="m-2">
+                            <asp:TextBox ID="TextBox2" TextMode="Password" class="form-control" placeholder="Retype password" runat="server" />
+                        </div>
+                    </div>
+
+
+                  <div class="input-group-append">
+                        <div class="m-2" style="text-align: left; width: 200px">
+                            <asp:TextBox ID="txtStorename_YS" class="form-control" placeholder="Store name" runat="server" />
+                        </div>
+                        <div style="width: 200px;" class="m-2">
+                            <asp:TextBox ID="txtStorecategory_YS" class="form-control" placeholder="Store category" runat="server" />
+                        </div>
+                    </div>
+
                     <div class="input-group-append">
-                        <div class="m-2" style="text-align: left; width: 155px">
+                        <div class="m-2" style="text-align: left; width: 200px">
                             <asp:TextBox ID="txtHelplineno_YS" class="form-control" placeholder="Helpline no" runat="server" />
                         </div>
-                        <div style="width: 155px;" class="m-2">
+                        <div style="width: 200px;" class="m-2">
                             <asp:DropDownList ID="ddtVouchermode_YS" class="form-control" runat="server">
                                 <asp:ListItem Value="SelectVouchermode">Select Voucher Mode</asp:ListItem>
                                 <asp:ListItem Value="Quickmode">Quick mode</asp:ListItem>
