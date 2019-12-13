@@ -12,7 +12,7 @@ namespace Creditmanagment.pages.examples
   {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+      string a = "ha maro j 6e ok tu run kar project ne kem run na thayo";
     }
 
     protected void rdStoreKeeper_YS_CheckedChanged(object sender, EventArgs e)
