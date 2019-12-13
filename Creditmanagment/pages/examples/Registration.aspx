@@ -85,7 +85,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group" >
                       <asp:Label runat="server" for="exampleInputFile">File input</asp:Label>
                         <div class="input-group">
                             <div class="custom-file">
@@ -100,8 +100,8 @@
                     </div>
 
                     <div class="input-group-append">
-                        <div style="width: 200px;" class="m-2">
-                            <asp:TextBox ID="TextBox2" TextMode="Password" class="form-control" placeholder="Retype password" runat="server" />
+                        <div style="width: 360px;" class="m-2">
+                            <asp:TextBox ID="txtAddress_YS" class="form-control" placeholder="Address" runat="server" TextMode="MultiLine"></asp:TextBox> 
                         </div>
                     </div>
 
@@ -125,6 +125,15 @@
                                 <asp:ListItem Value="Quickmode">Quick mode</asp:ListItem>
                                 <asp:ListItem Value="Detailmode">Detail mode</asp:ListItem>
                             </asp:DropDownList>
+                        </div>
+                    </div>
+
+                  <div class="input-group-append">
+                        <div class="m-2" style="text-align: left; width: 200px">
+                            <asp:TextBox ID="txtBirthdate_YS" class="form-control" placeholder="Birth Date" runat="server" />
+                        </div>
+                        <div style="width: 200px;" class="m-2">
+                            <asp:TextBox ID="txtAdharcardno" class="form-control" placeholder="Adhar card number" runat="server" />
                         </div>
                     </div>
                     <div class="row">
