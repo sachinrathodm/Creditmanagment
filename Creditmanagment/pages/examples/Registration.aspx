@@ -22,6 +22,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition register-page">
+  <form id="f1" runat="server">
     <div class="register-box">
         <div class="register-logo">
             <a href="../../index.html"><b>Credit Managment</b></a>
@@ -31,21 +32,29 @@
             <div class="card-body register-card-body">
                 <p class="login-box-msg">Register a new membership</p>
 
-                    <form  runat="server">
+                    
                         <div class="input-group mb-3">
-                            <div class="btn-group btn-group-toggle input-group mb-3 mr-5 ml-5" data-toggle="buttons">
-                                <asp:Label runat="server" class="btn bg-olive active" ID="hello">
-                                    <%--<input type="radio" name="options" id="rdStoreKeeper_YS" autocomplete="off" checked runat="server"> StoreKeeper--%>
-                                    <asp:RadioButton ID="rdStoreKeeper_YS" GroupName="a" Checked="true" runat="server" OnCheckedChanged="rdStoreKeeper_YS_CheckedChanged" />
+                          <%--<asp:RadioButton ID="rdStoreKeeper_YS" GroupName="a" AutoPostback="true" Checked="true" UseSubmitBehavior="false"  value="StoreKeeper" runat="server" OnCheckedChanged="rdStoreKeeper_YS_CheckedChanged" />
                                     StoreKeeper
-                                </asp:Label>
-                                <asp:Label runat="server" class="btn bg-olive active">
-                                    <%--<input type="radio" name="options" id="rdCustomers_YS" autocomplete="off" runat="server"> Customer--%>
-                                    <asp:RadioButton ID="rdCustomers_YS" GroupName="a" runat="server" />
-                                    Customers
-                                </asp:Label>
-                            </div>
-                          </div>
+                            <asp:RadioButton ID="rdCustomers_YS" GroupName="a" value="Cusomers" runat="server" />
+
+                         Customers  --%>
+
+                          <div  data-toggle="buttons">
+                                
+                              <asp:RadioButton ID="rdStoreKeeper_YS" GroupName="a" AutoPostBack="true" value="StoreKeeper" runat="server" OnCheckedChanged="rdStoreKeeper_YS_CheckedChanged" />
+                                    StoreKeeper
+                            <asp:RadioButton ID="rdCustomers_YS" GroupName="a" AutoPostBack="true" value="Cusomers" runat="server" OnCheckedChanged="rdStoreKeeper_YS_CheckedChanged" />
+
+                         Customers  
+                              
+                            <%-- <asp:RadioButtonList CausesValidation="false"  ID="RadioButtonList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged1">
+                                 <asp:ListItem></asp:ListItem>
+                                 <asp:ListItem></asp:ListItem>
+                              </asp:RadioButtonList>--%>
+                            </div>  
+
+                        </div>
 
                             <div class="input-group-append">
                                 <div class="m-2" style="text-align: left; width: 155px">
@@ -106,7 +115,7 @@
                                     <asp:Button ID="btnRegister_YS" class="btn btn-primary btn-block" UseSubmitBehavior="false" runat="server" Text="Register" />
                                 </div>
                             </div>
-                    </form>
+                    
 
                     <div class="social-auth-links text-center">
                     </div>
@@ -117,10 +126,9 @@
         </div>
         <!-- /.card -->
     </div>
+    </form>
     <!-- /.register-box -->
 
-    <!-- jQuery -->
-    <script src="../../plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->

@@ -15,6 +15,10 @@ namespace Creditmanagment.pages.examples
 
     }
 
+    protected void rdStoreKeeper_YS_CheckedChanged(object sender, EventArgs e)
+    {
+
+    }
   }
 
 }
