@@ -99,10 +99,6 @@
                         </div>
                     </div>
 
-
-
-
-
                     <div class="input-group-append">
                         <div style="width: 200px;" class="m-2">
                             <asp:TextBox ID="TextBox2" TextMode="Password" class="form-control" placeholder="Retype password" runat="server" />
