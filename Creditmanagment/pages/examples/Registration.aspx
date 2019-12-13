@@ -43,7 +43,7 @@
                         <div class="ml-5 mr-5">
                             <asp:Label runat="server" class="btn bg-olive active" ID="hello">
                                 <asp:RadioButton ID="rdStoreKeeper_YS" GroupName="a" AutoPostBack="true" value="StoreKeeper" runat="server" OnCheckedChanged="rdStoreKeeper_YS_CheckedChanged" />
-                                StoreKeeper
+                                StoreKeepers
                             </asp:Label>
                             <asp:Label runat="server" class="btn bg-olive active" ID="Label1">
                                 <asp:RadioButton ID="rdCustomers_YS" GroupName="a" AutoPostBack="true" value="Cusomers" runat="server" OnCheckedChanged="rdStoreKeeper_YS_CheckedChanged" />
