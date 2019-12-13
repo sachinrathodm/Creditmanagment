@@ -31,67 +31,144 @@
             <div class="card-body register-card-body">
                 <p class="login-box-msg">Register a new membership</p>
 
-                <form method="get" runat="server">
+                <form runat="server">
+                    <div class="input-group mb-3">
+                        <div class="btn-group btn-group-toggle input-group mb-3 mr-5 ml-5" data-toggle="buttons">
+                            <asp:Label runat="server" class="btn bg-olive active" ID="hello">
+                                <%--<input type="radio" name="options" id="rdStoreKeeper_YS" autocomplete="off" checked runat="server"> StoreKeeper--%>
+                                <asp:RadioButton ID="rdStoreKeeper_YS" GroupName="a" Checked="true" runat="server" OnCheckedChanged="rdStoreKeeper_YS_CheckedChanged" />
+                                StoreKeeper
+                </asp:Label>
+                            <asp:Label runat="server" class="btn bg-olive active">
+                                <%--<input type="radio" name="options" id="rdCustomers_YS" autocomplete="off" runat="server"> Customer--%>
+                                <asp:RadioButton ID="rdCustomers_YS" GroupName="a" runat="server" />
+                                Customers
+                 </asp:Label>
+                        </div>
 
-                    <div class="input-group-append">
-                        <div class="m-2" style="text-align: left; width: 155px">
-                            <asp:TextBox ID="txtFirstname_YS" class="form-control" placeholder="First name" runat="server" />
+                    </div>
+                    <div class="input-group mb-3">
+                        <%--<input type="text" class="form-control" placeholder="First name">--%>
+                        <asp:TextBox ID="txtFirstname_YS" class="form-control" placeholder="First name" runat="server" />
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <%--<span class="fas fa-user"></span>--%>
+                            </div>
                         </div>
-                        <div class="m-2" style="width: 155px;">
-                            <asp:TextBox ID="txtLastname_YS" class="form-control" placeholder="Last name" runat="server" />
+                    </div>
+                    <div class="input-group mb-3">
+                        <%--<input type="text" class="form-control" placeholder="Last name">--%>
+                        <asp:TextBox ID="txtLastname_YS" class="form-control" placeholder="Last name" runat="server" />
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <%--<span class="fas fa-user"></span>--%>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="input-group-append">
-                        <div class="m-2" style="text-align: left; width: 155px">
-                            <asp:TextBox ID="txtStorename_YS" class="form-control" placeholder="Store name" runat="server" />
-                        </div>
-                        <div style="width: 155px;" class="m-2">
-                            <asp:TextBox ID="txtStorecategory_YS" class="form-control" placeholder="Store category" runat="server" />
-                        </div>
-                    </div>
-                    <div class="input-group-append">
-                        <div class="m-2" style="text-align: left; width: 155px">
-                            <asp:TextBox ID="txtMobileno_YS" class="form-control" placeholder="Mobile no" runat="server" />
-                        </div>
-                        <div style="width: 155px;" class="m-2">
-                            <asp:TextBox ID="txtEmail_YS" class="form-control" placeholder="Email" runat="server" />
+                    <div class="input-group mb-3">
+                        <%--<input type="text" class="form-control" placeholder="Store name">--%>
+                        <asp:TextBox ID="txtStorename_YS" class="form-control" placeholder="Store name" runat="server" />
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <%--<span class="fas fa-user"></span>--%>
+                            </div>
                         </div>
                     </div>
-                    <div class="input-group-append">
-                        <div class="m-2" style="text-align: left; width: 155px">
-                            <asp:TextBox ID="txtPassword_YS" TextMode="Password" class="form-control" placeholder="Password" runat="server" />
-                        </div>
-                        <div style="width: 155px;" class="m-2">
-                            <asp:TextBox ID="txtRetypepassword_YS" TextMode="Password" class="form-control" placeholder="Retype password" runat="server" />
-                        </div>
-                    </div>
-                    <div class="input-group-append">
-                        <div class="m-2" style="text-align: left; width: 155px">
-                            <asp:TextBox ID="txtHelplineno_YS" class="form-control" placeholder="Helpline no" runat="server" />
-                        </div>
-                        <div style="width: 155px;" class="m-2">
-                            <asp:DropDownList ID="ddtVouchermode_YS" class="form-control" runat="server">
-                                <asp:ListItem Value="SelectVouchermode">Select Voucher Mode</asp:ListItem>
-                                <asp:ListItem Value="Quickmode">Quick mode</asp:ListItem>
-                                <asp:ListItem Value="Detailmode">Detail mode</asp:ListItem>
-                            </asp:DropDownList>
+                    <div class="input-group mb-3">
+                        <%--<input type="text" class="form-control" placeholder="Store category">--%>
+                        <asp:TextBox ID="txtStorecategory_YS" class="form-control" placeholder="Store category" runat="server" />
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <%--<span class="fas fa-user"></span>--%>
+                            </div>
                         </div>
                     </div>
-                  <div class="row">
-                    <div class="input-group-append col-7">
-                        <div class="icheck-primary d-inline m-2">
-                            <asp:CheckBox ID="checkboxPrimary3" runat="server" value="agree" />
+                    <div class="input-group mb-3">
+                        <%--<input type="text" class="form-control" placeholder="Mobile no">--%>
+                        <asp:TextBox ID="txtMobileno_YS" class="form-control" placeholder="Mobile no" runat="server" />
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <%--<span class="fas fa-user"></span>--%>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <%--<input type="email" class="form-control" placeholder="Email">--%>
+                        <asp:TextBox ID="txtEmail_YS" class="form-control" placeholder="Email" runat="server" />
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <%--<span class="fas fa-envelope"></span>--%>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <%--<input type="password" class="form-control" placeholder="Password">--%>
+                        <asp:TextBox ID="txtPassword_YS" TextMode="Password" class="form-control" placeholder="Password" runat="server" />
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <%--<span class="fas fa-lock"></span>--%>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <%--<input type="password" class="form-control" placeholder="Retype password">--%>
+                        <asp:TextBox ID="txtRetypepassword_YS" TextMode="Password" class="form-control" placeholder="Retype password" runat="server" />
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <%--<span class="fas fa-lock"></span>--%>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <%--<input type="password" class="form-control" placeholder="Retype password">--%>
+                        <asp:TextBox ID="txtAddress_YS" class="form-control" placeholder="Address" TextMode="MultiLine" runat="server"></asp:TextBox>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <%--<span class="fas fa-lock"></span>--%>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <%--<input type="email" class="form-control" placeholder="Helpline no">--%>
+                        <asp:TextBox ID="txtHelplineno_YS" class="form-control" placeholder="Helpline no" runat="server" />
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <%--<span class="fas fa-envelope"></span>--%>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <%--<input type="email" class="form-control" placeholder="Helpline no">--%>
+                        <asp:DropDownList ID="ddtVouchermode_YS" class="form-control" runat="server">
+                            <asp:ListItem Value="SelectVouchermode">Select Voucher Mode</asp:ListItem>
+                            <asp:ListItem Value="Quickmode">Quick mode</asp:ListItem>
+                            <asp:ListItem Value="Detailmode">Detail mode</asp:ListItem>
+                        </asp:DropDownList>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <%--<span class="fas fa-envelope"></span>--%>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="icheck-primary">
+                                <%--<input type="checkbox" id="agreeTerms" name="terms" value="agree">--%>
+                                <asp:CheckBox ID="chkagreeTerms_YS" runat="server" value="agree" />
 
-                            <label for="checkboxPrimary3">
-                             I agree to the <a href="#">terms</a>
-                            </label>
+                                <label for="agreeTerms">
+                                    I agree to the <a href="#">terms</a>
+                                </label>
+                            </div>
                         </div>
-                    </div >
-                     <div class="col-4">
-                            <asp:Button ID="btnRegister_YS" class="btn btn-primary btn-block" usesubmitbehavior="false" runat="server" Text="Register" />
+                        <!-- /.col -->
+                        <div class="col-4">
+                            <%--<button type="submit" class="btn btn-primary btn-block">Register</button>--%>
+                            <asp:Button ID="btnRegister_YS" EnableViewState="true" UseSubmitBehavior="false" runat="server" Text="Register" class="btn btn-primary btn-block" />
                         </div>
-                  </div>
+                        <!-- /.col -->
+                    </div>
                 </form>
 
                 <div class="social-auth-links text-center">
