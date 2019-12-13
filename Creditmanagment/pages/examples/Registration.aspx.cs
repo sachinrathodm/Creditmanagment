@@ -16,8 +16,20 @@ namespace Creditmanagment.pages.examples
 
     protected void rdStoreKeeper_YS_CheckedChanged(object sender, EventArgs e)
     {
-      txtStorecategory_YS.Visible = false;
-      txtStorename_YS.Visible = false;
+      if (rdCustomers_YS.Checked)
+      {
+        txtStorename_YS.Visible = false;
+        txtStorecategory_YS.Visible = false;
+        txtHelplineno_YS.Visible = false;
+        ddtVouchermode_YS.Visible = false;
+      }
+      else
+      {
+        txtStorename_YS.Visible = true;
+        txtStorecategory_YS.Visible = true;
+        txtHelplineno_YS.Visible = true;
+        ddtVouchermode_YS.Visible = true;
+      }
     }
   }
 
