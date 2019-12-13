@@ -22,6 +22,15 @@ namespace Creditmanagment.pages.examples {
         protected global::System.Web.UI.HtmlControls.HtmlForm f1;
         
         /// <summary>
+        /// hello control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label hello;
+        
+        /// <summary>
         /// rdStoreKeeper_YS control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace Creditmanagment.pages.examples {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButton rdStoreKeeper_YS;
+        
+        /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
         /// rdCustomers_YS control.
