@@ -13,15 +13,6 @@ namespace Creditmanagment.pages.examples {
     public partial class Registration {
         
         /// <summary>
-        /// f1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm f1;
-        
-        /// <summary>
         /// hello control.
         /// </summary>
         /// <remarks>
@@ -236,6 +227,15 @@ namespace Creditmanagment.pages.examples {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkAgree;
+        
+        /// <summary>
+        /// lblAgree control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblAgree;
         
         /// <summary>
         /// btnRegister_YS control.

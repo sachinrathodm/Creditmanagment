@@ -32,7 +32,7 @@ namespace Creditmanagment.pages.examples
       _CommanControlList.Add(btnRegister_YS);
       _CommanControlList.Add(chkAgree);
       _CommanControlList.Add(lblismember_YS);
-      //   _CommanControlList.Add(lblAgree);
+     _CommanControlList.Add(lblAgree);
       //StoreKeeperControl
       _StoreKeeperControl.Add(txtStorecategory_YS);
       _StoreKeeperControl.Add(txtStorename_YS);
