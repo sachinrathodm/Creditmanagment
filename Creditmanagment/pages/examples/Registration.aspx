@@ -41,11 +41,11 @@
 
                         <div class="ml-5 mr-5">
                             <asp:Label runat="server" class="btn bg-olive active" ID="hello">
-                                <asp:RadioButton ID="rdStoreKeeper_YS" GroupName="a" AutoPostBack="true" value="StoreKeeper" runat="server" OnCheckedChanged="rdStoreKeeper_YS_CheckedChanged" />
+                                <asp:RadioButton ID="rdStoreKeeper_YS" GroupName="a" AutoPostBack="true" value="StoreKeeper" runat="server" />
                                 StoreKeeper
                             </asp:Label>
                             <asp:Label runat="server" class="btn bg-olive active" ID="Label1">
-                                <asp:RadioButton ID="rdCustomers_YS" GroupName="a" AutoPostBack="true" value="Cusomers" runat="server" OnCheckedChanged="rdStoreKeeper_YS_CheckedChanged" />
+                                <asp:RadioButton ID="rdCustomers_YS" GroupName="a" AutoPostBack="true" value="Cusomers" runat="server" />
                                 Customers 
                             </asp:Label>
 
@@ -146,31 +146,31 @@
                         <!-- /.input group -->
                     </div>
                 </div>
-                 <div class="row">
-                        <div class="input-group-append col-7">
-                            <div class="icheck-primary d-inline m-2">
-                                <asp:CheckBox ID="chkAgree" runat="server" value="agree" />
-                                <label for="chkAgree">
-                                    I agree to the <a href="#">terms</a>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <asp:Button ID="btnRegister_YS" class="btn btn-primary btn-block" UseSubmitBehavior="false" runat="server" Text="Register" />
+                <div class="row">
+                    <div class="input-group-append col-7">
+                        <div class="icheck-primary d-inline m-2">
+                            <asp:CheckBox ID="chkAgree" runat="server" value="agree" />
+                            <label for="chkAgree">
+                                I agree to the <a href="#">terms</a>
+                            </label>
                         </div>
                     </div>
-  
+                    <div class="col-4">
+                        <asp:Button ID="btnRegister_YS" class="btn btn-primary btn-block" UseSubmitBehavior="false" runat="server" Text="Register" />
+                    </div>
                 </div>
-
-                <div class="social-auth-links text-center">
-                  <asp:Label ID="lblismember_YS" runat="server">
-                  <a href="LoginPage.aspx" class="text-center">I already have a membership</a>
-                </asp:Label>
-                </div>
-                
 
             </div>
-            <!-- /.form-box -->
+
+            <div class="social-auth-links text-center">
+                <asp:Label ID="lblismember_YS" runat="server">
+                  <a href="LoginPage.aspx" class="text-center">I already have a membership</a>
+                </asp:Label>
+            </div>
+
+
+        </div>
+        <!-- /.form-box -->
         </div>
         <!-- /.card -->
         </div>
