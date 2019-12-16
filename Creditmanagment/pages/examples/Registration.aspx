@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 3 | Registration Page</title>
+    <title>Credit Management | Registration Page</title>
 
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,10 +22,10 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition register-page">
-    <form id="f1" runat="server">
+    <form runat="server">
         <div class="register-box">
             <div class="register-logo">
-                <a href="../../index.html"><b>Credit Managment</b></a>
+                <a href="../../index.html"><b>Credit Management</b></a>
             </div>
 
             <div class="card ml-5 mr-5 aspNetHidden">
@@ -104,7 +104,7 @@
                     </div>
 
                     <div class="input-group-append">
-                        <div style="width: 360px;" class="ml-2 mr-2 mt-2 mb-0">
+                        <div style="width: 360px;" class="ml-2 mr-2 mt-2">
                             <asp:TextBox ID="txtAdharcardno_YS" class="form-control" placeholder="Adhar card number" runat="server" />
                         </div>
                     </div>
@@ -119,10 +119,10 @@
 
                     <div class="input-group-append">
                         <div class="m-2" style="text-align: left; width: 200px">
-                            <asp:TextBox ID="txtHelplineno_YS" class="form-control" placeholder="Helpline no" runat="server" />
+                            <asp:TextBox ID="txtHelplineno_YS" class="form-control " placeholder="Helpline no" runat="server" />
                         </div>
-                        <div style="width: 200px;" class="m-2">
-                            <asp:DropDownList ID="ddtVouchermode_YS" class="form-control" runat="server">
+                        <div style="width: 200px;" class="m-2 ">
+                            <asp:DropDownList ID="ddtVouchermode_YS" class="form-control custom-select" runat="server">
                                 <asp:ListItem Value="SelectVouchermode">Select Voucher Mode</asp:ListItem>
                                 <asp:ListItem Value="Quickmode">Quick mode</asp:ListItem>
                                 <asp:ListItem Value="Detailmode">Detail mode</asp:ListItem>
@@ -130,7 +130,7 @@
                         </div>
                     </div>
 
-                    <div class="ml-2 mr-2 mb-2 mt-0">
+                    <div class="ml-2 mr-2">
                         <!-- Date dd/mm/yyyy -->
                         <%--<div class="form-group">--%>
                         <asp:Label ID="lblBirthDate_YS" runat="server" Text="Label">Date Of Birth</asp:Label>
@@ -145,37 +145,31 @@
                         </div>
                         <!-- /.input group -->
                     </div>
+
                 </div>
-                 <div class="row">
-                        <div class="input-group-append col-7">
-                            <div class="icheck-primary d-inline m-2">
-                                <asp:CheckBox ID="chkAgree" runat="server" value="agree" />
-                                <label for="chkAgree">
-                                    I agree to the <a href="#">terms</a>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <asp:Button ID="btnRegister_YS" class="btn btn-primary btn-block" UseSubmitBehavior="false" runat="server" Text="Register" />
+                <div class="row ml-1">
+                    <div class="input-group-append col-7">
+                        <div class="icheck-primary d-inline ml-4">
+                            <asp:CheckBox ID="chkAgree" runat="server" value="agree" />
+                            <%--<asp:Label ID="lblAgree" runat="server" for="chkAgree">I agree to the <a href="#">terms</a></asp:Label>--%>
+
+                            <label for="chkAgree" id="lblAgree" runat="server">
+                                I agree to the <a href="#">terms</a>
+                            </label>
                         </div>
                     </div>
-  
+                    <div class="col-4">
+                        <asp:Button ID="btnRegister_YS" class="btn btn-primary btn-block" UseSubmitBehavior="false" runat="server" Text="Register" />
+                    </div>
                 </div>
-
                 <div class="social-auth-links text-center">
-                  <asp:Label ID="lblismember_YS" runat="server">
+                    <asp:Label ID="lblismember_YS" runat="server">
                   <a href="LoginPage.aspx" class="text-center">I already have a membership</a>
-                </asp:Label>
+                    </asp:Label>
                 </div>
-                
-
             </div>
-            <!-- /.form-box -->
-        </div>
-        <!-- /.card -->
         </div>
     </form>
-    <!-- /.register-box -->
     <!-- jQuery -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
@@ -196,7 +190,7 @@
         <!-- Control sidebar content goes here -->
     </aside>
     <!-- /.control-sidebar -->
-    </div>
+
     <!-- ./wrapper -->
 
     <!-- jQuery -->
@@ -269,17 +263,12 @@
                 }
             )
 
-
-
             //Bootstrap Duallistbox
             $('.duallistbox').bootstrapDualListbox()
-
-
 
             $("input[data-bootstrap-switch]").each(function () {
                 $(this).bootstrapSwitch('state', $(this).prop('checked'));
             });
-
         })
     </script>
 </body>

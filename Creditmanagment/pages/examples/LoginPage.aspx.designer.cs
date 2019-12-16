@@ -40,6 +40,15 @@ namespace Creditmanagment.pages.examples {
         protected global::System.Web.UI.WebControls.CheckBox chkAgree_YS;
         
         /// <summary>
+        /// lblAgree control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblAgree;
+        
+        /// <summary>
         /// btnLogin_YS control.
         /// </summary>
         /// <remarks>

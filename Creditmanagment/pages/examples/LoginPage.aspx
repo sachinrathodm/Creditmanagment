@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 3 | Log in</title>
+    <title>Credit Management | Log in</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -59,11 +59,11 @@
                 Remember Me
               </label>
             </div>--%>
-                            <div class="input-group-append col-7">
+                            <div class="input-group-append col-15">
                                 <div class="icheck-primary d-inline m-2">
                                     <asp:CheckBox ID="chkAgree_YS" runat="server" value="agree" />
-                                    <label for="chkAgree_YS">
-                                        Remember Me <a href="#">terms</a>
+                                    <label for="chkAgree_YS" id="lblAgree" runat="server">
+                                        Remember Me 
                                     </label>
                                 </div>
                             </div>
