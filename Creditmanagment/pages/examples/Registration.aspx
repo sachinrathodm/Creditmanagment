@@ -59,6 +59,7 @@
                     <div class="input-group-append">
                         <div class="m-2" style="text-align: left; width: 200px">
                             <asp:TextBox ID="txtFirstname_YS" class="form-control" placeholder="First name" runat="server" />
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtFirstname_YS" ErrorMessage="Enter First Name"></asp:RequiredFieldValidator>
                         </div>
                         <div class="m-2" style="width: 200px;">
                             <asp:TextBox ID="txtLastname_YS" class="form-control" placeholder="Last name" runat="server" />
