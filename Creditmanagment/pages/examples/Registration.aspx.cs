@@ -79,7 +79,7 @@ INSERT INTO [dbo].[User]
 ,'{Guid.NewGuid()}'
 ,'{txtFirstname_YS.Text} {txtLastname_YS.Text}', {((rdStoreKeeper_YS.Checked) ? 1 : 0)})
 ";
-      CommanFile.ExcuteNonQuery_YS(_Sql);
+    //  CommanFile.ExcuteNonQuery_YS(_Sql);
       if (rdStoreKeeper_YS.Checked)
       {
 

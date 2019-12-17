@@ -20,9 +20,11 @@
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+      <link rel="stylesheet" href="//getbootstrapadmin.com/remark/base/assets/examples/css/forms/validation.min.css?v4.0.2"/>
+
 </head>
 <body class="hold-transition register-page">
-    <form runat="server">
+    <form runat="server" name="form1" id="form1">
         <div class="register-box">
             <div class="register-logo">
                 <a href="../../index.html"><b>Credit Management</b></a>
@@ -57,9 +59,9 @@
                     </div>
 
                     <div class="input-group-append">
-                        <div class="m-2" style="text-align: left; width: 200px">
-                            <asp:TextBox ID="txtFirstname_YS" class="form-control" placeholder="First name" runat="server" />
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtFirstname_YS" ErrorMessage="Enter First Name"></asp:RequiredFieldValidator>
+                        <div class="m-2 form-group" style="text-align: left; width: 200px">
+                            <asp:TextBox ID="txtFirstname_YS" name="username" class="form-control" placeholder="First name" runat="server" />
+                           
                         </div>
                         <div class="m-2" style="width: 200px;">
                             <asp:TextBox ID="txtLastname_YS" class="form-control" placeholder="Last name" runat="server" />
@@ -70,8 +72,8 @@
                         <div class="m-2" style="text-align: left; width: 200px">
                             <asp:TextBox ID="txtMobileno_YS" class="form-control" placeholder="Mobile no" runat="server" />
                         </div>
-                        <div style="width: 200px;" class="m-2">
-                            <asp:TextBox ID="txtEmail_YS" class="form-control" placeholder="Email" runat="server" />
+                        <div style="width: 200px;" class="m-2 form-group">
+                            <asp:TextBox ID="txtEmail_YS" class="form-control" placeholder="Email" runat="server" name="email"/>
                         </div>
                     </div>
                     <div class="input-group-append">
@@ -171,6 +173,8 @@
             </div>
         </div>
     </form>
+  
+
     <!-- jQuery -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
@@ -217,6 +221,55 @@
     <script src="../../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
+
+
+      <!-- jQuery validator -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.js"></script>
+  <script>
+$(document).ready(function () {
+  $('#form1').bootstrapValidator({
+    message: 'This value is not valid',
+    feedbackIcons: {
+      valid: 'glyphicon glyphicon-ok',
+      invalid: 'glyphicon glyphicon-remove',
+      validating: 'glyphicon glyphicon-refresh'
+    },
+    fields: {
+      txtFirstname_YS: {
+        message: 'The username is not valid',
+        validators: {
+          notEmpty: {
+            message: 'The username is required and cannot be empty'
+          },
+          stringLength: {
+            min: 6,
+            max: 30,
+            message: 'The username must be more than 6 and less than 30 characters long'
+          },
+          regexp: {
+            regexp: /^[a-zA-Z0-9_]+$/,
+            message: 'The username can only consist of alphabetical, number and underscore'
+          }
+        }
+      },
+      txtEmail_YS: {
+        validators: {
+          notEmpty: {
+            message: 'The email is required and cannot be empty'
+          },
+          emailAddress: {
+            message: 'The input is not a valid email address'
+          }
+        }
+      }
+    }
+  });
+});
+
+  </script>
+
+
+
     <!-- Page script -->
     <script>
         $(function () {
