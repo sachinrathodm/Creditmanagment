@@ -107,6 +107,7 @@
     <Content Include="dist\css\alt\adminlte.pages.min.css" />
     <Content Include="dist\css\alt\adminlte.plugins.css" />
     <Content Include="dist\css\alt\adminlte.plugins.min.css" />
+    <Content Include="dist\css\textboxvalidation.css" />
     <Content Include="dist\img\AdminLTELogo.png" />
     <Content Include="dist\img\avatar.png" />
     <Content Include="dist\img\avatar04.png" />
@@ -1827,6 +1828,7 @@
     <Content Include="plugins\toastr\toastr.min.css" />
     <Content Include="plugins\toastr\toastr.min.js" />
     <Content Include="starter.html" />
+    <Content Include="StyleSheet1.css" />
     <Content Include="validator.js" />
     <Content Include="Web.config" />
   </ItemGroup>
