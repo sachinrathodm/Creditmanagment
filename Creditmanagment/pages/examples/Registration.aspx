@@ -19,117 +19,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
   <link rel="stylesheet" href="../../dist/css/textboxvalidation.css">
-  
-  <%--<style>--%>
-      <%--.has-success .help-block,
-.has-success .control-label,
-.has-success .radio,
-.has-success .checkbox,
-.has-success .radio-inline,
-.has-success .checkbox-inline {
-  color: #3c763d
-}
-
-.has-success .form-control {
-  border-color: #3c763d;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075)
-}
-
-  .has-success .form-control:focus {
-    border-color: #2b542c;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #67b168;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #67b168
-  }
-
-.has-success .input-group-addon {
-  color: #3c763d;
-  background-color: #dff0d8;
-  border-color: #3c763d
-}
-
-.has-success .form-control-feedback {
-  color: #3c763d
-}
-
-.has-warning .help-block,
-.has-warning .control-label,
-.has-warning .radio,
-.has-warning .checkbox,
-.has-warning .radio-inline,
-.has-warning .checkbox-inline {
-  color: #8a6d3b
-}
-
-.has-warning .form-control {
-  border-color: #8a6d3b;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075)
-}
-
-  .has-warning .form-control:focus {
-    border-color: #66512c;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #c0a16b;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #c0a16b
-  }
-
-.has-warning .input-group-addon {
-  color: #8a6d3b;
-  background-color: #fcf8e3;
-  border-color: #8a6d3b
-}
-
-.has-warning .form-control-feedback {
-  color: #8a6d3b
-}
-
-.has-error .help-block,
-.has-error .control-label,
-.has-error .radio,
-.has-error .checkbox,
-.has-error .radio-inline,
-.has-error .checkbox-inline {
-  color: #a94442
-}
-
-.has-error .form-control {
-  border-color: #a94442;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075)
-}
-
-  .has-error .form-control:focus {
-    border-color: #843534;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483
-  }
-
-.has-error .input-group-addon {
-  color: #a94442;
-  background-color: #f2dede;
-  border-color: #a94442
-}
-
-.has-error .form-control-feedback {
-  color: #a94442
-}
-
-.has-feedback label.sr-only ~ .form-control-feedback {
-  top: 0
-}
-
-.help-block {
-  display: block;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  color: #737373
-    </style>--%>
-  
-    <link rel="stylesheet" href="/path/to/dist/css/bootstrapValidator.min.css" />
-
-    <script type="text/javascript" src="../../plugins/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+ 
 </head>
 <body class="hold-transition register-page">
     <form runat="server" name="form1" id="form1">
@@ -168,20 +58,20 @@
 
                     <div class="input-group-append">
                         <div class="m-2 form-group" style="text-align: left; width: 200px">
-                            <asp:TextBox ID="txtFirstname_YS" name="username" class="form-control" placeholder="First name" runat="server" />
+                            <asp:TextBox ID="txtFirstname_YS" class="form-control" placeholder="First name" runat="server" />
 
                         </div>
-                        <div class="m-2" style="width: 200px;">
+                        <div class="m-2 form-group" style="width: 200px;">
                             <asp:TextBox ID="txtLastname_YS" class="form-control" placeholder="Last name" runat="server" />
                         </div>
                     </div>
 
                     <div class="input-group-append">
-                        <div class="m-2" style="text-align: left; width: 200px">
+                        <div class="m-2 form-group" style="text-align: left; width: 200px">
                             <asp:TextBox ID="txtMobileno_YS" class="form-control" placeholder="Mobile no" runat="server" />
                         </div>
                         <div style="width: 200px;" class="m-2 form-group">
-                            <asp:TextBox ID="txtEmail_YS" class="form-control" placeholder="Email" runat="server" name="email" />
+                            <asp:TextBox ID="txtEmail_YS" class="form-control" placeholder="Email" runat="server"/>
                         </div>
                     </div>
                     <div class="input-group-append">
@@ -329,7 +219,7 @@
 
     <!-- jQuery validator -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.js"></script>
-    <script src="../../validator.js"></script>
+    <script src="../../dist/js/validator.js"></script>
 
 
 
