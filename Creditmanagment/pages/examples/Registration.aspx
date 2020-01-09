@@ -132,9 +132,9 @@
                         </div>
                         <div style="width: 200px;" class="m-2 ">
                             <asp:DropDownList ID="ddtVouchermode_YS" class="form-control custom-select" runat="server">
-                                <asp:ListItem Value="SelectVouchermode">Select Voucher Mode</asp:ListItem>
-                                <asp:ListItem Value="Quickmode">Quick mode</asp:ListItem>
-                                <asp:ListItem Value="Detailmode">Detail mode</asp:ListItem>
+                                <asp:ListItem Value="0">Select Voucher Mode</asp:ListItem>
+                                <asp:ListItem Value="1">Quick mode</asp:ListItem>
+                                <asp:ListItem Value="2">Detail mode</asp:ListItem>
                             </asp:DropDownList>
                         </div>
                     </div>

@@ -32,7 +32,7 @@ namespace Creditmanagment.pages.examples
       _CommanControlList.Add(btnRegister_YS);
       _CommanControlList.Add(chkAgree);
       _CommanControlList.Add(lblismember_YS);
-     _CommanControlList.Add(lblAgree);
+      _CommanControlList.Add(lblAgree);
       //StoreKeeperControl
       _StoreKeeperControl.Add(txtStorecategory_YS);
       _StoreKeeperControl.Add(txtStorename_YS);
@@ -61,7 +61,7 @@ namespace Creditmanagment.pages.examples
 
     private void BtnRegister_YS_Click_YS(object sender, EventArgs e)
     {
-
+      Guid UserGUID = Guid.NewGuid();
       string _Sql = $@"
 INSERT INTO [dbo].[User]
            ([User_ID]
@@ -72,17 +72,66 @@ INSERT INTO [dbo].[User]
            ,[Display_Name]
            ,[Is_Storekeeper])
      VALUES
-           ({Guid.NewGuid()}
+           ('{UserGUID}'
 ,'{txtEmail_YS.Text}'
 ,'{txtPassword_YS.Text}'
 ,{txtMobileno_YS.Text}
 ,'{Guid.NewGuid()}'
 ,'{txtFirstname_YS.Text} {txtLastname_YS.Text}', {((rdStoreKeeper_YS.Checked) ? 1 : 0)})
 ";
-    //  CommanFile.ExcuteNonQuery_YS(_Sql);
+      CommanFile.ExcuteNonQuery_YS(_Sql);
+      if (rdCustomers_YS.Checked)
+      {
+        Guid CustomerGUID = Guid.NewGuid();
+         _Sql = $@"
+INSERT INTO [dbo].[Customers]
+           ([Customer_ID]
+           ,[User_ID]
+           ,[First_Name]
+           ,[Last_Name]
+           ,[Birth_Date]
+           ,[Phone_No]
+           ,[Address]
+           ,[Adhar_Card_Number])
+     VALUES
+('{CustomerGUID}'
+,'{UserGUID}'
+,'{txtFirstname_YS.Text}'
+,'{txtLastname_YS.Text}'
+,'{txtBirthDate_YS.Text}'
+,'{txtMobileno_YS.Text}'
+,'{txtAddress_YS.Text}'
+,{txtAdharcardno_YS.Text})
+";
+        CommanFile.ExcuteNonQuery_YS(_Sql);
+      }
       if (rdStoreKeeper_YS.Checked)
       {
-
+        Guid StoreGUID = Guid.NewGuid();
+        
+        _Sql = $@"
+INSERT INTO [dbo].[Store]
+           ([Store_ID]
+           ,[User_ID]
+           ,[Store_Name]
+           ,[Store_Category]
+           ,[First_Name]
+           ,[Last_Name]
+           ,[Helpline_No]
+           ,[Address]
+           ,[Is_Voucher_QuickMode])
+     VALUES
+('{StoreGUID}'
+,'{UserGUID}'
+,'{txtStorename_YS.Text}'
+,'{txtStorecategory_YS.Text}'
+,'{txtFirstname_YS.Text}'
+,'{txtLastname_YS.Text}'
+,'{txtHelplineno_YS.Text}'
+,'{txtAddress_YS.Text}'
+,{((Convert.ToInt32(ddtVouchermode_YS.SelectedValue) == 1) ? 1 : 0)})
+";
+        CommanFile.ExcuteNonQuery_YS(_Sql);
       }
     }
 
