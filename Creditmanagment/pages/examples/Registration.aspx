@@ -20,6 +20,14 @@
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
   <link rel="stylesheet" href="../../dist/css/textboxvalidation.css">
  
+
+  <link rel="stylesheet" href="../../dist/css/textboxvalidation.css">
+  
+    <link rel="stylesheet" href="/path/to/dist/css/bootstrapValidator.min.css" />
+
+    <script type="text/javascript" src="../../plugins/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 </head>
 <body class="hold-transition register-page">
     <form runat="server" name="form1" id="form1">

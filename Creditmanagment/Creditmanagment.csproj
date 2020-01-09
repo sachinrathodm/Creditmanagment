@@ -1828,7 +1828,7 @@
     <Content Include="plugins\toastr\toastr.min.css" />
     <Content Include="plugins\toastr\toastr.min.js" />
     <Content Include="starter.html" />
-    <Content Include="dist\js\validator.js" />
+    <Content Include="validator.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
