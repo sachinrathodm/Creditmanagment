@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace Creditmanagment.pages.examples
 {
   public partial class Registration : System.Web.UI.Page
@@ -79,7 +80,8 @@ INSERT INTO [dbo].[User]
 ,'{Guid.NewGuid()}'
 ,'{txtFirstname_YS.Text} {txtLastname_YS.Text}', {((rdStoreKeeper_YS.Checked) ? 1 : 0)})
 ";
-    //  CommanFile.ExcuteNonQuery_YS(_Sql);
+      CommanFile.ExcuteNonQuery_YS(_Sql);
+   
       if (rdStoreKeeper_YS.Checked)
       {
 

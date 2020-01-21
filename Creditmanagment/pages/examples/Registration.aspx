@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
-  <link rel="stylesheet" href="../../dist/css/textboxvalidation.css">
- 
+    <link rel="stylesheet" href="../../dist/css/textboxvalidation.css">
 
-  <link rel="stylesheet" href="../../dist/css/textboxvalidation.css">
-  
+
+    <link rel="stylesheet" href="../../dist/css/textboxvalidation.css">
+
     <link rel="stylesheet" href="/path/to/dist/css/bootstrapValidator.min.css" />
 
     <script type="text/javascript" src="../../plugins/jquery/jquery.min.js"></script>
@@ -79,19 +79,19 @@
                             <asp:TextBox ID="txtMobileno_YS" class="form-control" placeholder="Mobile no" runat="server" />
                         </div>
                         <div style="width: 200px;" class="m-2 form-group">
-                            <asp:TextBox ID="txtEmail_YS" class="form-control" placeholder="Email" runat="server"/>
+                            <asp:TextBox ID="txtEmail_YS" class="form-control" placeholder="Email" runat="server" />
                         </div>
                     </div>
                     <div class="input-group-append">
-                        <div class="m-2" style="text-align: left; width: 200px">
+                        <div class="m-2 form-group" style="text-align: left; width: 200px">
                             <asp:TextBox ID="txtPassword_YS" TextMode="Password" class="form-control" placeholder="Password" runat="server" />
                         </div>
-                        <div style="width: 200px;" class="m-2">
+                        <div style="width: 200px;" class="m-2 form-group">
                             <asp:TextBox ID="txtRetypepassword_YS" TextMode="Password" class="form-control" placeholder="Retype password" runat="server" />
                         </div>
                     </div>
 
-                    <div class="m-2">
+                    <div class="m-2 form-group">
                         <asp:Label ID="lblinputfile" runat="server" for="InputFile_YS">File input</asp:Label>
                         <div class="input-group">
                             <div class="custom-file">
@@ -107,27 +107,27 @@
                     </div>
 
                     <div class="input-group-append">
-                        <div style="width: 360px;" class="m-2">
+                        <div style="width: 360px;" class="m-2 form-group">
                             <asp:TextBox ID="txtAddress_YS" class="form-control" placeholder="Address" runat="server" TextMode="MultiLine"></asp:TextBox>
                         </div>
                     </div>
 
                     <div class="input-group-append">
-                        <div style="width: 360px;" class="ml-2 mr-2 mt-2">
+                        <div style="width: 360px;" class="ml-2 mr-2 mt-2 form-group">
                             <asp:TextBox ID="txtAdharcardno_YS" class="form-control" placeholder="Adhar card number" runat="server" />
                         </div>
                     </div>
                     <div class="input-group-append">
-                        <div class="m-2" style="text-align: left; width: 200px">
+                        <div class="m-2 form-group" style="text-align: left; width: 200px">
                             <asp:TextBox ID="txtStorename_YS" class="form-control" placeholder="Store name" runat="server" />
                         </div>
-                        <div style="width: 200px;" class="m-2">
+                        <div style="width: 200px;" class="m-2 form-group">
                             <asp:TextBox ID="txtStorecategory_YS" class="form-control" placeholder="Store category" runat="server" />
                         </div>
                     </div>
 
                     <div class="input-group-append">
-                        <div class="m-2" style="text-align: left; width: 200px">
+                        <div class="m-2 form-group" style="text-align: left; width: 200px">
                             <asp:TextBox ID="txtHelplineno_YS" class="form-control " placeholder="Helpline no" runat="server" />
                         </div>
                         <div style="width: 200px;" class="m-2 ">
@@ -227,7 +227,7 @@
 
     <!-- jQuery validator -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.js"></script>
-    <script src="../../dist/js/validator.js"></script>
+    <script src="../../validator.js"></script>
 
 
 

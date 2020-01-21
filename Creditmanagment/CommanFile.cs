@@ -12,7 +12,7 @@ namespace Creditmanagment
     {
       string connetionString;
       SqlConnection con;
-      connetionString = @"Data Source=.\DE_17;Initial Catalog=CreditManagement;User ID=sa;Password=sqladmin";
+      connetionString = @"Data Source=DESKTOP-M7QNTA0\SQLEXPRESS;Initial Catalog=CreditManagement;User ID=sa;Password=sqladmin";
       con = new SqlConnection(connetionString);
       con.Open();
       SqlCommand cmd = new SqlCommand(Query,con);
