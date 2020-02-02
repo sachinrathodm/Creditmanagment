@@ -9,7 +9,7 @@ namespace Creditmanagment
 {
   public static class CommanFile
   {
-    public static void ExcuteNonQuery_YS(string Query)
+    public static int ExcuteNonQuery_YS(string Query)
     {
       string connetionString;
       SqlConnection con;
@@ -17,8 +17,22 @@ namespace Creditmanagment
       con = new SqlConnection(connetionString);
       con.Open();
       SqlCommand cmd = new SqlCommand(Query, con);
-      cmd.ExecuteNonQuery();
+     int i= cmd.ExecuteNonQuery();
       con.Close();
+      return i;
+    }
+
+    public static Object ExcuteScalar_YS(string Query)
+    {
+      string connetionString;
+      SqlConnection con;
+      connetionString = @"Data Source=DESKTOP-A5UKIHU\DE_17;Initial Catalog=CreditManagement;User ID=sa;Password=sqladmin";
+      con = new SqlConnection(connetionString);
+      con.Open();
+      SqlCommand cmd = new SqlCommand(Query, con);
+      object i = cmd.ExecuteScalar();
+      con.Close();
+      return i;
     }
 
 
