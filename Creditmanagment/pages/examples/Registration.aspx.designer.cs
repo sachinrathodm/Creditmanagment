@@ -22,13 +22,13 @@ namespace Creditmanagment.pages.examples {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// hello control.
+        /// Labe2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label hello;
+        protected global::System.Web.UI.WebControls.Label Labe2;
         
         /// <summary>
         /// rdStoreKeeper_YS control.

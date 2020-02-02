@@ -48,7 +48,7 @@
                          Customers  --%>
 
                         <div class="ml-5 mr-5">
-                            <asp:Label runat="server" class="btn bg-olive active" ID="hello">
+                            <asp:Label runat="server" class="btn bg-olive active" ID="Labe2">
                                 <asp:RadioButton ID="rdStoreKeeper_YS" GroupName="a" AutoPostBack="true" value="StoreKeeper" runat="server" />
                                 StoreKeeper
                             </asp:Label>
