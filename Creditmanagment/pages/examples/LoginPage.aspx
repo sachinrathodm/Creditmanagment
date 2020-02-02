@@ -31,8 +31,20 @@
         <div class="card mr-5 ml-5">
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
-
+              
                 <form runat="server" method="post">
+                  <div class="input-group mb-3">
+                        <div class="ml-5 mr-5">
+                            <asp:Label runat="server" class="btn bg-olive active" ID="Labe2">
+                                <asp:RadioButton ID="rdStoreKeeper_YS" GroupName="a" AutoPostBack="true" value="StoreKeeper" runat="server" />
+                                StoreKeeper
+                            </asp:Label>
+                            <asp:Label runat="server" class="btn bg-olive active" ID="Label1">
+                                <asp:RadioButton ID="rdCustomers_YS" GroupName="a" AutoPostBack="true" value="Cusomers" runat="server" />
+                                Customers 
+                            </asp:Label>
+                        </div>
+                    </div>
                     <div class="input-group mb-3">
                         <asp:TextBox ID="txtEmail_YS" runat="server" type="email" class="form-control" placeholder="Email"></asp:TextBox>
                         <%--<input type="email" class="form-control" placeholder="Email">--%>
@@ -71,7 +83,7 @@
                         <!-- /.col -->
                         <div class="col-4">
                             <%--<button type="submit" class="btn btn-primary btn-block">Sign In</button>--%>
-                            <asp:Button ID="btnLogin_YS" class="btn btn-primary btn-block" UseSubmitBehavior="false" runat="server" Text="Sign In" />
+                            <asp:Button ID="btnLogin_YS" class="btn btn-primary btn-block" UseSubmitBehavior="false" runat="server" Text="Sign In" OnClick="btnLogin_YS_Click" />
 
                         </div>
                         <!-- /.col -->
