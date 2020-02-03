@@ -40,6 +40,15 @@ namespace Creditmanagment.pages.examples {
         protected global::System.Web.UI.WebControls.TextBox txtPassword_YS;
         
         /// <summary>
+        /// lblIncorrect_ps_YS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblIncorrect_ps_YS;
+        
+        /// <summary>
         /// chkAgree_YS control.
         /// </summary>
         /// <remarks>

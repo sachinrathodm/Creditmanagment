@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+
 </head>
 <body class="hold-transition login-page">
     <div class="login-box">
@@ -44,12 +46,18 @@
                     </div>
                     <div class="input-group mb-3">
                         <asp:TextBox ID="txtPassword_YS" runat="server" type="password" class="form-control" placeholder="Password"></asp:TextBox>
+                        
+                        <br />
                         <%--<input type="password" class="form-control" placeholder="Password">--%>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
                             </div>
                         </div>
+                    </div>
+                  <div>
+                  <asp:Label ID="lblIncorrect_ps_YS" runat="server" class="form-control" ClientIDMode="Static" Visible="false">hello</asp:Label>
+                <br />
                     </div>
                     <div class="row">
                         <div class="col-8">
