@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -16,35 +18,33 @@ namespace Creditmanagment.pages.examples
 
     protected void btnLogin_YS_Click(object sender, EventArgs e)
     {
+      try
+      {
+        int Count = Convert.ToInt32( CommanFile.ExcuteScalar_YS($@"
+select count(*) from[dbo].[User] 
+Where 
+[Email_ID] = '{txtEmail_YS.Text}'
+AND 
+[Password]='{txtPassword_YS.Text}'
+"));
+        if (Count>0)
+        {
+          Response.Redirect("/indexhome.aspx");
+        }
+        else
+        {
+          Response.Redirect("/pages/examples/LoginPage.aspx");
+        }
+        
+      }
+      catch (Exception ex)
+      {
+
+        
+      }
       if (rdStoreKeeper_YS.Checked)
       {
-        string _sql = @"SELECT [User_ID]
-      ,[Email_ID]
-      ,[Password]
-      ,[Is_Storekeeper]
-  FROM[dbo].[User] where Email_Id = '" + txtEmail_YS.Text + "'And Password = '" + txtPassword_YS.Text + "'";
-
-        CommanFile.SqlDataAdapter_YS(_sql);
-        if (true)
-        {
-
-        }
-        Response.Redirect("/indexhome.aspx");
-      }
-      if (rdCustomers_YS.Checked)
-      {
-        string _sql = @"SELECT [User_ID]
-      ,[Email_ID]
-      ,[Password]
-      ,[Is_Storekeeper]
-  FROM[dbo].[User] where Email_Id = '"+txtEmail_YS.Text+"'And Password = '"+txtPassword_YS.Text+"'";
-
-        CommanFile.SqlDataAdapter_YS(_sql);
-        if (true)
-        {
-
-        }
-        Response.Redirect("/indexhome.aspx");
+       
       }
     }
   }
