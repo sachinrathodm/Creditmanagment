@@ -9,24 +9,23 @@ namespace Creditmanagment
 {
   public static class CommanFile
   {
+    public static string connetionString = @"Data Source=DESKTOP-M7QNTA0\SQLEXPRESS;Initial Catalog=CreditManagement;User ID=sa;Password=sqladmin";
+    //public static string connetionString= @"Data Source=DESKTOP-A5UKIHU\DE_17;Initial Catalog=CreditManagement;User ID=sa;Password=sqladmin";
+
     public static int ExcuteNonQuery_YS(string Query)
     {
-      string connetionString;
       SqlConnection con;
-      connetionString = @"Data Source=DESKTOP-A5UKIHU\DE_17;Initial Catalog=CreditManagement;User ID=sa;Password=sqladmin";
       con = new SqlConnection(connetionString);
       con.Open();
       SqlCommand cmd = new SqlCommand(Query, con);
-     int i= cmd.ExecuteNonQuery();
+      int i = cmd.ExecuteNonQuery();
       con.Close();
       return i;
     }
 
     public static Object ExcuteScalar_YS(string Query)
     {
-      string connetionString;
       SqlConnection con;
-      connetionString = @"Data Source=DESKTOP-A5UKIHU\DE_17;Initial Catalog=CreditManagement;User ID=sa;Password=sqladmin";
       con = new SqlConnection(connetionString);
       con.Open();
       SqlCommand cmd = new SqlCommand(Query, con);
@@ -38,9 +37,7 @@ namespace Creditmanagment
 
     public static void SqlDataAdapter_YS(string Query)
     {
-      string connetionString;
       SqlConnection con;
-      connetionString = @"Data Source=DESKTOP-M7QNTA0\SQLEXPRESS;Initial Catalog=CreditManagement;User ID=sa;Password=sqladmin";
       con = new SqlConnection(connetionString);
       con.Open();
       SqlDataAdapter adpt = new SqlDataAdapter(Query, con);

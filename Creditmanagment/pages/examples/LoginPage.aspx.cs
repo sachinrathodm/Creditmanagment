@@ -42,10 +42,5 @@ AND
 
         
       }
-      if (rdStoreKeeper_YS.Checked)
-      {
-       
-      }
-    }
   }
 }

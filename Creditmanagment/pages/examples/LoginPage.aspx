@@ -33,18 +33,6 @@
                 <p class="login-box-msg">Sign in to start your session</p>
               
                 <form runat="server" method="post" id="form1">
-                  <div class="input-group mb-3">
-                        <div class="ml-5 mr-5">
-                            <asp:Label runat="server" class="btn bg-olive active" ID="Labe2">
-                                <asp:RadioButton ID="rdStoreKeeper_YS" GroupName="a" AutoPostBack="true" value="StoreKeeper" runat="server" />
-                                StoreKeeper
-                            </asp:Label>
-                            <asp:Label runat="server" class="btn bg-olive active" ID="Label1">
-                                <asp:RadioButton ID="rdCustomers_YS" GroupName="a" AutoPostBack="true" value="Cusomers" runat="server" />
-                                Customers 
-                            </asp:Label>
-                        </div>
-                    </div>
                     <div class="input-group mb-3">
                         <asp:TextBox ID="txtEmail_YS" runat="server" type="email" class="form-control" placeholder="Email"></asp:TextBox>
                         <%--<input type="email" class="form-control" placeholder="Email">--%>
