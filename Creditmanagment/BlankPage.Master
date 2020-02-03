@@ -36,7 +36,7 @@
                         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
                     </li>
                     <li class="nav-item d-none d-sm-inline-block">
-                        <a href="../../index.html" class="nav-link">Home</a>
+                        <a href="../../indexhome.aspx" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item d-none d-sm-inline-block">
                         <a href="#" class="nav-link">Contact</a>
@@ -157,7 +157,7 @@
             <!-- Main Sidebar Container -->
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
                 <!-- Brand Logo -->
-                <a href="../../index.html" class="brand-link">
+                <a href="../../indexhome.aspx" class="brand-link">
                     <img src="../../dist/img/CM_LOGO.png"
                         alt="Credit Management Logo"
                         class="brand-image img-circle elevation-3"
@@ -193,7 +193,7 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="../../index.html" class="nav-link">
+                                        <a href="../../indexhome.aspx" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Home</p>
                                         </a>
@@ -431,6 +431,12 @@
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview">
+                                  <li class="nav-item">
+                                        <a href="../examples/AddItems.aspx" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Add Item</p>
+                                        </a>
+                                    </li>
                                     <li class="nav-item">
                                         <a href="../examples/LoginPage.aspx" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
@@ -669,7 +675,6 @@
             <footer class="main-footer">
                 <div class="float-right d-none d-sm-block">
                     <b>Version</b> 3.0.1
-   
                 </div>
                 <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
     reserved.

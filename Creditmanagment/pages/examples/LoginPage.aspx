@@ -25,14 +25,14 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="../../index.html"><b>Credit </b>Managment</a>
+            <a href="../../indexhome.aspx"><b>Credit </b>Managment</a>
         </div>
         <!-- /.login-logo -->
         <div class="card mr-5 ml-5">
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
               
-                <form runat="server" method="post">
+                <form runat="server" method="post" id="form1">
                   <div class="input-group mb-3">
                         <div class="ml-5 mr-5">
                             <asp:Label runat="server" class="btn bg-olive active" ID="Labe2">
@@ -110,6 +110,11 @@
     <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="../../dist/js/adminlte.min.js"></script>
+
+  
+    <!-- jQuery validator -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.js"></script>
+    <script src="../../validator.js"></script>
 
 </body>
 </html>

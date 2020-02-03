@@ -234,6 +234,7 @@
     <Content Include="indexhome.aspx" />
     <Content Include="pages\examples\404.html" />
     <Content Include="pages\examples\500.html" />
+    <Content Include="pages\examples\AddItems.aspx" />
     <Content Include="pages\examples\blank.html" />
     <Content Include="pages\examples\contacts.html" />
     <Content Include="pages\examples\e_commerce.html" />
@@ -1844,6 +1845,13 @@
     </Compile>
     <Compile Include="indexhome.aspx.designer.cs">
       <DependentUpon>indexhome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\examples\AddItems.aspx.cs">
+      <DependentUpon>AddItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\examples\AddItems.aspx.designer.cs">
+      <DependentUpon>AddItems.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\examples\ForgotPasswordPage.aspx.cs">
       <DependentUpon>ForgotPasswordPage.aspx</DependentUpon>
