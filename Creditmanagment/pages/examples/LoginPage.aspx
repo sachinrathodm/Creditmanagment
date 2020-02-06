@@ -19,45 +19,42 @@
     <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
-    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="../../dist/css/textboxvalidation.css">
+   <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
+    <link rel="stylesheet" href="../../dist/css/textboxvalidation.css">
+
+    <link rel="stylesheet" href="/path/to/dist/css/bootstrapValidator.min.css" />
+
+    <script type="text/javascript" src="../../plugins/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </head>
 <body class="hold-transition login-page">
-    <div class="login-box">
-        <div class="login-logo">
-            <a href="../../indexhome.aspx"><b>Credit </b>Managment</a>
-        </div>
-        <!-- /.login-logo -->
-        <div class="card mr-5 ml-5">
-            <div class="card-body login-card-body">
-                <p class="login-box-msg">Sign in to start your session</p>
-              
-                <form runat="server" method="post" id="form1">
-                    <div class="input-group mb-3">
-                        <asp:TextBox ID="txtEmail_YS" runat="server" type="email" class="form-control" placeholder="Email"></asp:TextBox>
-                        <%--<input type="email" class="form-control" placeholder="Email">--%>
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-envelope"></span>
-                            </div>
+    <form runat="server" method="post" id="form1">
+        <div class="login-box">
+            <div class="login-logo">
+                <a href="../../indexhome.aspx"><b>Credit </b>Managment</a>
+            </div>
+            <!-- /.login-logo -->
+            <div class="card mr-5 ml-5 aspNetHidden">
+                <div class="card-body login-card-body">
+                    <p class="login-box-msg">Sign in to start your session</p>
+
+                    <div class="input-group-append">
+                        <div style="width: 360px;" class="m-2 form-group">
+                            <asp:TextBox ID="txtEmail_YS" class="form-control" placeholder="Email" runat="server"></asp:TextBox>
                         </div>
                     </div>
-                    <div class="input-group mb-3">
-                        <asp:TextBox ID="txtPassword_YS" runat="server" type="password" class="form-control" placeholder="Password"></asp:TextBox>
-                        
+                    <div class="input-group-append">
+                        <div style="width: 360px;" class="m-2 form-group">
+                            <asp:TextBox ID="txtPassword_YS" class="form-control" placeholder="Password" runat="server" TextMode="Password"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div>
+                        <asp:Label ID="lblIncorrect_ps_YS" runat="server" class="form-control" ClientIDMode="Static" Visible="false">hello</asp:Label>
                         <br />
-                        <%--<input type="password" class="form-control" placeholder="Password">--%>
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-lock"></span>
-                            </div>
-                        </div>
-                    </div>
-                  <div>
-                  <asp:Label ID="lblIncorrect_ps_YS" runat="server" class="form-control" ClientIDMode="Static" Visible="false">hello</asp:Label>
-                <br />
                     </div>
                     <div class="row">
                         <div class="col-8">
@@ -84,21 +81,26 @@
                         </div>
                         <!-- /.col -->
                     </div>
-                </form>
 
-                <!-- /.social-auth-links -->
 
-                <p class="mb-1">
-                    <a href="ForgotPasswordPage.aspx">I forgot my password</a>
-                </p>
-                <p class="mb-0">
-                    <a href="Registration.aspx" class="text-center">Register a new membership</a>
-                </p>
+                    <!-- /.social-auth-links -->
+
+                    <p class="mb-1">
+                        <a href="ForgotPasswordPage.aspx">I forgot my password</a>
+                    </p>
+                    <p class="mb-0">
+                        <a href="Registration.aspx" class="text-center">Register a new membership</a>
+                    </p>
+                </div>
+                <!-- /.login-card-body -->
             </div>
-            <!-- /.login-card-body -->
         </div>
-    </div>
+    </form>
     <!-- /.login-box -->
+
+    
+ 
+
 
     <!-- jQuery -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
@@ -107,7 +109,7 @@
     <!-- AdminLTE App -->
     <script src="../../dist/js/adminlte.min.js"></script>
 
-  
+
     <!-- jQuery validator -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.js"></script>
     <script src="../../validator.js"></script>

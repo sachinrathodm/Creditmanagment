@@ -19,7 +19,8 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
     <link rel="stylesheet" href="../../dist/css/textboxvalidation.css">
-
+   <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
     <link rel="stylesheet" href="../../dist/css/textboxvalidation.css">
 
@@ -35,7 +36,7 @@
             <div class="register-logo">
                 <a href="../../indexhome.aspx"><b>Credit Management</b></a>
             </div>
-
+          
             <div class="card ml-5 mr-5 aspNetHidden">
                 <div class="card-body register-card-body">
                     <p class="login-box-msg">Register a new membership</p>
