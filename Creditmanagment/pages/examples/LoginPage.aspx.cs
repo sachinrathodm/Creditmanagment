@@ -20,27 +20,38 @@ namespace Creditmanagment.pages.examples
     {
       try
       {
-        int Count = Convert.ToInt32( CommanFile.ExcuteScalar_YS($@"
+        int CountEmail = Convert.ToInt32(CommanFile.ExcuteScalar_YS($@"
 select count(*) from[dbo].[User] 
 Where 
 [Email_ID] = '{txtEmail_YS.Text}'
 AND 
 [Password]='{txtPassword_YS.Text}'
 "));
-        if (Count>0)
+        if (CountEmail > 0)
         {
-          Response.Redirect("/indexhome.aspx");
+          int CountPassword = Convert.ToInt32(CommanFile.ExcuteScalar_YS($@"
+select count(*) from[dbo].[User] 
+Where 
+[Email_ID] = '{txtEmail_YS.Text}'
+AND 
+[Password]='{txtPassword_YS.Text}'
+"));
+          if (CountPassword>0)
+            Response.Redirect("/indexhome.aspx");
+          else
+            Response.Redirect("/indexhome.aspx");
         }
         else
         {
           Response.Redirect("/pages/examples/LoginPage.aspx");
         }
-        
+
       }
       catch (Exception ex)
       {
 
-        
+
       }
+    }
   }
 }
