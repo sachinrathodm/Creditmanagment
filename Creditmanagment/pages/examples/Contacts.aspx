@@ -24,7 +24,7 @@
     <section class="content">
 
       <!-- Default box -->
-      <div class="card card-solid">
+      <div class="card card-solid"> 
         <div class="card-body pb-0">
           <div class="row d-flex align-items-stretch">
             <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
@@ -38,8 +38,13 @@
                       <h2 class="lead"><b>Nicole Pearson</b></h2>
                       <p class="text-muted text-sm"><b>About: </b> Web Designer / UX / Graphic Artist / Coffee Lover </p>
                       <ul class="ml-4 mb-0 fa-ul text-muted">
-                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ</li>
-                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23 52</li>
+                        <li class="small">
+                          <asp:Label ID="lbl_Name_YS" class="fa-li" runat="server" Text="" ><i class="fas fa-lg fa-building"></i></asp:Label>Address: Demo Street 123, Demo City 04312, NJ
+                          <%--<span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ--%>
+                        </li>
+                        <li class="small">
+                          <span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23 52
+                        </li>
                       </ul>
                     </div>
                     <div class="col-5 text-center">

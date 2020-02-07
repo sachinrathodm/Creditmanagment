@@ -182,6 +182,22 @@ $(document).ready(function () {
           }
         }
       },
+      txtItemname_YS: {
+        message: 'Item name no is not valid',
+        validators: {
+          notEmpty: {
+            message: 'Item name no is required'
+          },
+        }
+      },
+      txtRate_YS: {
+        message: 'Rate no is not valid',
+        validators: {
+          notEmpty: {
+            message: 'Rate no is required'
+          },
+        }
+      },
     }
   });
 });

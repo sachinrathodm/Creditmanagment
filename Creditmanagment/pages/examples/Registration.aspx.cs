@@ -64,21 +64,22 @@ namespace Creditmanagment.pages.examples
     {
       Guid UserGUID = Guid.NewGuid();
       string _Sql = $@"
-INSERT INTO [dbo].[User]
-           ([User_ID]
-           ,[Email_ID]
-           ,[Password]
-           ,[Mobile_No]
-           ,[Photo]
-           ,[Display_Name]
-           ,[Is_Storekeeper])
-     VALUES
-           ('{UserGUID}'
-,'{txtEmail_YS.Text}'
-,'{txtPassword_YS.Text}'
-,{txtMobileno_YS.Text}
-,'{Guid.NewGuid()}'
-,'{txtFirstname_YS.Text} {txtLastname_YS.Text}', {((rdStoreKeeper_YS.Checked) ? 1 : 0)})
+INSERT INTO [dbo].[User](
+       [User_ID]
+      ,[Email_ID]
+      ,[Password]
+      ,[Mobile_No]
+      ,[Photo]
+      ,[Display_Name]
+      ,[Is_Storekeeper]
+)VALUES(
+        '{UserGUID}'
+        ,'{txtEmail_YS.Text}'
+        ,'{txtPassword_YS.Text}'
+        ,{txtMobileno_YS.Text}
+        ,'{Guid.NewGuid()}'
+        ,'{txtFirstname_YS.Text} {txtLastname_YS.Text}'
+        , {((rdStoreKeeper_YS.Checked) ? 1 : 0)})
 ";
       CommanFile.ExcuteNonQuery_YS(_Sql);
       if (rdCustomers_YS.Checked)
