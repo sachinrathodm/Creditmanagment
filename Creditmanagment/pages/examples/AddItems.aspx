@@ -10,18 +10,20 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form class="form-horizontal" id="form1">
+            <form class="form-horizontal" runat="server" id="form1">
                 <div class="card-body">
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-4 col-form-label">Item Name</label>
+                        <label class="col-sm-4 col-form-label">Item Name</label>
                         <div style="-ms-flex: 0 0 60%; flex: 0 0 250%; max-width: 60%;">
-                            <input type="text" class="form-control" id="inputEmail3" placeholder="Item Name">
+                            <%--<input type="text" class="form-control" id="inputEmail3" placeholder="Item Name">--%>
+                            <asp:TextBox ID="txtItemname_YS" class="form-control" placeholder="Item Name" runat="server"></asp:TextBox>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputPassword3" class="col-sm-4 col-form-label">Rate</label>
+                        <label class="col-sm-4 col-form-label">Rate</label>
                         <div style="-ms-flex: 0 0 60%; flex: 0 0 250%; max-width: 60%;">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="Rate">
+                            <%--<input type="text" class="form-control" id="inputPassword3" placeholder="Rate">--%>
+                            <asp:TextBox ID="txtRate_YS" class="form-control" placeholder="Rate" runat="server"></asp:TextBox>
                         </div>
                     </div>
                 </div>
