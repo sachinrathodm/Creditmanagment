@@ -44,16 +44,16 @@
 
                     <div class="input-group-append">
                         <div style="width: 360px;" class="m-2 form-group">
-                            <asp:TextBox ID="txtEmail_YS" class="form-control" placeholder="Email" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtEmail_YS" class="form-control" placeholder="Email" AutoPostBack="false" runat="server"></asp:TextBox>
                         </div>
                     </div>
                     <div class="input-group-append">
                         <div style="width: 360px;" class="m-2 form-group">
-                            <asp:TextBox ID="txtPassword_YS" class="form-control" placeholder="Password" runat="server" TextMode="Password"></asp:TextBox>
+                            <asp:TextBox ID="txtPassword_YS" class="form-control" placeholder="Password"  runat="server" AutoPostBack="false" TextMode="Password"></asp:TextBox>
                         </div>
                     </div>
                     <div>
-                        <asp:Label ID="lblIncorrect_ps_YS" runat="server" class="form-control" ClientIDMode="Static" Visible="false">hello</asp:Label>
+                        <asp:Label ID="lblIncorrect_ps_YS" runat="server" ForeColor="PaleVioletRed"  ClientIDMode="Static" Visible="true"></asp:Label>
                         <br />
                     </div>
                     <div class="row">
@@ -76,7 +76,7 @@
                         <!-- /.col -->
                         <div class="col-4">
                             <%--<button type="submit" class="btn btn-primary btn-block">Sign In</button>--%>
-                            <asp:Button ID="btnLogin_YS" class="btn btn-primary btn-block" UseSubmitBehavior="false" runat="server" Text="Sign In" OnClick="btnLogin_YS_Click" />
+                            <asp:Button ID="btnLogin_YS" class="btn btn-primary btn-block" UseSubmitBehavior="false" AutoPostBack="true" runat="server" Text="Sign In" OnClick="btnLogin_YS_Click" />
 
                         </div>
                         <!-- /.col -->
