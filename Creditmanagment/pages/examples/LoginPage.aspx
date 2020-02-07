@@ -53,7 +53,7 @@
                         </div>
                     </div>
                     <div>
-                        <asp:Label ID="lblIncorrect_ps_YS" runat="server" class="form-control" ClientIDMode="Static" Visible="false">Hello</asp:Label>
+                        <asp:Label ID="lblIncorrect_ps_YS" runat="server"  ClientIDMode="Static" Visible="false">Hello</asp:Label>
                         <br />
                     </div>
                     <div class="row">
