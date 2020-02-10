@@ -7,27 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Creditmanagment {
+namespace Creditmanagment.pages.examples {
     
     
-    public partial class indexhome {
+    public partial class LogoutPage {
         
         /// <summary>
-        /// login_YS control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl login_YS;
-        
-        /// <summary>
-        /// logout_YS control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl logout_YS;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
     }
 }

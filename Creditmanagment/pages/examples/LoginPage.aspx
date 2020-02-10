@@ -77,7 +77,6 @@
                         <div class="col-4">
                             <%--<button type="submit" class="btn btn-primary btn-block">Sign In</button>--%>
                             <asp:Button ID="btnLogin_YS" class="btn btn-primary btn-block" UseSubmitBehavior="false" AutoPostBack="true" runat="server" Text="Sign In" OnClick="btnLogin_YS_Click" />
-
                         </div>
                         <!-- /.col -->
                     </div>
