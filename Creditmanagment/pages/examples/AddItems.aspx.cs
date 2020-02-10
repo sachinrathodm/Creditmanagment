@@ -18,18 +18,17 @@ namespace Creditmanagment.pages.examples
 
     private void BtnAddItem_YS_Click_YS(object sender, EventArgs e)
     {
-
-      string insertQuery = $@"
-INSERT INTO [dbo].[Store_Item]
-           ([Store_Item_ID]
-           ,[Store_ID]
-           ,[Item_Name]
-           ,[Rate])
-     VALUES
-           ('{Storeitemid}'
-,'{Storeitemid}'
-,'{}')
-";
+      //tstring insertQuery = $@"
+    ////INSERT INTO [dbo].[Store_Item]
+    ////           ([Store_Item_ID]
+    ////           ,[Store_ID]
+    ////           ,[Item_Name]
+    ////           ,[Rate])
+    ////     VALUES
+    ////           ('{Storeitemid}'
+    ////,'{Storeitemid}'
+    ////,'{}')
+    ////";
     }
   }
 }
