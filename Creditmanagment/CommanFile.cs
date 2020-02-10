@@ -9,8 +9,8 @@ namespace Creditmanagment
 {
   public static class CommanFile
   {
-   public static string connetionString = @"Data Source=DESKTOP-M7QNTA0\SQLEXPRESS;Initial Catalog=CreditManagement;User ID=sa;Password=sqladmin";
-    //public static string connetionString= @"Data Source=DESKTOP-A5UKIHU\DE_17;Initial Catalog=CreditManagement;User ID=sa;Password=sqladmin";
+    //public static string connetionString = @"Data Source=DESKTOP-M7QNTA0\SQLEXPRESS;Initial Catalog=CreditManagement;User ID=sa;Password=sqladmin";
+    public static string connetionString = @"Data Source=DESKTOP-A5UKIHU\DE_17;Initial Catalog=CreditManagement;User ID=sa;Password=sqladmin";
 
     public static int ExcuteNonQuery_YS(string Query)
     {
@@ -34,7 +34,6 @@ namespace Creditmanagment
       return i;
     }
 
-
     public static void SqlDataAdapter_YS(string Query)
     {
       SqlConnection con;
@@ -43,6 +42,16 @@ namespace Creditmanagment
       SqlDataAdapter adpt = new SqlDataAdapter(Query, con);
       DataTable dt = new DataTable();
       adpt.Fill(dt);
+    }
+
+    public static DataTable GetDataTable_YS(DataTable dt, string Query)
+    {
+      SqlConnection conn = new SqlConnection(connetionString);
+      conn.Open();
+      SqlCommand cmd = new SqlCommand(Query, conn);
+      dt.Load(cmd.ExecuteReader());
+      conn.Close();
+      return dt;
     }
   }
 }
