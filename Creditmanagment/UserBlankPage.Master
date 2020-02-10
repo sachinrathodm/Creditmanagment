@@ -473,7 +473,7 @@
                                   <li class="nav-item">
                                         <a href="pages/examples/SendRequestUser.aspx" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
-                                            <p>Send</p>
+                                            <p>Send Request</p>
                                         </a>
                                     </li>
                                     <%--  <li class="nav-item">

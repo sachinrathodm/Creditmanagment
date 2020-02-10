@@ -19,8 +19,6 @@ namespace Creditmanagment.pages.examples
       txtPassword_YS.TextChanged += TxtPassword_YS_TextChanged_YS;
     }
 
-
-
     #region Events
     private void TxtEmail_YS_TextChanged_YS(object sender, EventArgs e)
     {
