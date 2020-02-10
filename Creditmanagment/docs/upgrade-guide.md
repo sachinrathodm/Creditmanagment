@@ -10,7 +10,7 @@ The first step to migrate AdminLTE v2.4.x to v3.0 is upgrade the Bootstrap 3 bas
 The biggest change in Main Header is the Logo is moved to Main Sidebar and the Main Header has now color variations, here are all changes:
 
 1. Logo 
-  - `<a href="indexhome.aspx" class="logo">` moved & rebuild to `.brand-link` inside `.main-sidebar`
+  - `<a href="IndexHomePage.aspx" class="logo">` moved & rebuild to `.brand-link` inside `.main-sidebar`
 2. Header / Nav
   - `<header class="main-header">` & `<nav class="navbar navbar-static-top">` merged with `<nav class="main-header navbar navbar-expand navbar-white navbar-light">`
 3. Sidebar Toggle / Left Navbar
@@ -24,7 +24,7 @@ Like above the biggest change is the Main Sidebar contains now the Logo and the 
 1. Main Sidebar Color
   - `<aside class="main-sidebar">` replaced with `<aside class="main-sidebar sidebar-dark-primary">`
 2. Logo / Brand Link
-  - `<a href="indexhome.aspx" class="brand-link"><img src="dist/img/AdminLTELogo.png" alt="Credit Management Logo" class="brand-image img-circle elevation-3" style="opacity: .8"><span class="brand-text font-weight-light">Credit Management</span></a>` replaces the old logo
+  - `<a href="IndexHomePage.aspx" class="brand-link"><img src="dist/img/AdminLTELogo.png" alt="Credit Management Logo" class="brand-image img-circle elevation-3" style="opacity: .8"><span class="brand-text font-weight-light">Credit Management</span></a>` replaces the old logo
 3. Sidebar
   - `<section class="sidebar">` replaced with `<div class="sidebar">`
 4. User Panel
@@ -85,7 +85,7 @@ Old sample entry (with tree menu)
     </span>
   </a>
   <ul class="treeview-menu">
-    <li class="active"><a href="indexhome.aspx"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+    <li class="active"><a href="IndexHomePage.aspx"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
   </ul>
 </li>
 ```
@@ -103,7 +103,7 @@ New sample entry (with tree menu)
   </a>
   <ul class="nav nav-treeview">
     <li class="nav-item">
-      <a href="indexhome.aspx" class="nav-link active">
+      <a href="IndexHomePage.aspx" class="nav-link active">
         <i class="far fa-circle nav-icon"></i>
         <p>Dashboard v1</p>
       </a>

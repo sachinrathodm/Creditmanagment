@@ -106,6 +106,7 @@ INSERT INTO [dbo].[Customers]
 ,{txtAdharcardno_YS.Text})
 ";
         CommanFile.ExcuteNonQuery_YS(_Sql);
+        Response.Redirect("LoginPage.aspx");
       }
       if (rdStoreKeeper_YS.Checked)
       {
@@ -134,6 +135,7 @@ INSERT INTO [dbo].[Store]
 ,{((Convert.ToInt32(ddtVouchermode_YS.SelectedValue) == 1) ? 1 : 0)})
 ";
         CommanFile.ExcuteNonQuery_YS(_Sql);
+        Response.Redirect("LoginPage.aspx");
       }
     }
 

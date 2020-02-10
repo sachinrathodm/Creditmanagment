@@ -35,7 +35,7 @@
     <form runat="server" method="post" id="form1">
         <div class="login-box">
             <div class="login-logo">
-                <a href="../../indexhome.aspx"><b>Credit </b>Managment</a>
+                <a href="../../IndexHomePage.aspx"><b>Credit </b>Managment</a>
             </div>
             <!-- /.login-logo -->
             <div class="card mr-5 ml-5 aspNetHidden">

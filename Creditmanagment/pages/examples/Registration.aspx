@@ -34,7 +34,7 @@
     <form runat="server" id="form1">
         <div class="register-box">
             <div class="register-logo">
-                <a href="../../indexhome.aspx"><b>Credit Management</b></a>
+                <a href="../../IndexHomePage.aspx"><b>Credit Management</b></a>
             </div>
           
             <div class="card ml-5 mr-5 aspNetHidden">

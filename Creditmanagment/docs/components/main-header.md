@@ -22,7 +22,7 @@ The main header contains the navbar. Construction of the navbar differs slightly
       <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
-      <a href="indexhome.aspx" class="nav-link">Home</a>
+      <a href="IndexHomePage.aspx" class="nav-link">Home</a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
       <a href="#" class="nav-link">Contact</a>
@@ -155,7 +155,7 @@ The main header contains the navbar. Construction of the navbar differs slightly
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="indexhome.aspx" class="nav-link">Home</a>
+        <a href="IndexHomePage.aspx" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -294,7 +294,7 @@ Top navbar example can be found in this [demo page](https://adminlte.io/themes/d
 
 <nav class="navbar navbar-expand navbar-light navbar-white">
   <div class="container">
-    <a href="indexhome.aspx" class="navbar-brand">
+    <a href="IndexHomePage.aspx" class="navbar-brand">
       <img src="{{'assets/img/AdminLTELogo.png' | relative_url}}" alt="Credit Management Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">Credit Management</span>
@@ -304,7 +304,7 @@ Top navbar example can be found in this [demo page](https://adminlte.io/themes/d
       <li class="nav-item">
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="indexhome.aspx" class="nav-link">Home</a>
+        <a href="IndexHomePage.aspx" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -430,7 +430,7 @@ Top navbar example can be found in this [demo page](https://adminlte.io/themes/d
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-light navbar-white">
     <div class="container">
-      <a href="indexhome.aspx" class="navbar-brand">
+      <a href="IndexHomePage.aspx" class="navbar-brand">
         <img src="dist/img/AdminLTELogo.png" alt="Credit Management Logo" class="brand-image img-circle elevation-3"
              style="opacity: .8">
         <span class="brand-text font-weight-light">Credit Management</span>
@@ -441,7 +441,7 @@ Top navbar example can be found in this [demo page](https://adminlte.io/themes/d
         <li class="nav-item">
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="indexhome.aspx" class="nav-link">Home</a>
+          <a href="IndexHomePage.aspx" class="nav-link">Home</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
           <a href="#" class="nav-link">Contact</a>

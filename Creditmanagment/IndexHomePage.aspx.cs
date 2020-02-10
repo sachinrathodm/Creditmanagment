@@ -5,16 +5,18 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Creditmanagment.pages.examples
+namespace Creditmanagment
 {
-  public partial class BlankPage : System.Web.UI.MasterPage
+  public partial class IndexHomePage : System.Web.UI.Page
   {
     protected void Page_Load(object sender, EventArgs e)
     {
       if (Session["User_ID"] != null)
       {
-        login_YS.Visible = false;
+        
       }
+      else
+        Response.Redirect("pages/examples/LoginPage.aspx");
     }
   }
 }

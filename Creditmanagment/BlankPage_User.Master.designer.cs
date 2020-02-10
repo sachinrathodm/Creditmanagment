@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Creditmanagment.pages.examples {
+namespace Creditmanagment {
     
     
-    public partial class BlankPage {
+    public partial class BlankPage_User {
         
         /// <summary>
         /// head control.

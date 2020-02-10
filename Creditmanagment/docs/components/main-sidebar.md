@@ -9,7 +9,7 @@ The sidebar used in this page to the left provides an example of what your sideb
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="indexhome.aspx" class="brand-link">
+    <a href="IndexHomePage.aspx" class="brand-link">
       <img src="dist/img/AdminLTELogo.png" alt="Credit Management Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">Credit Management</span>

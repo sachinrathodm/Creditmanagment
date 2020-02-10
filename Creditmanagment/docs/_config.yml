@@ -28,7 +28,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 
 navigation:
 - title: Installation
-  url: indexhome.aspx
+  url: IndexHomePage.aspx
   icon: fas fa-microchip
 - title: Dependencies & Plugins
   url: dependencies.html

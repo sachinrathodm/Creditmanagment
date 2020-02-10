@@ -23,7 +23,7 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="../../indexhome.aspx"><b>Credit </b>Managment</a>
+            <a href="../../IndexHomePage.aspx"><b>Credit </b>Managment</a>
         </div>
         <!-- /.login-logo -->
         <div class="card ml-5 mr-5">

@@ -10,10 +10,16 @@ namespace Creditmanagment.pages.examples
   public partial class AddItems : System.Web.UI.Page
   {
     public Guid Storeitemid = Guid.NewGuid();
+    string a;
     protected void Page_Load(object sender, EventArgs e)
     {
       //Events
       btnAddItem_YS.Click += BtnAddItem_YS_Click_YS;
+      
+      if (Session["User_Id"] != null)
+      {
+         a = Session["User_Id"].ToString();
+      }
     }
 
     private void BtnAddItem_YS_Click_YS(object sender, EventArgs e)
@@ -26,7 +32,7 @@ INSERT INTO [dbo].[Store_Item]
            ,[Item_Name]
            ,[Rate])
      VALUES
-           ('{Session["User_ID"]}'
+           ('{a}'
 ,'{Storeitemid}'
 ,'{txtItemname_YS.Text}'
 ,'{txtRate_YS.Text}')

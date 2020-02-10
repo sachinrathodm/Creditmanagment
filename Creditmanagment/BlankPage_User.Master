@@ -1,34 +1,10 @@
-<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="BlankPage.master.cs" Inherits="Creditmanagment.pages.examples.BlankPage" %>
-
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="BlankPage_User.master.cs" Inherits="Creditmanagment.BlankPage_User" %>
 
 <!DOCTYPE html>
+
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Credit Management | Blank Page</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
-    <!-- Google Font: Source Sans Pro -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-
-
-   <link rel="stylesheet" href="../../dist/css/textboxvalidation.css">
-
-    <link rel="stylesheet" href="/path/to/dist/css/bootstrapValidator.min.css" />
-
-    <script type="text/javascript" src="../../plugins/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-
+<head runat="server">
+    <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -69,7 +45,7 @@
                 <a href="pages/examples/LoginPage.aspx">
                <label id="login_YS" runat="server">Login</label>
                 </a>
-                 <a href="LogoutPage.aspx">
+                 <a href="pages/examples/LogoutPage.aspx">
                <label id="logout_YS" runat="server">Logout</label>
                 </a>
               </li>

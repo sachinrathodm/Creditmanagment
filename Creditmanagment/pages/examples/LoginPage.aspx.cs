@@ -63,7 +63,7 @@ Where
 [Email_ID] = '{txtEmail_YS.Text}'
 "));
               Session["User_ID"] = user_id;
-              Response.Redirect("../../indexhome.aspx");
+              Response.Redirect("../../IndexHomePage.aspx");
 
             }
             else

@@ -231,7 +231,8 @@
     <Content Include="docs\_layouts\page.html" />
     <Content Include="docs\_layouts\post.html" />
     <Content Include="index.html" />
-    <Content Include="indexhome.aspx" />
+    <Content Include="indexhome1.aspx" />
+    <Content Include="IndexHomePage.aspx" />
     <Content Include="pages\examples\404.html" />
     <Content Include="pages\examples\500.html" />
     <Content Include="pages\examples\AddItems.aspx" />
@@ -1840,13 +1841,27 @@
     <Compile Include="BlankPage.Master.designer.cs">
       <DependentUpon>BlankPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="CommanFile.cs" />
-    <Compile Include="indexhome.aspx.cs">
-      <DependentUpon>indexhome.aspx</DependentUpon>
+    <Compile Include="BlankPage_User.Master.cs">
+      <DependentUpon>BlankPage_User.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="indexhome.aspx.designer.cs">
-      <DependentUpon>indexhome.aspx</DependentUpon>
+    <Compile Include="BlankPage_User.Master.designer.cs">
+      <DependentUpon>BlankPage_User.Master</DependentUpon>
+    </Compile>
+    <Compile Include="CommanFile.cs" />
+    <Compile Include="indexhome1.aspx.cs">
+      <DependentUpon>indexhome1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="indexhome1.aspx.designer.cs">
+      <DependentUpon>indexhome1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IndexHomePage.aspx.cs">
+      <DependentUpon>IndexHomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IndexHomePage.aspx.designer.cs">
+      <DependentUpon>IndexHomePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\examples\AddItems.aspx.cs">
       <DependentUpon>AddItems.aspx</DependentUpon>
@@ -2077,6 +2092,7 @@
     <Content Include="BlankPage.Master" />
     <Content Include="build\scss\_input-group.scss" />
     <Content Include="build\scss\_type.scss" />
+    <Content Include="BlankPage_User.Master" />
     <None Include="packages.config" />
     <Content Include="plugins\.npmignore" />
     <Content Include="plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.css.map" />
