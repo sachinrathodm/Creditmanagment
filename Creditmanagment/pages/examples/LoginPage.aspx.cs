@@ -79,7 +79,6 @@ Where
       catch (Exception ex)
       {
 
-        Response.Write(ex);
       }
     }
 
