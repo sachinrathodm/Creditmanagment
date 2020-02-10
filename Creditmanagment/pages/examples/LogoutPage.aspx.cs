@@ -14,7 +14,7 @@ namespace Creditmanagment.pages.examples
       if (Session["User_ID"] != null)
       {
         Session.RemoveAll();
-        Response.Redirect("pages/examples/LoginPage.aspx");
+        Response.Redirect("LoginPage.aspx");
       }
     }
   }
