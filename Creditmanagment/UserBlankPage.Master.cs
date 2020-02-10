@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +11,10 @@ namespace Creditmanagment
   {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+      if (Session["User_ID"] != null && Session["Display_Name"] != null)
+      {
+        lblName_YS.Text = Session["Display_Name"].ToString();
+      }
     }
   }
 }

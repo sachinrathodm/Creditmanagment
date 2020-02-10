@@ -55,7 +55,7 @@
     "control-panel",
     "dashboard"
   ],
-  "homepage": "https://adminlte.io",
+  "homepage": "https://Credit Management",
   "style": "dist/css/adminlte.css",
   "sass": "build/scss/AdminLTE.scss",
   "repository": {

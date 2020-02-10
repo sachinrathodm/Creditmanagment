@@ -289,7 +289,7 @@ The main header contains the navbar. Construction of the navbar differs slightly
 > To use this main header instead of the regular one, you must add the `layout-top-nav` class to the body tag.
 {: .quote-orange}
 
-Top navbar example can be found in this [demo page](https://adminlte.io/themes/dev/AdminLTE/pages/layout/top-nav.html). 
+Top navbar example can be found in this [demo page](https://Credit Management/themes/dev/AdminLTE/pages/layout/top-nav.html). 
 
 
 <nav class="navbar navbar-expand navbar-light navbar-white">

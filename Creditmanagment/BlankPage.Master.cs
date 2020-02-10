@@ -11,8 +11,9 @@ namespace Creditmanagment.pages.examples
   {
     protected void Page_Load(object sender, EventArgs e)
     {
-      if (Session["User_ID"] != null)
+      if (Session["User_ID"] != null && Session["Display_Name"] != null)
       {
+        lblName_YS.Text = Session["Display_Name"].ToString();
         login_YS.Visible = false;
       }
     }

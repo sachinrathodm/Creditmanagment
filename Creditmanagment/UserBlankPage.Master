@@ -65,7 +65,7 @@
                 <!-- Right navbar links -->
                 <ul class="navbar-nav ml-auto">
                     <li>
-                       <%-- <a href="pages/examples/LoginPage.aspx">
+                        <%-- <a href="pages/examples/LoginPage.aspx">
                             <label id="login_YS" runat="server">Login</label>
                         </a>--%>
                         <a href="pages/examples/LogoutPage.aspx">
@@ -188,7 +188,8 @@
                             <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                         </div>
                         <div class="info">
-                            <a href="#" class="d-block">Alexander Pierce</a>
+                            <a href="#" class="d-block">
+                                <asp:Label ID="lblName_YS" runat="server"></asp:Label></a>
                         </div>
                     </div>
 
@@ -446,7 +447,7 @@
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview">
-                                   <%-- <li class="nav-item">
+                                    <%-- <li class="nav-item">
                                         <a href="pages/examples/AddItems.aspx" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Add Item</p>
@@ -470,7 +471,7 @@
                                             <p>Forgot Password</p>
                                         </a>
                                     </li>--%>
-                                  <li class="nav-item">
+                                    <li class="nav-item">
                                         <a href="pages/examples/SendRequestUser.aspx" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Send</p>
@@ -534,7 +535,7 @@
                             </li>
                             <%--<li class="nav-header">MISCELLANEOUS</li>
                             <li class="nav-item">
-                                <a href="https://adminlte.io/docs/3.0" class="nav-link">
+                                <a href="https://Credit Management/docs/3.0" class="nav-link">
                                     <i class="nav-icon fas fa-file"></i>
                                     <p>Documentation</p>
                                 </a>
@@ -694,7 +695,7 @@
                 <div class="float-right d-none d-sm-block">
                     <b>Version</b> 3.0.1
                 </div>
-                <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
+                <strong>Copyright &copy; 2014-2019 <a href="http://CreditManagement">Credit Management</a>.</strong> All rights
     reserved.
  
             </footer>

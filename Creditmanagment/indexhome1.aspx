@@ -512,7 +512,7 @@
                         </li>
                         <li class="nav-header">MISCELLANEOUS</li>
                         <li class="nav-item">
-                            <a href="https://adminlte.io/docs/3.0" class="nav-link">
+                            <a href="https://Credit Management/docs/3.0" class="nav-link">
                                 <i class="nav-icon fas fa-file"></i>
                                 <p>Documentation</p>
                             </a>
@@ -1115,7 +1115,7 @@
 
                             <!-- /.content-wrapper -->
                             <footer class="main-footer">
-                                <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+                                <strong>Copyright &copy; 2014-2019 <a href="http://CreditManagement">Credit Management</a>.</strong>
                                 All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
         <b>Version</b> 3.0.1

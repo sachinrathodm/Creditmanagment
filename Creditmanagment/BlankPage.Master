@@ -189,7 +189,7 @@
                             <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                         </div>
                         <div class="info">
-                            <a href="#" class="d-block">Alexander Pierce</a>
+                            <a href="#" class="d-block"><asp:Label id="lblName_YS" runat="server"></asp:Label></a>
                         </div>
                     </div>
 
@@ -453,6 +453,12 @@
                                             <p>Add Item</p>
                                         </a>
                                     </li>
+                                  <li class="nav-item">
+                                        <a href="pages/examples/AcceptRequest.aspx" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Accept Request</p>
+                                        </a>
+                                    </li>
                                     <li class="nav-item">
                                         <a href="pages/examples/LoginPage.aspx" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
@@ -529,7 +535,7 @@
                             </li>
                             <%--<li class="nav-header">MISCELLANEOUS</li>
                             <li class="nav-item">
-                                <a href="https://adminlte.io/docs/3.0" class="nav-link">
+                                <a href="https://Credit Management/docs/3.0" class="nav-link">
                                     <i class="nav-icon fas fa-file"></i>
                                     <p>Documentation</p>
                                 </a>
@@ -689,7 +695,7 @@
                 <div class="float-right d-none d-sm-block">
                     <b>Version</b> 3.0.1
                 </div>
-                <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
+                <strong>Copyright &copy; 2019-2020 <a href="http://CreditManagement">Credit Management</a>.</strong> All rights
     reserved.
  
             </footer>

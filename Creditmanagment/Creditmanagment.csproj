@@ -234,6 +234,7 @@
     <Content Include="indexhome1.aspx" />
     <Content Include="IndexHomePage.aspx" />
     <Content Include="IndexHomePage_User.aspx" />
+    <Content Include="pages\examples\AcceptRequest.aspx" />
     <Content Include="pages\examples\404.html" />
     <Content Include="pages\examples\500.html" />
     <Content Include="pages\examples\AddItems.aspx" />
@@ -1831,7 +1832,6 @@
     <Content Include="plugins\toastr\toastr.css" />
     <Content Include="plugins\toastr\toastr.min.css" />
     <Content Include="plugins\toastr\toastr.min.js" />
-    <Content Include="starter.html" />
     <Content Include="validator.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -1864,6 +1864,13 @@
     </Compile>
     <Compile Include="IndexHomePage_User.aspx.designer.cs">
       <DependentUpon>IndexHomePage_User.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\examples\AcceptRequest.aspx.cs">
+      <DependentUpon>AcceptRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\examples\AcceptRequest.aspx.designer.cs">
+      <DependentUpon>AcceptRequest.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\examples\AddItems.aspx.cs">
       <DependentUpon>AddItems.aspx</DependentUpon>

@@ -58,7 +58,12 @@ AND
             if (CountPassword > 0)
             {
               string user_id = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
-select User_ID from[dbo].[User] 
+select User_ID,Display_Name from[dbo].[User] 
+Where 
+[Email_ID] = '{txtEmail_YS.Text}'
+"));
+              string display_name = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
+select Display_Name from[dbo].[User] 
 Where 
 [Email_ID] = '{txtEmail_YS.Text}'
 "));
@@ -68,6 +73,7 @@ Where
 [User_ID] = '{user_id}'
 "));
               Session["User_ID"] = user_id;
+              Session["Display_Name"] = display_name;
               if (isstorekeeper)
               {
               Response.Redirect("../../IndexHomePage.aspx");
