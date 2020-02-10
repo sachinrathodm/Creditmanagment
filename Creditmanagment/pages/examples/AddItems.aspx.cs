@@ -19,7 +19,7 @@ namespace Creditmanagment.pages.examples
     private void BtnAddItem_YS_Click_YS(object sender, EventArgs e)
     {
 
-      string insertQuery = $@"
+      string insertItem = $@"
 INSERT INTO [dbo].[Store_Item]
            ([Store_Item_ID]
            ,[Store_ID]
@@ -28,8 +28,11 @@ INSERT INTO [dbo].[Store_Item]
      VALUES
            ('{Storeitemid}'
 ,'{Storeitemid}'
-,'{}')
+,'{txtItemname_YS.Text}'
+,'{txtRate_YS.Text}')
 ";
+      CommanFile.ExcuteNonQuery_YS(insertItem);
+
     }
   }
 }
