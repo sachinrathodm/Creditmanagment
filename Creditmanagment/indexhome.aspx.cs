@@ -11,19 +11,14 @@ namespace Creditmanagment
   {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["User_ID"] != null)
-        {
-        Response.Redirect("pages/examples/LoginPage.aspx");
+      if (Session["User_ID"] != null)
         Label1.Text = Session["User_ID"].ToString();
-        }
-        else
-        {
-          
-        }
-     
+      else
+        Response.Redirect("pages/examples/LoginPage.aspx");
+
       Session.RemoveAll();
-     
+
     }
- 
+
   }
 }

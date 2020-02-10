@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -76,7 +77,7 @@ Where
         }
       }
 
-      catch (Exception ex)
+      catch (ThreadAbortException ex)
       {
 
         Response.Write(ex);
