@@ -17,6 +17,7 @@ namespace Creditmanagment.pages.examples
       //Events
       txtEmail_YS.TextChanged += TxtEmail_YS_TextChanged_YS;
       txtPassword_YS.TextChanged += TxtPassword_YS_TextChanged_YS;
+      Form.DefaultButton = btnLogin_YS.UniqueID;
     }
 
     #region Events

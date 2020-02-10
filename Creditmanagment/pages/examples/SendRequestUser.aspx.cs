@@ -17,6 +17,7 @@ namespace Creditmanagment.pages.examples
     protected void Page_Load(object sender, EventArgs e)
     {
       Userid = Session["User_ID"].ToString();
+      //Events
       btnSend_YS.Click += BtnSend_YS_Click_YS;
 
       if (!Page.IsPostBack)
@@ -28,9 +29,7 @@ namespace Creditmanagment.pages.examples
           ddStoreName_YS.DataTextField = "Store_Name";
           ddStoreName_YS.DataValueField = "Store_ID";
           ddStoreName_YS.DataSource = dtStoreDetails.DefaultView;
-          ddStoreName_YS.DataBind();
-          //Events
-
+          ddStoreName_YS.DataBind();  
         }
         else
           Response.Redirect("pages/examples/LoginPage.aspx");
