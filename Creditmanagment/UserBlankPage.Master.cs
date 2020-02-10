@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Creditmanagment
 {
-  public partial class IndexHomePage_User : System.Web.UI.Page
+  public partial class UserBlankPage : System.Web.UI.MasterPage
   {
     protected void Page_Load(object sender, EventArgs e)
     {

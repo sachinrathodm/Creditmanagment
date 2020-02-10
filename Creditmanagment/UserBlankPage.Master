@@ -1,10 +1,9 @@
-<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="BlankPage_User.master.cs" Inherits="Creditmanagment.BlankPage_User" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UserBlankPage.master.cs" Inherits="Creditmanagment.UserBlankPage" %>
 
 <!DOCTYPE html>
 
 <html>
-<head runat="server">
-
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Credit Management | Blank Page</title>
@@ -66,11 +65,11 @@
                 <!-- Right navbar links -->
                 <ul class="navbar-nav ml-auto">
                     <li>
-                        <%--<a href="pages/examples/LoginPage.aspx">
-                            <label id="lbllogin_YS" runat="server">Login</label>
+                       <%-- <a href="pages/examples/LoginPage.aspx">
+                            <label id="login_YS" runat="server">Login</label>
                         </a>--%>
                         <a href="pages/examples/LogoutPage.aspx">
-                            <label id="lbllogout_YS" runat="server">Logout</label>
+                            <label id="logout_YS" runat="server">Logout</label>
                         </a>
                     </li>
                     <!-- Messages Dropdown Menu -->
@@ -386,7 +385,7 @@
                                             <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
-                                <%--<ul class="nav nav-treeview">
+                                <ul class="nav nav-treeview">
                                     <li class="nav-item">
                                         <a href="../examples/invoice.html" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
@@ -399,7 +398,7 @@
                                             <p>Profile</p>
                                         </a>
                                     </li>
-                                    <li class="nav-item">
+                                    <%-- <li class="nav-item">
                                         <a href="../examples/e_commerce.html" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>E-commerce</p>
@@ -428,14 +427,14 @@
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Project Detail</p>
                                         </a>
-                                    </li>
+                                    </li>--%>
                                     <li class="nav-item">
                                         <a href="../examples/contacts.html" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Contacts</p>
                                         </a>
                                     </li>
-                                </ul>--%>
+                                </ul>
                             </li>
                             <li class="nav-item has-treeview menu-open">
                                 <a href="#" class="nav-link active">
@@ -447,7 +446,7 @@
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview">
-                                    <%--<li class="nav-item">
+                                   <%-- <li class="nav-item">
                                         <a href="pages/examples/AddItems.aspx" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Add Item</p>
@@ -465,10 +464,16 @@
                                             <p>Register</p>
                                         </a>
                                     </li>
-                                    <li class="nav-item">
+                                    <%--<li class="nav-item">
                                         <a href="pages/examples/ForgotPasswordPage.aspx" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Forgot Password</p>
+                                        </a>
+                                    </li>--%>
+                                  <li class="nav-item">
+                                        <a href="pages/examples/SendRequestUser.aspx" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Send</p>
                                         </a>
                                     </li>
                                     <%--  <li class="nav-item">

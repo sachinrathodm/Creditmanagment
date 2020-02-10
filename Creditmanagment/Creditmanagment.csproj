@@ -260,6 +260,7 @@
     <Content Include="pages\examples\recover-password.html" />
     <Content Include="pages\examples\register.html" />
     <Content Include="pages\examples\Registration.aspx" />
+    <Content Include="pages\examples\SendRequestUser.aspx" />
     <Content Include="pages\forms\advanced.html" />
     <Content Include="pages\forms\editors.html" />
     <Content Include="pages\forms\general.html" />
@@ -1842,13 +1843,6 @@
     <Compile Include="BlankPage.Master.designer.cs">
       <DependentUpon>BlankPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="BlankPage_User.Master.cs">
-      <DependentUpon>BlankPage_User.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="BlankPage_User.Master.designer.cs">
-      <DependentUpon>BlankPage_User.Master</DependentUpon>
-    </Compile>
     <Compile Include="CommanFile.cs" />
     <Compile Include="indexhome1.aspx.cs">
       <DependentUpon>indexhome1.aspx</DependentUpon>
@@ -1913,7 +1907,21 @@
     <Compile Include="pages\examples\Registration.aspx.designer.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pages\examples\SendRequestUser.aspx.cs">
+      <DependentUpon>SendRequestUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\examples\SendRequestUser.aspx.designer.cs">
+      <DependentUpon>SendRequestUser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserBlankPage.Master.cs">
+      <DependentUpon>UserBlankPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserBlankPage.Master.designer.cs">
+      <DependentUpon>UserBlankPage.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include=".babelrc" />
@@ -2100,7 +2108,6 @@
     <Content Include="BlankPage.Master" />
     <Content Include="build\scss\_input-group.scss" />
     <Content Include="build\scss\_type.scss" />
-    <Content Include="BlankPage_User.Master" />
     <None Include="packages.config" />
     <Content Include="plugins\.npmignore" />
     <Content Include="plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.css.map" />
@@ -2166,6 +2173,7 @@
     <Content Include="plugins\summernote\summernote.js.map" />
     <Content Include="plugins\sweetalert2-theme-bootstrap-4\bootstrap-4.scss" />
     <Content Include="plugins\toastr\toastr.js.map" />
+    <Content Include="UserBlankPage.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
