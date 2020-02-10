@@ -26,7 +26,7 @@ INSERT INTO [dbo].[Store_Item]
            ,[Item_Name]
            ,[Rate])
      VALUES
-           ('{Storeitemid}'
+           ('{Session["User_ID"]}'
 ,'{Storeitemid}'
 ,'{txtItemname_YS.Text}'
 ,'{txtRate_YS.Text}')
