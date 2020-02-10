@@ -4,13 +4,37 @@
 
 <html>
 <head runat="server">
-    <title></title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Credit Management | Blank Page</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="../../dist/css/textboxvalidation.css">
+
+    <link rel="stylesheet" href="/path/to/dist/css/bootstrapValidator.min.css" />
+
+    <script type="text/javascript" src="../../plugins/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body class="hold-transition sidebar-mini">
     <form id="form1">
-       <!-- Site wrapper -->
+        <!-- Site wrapper -->
         <div class="wrapper">
             <!-- Navbar -->
             <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -41,14 +65,14 @@
 
                 <!-- Right navbar links -->
                 <ul class="navbar-nav ml-auto">
-                   <li >
-                <a href="pages/examples/LoginPage.aspx">
-               <label id="login_YS" runat="server">Login</label>
-                </a>
-                 <a href="pages/examples/LogoutPage.aspx">
-               <label id="logout_YS" runat="server">Logout</label>
-                </a>
-              </li>
+                    <li>
+                        <%--<a href="pages/examples/LoginPage.aspx">
+                            <label id="lbllogin_YS" runat="server">Login</label>
+                        </a>--%>
+                        <a href="pages/examples/LogoutPage.aspx">
+                            <label id="lbllogout_YS" runat="server">Logout</label>
+                        </a>
+                    </li>
                     <!-- Messages Dropdown Menu -->
                     <li class="nav-item dropdown">
                         <a class="nav-link" data-toggle="dropdown" href="#">
@@ -262,7 +286,7 @@
                                     </li>
                                 </ul>
                             </li>--%>
-                           <%-- <li class="nav-item has-treeview">
+                            <%-- <li class="nav-item has-treeview">
                                 <a href="#" class="nav-link">
                                     <i class="nav-icon fas fa-edit"></i>
                                     <p>
@@ -292,7 +316,7 @@
                                     </li>
                                 </ul>
                             </li>--%>
-                          <%--  <li class="nav-item has-treeview">
+                            <%--  <li class="nav-item has-treeview">
                                 <a href="#" class="nav-link">
                                     <i class="nav-icon fas fa-table"></i>
                                     <p>
@@ -362,7 +386,7 @@
                                             <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
-                                <ul class="nav nav-treeview">
+                                <%--<ul class="nav nav-treeview">
                                     <li class="nav-item">
                                         <a href="../examples/invoice.html" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
@@ -375,7 +399,7 @@
                                             <p>Profile</p>
                                         </a>
                                     </li>
-                                   <%-- <li class="nav-item">
+                                    <li class="nav-item">
                                         <a href="../examples/e_commerce.html" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>E-commerce</p>
@@ -404,14 +428,14 @@
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Project Detail</p>
                                         </a>
-                                    </li>--%>
+                                    </li>
                                     <li class="nav-item">
                                         <a href="../examples/contacts.html" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Contacts</p>
                                         </a>
                                     </li>
-                                </ul>
+                                </ul>--%>
                             </li>
                             <li class="nav-item has-treeview menu-open">
                                 <a href="#" class="nav-link active">
@@ -423,12 +447,12 @@
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview">
-                                  <li class="nav-item">
+                                    <%--<li class="nav-item">
                                         <a href="pages/examples/AddItems.aspx" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Add Item</p>
                                         </a>
-                                    </li>
+                                    </li>--%>
                                     <li class="nav-item">
                                         <a href="pages/examples/LoginPage.aspx" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
@@ -447,7 +471,7 @@
                                             <p>Forgot Password</p>
                                         </a>
                                     </li>
-                                  <%--  <li class="nav-item">
+                                    <%--  <li class="nav-item">
                                         <a href="../examples/recover-password.html" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Recover Password</p>
@@ -459,7 +483,7 @@
                                             <p>Lockscreen</p>
                                         </a>
                                     </li>--%>
-                                   <%-- <li class="nav-item">
+                                    <%-- <li class="nav-item">
                                         <a href="../examples/legacy-user-menu.html" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Legacy User Menu</p>
@@ -510,7 +534,7 @@
                                     <p>Documentation</p>
                                 </a>
                             </li>--%>
-                           <%-- <li class="nav-header">MULTI LEVEL EXAMPLE</li>
+                            <%-- <li class="nav-header">MULTI LEVEL EXAMPLE</li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     <i class="fas fa-circle nav-icon"></i>
@@ -577,7 +601,7 @@
                                     <p>Level 1</p>
                                 </a>
                             </li>--%>
-                           <%-- <li class="nav-header">LABELS</li>
+                            <%-- <li class="nav-header">LABELS</li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     <i class="nav-icon far fa-circle text-danger"></i>
@@ -609,13 +633,13 @@
                 <section class="content-header">
                     <div class="container-fluid">
                         <div class="row mb-1">
-                            
-                                
-                                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                                        </asp:ContentPlaceHolder>
-                                    
-                               
-                           <%-- <div class="col-sm-6">
+
+
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+
+
+                            <%-- <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
                                     <li class="breadcrumb-item"><a href="#">Home</a></li>
                                     <li class="breadcrumb-item active"></li>
@@ -678,15 +702,15 @@
         </div>
         <!-- ./wrapper -->
 
-       <!-- jQuery -->
-    <script src="../../plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="../../dist/js/adminlte.min.js"></script>
+        <!-- jQuery -->
+        <script src="../../plugins/jquery/jquery.min.js"></script>
+        <!-- Bootstrap 4 -->
+        <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../../dist/js/adminlte.min.js"></script>
 
 
-    <script src="../../validator.js"></script>
+        <script src="../../validator.js"></script>
     </form>
 </body>
 </html>

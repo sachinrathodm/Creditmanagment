@@ -233,6 +233,7 @@
     <Content Include="index.html" />
     <Content Include="indexhome1.aspx" />
     <Content Include="IndexHomePage.aspx" />
+    <Content Include="IndexHomePage_User.aspx" />
     <Content Include="pages\examples\404.html" />
     <Content Include="pages\examples\500.html" />
     <Content Include="pages\examples\AddItems.aspx" />
@@ -1862,6 +1863,13 @@
     </Compile>
     <Compile Include="IndexHomePage.aspx.designer.cs">
       <DependentUpon>IndexHomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IndexHomePage_User.aspx.cs">
+      <DependentUpon>IndexHomePage_User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IndexHomePage_User.aspx.designer.cs">
+      <DependentUpon>IndexHomePage_User.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\examples\AddItems.aspx.cs">
       <DependentUpon>AddItems.aspx</DependentUpon>

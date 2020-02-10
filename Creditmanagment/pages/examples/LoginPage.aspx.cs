@@ -62,8 +62,20 @@ select User_ID from[dbo].[User]
 Where 
 [Email_ID] = '{txtEmail_YS.Text}'
 "));
+              bool isstorekeeper= (bool)(CommanFile.ExcuteScalar_YS($@"
+select Is_Storekeeper from[dbo].[User] 
+Where 
+[User_ID] = '{user_id}'
+"));
               Session["User_ID"] = user_id;
+              if (isstorekeeper)
+              {
               Response.Redirect("../../IndexHomePage.aspx");
+              }
+              else
+              {
+              Response.Redirect("../../IndexHomePage_User.aspx");
+              }
 
             }
             else
