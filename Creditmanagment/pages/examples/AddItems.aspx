@@ -29,8 +29,11 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-info">Add</button>
-                    <button type="submit" class="btn btn-default float-right">Cancel</button>
+                    <%--<button id="btnAddItem_YS" runat="server" type="submit" class="btn btn-info">Add</button>
+                    <button type="submit" class="btn btn-default float-right">Cancel</button>--%>
+                  <asp:Button  id="btnCancel_YS" type="submit" runat="server" Text="Cancel" class="btn btn-default float-right" />
+                  <asp:Button  id="btnAddItem_YS" runat="server" type="submit" class="btn btn-info" Text="ADD" />
+
                 </div>
                 <!-- /.card-footer -->
             </form>
