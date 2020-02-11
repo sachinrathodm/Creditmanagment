@@ -186,10 +186,11 @@
                     <!-- Sidebar user (optional) -->
                     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                         <div class="image">
-                            <img src="../../dist/img/user2-160x160.jpg" runat="server" id="imgStoremg_YS" class="img-circle elevation-2" alt="Store Image">
+                            <%--<img src="../../dist/img/user2-160x160.jpg" runat="server" id="imgStoremg_YS" class="img-circle elevation-2" alt="Store Image">--%>
                         </div>
                         <div class="info">
-                            <a href="#" class="d-block"><asp:Label id="lblName_YS" runat="server"></asp:Label></a>
+                            <a href="#" class="d-block">
+                                <asp:Label ID="lblName_YS" runat="server"></asp:Label></a>
                         </div>
                     </div>
 
@@ -382,18 +383,17 @@
                                     <i class="nav-icon fas fa-book"></i>
                                     <p>
                                         Pages
-               
-                                            <i class="fas fa-angle-left right"></i>
+                <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview">
-                                    <%--<li class="nav-item">
+                                    <li class="nav-item">
                                         <a href="../examples/invoice.html" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Invoice</p>
                                         </a>
                                     </li>
-                                    <li class="nav-item">
+                                    <%--  <li class="nav-item">
                                         <a href="../examples/profile.html" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Profile</p>
@@ -453,7 +453,7 @@
                                             <p>Add Item</p>
                                         </a>
                                     </li>
-                                  <li class="nav-item">
+                                    <li class="nav-item">
                                         <a href="../../pages/examples/AcceptRequest.aspx" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Accept Request</p>
@@ -501,7 +501,7 @@
                                             <p>Language Menu</p>
                                         </a>
                                     </li>--%>
-                                   <%-- <li class="nav-item">
+                                    <%-- <li class="nav-item">
                                         <a href="../../pages/examples/404.html" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Error 404</p>

@@ -3,16 +3,15 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <form runat="server">
-        
-            <div class="col-lg-12">
+   
+            <div class="col-lg-5">
                 <div class="card card-info">
                     <div class="card-header">
                         <h3 class="card-title">Send Request</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form class="form-horizontal" id="form1">
+                    <form class="form-horizontal" runat="server" id="form1">
                         <div class="card-body">
                             <div class="form-group row">
                                 <label class="col-sm-4 col-form-label">Select Store Name</label>
@@ -32,12 +31,11 @@
 
                         </div>
                         <!-- /.card-footer -->
-                    </form>
+                    
                 </div>
             </div>
             
-            <div>
-                <div class="content-wrapper col-lg-8"">
+                <div class="content-wrapper col-ml-4"">
                     <!-- Main content -->
                     <section class="content">
                         <div class="row">
@@ -55,10 +53,10 @@
                             </div>
                         </div>
                 </div>
-            </div>
+           
             <!-- /.card -->
-    </form>
+    
     <!-- /.card -->
-
+  </form>
 
 </asp:Content>
