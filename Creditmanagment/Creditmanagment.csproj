@@ -230,6 +230,7 @@
     <Content Include="docs\_layouts\home.html" />
     <Content Include="docs\_layouts\page.html" />
     <Content Include="docs\_layouts\post.html" />
+    <Content Include="Images\5c7f71d4-d114-401f-862c-7c3da1fe7b72.jpg" />
     <Content Include="index.html" />
     <Content Include="indexhome1.aspx" />
     <Content Include="IndexHomePage.aspx" />
@@ -2179,9 +2180,7 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

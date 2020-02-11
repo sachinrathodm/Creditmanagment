@@ -83,7 +83,7 @@ INSERT INTO [dbo].[User](
         , {((rdStoreKeeper_YS.Checked) ? 1 : 0)})
 ";
       
-      InputFile_YS.SaveAs(Server.MapPath("/Images/" + UserGUID));
+      InputFile_YS.SaveAs(Server.MapPath("/Images/" + UserGUID + ".jpg"));
       CommanFile.ExcuteNonQuery_YS(_Sql);
 
       if (rdCustomers_YS.Checked)
