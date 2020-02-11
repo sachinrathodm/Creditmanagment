@@ -37,7 +37,7 @@ namespace Creditmanagment {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgUserImage_YS;
+        protected global::System.Web.UI.WebControls.Image imgUserImage_YS;
         
         /// <summary>
         /// lblName_YS control.

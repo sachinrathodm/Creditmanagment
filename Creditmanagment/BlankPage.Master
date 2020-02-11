@@ -173,6 +173,7 @@
             <!-- Main Sidebar Container -->
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
                 <!-- Brand Logo -->
+               
                 <a href="../../IndexHomePage.aspx" class="brand-link">
                     <img src="../../dist/img/CM_LOGO.png"
                         alt="Credit Management Logo"
@@ -186,7 +187,8 @@
                     <!-- Sidebar user (optional) -->
                     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                         <div class="image">
-                            <img src="../../dist/img/user2-160x160.jpg" runat="server" id="imgStoremg_YS" class="img-circle elevation-2" alt="Store Image">
+                           <asp:Image ID="imgStoremg_YS" runat="server" class="img-circle elevation-2" alt="Store Image"/>
+                            <%--<img src="../../dist/img/user2-160x160.jpg" runat="server" id="imgStoremg_YS" class="img-circle elevation-2" alt="Store Image">--%>
                         </div>
                         <div class="info">
                             <a href="#" class="d-block"><asp:Label id="lblName_YS" runat="server"></asp:Label></a>
