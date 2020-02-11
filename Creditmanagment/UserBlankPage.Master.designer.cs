@@ -31,6 +31,15 @@ namespace Creditmanagment {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl logout_YS;
         
         /// <summary>
+        /// imgUserImage_YS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage imgUserImage_YS;
+        
+        /// <summary>
         /// lblName_YS control.
         /// </summary>
         /// <remarks>

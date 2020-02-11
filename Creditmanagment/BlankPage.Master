@@ -69,7 +69,7 @@
                         <a href="pages/examples/LoginPage.aspx">
                             <label id="login_YS" runat="server">Login</label>
                         </a>
-                        <a href="pages/examples/LogoutPage.aspx">
+                        <a href="../../pages/examples/LogoutPage.aspx">
                             <label id="logout_YS" runat="server">Logout</label>
                         </a>
                     </li>
@@ -186,7 +186,7 @@
                     <!-- Sidebar user (optional) -->
                     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                         <div class="image">
-                            <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                            <img src="../../dist/img/user2-160x160.jpg" runat="server" id="imgStoremg_YS" class="img-circle elevation-2" alt="Store Image">
                         </div>
                         <div class="info">
                             <a href="#" class="d-block"><asp:Label id="lblName_YS" runat="server"></asp:Label></a>
@@ -387,7 +387,7 @@
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview">
-                                    <li class="nav-item">
+                                    <%--<li class="nav-item">
                                         <a href="../examples/invoice.html" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Invoice</p>
@@ -398,7 +398,7 @@
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Profile</p>
                                         </a>
-                                    </li>
+                                    </li>--%>
                                     <%-- <li class="nav-item">
                                         <a href="../examples/e_commerce.html" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
@@ -430,7 +430,7 @@
                                         </a>
                                     </li>--%>
                                     <li class="nav-item">
-                                        <a href="../examples/contacts.html" class="nav-link">
+                                        <a href="../examples/contacts.aspx" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Contacts</p>
                                         </a>
@@ -448,31 +448,31 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="pages/examples/AddItems.aspx" class="nav-link">
+                                        <a href="../../pages/examples/AddItems.aspx" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Add Item</p>
                                         </a>
                                     </li>
                                   <li class="nav-item">
-                                        <a href="pages/examples/AcceptRequest.aspx" class="nav-link">
+                                        <a href="../../pages/examples/AcceptRequest.aspx" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Accept Request</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="pages/examples/LoginPage.aspx" class="nav-link">
+                                        <a href="../../pages/examples/LoginPage.aspx" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Login</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="pages/examples/Registration.aspx" class="nav-link">
+                                        <a href="../../pages/examples/Registration.aspx" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Register</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="pages/examples/ForgotPasswordPage.aspx" class="nav-link">
+                                        <a href="../../pages/examples/ForgotPasswordPage.aspx" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Forgot Password</p>
                                         </a>
@@ -501,18 +501,18 @@
                                             <p>Language Menu</p>
                                         </a>
                                     </li>--%>
-                                    <li class="nav-item">
-                                        <a href="../examples/404.html" class="nav-link">
+                                   <%-- <li class="nav-item">
+                                        <a href="../../pages/examples/404.html" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Error 404</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="../examples/500.html" class="nav-link">
+                                        <a href="../../pages/examples/500.html" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Error 500</p>
                                         </a>
-                                    </li>
+                                    </li>--%>
                                     <%--<li class="nav-item">
                                         <a href="../examples/pace.html" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>

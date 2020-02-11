@@ -16,6 +16,8 @@ namespace Creditmanagment.pages.examples
 
     protected void Page_Load(object sender, EventArgs e)
     {
+      
+
       Userid = Session["User_ID"].ToString();
       //Events
       btnSend_YS.Click += BtnSend_YS_Click_YS;
@@ -34,26 +36,24 @@ namespace Creditmanagment.pages.examples
         else
           Response.Redirect("pages/examples/LoginPage.aspx");
       }
+
       string Customerid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
 select Customer_ID from [dbo].[Customers]
 Where 
 [User_Id] = '{Userid}'
 "));
       DataTable dtUserRequest = new DataTable();
-      CommanFile.GetDataTable_YS(dtUserRequest,$@"SELECT s.Store_Name,r.Store_Request_Date,r.CU_Request_Status
+      CommanFile.GetDataTable_YS(dtUserRequest, $@"SELECT s.Store_Name,r.Store_Request_Date,r.CU_Request_Status
 FROM Store_Customer_Request r
 INNER JOIN Store s ON r.Store_ID=s.Store_ID where r.CU_Request_Status='p' and r.Customer_ID='{Customerid}'");
 
       gdUserRequest.DataSource = dtUserRequest.DefaultView;
       gdUserRequest.DataBind();
-     
-
     }
 
     #region Events
     private void BtnSend_YS_Click_YS(object sender, EventArgs e)
     {
-
       string Customerid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
 select Customer_ID from [dbo].[Customers]
 Where 

@@ -4,8 +4,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form runat="server">
-        <div>
-            <div class="col-lg-5">
+        
+            <div class="col-lg-12">
                 <div class="card card-info">
                     <div class="card-header">
                         <h3 class="card-title">Send Request</h3>
@@ -35,10 +35,9 @@
                     </form>
                 </div>
             </div>
+            
             <div>
-            </div>
-            <div style="float:left">
-                <div class="content-wrapper">
+                <div class="content-wrapper col-lg-8"">
                     <!-- Main content -->
                     <section class="content">
                         <div class="row">
@@ -61,6 +60,5 @@
     </form>
     <!-- /.card -->
 
-    </div>
 
 </asp:Content>
