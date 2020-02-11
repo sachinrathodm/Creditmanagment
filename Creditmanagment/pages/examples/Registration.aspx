@@ -101,7 +101,8 @@
                                 <%--<label class="custom-file-label" for="exampleInputFile">Choose file</label>--%>
                             </div>
                             <div class="input-group-append">
-                                <asp:Label ID="lblUpload_YS" runat="server" class="input-group-text">Upload</asp:Label>
+                              <%--  <asp:Button ID="lblUpload_YS" runat="server" runat="server" class="input-group-text" Text="Upload" />--%>
+                                <%--<asp:Label ID="lblUpload_YS" runat="server" class="input-group-text">Upload</asp:Label>--%>
                                 <%--<span class="input-group-text" id="">Upload</span>--%>
                             </div>
                         </div>

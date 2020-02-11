@@ -11,6 +11,7 @@ namespace Creditmanagment.pages.examples
 {
   public partial class Registration : System.Web.UI.Page
   {
+    Guid UserGUID = Guid.NewGuid();
     List<Control> _CommanControlList = new List<Control>();
     List<Control> _StoreKeeperControl = new List<Control>();
     List<Control> _CustomerControl = new List<Control>();
@@ -27,7 +28,7 @@ namespace Creditmanagment.pages.examples
       _CommanControlList.Add(txtMobileno_YS);
       _CommanControlList.Add(InputFile_YS);
       _CommanControlList.Add(lblinputfile);
-      _CommanControlList.Add(lblUpload_YS);
+      //_CommanControlList.Add(lblUpload_YS);
       _CommanControlList.Add(ltrinputfile);
       _CommanControlList.Add(txtAddress_YS);
       _CommanControlList.Add(btnRegister_YS);
@@ -62,7 +63,7 @@ namespace Creditmanagment.pages.examples
 
     private void BtnRegister_YS_Click_YS(object sender, EventArgs e)
     {
-      Guid UserGUID = Guid.NewGuid();
+     
       string _Sql = $@"
 INSERT INTO [dbo].[User](
        [User_ID]
@@ -77,11 +78,14 @@ INSERT INTO [dbo].[User](
         ,'{txtEmail_YS.Text}'
         ,'{txtPassword_YS.Text}'
         ,{txtMobileno_YS.Text}
-        ,'{Guid.NewGuid()}'
+        ,'{UserGUID}'
         ,'{txtFirstname_YS.Text} {txtLastname_YS.Text}'
         , {((rdStoreKeeper_YS.Checked) ? 1 : 0)})
 ";
+      
+      InputFile_YS.SaveAs(Server.MapPath("/Images/" + UserGUID));
       CommanFile.ExcuteNonQuery_YS(_Sql);
+
       if (rdCustomers_YS.Checked)
       {
         Guid CustomerGUID = Guid.NewGuid();
@@ -139,6 +143,8 @@ INSERT INTO [dbo].[Store]
       }
     }
 
+    
+
     #region Events
     protected void rdStoreKeeper_YS_CheckedChanged_YS(object sender, EventArgs e)
     {
@@ -161,8 +167,11 @@ INSERT INTO [dbo].[Store]
         foreach (var control in _StoreKeeperControl)
           control.Visible = true;
       }
+      //btnupload
+     
       #endregion
     }
+   
     #endregion
   }
 }

@@ -139,15 +139,6 @@ namespace Creditmanagment.pages.examples {
         protected global::System.Web.UI.WebControls.Label ltrinputfile;
         
         /// <summary>
-        /// lblUpload_YS control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUpload_YS;
-        
-        /// <summary>
         /// txtAddress_YS control.
         /// </summary>
         /// <remarks>
