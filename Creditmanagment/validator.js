@@ -101,6 +101,9 @@ $(document).ready(function () {
             message: 'Password in 1 number, 1 lowarcase, 1 upparcase, 1 special character is required'
           }
         }
+  }
+
+
       },
       txtAddress_YS: {
         message: 'Address is not valid',
@@ -143,7 +146,7 @@ $(document).ready(function () {
           //  message: 'First name must be more than 6 and less than 30 characters long'
           //},
           regexp: {
-            regexp: /^[a-zA-Z]+$/,
+            regexp: /^[a-z\sA-Z]+$/,
             message: 'Store category in use only alphabetical'
           }
         }
@@ -160,7 +163,7 @@ $(document).ready(function () {
           //  message: 'The lastname must be more than 6 and less than 30 characters long'
           //},
           regexp: {
-            regexp: /(^[0-9_]{10})+$/,
+            regexp: /(^[0-9_]{13})+$/,
             message: 'Helpline no in use only number or 10 digit'
           }
         }
