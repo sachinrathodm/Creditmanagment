@@ -14,10 +14,11 @@ namespace Creditmanagment.pages.examples
   {
     protected void Page_Load(object sender, EventArgs e)
     {
-      //Events
-      txtEmail_YS.TextChanged += TxtEmail_YS_TextChanged_YS;
-      txtPassword_YS.TextChanged += TxtPassword_YS_TextChanged_YS;
-      Form.DefaultButton = btnLogin_YS.UniqueID;
+      
+        //Events
+        txtEmail_YS.TextChanged += TxtEmail_YS_TextChanged_YS;
+        txtPassword_YS.TextChanged += TxtPassword_YS_TextChanged_YS;
+        Form.DefaultButton = btnLogin_YS.UniqueID;
     }
 
     #region Events

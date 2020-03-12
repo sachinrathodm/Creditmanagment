@@ -101,9 +101,6 @@ $(document).ready(function () {
             message: 'Password in 1 number, 1 lowarcase, 1 upparcase, 1 special character is required'
           }
         }
-  }
-
-
       },
       txtAddress_YS: {
         message: 'Address is not valid',

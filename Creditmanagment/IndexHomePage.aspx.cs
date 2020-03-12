@@ -13,7 +13,12 @@ namespace Creditmanagment
     {
       if (Session["User_ID"] != null)
       {
-        
+          string totaluser = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
+Select count(*) from [User] 
+where Is_Storekeeper = 0
+"));
+
+        lblNumberofuser_YS.Text = totaluser;
       }
       else
         Response.Redirect("pages/examples/LoginPage.aspx");

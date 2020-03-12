@@ -247,6 +247,7 @@
     <Content Include="pages\examples\forgot-password.html" />
     <Content Include="pages\examples\ForgotPasswordPage.aspx" />
     <Content Include="pages\examples\invoice-print.html" />
+    <Content Include="pages\examples\Invoice.aspx" />
     <Content Include="pages\examples\invoice.html" />
     <Content Include="pages\examples\language-menu.html" />
     <Content Include="pages\examples\legacy-user-menu.html" />
@@ -282,6 +283,12 @@
     <Content Include="plugins\bootstrap\js\bootstrap.min.js" />
     <Content Include="plugins\bs-custom-file-input\bs-custom-file-input.js" />
     <Content Include="plugins\bs-custom-file-input\bs-custom-file-input.min.js" />
+    <Content Include="plugins\chart.js\Chart.bundle.js" />
+    <Content Include="plugins\chart.js\Chart.bundle.min.js" />
+    <Content Include="plugins\chart.js\Chart.css" />
+    <Content Include="plugins\chart.js\Chart.js" />
+    <Content Include="plugins\chart.js\Chart.min.css" />
+    <Content Include="plugins\chart.js\Chart.min.js" />
     <Content Include="plugins\datatables-autofill\css\autoFill.bootstrap4.css" />
     <Content Include="plugins\datatables-autofill\css\autoFill.bootstrap4.min.css" />
     <Content Include="plugins\datatables-autofill\js\autoFill.bootstrap4.js" />
@@ -1871,6 +1878,13 @@
     </Compile>
     <Compile Include="pages\examples\ForgotPasswordPage.aspx.designer.cs">
       <DependentUpon>ForgotPasswordPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\examples\Invoice.aspx.cs">
+      <DependentUpon>Invoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\examples\Invoice.aspx.designer.cs">
+      <DependentUpon>Invoice.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\examples\LoginPage.aspx.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>

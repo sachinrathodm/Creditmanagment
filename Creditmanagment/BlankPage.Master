@@ -52,7 +52,7 @@
                 </ul>
 
                 <!-- SEARCH FORM -->
-                <form class="form-inline ml-3">
+                <form class="form-inline ml-2">
                     <div class="input-group input-group-sm">
                         <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
                         <div class="input-group-append">
@@ -66,12 +66,19 @@
                 <!-- Right navbar links -->
                 <ul class="navbar-nav ml-auto">
                     <li>
-                        <a href="pages/examples/LoginPage.aspx">
-                            <label id="login_YS" runat="server">Login</label>
-                        </a>
+                        <%if (Session["User_ID"] != null)
+                            {%>
+
                         <a href="../../pages/examples/LogoutPage.aspx">
                             <label id="logout_YS" runat="server">Logout</label>
                         </a>
+                        <%} %>
+                        <%else
+                            {%>
+                        <a href="pages/examples/LoginPage.aspx">
+                            <label id="login_YS" runat="server">Login</label>
+                        </a>
+                        <%} %>
                     </li>
                     <!-- Messages Dropdown Menu -->
                     <li class="nav-item dropdown">
@@ -390,7 +397,7 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="../examples/invoice.html" class="nav-link">
+                                        <a href="../../pages/examples/Invoice.aspx" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Invoice</p>
                                         </a>
@@ -461,19 +468,24 @@
                                             <p>Accept Request</p>
                                         </a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="../../pages/examples/LoginPage.aspx" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Login</p>
-                                        </a>
-                                    </li>
-
+                                    <% if (Session["User_ID"] != null)
+                                        {%>
                                     <li class="nav-item">
                                         <a href="../../pages/examples/LoginPage.aspx" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Logout</p>
                                         </a>
                                     </li>
+                                    <%} %>
+                                    <%else
+                                        { %>
+                                    <li class="nav-item">
+                                        <a href="../../pages/examples/LoginPage.aspx" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Login</p>
+                                        </a>
+                                    </li>
+                                    <%} %>
                                     <li class="nav-item">
                                         <a href="../../pages/examples/Registration.aspx" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
