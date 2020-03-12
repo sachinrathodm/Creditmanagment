@@ -63,7 +63,17 @@ namespace Creditmanagment.pages.examples
 
     private void BtnRegister_YS_Click_YS(object sender, EventArgs e)
     {
-     
+      int IsEmail = Convert.ToInt32(CommanFile.ExcuteScalar_YS($@"
+select count(*) from[dbo].[User] 
+Where 
+[Email_ID] = '{txtEmail_YS.Text}'
+"));
+      if (IsEmail > 0)
+      {
+        Response.Write("<script>alert('Please Select Another Emailid');</script>");
+        return;
+
+      }
       string _Sql = $@"
 INSERT INTO [dbo].[User](
        [User_ID]
@@ -82,14 +92,14 @@ INSERT INTO [dbo].[User](
         ,'{txtFirstname_YS.Text} {txtLastname_YS.Text}'
         , {((rdStoreKeeper_YS.Checked) ? 1 : 0)})
 ";
-      
+
       InputFile_YS.SaveAs(Server.MapPath("/Images/" + UserGUID + ".jpg"));
       CommanFile.ExcuteNonQuery_YS(_Sql);
 
       if (rdCustomers_YS.Checked)
       {
         Guid CustomerGUID = Guid.NewGuid();
-         _Sql = $@"
+        _Sql = $@"
 INSERT INTO [dbo].[Customers]
            ([Customer_ID]
            ,[User_ID]
@@ -111,12 +121,13 @@ INSERT INTO [dbo].[Customers]
 ";
         CommanFile.ExcuteNonQuery_YS(_Sql);
         Response.Write("<script LANGUAGE='JavaScript' >alert('Login Successful')</script>");
+        //Response.Write("<script>alert('Register Succesfully');</script>");
         Response.Redirect("LoginPage.aspx");
       }
       if (rdStoreKeeper_YS.Checked)
       {
         Guid StoreGUID = Guid.NewGuid();
-        
+
         _Sql = $@"
 INSERT INTO [dbo].[Store]
            ([Store_ID]
@@ -140,11 +151,12 @@ INSERT INTO [dbo].[Store]
 ,{((Convert.ToInt32(ddtVouchermode_YS.SelectedValue) == 1) ? 1 : 0)})
 ";
         CommanFile.ExcuteNonQuery_YS(_Sql);
+        //Response.Write("<script>alert('Register Succesfully');</script>");
         Response.Redirect("LoginPage.aspx");
       }
     }
 
-    
+
 
     #region Events
     protected void rdStoreKeeper_YS_CheckedChanged_YS(object sender, EventArgs e)
@@ -169,10 +181,10 @@ INSERT INTO [dbo].[Store]
           control.Visible = true;
       }
       //btnupload
-     
+
       #endregion
     }
-   
+
     #endregion
   }
 }
