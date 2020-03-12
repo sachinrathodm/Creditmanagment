@@ -17,7 +17,7 @@ namespace Creditmanagment
         lblName_YS.Text = Session["Display_Name"].ToString();
 
       }
-      imgUserImage_YS.ImageUrl = $@"{("~/Images/" + UserGUID+".jpg")}";
+      imgUserImage_YS.ImageUrl = $@"{("~/Images/" + UserGUID + ".jpg")}";
     }
   }
 }
