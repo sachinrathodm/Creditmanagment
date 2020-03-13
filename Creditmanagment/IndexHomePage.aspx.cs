@@ -11,14 +11,21 @@ namespace Creditmanagment
   {
     protected void Page_Load(object sender, EventArgs e)
     {
+      string userid = Session["User_Id"].ToString();
       if (Session["User_ID"] != null)
       {
-          string totaluser = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
-Select count(*) from [User] 
-where Is_Storekeeper = 0
+        string storeid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
+SELECT[Store_ID]
+  FROM [CreditManagement].[dbo].[Store]
+  where User_ID = '{userid}'
 "));
 
-        lblNumberofuser_YS.Text = totaluser;
+        string totalcoustomers = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
+Select count(*) from [Store_Customers] 
+where Store_ID = '{storeid}'
+"));
+
+        lblNumberofuser_YS.Text = totalcoustomers;
       }
       else
         Response.Redirect("pages/examples/LoginPage.aspx");

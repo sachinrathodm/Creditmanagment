@@ -77,7 +77,7 @@ select Store_ID from [dbo].[Store] where User_ID='{Userid}'"));
 ,'{Customer_ID}'
 ,'{Storeid}'
 ,500
-,'{DateTime.Now}'
+,GETDATE()
 ,0
 ,'N')";
       CommanFile.ExcuteNonQuery_YS(_sql);

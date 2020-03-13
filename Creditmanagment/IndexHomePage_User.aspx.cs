@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +11,26 @@ namespace Creditmanagment
   {
     protected void Page_Load(object sender, EventArgs e)
     {
+      string userid = Session["User_ID"].ToString();
+      if (Session["User_ID"] != null)
+      {
+        string customerid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
+SELECT[Customer_ID]
+      ,[User_ID]
+    FROM[CreditManagement].[dbo].[Customers]
+    where User_ID = '{userid}'
+"));
 
+        string totaluser = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
+SELECT Count([CU_Request_Status])
+  FROM [CreditManagement].[dbo].[Store_Customer_Request]
+  where Customer_ID = '{customerid}' and CU_Request_Status = 'A'
+"));
+
+        lblNumberofuser1_YS.Text = totaluser;
+      }
+      else
+        Response.Redirect("pages/examples/LoginPage.aspx");
     }
   }
 }

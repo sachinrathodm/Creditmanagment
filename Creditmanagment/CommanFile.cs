@@ -34,7 +34,7 @@ namespace Creditmanagment
       return i;
     }
 
-    public static void SqlDataAdapter_YS(string Query)
+    public static DataTable SqlDataAdapter_YS(string Query)
     {
       SqlConnection con;
       con = new SqlConnection(connetionString);
@@ -42,6 +42,7 @@ namespace Creditmanagment
       SqlDataAdapter adpt = new SqlDataAdapter(Query, con);
       DataTable dt = new DataTable();
       adpt.Fill(dt);
+      return dt;
     }
 
     public static DataTable GetDataTable_YS(DataTable dt, string Query)
