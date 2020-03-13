@@ -11,6 +11,7 @@ namespace Creditmanagment.pages
   public partial class AcceptRequest : System.Web.UI.Page
   {
     string Userid;
+    string Storeid;
     protected void Page_Load(object sender, EventArgs e)
     {
       Userid = Session["User_ID"].ToString();
@@ -22,7 +23,7 @@ namespace Creditmanagment.pages
       {
         if (Session["User_ID"] != null)
         {
-          string Storeid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
+          Storeid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
 select Store_ID from [dbo].[Store]
 Where 
 [User_ID] = '{Userid}'
@@ -45,18 +46,40 @@ INNER JOIN Customers c ON r.Customer_ID=c.Customer_ID where r.Store_ID='{Storeid
     private void BtnReject_YS_Click_YS(object sender, EventArgs e)
     {
       string _sql = $@"UPDATE [dbo].[Store_Customer_Request]
-   SET 
-      [CU_Request_Status] = 'R'
- WHERE Store_Customer_Request_ID='{ddCustomerRequest.SelectedValue.ToString()}'";
+       SET 
+       [CU_Request_Status] = 'R'
+       WHERE Store_Customer_Request_ID='{ddCustomerRequest.SelectedValue.ToString()}'";
       CommanFile.ExcuteNonQuery_YS(_sql);
     }
 
     private void BtnAccept_YS_Click_YS(object sender, EventArgs e)
     {
       string _sql = $@"UPDATE [dbo].[Store_Customer_Request]
-   SET 
-      [CU_Request_Status] = 'A'
- WHERE Store_Customer_Request_ID='{ddCustomerRequest.SelectedValue.ToString()}'";
+          SET 
+          [CU_Request_Status] = 'A'
+          WHERE Store_Customer_Request_ID='{ddCustomerRequest.SelectedValue.ToString()}'";
+      CommanFile.ExcuteNonQuery_YS(_sql);
+      Guid Store_Customers_ID = Guid.NewGuid();
+      string Customer_ID = Convert.ToString(CommanFile.ExcuteScalar_YS( $@"select Customer_ID from Store_Customer_Request where Store_Customer_Request_ID='{ddCustomerRequest.SelectedValue.ToString()}'"));
+      Storeid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
+select Store_ID from [dbo].[Store] where User_ID='{Userid}'"));
+
+      _sql = $@"INSERT INTO [dbo].[Store_Customers]
+           ([Store_Customers_ID]
+           ,[Customer_ID]
+           ,[Store_ID]
+           ,[Credit]
+           ,[Date_Approval]
+           ,[Credit_Used]
+           ,[Status])
+     VALUES
+           ('{Store_Customers_ID}'
+,'{Customer_ID}'
+,'{Storeid}'
+,500
+,'{DateTime.Now}'
+,0
+,'N')";
       CommanFile.ExcuteNonQuery_YS(_sql);
     }
 
