@@ -13,11 +13,8 @@ namespace Creditmanagment.pages.examples
     string Userid;
     Guid Store_Customer_Request_ID = Guid.NewGuid();
 
-
     protected void Page_Load(object sender, EventArgs e)
     {
-      
-
       Userid = Session["User_ID"].ToString();
       //Events
       btnSend_YS.Click += BtnSend_YS_Click_YS;
@@ -36,7 +33,12 @@ namespace Creditmanagment.pages.examples
         else
           Response.Redirect("pages/examples/LoginPage.aspx");
       }
+      get_Request_Details_YS();
+    }
 
+    #region Get Request Details Method
+    protected void get_Request_Details_YS()
+    {
       string Customerid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
 select Customer_ID from [dbo].[Customers]
 Where 
@@ -50,15 +52,24 @@ INNER JOIN Store s ON r.Store_ID=s.Store_ID where r.CU_Request_Status='p' and r.
       gdUserRequest.DataSource = dtUserRequest.DefaultView;
       gdUserRequest.DataBind();
     }
+    #endregion
 
     #region Events
     private void BtnSend_YS_Click_YS(object sender, EventArgs e)
-    {
+     {
       string Customerid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
 select Customer_ID from [dbo].[Customers]
 Where 
 [User_ID] = '{Userid}'
 "));
+
+//      string Storeid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
+//select Store_ID from [dbo].[Store_Customer_Request]
+//Where 
+//[Customer_ID] = '{Customerid}'"));
+
+//      string a = ddStoreName_YS.SelectedValue;
+
       string _sql = $@"
             INSERT INTO [dbo].[Store_Customer_Request]
            ([Store_Customer_Request_ID]
@@ -74,6 +85,7 @@ Where
            ,'{DateTime.Now}')
 ";
       CommanFile.ExcuteNonQuery_YS(_sql);
+      get_Request_Details_YS();
     }
     #endregion
   }
