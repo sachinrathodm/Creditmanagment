@@ -60,7 +60,7 @@ INNER JOIN Customers c ON r.Customer_ID=c.Customer_ID where r.Store_ID='{Storeid
           WHERE Store_Customer_Request_ID='{ddCustomerRequest.SelectedValue.ToString()}'";
       CommanFile.ExcuteNonQuery_YS(_sql);
       Guid Store_Customers_ID = Guid.NewGuid();
-      string Customer_ID = Convert.ToString(CommanFile.ExcuteScalar_YS( $@"select Customer_ID from Store_Customer_Request where Store_Customer_Request_ID='{ddCustomerRequest.SelectedValue.ToString()}'"));
+      string Customer_ID = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select Customer_ID from Store_Customer_Request where Store_Customer_Request_ID='{ddCustomerRequest.SelectedValue.ToString()}'"));
       Storeid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
 select Store_ID from [dbo].[Store] where User_ID='{Userid}'"));
 
