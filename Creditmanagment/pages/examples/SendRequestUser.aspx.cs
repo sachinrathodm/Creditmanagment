@@ -63,14 +63,20 @@ Where
 [User_ID] = '{Userid}'
 "));
 
-//      string Storeid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
-//select Store_ID from [dbo].[Store_Customer_Request]
-//Where 
-//[Customer_ID] = '{Customerid}'"));
+      string Storeid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
+      select Store_ID from [dbo].[Store_Customer_Request]
+      Where 
+      [Customer_ID] = '{Customerid}'"));
 
-//      string a = ddStoreName_YS.SelectedValue;
+      string a = ddStoreName_YS.SelectedValue;
 
-      string _sql = $@"
+      if (a == Storeid)
+      {
+        ScriptManager.RegisterStartupScript(this, GetType(), "alertMessage", "alertMessage();", true);
+      }
+      else
+      {
+        string _sql = $@"
             INSERT INTO [dbo].[Store_Customer_Request]
            ([Store_Customer_Request_ID]
            ,[Customer_ID]
@@ -82,10 +88,11 @@ Where
            ,'{Customerid}'
            ,'{ddStoreName_YS.SelectedValue}'
            ,'p'
-           ,'{DateTime.Now}')
+           ,GETDATE())
 ";
-      CommanFile.ExcuteNonQuery_YS(_sql);
-      get_Request_Details_YS();
+        CommanFile.ExcuteNonQuery_YS(_sql);
+        get_Request_Details_YS();
+      }
     }
     #endregion
   }

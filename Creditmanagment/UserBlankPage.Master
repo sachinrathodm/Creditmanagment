@@ -27,6 +27,11 @@
 
     <script type="text/javascript" src="../../plugins/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript">  
+        function alertMessage() {  
+            alert('You alredy send request');  
+        }  
+    </script>  
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>

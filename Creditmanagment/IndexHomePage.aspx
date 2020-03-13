@@ -31,7 +31,7 @@
                     <div class="inner">
                         <h3><asp:Label ID="lblNumberofuser_YS" runat="server" Text=""></asp:Label></h3>
 
-                        <p>New Orders</p>
+                        <p>My Customers</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-bag"></i>
