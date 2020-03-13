@@ -68,9 +68,10 @@ Where
       Where 
       [Customer_ID] = '{Customerid}'"));
 
-      string a = ddStoreName_YS.SelectedValue;
+      //string a = ddStoreName_YS.SelectedValue;
+      int Countrequest_YS = Convert.ToInt32(CommanFile.ExcuteScalar_YS($@"select Count(*) from Store_Customer_Request where Customer_ID='{Customerid}' and Store_ID='{ddStoreName_YS.SelectedValue.ToString()}'"));
 
-      if (a == Storeid)
+      if (Countrequest_YS > 0)
       {
         ScriptManager.RegisterStartupScript(this, GetType(), "alertMessage", "alertMessage();", true);
       }
