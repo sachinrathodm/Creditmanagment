@@ -472,6 +472,12 @@
                                             <p>Display Items</p>
                                         </a>
                                     </li>
+                                  <li class="nav-item">
+                                        <a href="../../pages/examples/Add_Invoice.aspx" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Add Iinvoice</p>
+                                        </a>
+                                    </li>
                                     <li class="nav-item">
                                         <a href="../../pages/examples/AcceptRequest.aspx" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>

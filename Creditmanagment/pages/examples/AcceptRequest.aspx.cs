@@ -10,7 +10,7 @@ namespace Creditmanagment.pages
 {
   public partial class AcceptRequest : System.Web.UI.Page
   {
-    string Userid;
+    string Userid ;
     string Storeid;
     DataTable dtStoreDetails = new DataTable();
     protected void Page_Load(object sender, EventArgs e)
