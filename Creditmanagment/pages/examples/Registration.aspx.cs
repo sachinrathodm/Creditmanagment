@@ -12,6 +12,7 @@ namespace Creditmanagment.pages.examples
   public partial class Registration : System.Web.UI.Page
   {
     Guid UserGUID = Guid.NewGuid();
+    string encryptpassword;
     List<Control> _CommanControlList = new List<Control>();
     List<Control> _StoreKeeperControl = new List<Control>();
     List<Control> _CustomerControl = new List<Control>();
@@ -72,8 +73,8 @@ Where
       {
         Response.Write("<script>alert('Please Select Another Emailid');</script>");
         return;
-
       }
+      encryptpassword = CommanFile.encryptionpass(txtPassword_YS.Text);
       string _Sql = $@"
 INSERT INTO [dbo].[User](
        [User_ID]
@@ -86,7 +87,7 @@ INSERT INTO [dbo].[User](
 )VALUES(
         '{UserGUID}'
         ,'{txtEmail_YS.Text}'
-        ,'{txtPassword_YS.Text}'
+        ,'{encryptpassword}'
         ,{txtMobileno_YS.Text}
         ,'{UserGUID}'
         ,'{txtFirstname_YS.Text} {txtLastname_YS.Text}'
