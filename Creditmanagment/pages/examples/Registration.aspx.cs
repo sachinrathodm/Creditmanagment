@@ -64,6 +64,7 @@ namespace Creditmanagment.pages.examples
 
     private void BtnRegister_YS_Click_YS(object sender, EventArgs e)
     {
+      string _Sql;
       int IsEmail = Convert.ToInt32(CommanFile.ExcuteScalar_YS($@"
 select count(*) from[dbo].[User] 
 Where 
@@ -75,7 +76,23 @@ Where
         return;
       }
       encryptpassword = CommanFile.encryptionpass(txtPassword_YS.Text);
-      string _Sql = $@"
+      if (string.IsNullOrEmpty(txtFirstname_YS.Text) || 
+          string.IsNullOrEmpty(txtLastname_YS.Text) || 
+          string.IsNullOrEmpty(txtMobileno_YS.Text) || 
+          string.IsNullOrEmpty(txtEmail_YS.Text) ||
+          string.IsNullOrEmpty(txtPassword_YS.Text) ||
+          string.IsNullOrEmpty(txtRetypepassword_YS.Text) ||
+          string.IsNullOrEmpty(txtStorename_YS.Text) ||
+          string.IsNullOrEmpty(txtStorecategory_YS.Text) ||
+          string.IsNullOrEmpty(txtHelplineno_YS.Text) ||
+          string.IsNullOrEmpty(txtAdharcardno_YS.Text))
+      {
+        Response.Write("<script>alert('Please Enter all fileds');</script>");
+        return;
+      }
+      else
+      {
+         _Sql = $@"
 INSERT INTO [dbo].[User](
        [User_ID]
       ,[Email_ID]
@@ -94,9 +111,9 @@ INSERT INTO [dbo].[User](
         , {((rdStoreKeeper_YS.Checked) ? 1 : 0)})
 ";
 
-      InputFile_YS.SaveAs(Server.MapPath("/Images/" + UserGUID + ".jpg"));
-      CommanFile.ExcuteNonQuery_YS(_Sql);
-
+        InputFile_YS.SaveAs(Server.MapPath("/Images/" + UserGUID + ".jpg"));
+        CommanFile.ExcuteNonQuery_YS(_Sql);
+      }
       if (rdCustomers_YS.Checked)
       {
         Guid CustomerGUID = Guid.NewGuid();
@@ -156,8 +173,7 @@ INSERT INTO [dbo].[Store]
         Response.Redirect("LoginPage.aspx");
       }
     }
-
-
+    
 
     #region Events
     protected void rdStoreKeeper_YS_CheckedChanged_YS(object sender, EventArgs e)

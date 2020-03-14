@@ -151,8 +151,9 @@
                                 <asp:Label ID="ltrBirthdate_YS" runat="server" class="input-group-text"><i class="far fa-calendar-alt"></i></asp:Label>
                                 <%--<span class="input-group-text"><i class="far fa-calendar-alt"></i></span>--%>
                             </div>
-                            <asp:TextBox ID="txtBirthDate_YS" runat="server" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask> </asp:TextBox>
-                            <%--<input type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>--%>
+                            <asp:TextBox ID="txtBirthDate_YS" runat="server" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask > </asp:TextBox>
+                            <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="BirthDate is required" ControlToValidate="txtBirthDate_YS"></asp:RequiredFieldValidator>--%>
+                          <%--<input type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>--%>
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -204,8 +205,6 @@
     </aside>
     <!-- /.control-sidebar -->
 
-    <!-- ./wrapper -->
-
     <!-- Select2 -->
     <script src="../../plugins/select2/js/select2.full.min.js"></script>
     <!-- Bootstrap4 Duallistbox -->
@@ -230,8 +229,6 @@
     <!-- jQuery validator -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.js"></script>
     <script src="../../validator.js"></script>
-
-
 
     <!-- Page script -->
     <script>
