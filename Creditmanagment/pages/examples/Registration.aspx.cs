@@ -62,9 +62,9 @@ namespace Creditmanagment.pages.examples
       #endregion
     }
 
+    string _Sql;
     private void BtnRegister_YS_Click_YS(object sender, EventArgs e)
     {
-      string _Sql;
       int IsEmail = Convert.ToInt32(CommanFile.ExcuteScalar_YS($@"
 select count(*) from[dbo].[User] 
 Where 
@@ -75,49 +75,29 @@ Where
         Response.Write("<script>alert('Please Select Another Emailid');</script>");
         return;
       }
-      encryptpassword = CommanFile.encryptionpass(txtPassword_YS.Text);
-      if (string.IsNullOrEmpty(txtFirstname_YS.Text) || 
-          string.IsNullOrEmpty(txtLastname_YS.Text) || 
-          string.IsNullOrEmpty(txtMobileno_YS.Text) || 
-          string.IsNullOrEmpty(txtEmail_YS.Text) ||
-          string.IsNullOrEmpty(txtPassword_YS.Text) ||
-          string.IsNullOrEmpty(txtRetypepassword_YS.Text) ||
-          string.IsNullOrEmpty(txtStorename_YS.Text) ||
-          string.IsNullOrEmpty(txtStorecategory_YS.Text) ||
-          string.IsNullOrEmpty(txtHelplineno_YS.Text) ||
-          string.IsNullOrEmpty(txtAdharcardno_YS.Text))
-      {
-        Response.Write("<script>alert('Please Enter all fileds');</script>");
-        return;
-      }
-      else
-      {
-         _Sql = $@"
-INSERT INTO [dbo].[User](
-       [User_ID]
-      ,[Email_ID]
-      ,[Password]
-      ,[Mobile_No]
-      ,[Photo]
-      ,[Display_Name]
-      ,[Is_Storekeeper]
-)VALUES(
-        '{UserGUID}'
-        ,'{txtEmail_YS.Text}'
-        ,'{encryptpassword}'
-        ,{txtMobileno_YS.Text}
-        ,'{UserGUID}'
-        ,'{txtFirstname_YS.Text} {txtLastname_YS.Text}'
-        , {((rdStoreKeeper_YS.Checked) ? 1 : 0)})
-";
 
-        InputFile_YS.SaveAs(Server.MapPath("/Images/" + UserGUID + ".jpg"));
-        CommanFile.ExcuteNonQuery_YS(_Sql);
-      }
+      encryptpassword = CommanFile.encryptionpass(txtPassword_YS.Text);
+
       if (rdCustomers_YS.Checked)
       {
-        Guid CustomerGUID = Guid.NewGuid();
-        _Sql = $@"
+
+        if (string.IsNullOrEmpty(txtFirstname_YS.Text) ||
+            string.IsNullOrEmpty(txtLastname_YS.Text) ||
+            string.IsNullOrEmpty(txtMobileno_YS.Text) ||
+            string.IsNullOrEmpty(txtEmail_YS.Text) ||
+            string.IsNullOrEmpty(txtPassword_YS.Text) ||
+            string.IsNullOrEmpty(txtRetypepassword_YS.Text) ||
+            string.IsNullOrEmpty(txtAddress_YS.Text)||
+            string.IsNullOrEmpty(txtAdharcardno_YS.Text))
+        {
+          Response.Write("<script>alert('Please Enter all fileds');</script>");
+          return;
+        }
+        else
+        {
+          insert_in_user_table_YS();
+          Guid CustomerGUID = Guid.NewGuid();
+          _Sql = $@"
 INSERT INTO [dbo].[Customers]
            ([Customer_ID]
            ,[User_ID]
@@ -137,16 +117,36 @@ INSERT INTO [dbo].[Customers]
 ,'{txtAddress_YS.Text}'
 ,{txtAdharcardno_YS.Text})
 ";
-        CommanFile.ExcuteNonQuery_YS(_Sql);
-       
-         ScriptManager.RegisterStartupScript(this, GetType(), "alertMessage", "alertMessage();", true);
-        Response.Redirect("LoginPage.aspx");
+          CommanFile.ExcuteNonQuery_YS(_Sql);
+
+          ScriptManager.RegisterStartupScript(this, GetType(), "alertMessage", "alertMessage();", true);
+          Response.Redirect("LoginPage.aspx");
+        }
       }
+
       if (rdStoreKeeper_YS.Checked)
       {
-        Guid StoreGUID = Guid.NewGuid();
+        if (string.IsNullOrEmpty(txtFirstname_YS.Text) ||
+           string.IsNullOrEmpty(txtLastname_YS.Text) ||
+           string.IsNullOrEmpty(txtMobileno_YS.Text) ||
+           string.IsNullOrEmpty(txtEmail_YS.Text) ||
+           string.IsNullOrEmpty(txtPassword_YS.Text) ||
+           string.IsNullOrEmpty(txtRetypepassword_YS.Text) ||
+           string.IsNullOrEmpty(txtAddress_YS.Text) ||
+           string.IsNullOrEmpty(txtStorename_YS.Text) ||
+           string.IsNullOrEmpty(txtStorecategory_YS.Text) ||
+           string.IsNullOrEmpty(txtHelplineno_YS.Text) ||
+           string.IsNullOrEmpty(ddtVouchermode_YS.Text))
+        {
+          Response.Write("<script>alert('Please Enter all fileds');</script>");
+          return;
+        }
+        else
+        {
+          insert_in_user_table_YS();
+          Guid StoreGUID = Guid.NewGuid();
 
-        _Sql = $@"
+          _Sql = $@"
 INSERT INTO [dbo].[Store]
            ([Store_ID]
            ,[User_ID]
@@ -168,12 +168,37 @@ INSERT INTO [dbo].[Store]
 ,'{txtAddress_YS.Text}'
 ,{((Convert.ToInt32(ddtVouchermode_YS.SelectedValue) == 1) ? 1 : 0)})
 ";
-        CommanFile.ExcuteNonQuery_YS(_Sql);
-        //Response.Write("<script>alert('Register Succesfully');</script>");
-        Response.Redirect("LoginPage.aspx");
+          CommanFile.ExcuteNonQuery_YS(_Sql);
+          //Response.Write("<script>alert('Register Succesfully');</script>");
+          Response.Redirect("LoginPage.aspx");
+        }
       }
     }
-    
+
+    private void insert_in_user_table_YS()
+    {
+      _Sql = $@"
+INSERT INTO [dbo].[User](
+       [User_ID]
+      ,[Email_ID]
+      ,[Password]
+      ,[Mobile_No]
+      ,[Photo]
+      ,[Display_Name]
+      ,[Is_Storekeeper]
+)VALUES(
+        '{UserGUID}'
+        ,'{txtEmail_YS.Text}'
+        ,'{encryptpassword}'
+        ,{txtMobileno_YS.Text}
+        ,'{UserGUID}'
+        ,'{txtFirstname_YS.Text} {txtLastname_YS.Text}'
+        , {((rdStoreKeeper_YS.Checked) ? 1 : 0)})
+";
+
+      InputFile_YS.SaveAs(Server.MapPath("/Images/" + UserGUID + ".jpg"));
+      CommanFile.ExcuteNonQuery_YS(_Sql);
+    }
 
     #region Events
     protected void rdStoreKeeper_YS_CheckedChanged_YS(object sender, EventArgs e)

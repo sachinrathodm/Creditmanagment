@@ -13,10 +13,11 @@ namespace Creditmanagment.pages.examples
     public Guid Voucher_ID = Guid.NewGuid();
     DataTable dtCustomers, dtItems;
     string storeid;
+    string userid;
     protected void Page_Load(object sender, EventArgs e)
     {
       btnAdd_YS.Click += BtnAdd_YS_Click_YS;
-      string userid = Session["User_Id"].ToString();
+      userid = Session["User_Id"].ToString();
       if (Session["User_ID"] != null)
       {
         storeid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
@@ -49,6 +50,8 @@ SELECT[Store_ID]
         ddItemName_YS.DataValueField = "Store_Item_ID";
         ddItemName_YS.DataSource = dtItems.DefaultView;
         ddItemName_YS.DataBind();
+        get_Customer_Invoice_YS();
+
       }
       else
         Response.Redirect("pages/examples/LoginPage.aspx");
@@ -60,7 +63,9 @@ SELECT[Store_ID]
       int isquickmode = Convert.ToInt32(CommanFile.ExcuteScalar_YS($@"select Is_Voucher_QuickMode from Store where Store_ID='{storeid}'"));
       if (isquickmode > 0)
       {
-        if (string.IsNullOrEmpty(ddCustomerName_YS.Text) || string.IsNullOrEmpty(txtValue_YS.Text) || string.IsNullOrEmpty(txtQty_YS.Text) || string.IsNullOrEmpty(txtDescription.Text))
+        if (string.IsNullOrEmpty(ddCustomerName_YS.Text) || 
+          string.IsNullOrEmpty(txtValue_YS.Text) ||
+          string.IsNullOrEmpty(txtDescription.Text))
         {
           Response.Write("<script>alert('please Select All Fields');</script>");
           return;
@@ -84,8 +89,26 @@ SELECT[Store_ID]
 ,'S'
 ,+{txtValue_YS.Text})";
         CommanFile.ExcuteNonQuery_YS(sql_de);
+        get_Customer_Invoice_YS();
+
+        txtDescription.Text = null;
+        txtValue_YS.Text = null;
       }
     }
     #endregion
+
+    private void get_Customer_Invoice_YS()
+    {
+      string storecoustomersid = ddCustomerName_YS.DataValueField;
+
+
+      DataTable dtUserRequest = new DataTable();
+      CommanFile.GetDataTable_YS(dtUserRequest, $@"select Description,Amount,Voucher_Date from Voucher
+where Store_ID = '{storeid}' and 
+");
+      
+        gdUserRequest.DataSource = dtUserRequest.DefaultView;
+        gdUserRequest.DataBind();
+    }
   }
 }
