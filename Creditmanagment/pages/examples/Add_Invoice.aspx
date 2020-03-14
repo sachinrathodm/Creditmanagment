@@ -2,9 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   <div class="col-lg-6">
-                <div class="card card-info">
-                    <div class="card-header">
+   <div class="col-lg-6" >
+                <div class="card card-info" >
+                    <div class="card-header"  >
                         <h3 class="card-title">Add Invoice</h3>
                     </div>
                     <!-- /.card-header -->
@@ -34,7 +34,7 @@
                                 <div style="-ms-flex: 0 0 60%;flex: 0 0 250%;max-width: 60%;">
                                     <%--<input type="text" class="form-control" id="inputEmail3" placeholder="Item Name">--%>
                                     <%--<asp:TextBox ID="txtItemname_YS" class="form-control" placeholder="Item Name" runat="server"></asp:TextBox>--%>
-                                    <asp:DropDownList ID="ddItemName_YS" runat="server" class="form-control"></asp:DropDownList><br/>
+                                    <asp:DropDownList ID="ddItemName_YS" UseSubmitBehavior="true" OnSelectedIndexChanged="ddItemName_YS_SelectedIndexChanged" AutoPostBack="True" runat="server" class="form-control" ></asp:DropDownList><br/>
                                   </div>
 
                                <asp:Label ID="lblqty"  runat="server"  class="col-sm-4 col-form-label">Qty</asp:Label>

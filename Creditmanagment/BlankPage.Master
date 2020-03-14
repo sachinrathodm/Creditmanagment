@@ -37,7 +37,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body class="hold-transition sidebar-mini">
-    <form id="form1">
+  
         <!-- Site wrapper -->
         <div class="wrapper">
             <!-- Navbar -->
@@ -754,6 +754,6 @@
 
 
         <script src="../../validator.js"></script>
-    </form>
+   
 </body>
 </html>
