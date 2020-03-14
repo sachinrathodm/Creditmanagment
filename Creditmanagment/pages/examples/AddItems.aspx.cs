@@ -39,7 +39,8 @@ INSERT INTO [dbo].[Store_Item]
 ,'{txtRate_YS.Text}')
 ";
       CommanFile.ExcuteNonQuery_YS(insertItem);
-
+      txtItemname_YS.Text = null;
+      txtRate_YS.Text = null;
     }
   }
 }

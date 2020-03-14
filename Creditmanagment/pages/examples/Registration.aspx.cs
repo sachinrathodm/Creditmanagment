@@ -120,8 +120,8 @@ INSERT INTO [dbo].[Customers]
 ,{txtAdharcardno_YS.Text})
 ";
         CommanFile.ExcuteNonQuery_YS(_Sql);
-        Response.Write("<script LANGUAGE='JavaScript' >alert('Login Successful')</script>");
-        //Response.Write("<script>alert('Register Succesfully');</script>");
+       
+         ScriptManager.RegisterStartupScript(this, GetType(), "alertMessage", "alertMessage();", true);
         Response.Redirect("LoginPage.aspx");
       }
       if (rdStoreKeeper_YS.Checked)

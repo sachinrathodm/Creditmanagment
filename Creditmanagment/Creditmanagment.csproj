@@ -243,7 +243,9 @@
     <Content Include="pages\examples\Contacts.aspx" />
     <Content Include="pages\examples\contacts.html" />
     <Content Include="pages\examples\ContactsUser.aspx" />
+    <Content Include="pages\examples\DisplayItems.aspx" />
     <Content Include="pages\examples\DisplayStoresList_User.aspx" />
+    <Content Include="pages\examples\DisplayUsersList.aspx" />
     <Content Include="pages\examples\e_commerce.html" />
     <Content Include="pages\examples\forgot-password.html" />
     <Content Include="pages\examples\ForgotPasswordPage.aspx" />
@@ -1873,12 +1875,26 @@
     <Compile Include="pages\examples\ContactsUser.aspx.designer.cs">
       <DependentUpon>ContactsUser.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pages\examples\DisplayItems.aspx.cs">
+      <DependentUpon>DisplayItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\examples\DisplayItems.aspx.designer.cs">
+      <DependentUpon>DisplayItems.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\examples\DisplayStoresList_User.aspx.cs">
       <DependentUpon>DisplayStoresList_User.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="pages\examples\DisplayStoresList_User.aspx.designer.cs">
       <DependentUpon>DisplayStoresList_User.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\examples\DisplayUsersList.aspx.cs">
+      <DependentUpon>DisplayUsersList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\examples\DisplayUsersList.aspx.designer.cs">
+      <DependentUpon>DisplayUsersList.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\examples\ForgotPasswordPage.aspx.cs">
       <DependentUpon>ForgotPasswordPage.aspx</DependentUpon>
