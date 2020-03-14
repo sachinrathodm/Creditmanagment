@@ -10,7 +10,7 @@ namespace Creditmanagment.pages
 {
   public partial class AcceptRequest : System.Web.UI.Page
   {
-    string Userid;
+    string Userid ;
     string Storeid;
     DataTable dtStoreDetails = new DataTable();
     protected void Page_Load(object sender, EventArgs e)
@@ -68,6 +68,12 @@ INNER JOIN Customers c ON r.Customer_ID=c.Customer_ID where r.Store_ID='{Storeid
 
     private void BtnAccept_YS_Click_YS(object sender, EventArgs e)
     {
+      Userid = Session["User_ID"].ToString();
+      Storeid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
+select Store_ID from [dbo].[Store]
+Where 
+[User_ID] = '{Userid}'
+"));
       string _sql = $@"UPDATE [dbo].[Store_Customer_Request]
           SET 
           [CU_Request_Status] = 'A'

@@ -13,7 +13,7 @@
                 </div>
                     <!-- Main content -->
                         <div class="row">
-                            <div class="col-7">
+                            <div class="col-5">
                                 <div class="card">
                                     
                                     <!-- /.card-header -->

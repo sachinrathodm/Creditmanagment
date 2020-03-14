@@ -239,6 +239,7 @@
     <Content Include="pages\examples\404.html" />
     <Content Include="pages\examples\500.html" />
     <Content Include="pages\examples\AddItems.aspx" />
+    <Content Include="pages\examples\Add_Invoice.aspx" />
     <Content Include="pages\examples\blank.html" />
     <Content Include="pages\examples\Contacts.aspx" />
     <Content Include="pages\examples\contacts.html" />
@@ -1860,6 +1861,13 @@
     </Compile>
     <Compile Include="pages\examples\AddItems.aspx.designer.cs">
       <DependentUpon>AddItems.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\examples\Add_Invoice.aspx.cs">
+      <DependentUpon>Add_Invoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\examples\Add_Invoice.aspx.designer.cs">
+      <DependentUpon>Add_Invoice.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\examples\Contacts.aspx.cs">
       <DependentUpon>Contacts.aspx</DependentUpon>
