@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 
 namespace Creditmanagment
@@ -46,7 +48,6 @@ namespace Creditmanagment
     }
 
     public static DataTable GetDataTable_YS(DataTable dt, string Query)
-
     {
       SqlConnection conn = new SqlConnection(connetionString);
       conn.Open();
@@ -54,6 +55,30 @@ namespace Creditmanagment
       dt.Load(cmd.ExecuteReader());
       conn.Close();
       return dt;
+    }
+
+    //public static string encryptionpass(String password)
+    //{
+    //  MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+    //  byte[] encrypt;
+    //  UTF8Encoding encode = new UTF8Encoding();
+    //  //encrypt the given password string into Encrypted data  
+    //  encrypt = md5.ComputeHash(encode.GetBytes(password));
+    //  StringBuilder encryptdata = new StringBuilder();
+    //  //Create a new string by using the encrypted data  
+    //  for (int i = 0; i < encrypt.Length; i++)
+    //  {
+    //    encryptdata.Append(encrypt[i].ToString());
+    //  }
+    //  return encryptdata.ToString();
+    //}
+    public static string encryptionpass(string password)
+    {
+      string msg = "";
+      byte[] encode = new byte[password.Length];
+      encode = Encoding.UTF8.GetBytes(password);
+      msg = Convert.ToBase64String(encode);
+      return msg;
     }
   }
 }

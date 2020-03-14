@@ -47,12 +47,13 @@ Where
 "));
           if (CountEmail > 0)
           {
+            string passwordenc= CommanFile.encryptionpass(txtPassword_YS.Text);
             int CountPassword = Convert.ToInt32(CommanFile.ExcuteScalar_YS($@"
 select count(*) from[dbo].[User] 
 Where 
 [Email_ID] = '{txtEmail_YS.Text}'
 AND 
-[Password]='{txtPassword_YS.Text}'
+[Password]='{passwordenc}'
 "));
 
             if (CountPassword > 0)
