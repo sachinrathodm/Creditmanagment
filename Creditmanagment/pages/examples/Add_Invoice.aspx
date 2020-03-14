@@ -22,7 +22,7 @@
                                 <div style="-ms-flex: 0 0 60%; flex: 0 0 250%; max-width: 60%;">
                                     <%--<input type="text" class="form-control" id="inputEmail3" placeholder="Item Name">--%>
                                     <%--<asp:TextBox ID="txtItemname_YS" class="form-control" placeholder="Item Name" runat="server"></asp:TextBox>--%>
-                                    <asp:DropDownList ID="ddStoreName_YS" runat="server" class="form-control"></asp:DropDownList><br/>
+                                    <asp:DropDownList ID="ddItemName_YS" runat="server" class="form-control"></asp:DropDownList><br/>
                                   </div>
                                <label class="col-sm-4 col-form-label">Item Value</label>
                                 <div style="-ms-flex: 0 0 60%; flex: 0 0 250%; max-width: 60%;">
