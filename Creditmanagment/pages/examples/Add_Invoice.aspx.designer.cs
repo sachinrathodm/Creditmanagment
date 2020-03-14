@@ -31,13 +31,22 @@ namespace Creditmanagment.pages.examples {
         protected global::System.Web.UI.WebControls.DropDownList ddCustomerName_YS;
         
         /// <summary>
-        /// ddStoreName_YS control.
+        /// lblitems control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddStoreName_YS;
+        protected global::System.Web.UI.WebControls.Label lblitems;
+        
+        /// <summary>
+        /// ddItemName_YS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddItemName_YS;
         
         /// <summary>
         /// txtValue_YS control.
@@ -56,6 +65,15 @@ namespace Creditmanagment.pages.examples {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDescription;
+        
+        /// <summary>
+        /// lblqty control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblqty;
         
         /// <summary>
         /// txtQty_YS control.
