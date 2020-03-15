@@ -59,7 +59,8 @@ SELECT[Store_ID]
 
     protected void ddItemName_YS_SelectedIndexChanged(object sender, EventArgs e)
     {
-
+  decimal rate = Convert.ToDecimal(CommanFile.ExcuteScalar_YS($@"select rate from Store_Item where Store_Item_ID={ddItemName_YS.SelectedValue}"));
+      txtValue_YS.Text = rate.ToString();
     }
 
 
@@ -67,8 +68,7 @@ SELECT[Store_ID]
     #region Event
     //private void DdItemName_YS_SelectedIndexChanged_YS(object sender, EventArgs e)
     //{
-    //  decimal rate = Convert.ToDecimal(CommanFile.ExcuteScalar_YS($@"select rate from Store_Item where Store_Item_ID={ddItemName_YS.SelectedValue}"));
-    //  txtValue_YS.Text = rate.ToString();
+    
     //}
     private void BtnAdd_YS_Click_YS(object sender, EventArgs e)
     {
@@ -151,7 +151,7 @@ and Store_ID = '{storeid}'"));
 
       DataTable dtUserRequest = new DataTable();
       CommanFile.GetDataTable_YS(dtUserRequest, $@"select Description,Amount,Voucher_Date from Voucher
-where Store_ID = '{storeid}' and 
+where Store_ID = '{storeid}'
 ");
       
         gdUserRequest.DataSource = dtUserRequest.DefaultView;
