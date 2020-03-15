@@ -18,7 +18,7 @@ namespace Creditmanagment.pages.examples
     {
       btnAdd_YS.Click += BtnAdd_YS_Click_YS;
       
-      string userid = Session["User_Id"].ToString();
+       userid = Session["User_Id"].ToString();
       if (Session["User_ID"] != null)
       {
         storeid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
@@ -59,8 +59,17 @@ SELECT[Store_ID]
 
     protected void ddItemName_YS_SelectedIndexChanged(object sender, EventArgs e)
     {
+      string store_Customer_ID = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select Store_Customers_ID from Store_Customers 
+where Store_ID='{storeid}' and Customer_ID='{ddCustomerName_YS.SelectedValue}';"));
+      DataTable dtUserRequest = new DataTable();
+      CommanFile.GetDataTable_YS(dtUserRequest, $@"select Description,Amount,Voucher_Date from Voucher
+where Store_ID = '{storeid}' and Store_Customers_ID='{store_Customer_ID}'
+");
+
   decimal rate = Convert.ToDecimal(CommanFile.ExcuteScalar_YS($@"select rate from Store_Item where Store_Item_ID={ddItemName_YS.SelectedValue}"));
       txtValue_YS.Text = rate.ToString();
+      gdUserRequest.DataSource = dtUserRequest.DefaultView;
+      gdUserRequest.DataBind();
     }
 
 
@@ -82,6 +91,7 @@ SELECT[Store_ID]
           Response.Write("<script>alert('please Select All Fields');</script>");
           return;
         }
+        string store_Customer_ID = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select Store_Customers_ID from Store_Customers where Store_ID='{storeid}' and Customer_ID='{ddCustomerName_YS.SelectedValue}';"));
         string sql_de = $@"INSERT INTO [dbo].[Voucher]
            ([Voucher_ID]
            ,[Store_Customers_ID]
@@ -93,7 +103,7 @@ SELECT[Store_ID]
            ,[Amount_Effect])
      VALUES
            ('{Voucher_ID}'
-,'{ddCustomerName_YS.SelectedValue}'
+,'{store_Customer_ID}'
 ,'{storeid}'
 ,{txtValue_YS.Text}
 ,GETDATE()
@@ -146,12 +156,13 @@ and Store_ID = '{storeid}'"));
 
     private void get_Customer_Invoice_YS()
     {
-      string storecoustomersid = ddCustomerName_YS.DataValueField;
 
 
+      string store_Customer_ID = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select Store_Customers_ID from Store_Customers 
+where Store_ID='{storeid}' and Customer_ID='{ddCustomerName_YS.SelectedValue}';"));
       DataTable dtUserRequest = new DataTable();
       CommanFile.GetDataTable_YS(dtUserRequest, $@"select Description,Amount,Voucher_Date from Voucher
-where Store_ID = '{storeid}'
+where Store_ID = '{storeid}' and Store_Customers_ID='{store_Customer_ID}'
 ");
       
         gdUserRequest.DataSource = dtUserRequest.DefaultView;
