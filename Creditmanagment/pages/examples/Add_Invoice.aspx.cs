@@ -19,55 +19,61 @@ namespace Creditmanagment.pages.examples
       btnAdd_YS.Click += BtnAdd_YS_Click_YS;
       
        userid = Session["User_Id"].ToString();
-      if (Session["User_ID"] != null)
-      {
-        storeid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
+      storeid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
 SELECT[Store_ID]
   FROM [CreditManagement].[dbo].[Store]
   where User_ID = '{userid}'
 "));
-
-        int isquickmode = Convert.ToInt32(CommanFile.ExcuteScalar_YS($@"select Is_Voucher_QuickMode from Store where Store_ID='{storeid}'"));
-        if (isquickmode > 0)
+      if (!Page.IsPostBack)
+      {
+        if (Session["User_ID"] != null)
         {
-          lblitems.Visible = false;
-          lblqty.Visible = false;
-          ddItemName_YS.Visible = false;
-          txtQty_YS.Visible = false;
+          
+          int isquickmode = Convert.ToInt32(CommanFile.ExcuteScalar_YS($@"select Is_Voucher_QuickMode from Store where Store_ID='{storeid}'"));
+          if (isquickmode > 0)
+          {
+            lblitems.Visible = false;
+            lblqty.Visible = false;
+            ddItemName_YS.Visible = false;
+            txtQty_YS.Visible = false;
+          }
+
+          dtCustomers = new DataTable();
+          CommanFile.GetDataTable_YS(dtCustomers, $@"SELECT  c.First_Name+ ' '+c.Last_Name as Customer_Name,*
+FROM Store_Customers sc
+INNER JOIN Customers c ON c.Customer_ID=sc.Customer_ID where sc.Store_ID='{storeid}' ");
+          ddCustomerName_YS.DataTextField = "Customer_Name";
+          ddCustomerName_YS.DataValueField = "Customer_ID";
+          ddCustomerName_YS.DataSource = dtCustomers.DefaultView;
+          ddCustomerName_YS.DataBind();
+
+          dtItems = new DataTable();
+          CommanFile.GetDataTable_YS(dtItems, $@"select * from Store_Item where Store_ID='{storeid}'");
+          ddItemName_YS.DataTextField = "Item_Name";
+          ddItemName_YS.DataValueField = "Store_Item_ID";
+          ddItemName_YS.DataSource = dtItems.DefaultView;
+          ddItemName_YS.DataBind();
+          get_Customer_Invoice_YS();
+
         }
-
-        dtCustomers = new DataTable();
-        CommanFile.GetDataTable_YS(dtCustomers, $@"SELECT First_Name+' '+Last_Name as Customer_Name,Customer_ID
-  FROM[CreditManagement].[dbo].[Customers]");
-        ddCustomerName_YS.DataTextField = "Customer_Name";
-        ddCustomerName_YS.DataValueField = "Customer_ID";
-        ddCustomerName_YS.DataSource = dtCustomers.DefaultView;
-        ddCustomerName_YS.DataBind();
-
-        dtItems = new DataTable();
-        CommanFile.GetDataTable_YS(dtItems, $@"select * from Store_Item where Store_ID='{storeid}'");
-        ddItemName_YS.DataTextField = "Item_Name";
-        ddItemName_YS.DataValueField = "Store_Item_ID";
-        ddItemName_YS.DataSource = dtItems.DefaultView;
-        ddItemName_YS.DataBind();
-        get_Customer_Invoice_YS();
-
+        else
+          Response.Redirect("pages/examples/LoginPage.aspx");
       }
-      else
-        Response.Redirect("pages/examples/LoginPage.aspx");
     }
 
     protected void ddItemName_YS_SelectedIndexChanged(object sender, EventArgs e)
     {
-      string store_Customer_ID = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select Store_Customers_ID from Store_Customers 
-where Store_ID='{storeid}' and Customer_ID='{ddCustomerName_YS.SelectedValue}';"));
-      DataTable dtUserRequest = new DataTable();
-      CommanFile.GetDataTable_YS(dtUserRequest, $@"select Description,Amount,Voucher_Date from Voucher
+      
+        string store_Customer_ID = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select Store_Customers_ID from Store_Customers 
+where Store_ID='{storeid}' and Customer_ID='{ddCustomerName_YS.SelectedValue}'"));
+        DataTable dtUserRequest = new DataTable();
+        CommanFile.GetDataTable_YS(dtUserRequest, $@"select Description,Amount,Voucher_Date from Voucher
 where Store_ID = '{storeid}' and Store_Customers_ID='{store_Customer_ID}'
 ");
 
-      gdUserRequest.DataSource = dtUserRequest.DefaultView;
-      gdUserRequest.DataBind();
+        gdUserRequest.DataSource = dtUserRequest.DefaultView;
+        gdUserRequest.DataBind();
+      
     }
 
 
@@ -155,8 +161,6 @@ and Store_ID = '{storeid}'"));
 
     private void get_Customer_Invoice_YS()
     {
-
-
       string store_Customer_ID = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select Store_Customers_ID from Store_Customers 
 where Store_ID='{storeid}' and Customer_ID='{ddCustomerName_YS.SelectedValue}';"));
       DataTable dtUserRequest = new DataTable();

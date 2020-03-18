@@ -5,7 +5,7 @@
    <div class="col-lg-5">
                 <div class="card card-info">
                     <div class="card-header">
-                        <h3 class="card-title">Send Request</h3>
+                        <h3 class="card-title">Display Items</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
