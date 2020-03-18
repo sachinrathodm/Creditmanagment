@@ -71,9 +71,10 @@ where Store_ID='{storeid}' and Customer_ID='{ddCustomerName_YS.SelectedValue}'")
 where Store_ID = '{storeid}' and Store_Customers_ID='{store_Customer_ID}'
 ");
 
-        gdUserRequest.DataSource = dtUserRequest.DefaultView;
-        gdUserRequest.DataBind();
-      
+  decimal rate = Convert.ToDecimal(CommanFile.ExcuteScalar_YS($@"select rate from Store_Item where Store_Item_ID='{ddItemName_YS.SelectedValue}'"));
+      txtValue_YS.Text = rate.ToString();
+      gdUserRequest.DataSource = dtUserRequest.DefaultView;
+      gdUserRequest.DataBind();
     }
 
 
@@ -81,8 +82,7 @@ where Store_ID = '{storeid}' and Store_Customers_ID='{store_Customer_ID}'
     #region Event
     //private void DdItemName_YS_SelectedIndexChanged_YS(object sender, EventArgs e)
     //{
-    //  decimal rate = Convert.ToDecimal(CommanFile.ExcuteScalar_YS($@"select rate from Store_Item where Store_Item_ID={ddItemName_YS.SelectedValue}"));
-    //  txtValue_YS.Text = rate.ToString();
+    
     //}
     private void BtnAdd_YS_Click_YS(object sender, EventArgs e)
     {
