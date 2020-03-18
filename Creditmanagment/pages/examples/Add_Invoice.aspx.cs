@@ -37,8 +37,9 @@ SELECT[Store_ID]
         }
 
         dtCustomers = new DataTable();
-        CommanFile.GetDataTable_YS(dtCustomers, $@"SELECT First_Name+' '+Last_Name as Customer_Name,Customer_ID
-  FROM[CreditManagement].[dbo].[Customers]");
+        CommanFile.GetDataTable_YS(dtCustomers, $@"SELECT  c.First_Name+ ' '+c.Last_Name as Customer_Name,*
+FROM Store_Customers sc
+INNER JOIN Customers c ON c.Customer_ID=sc.Customer_ID where sc.Store_ID='{storeid}';");
         ddCustomerName_YS.DataTextField = "Customer_Name";
         ddCustomerName_YS.DataValueField = "Customer_ID";
         ddCustomerName_YS.DataSource = dtCustomers.DefaultView;
@@ -50,7 +51,7 @@ SELECT[Store_ID]
         ddItemName_YS.DataValueField = "Store_Item_ID";
         ddItemName_YS.DataSource = dtItems.DefaultView;
         ddItemName_YS.DataBind();
-        get_Customer_Invoice_YS();
+       // get_Customer_Invoice_YS();
 
       }
       else
@@ -66,7 +67,7 @@ where Store_ID='{storeid}' and Customer_ID='{ddCustomerName_YS.SelectedValue}';"
 where Store_ID = '{storeid}' and Store_Customers_ID='{store_Customer_ID}'
 ");
 
-  decimal rate = Convert.ToDecimal(CommanFile.ExcuteScalar_YS($@"select rate from Store_Item where Store_Item_ID={ddItemName_YS.SelectedValue}"));
+  decimal rate = Convert.ToDecimal(CommanFile.ExcuteScalar_YS($@"select rate from Store_Item where Store_Item_ID='{ddItemName_YS.SelectedValue}'"));
       txtValue_YS.Text = rate.ToString();
       gdUserRequest.DataSource = dtUserRequest.DefaultView;
       gdUserRequest.DataBind();
