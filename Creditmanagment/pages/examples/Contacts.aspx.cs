@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +11,13 @@ namespace Creditmanagment.pages.examples
   {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+      if (string.IsNullOrEmpty(Session["User_ID"].ToString()))
+      {
+        Response.Redirect("LoginPage.aspx");
+      }
+      else
+      {
+      }
     }
   }
 }

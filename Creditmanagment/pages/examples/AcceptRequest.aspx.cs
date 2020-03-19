@@ -23,6 +23,13 @@ namespace Creditmanagment.pages
       {
         Response.Redirect("SessionErrorMessage.aspx");
       }
+      if (string.IsNullOrEmpty(Session["User_ID"].ToString()))
+      {
+        Response.Redirect("LoginPage.aspx");
+      }
+      else
+      {
+      Userid = Session["User_ID"].ToString();
       //Event
       btnAccept_YS.Click += BtnAccept_YS_Click_YS;
       btnReject_YS.Click += BtnReject_YS_Click_YS;
@@ -48,6 +55,7 @@ INNER JOIN Customers c ON r.Customer_ID=c.Customer_ID where r.Store_ID='{Storeid
         else
           Response.Redirect("pages/examples/LoginPage.aspx");
       }
+    }
     }
 
     #region Events
@@ -98,7 +106,7 @@ select Store_ID from [dbo].[Store] where User_ID='{Userid}'"));
            ('{Store_Customers_ID}'
 ,'{Customer_ID}'
 ,'{Storeid}'
-,500
+,2000
 ,GETDATE()
 ,0
 ,'N')";

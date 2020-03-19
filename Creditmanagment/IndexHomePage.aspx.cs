@@ -12,34 +12,39 @@ namespace Creditmanagment
     string userid;
     protected void Page_Load(object sender, EventArgs e)
     {
-      
-      try
+      if (string.IsNullOrEmpty( Session["User_ID"].ToString()))
       {
-        userid = Session["User_Id"].ToString();
+        Response.Redirect("LoginPage.aspx");
       }
-      catch (Exception)
+      else
       {
-        Response.Redirect("pages/examples/LoginPage.aspx");
-      }
-      if (Session["User_ID"] != null)
+        string userid = Session["User_Id"].ToString();
+        try
         {
-          string storeid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
+          if (Session["User_ID"] != null)
+          {
+            string storeid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
 SELECT[Store_ID]
   FROM [CreditManagement].[dbo].[Store]
   where User_ID = '{userid}'
 "));
 
-          string totalcoustomers = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
+            string totalcoustomers = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
 Select count(*) from [Store_Customers] 
 where Store_ID = '{storeid}'
 "));
 
-          lblNumberofuser_YS.Text = totalcoustomers;
+            lblNumberofuser_YS.Text = totalcoustomers;
 
+          }
+          else
+            Response.Redirect("pages/examples/LoginPage.aspx");
         }
-        else
+        catch (Exception)
+        {
           Response.Redirect("pages/examples/LoginPage.aspx");
-      
+        }
+      }
 
     }
   }

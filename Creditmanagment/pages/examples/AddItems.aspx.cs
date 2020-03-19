@@ -23,6 +23,17 @@ namespace Creditmanagment.pages.examples
       {
         Response.Redirect("SessionErrorMessage.aspx");
       }
+      if (string.IsNullOrEmpty(Session["User_ID"].ToString()))
+      {
+        Response.Redirect("LoginPage.aspx");
+      }
+      else
+      {
+        //Events
+        btnAddItem_YS.Click += BtnAddItem_YS_Click_YS;
+        User_id_YS = Session["User_ID"].ToString();
+      }
+
     }
 
     private void BtnAddItem_YS_Click_YS(object sender, EventArgs e)

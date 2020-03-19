@@ -11,26 +11,35 @@ namespace Creditmanagment
   {
     protected void Page_Load(object sender, EventArgs e)
     {
-      string userid = Session["User_ID"].ToString();
-      if (Session["User_ID"] != null)
+      if (string.IsNullOrEmpty(Session["User_ID"].ToString()))
       {
-        string customerid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
+        Response.Redirect("LoginPage.aspx");
+      }
+      else
+      {
+
+
+        string userid = Session["User_ID"].ToString();
+        if (Session["User_ID"] != null)
+        {
+          string customerid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
 SELECT[Customer_ID]
       ,[User_ID]
     FROM[CreditManagement].[dbo].[Customers]
     where User_ID = '{userid}'
 "));
 
-        string totaluser = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
+          string totaluser = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
 SELECT Count([CU_Request_Status])
   FROM [CreditManagement].[dbo].[Store_Customer_Request]
   where Customer_ID = '{customerid}' and CU_Request_Status = 'A'
 "));
 
-        lblNumberofuser1_YS.Text = totaluser;
+          lblNumberofuser1_YS.Text = totaluser;
+        }
+        else
+          Response.Redirect("pages/examples/LoginPage.aspx");
       }
-      else
-        Response.Redirect("pages/examples/LoginPage.aspx");
     }
   }
 }
