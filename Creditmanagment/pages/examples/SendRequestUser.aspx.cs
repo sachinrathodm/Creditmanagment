@@ -10,12 +10,19 @@ namespace Creditmanagment.pages.examples
 {
   public partial class SendRequestUser : System.Web.UI.Page
   {
-    string Userid;
+    string userid;
     Guid Store_Customer_Request_ID = Guid.NewGuid();
 
     protected void Page_Load(object sender, EventArgs e)
     {
-      Userid = Session["User_ID"].ToString();
+      try
+      {
+        userid = Session["User_ID"].ToString();
+      }
+      catch (Exception)
+    {
+        Response.Redirect("SessionErrorMessage.aspx");
+      }
       //Events
       btnSend_YS.Click += BtnSend_YS_Click_YS;
 
@@ -42,7 +49,7 @@ namespace Creditmanagment.pages.examples
       string Customerid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
 select Customer_ID from [dbo].[Customers]
 Where 
-[User_Id] = '{Userid}'
+[User_Id] = '{userid}'
 "));
       DataTable dtUserRequest = new DataTable();
       CommanFile.GetDataTable_YS(dtUserRequest, $@"SELECT s.Store_Name,r.Store_Request_Date,r.CU_Request_Status
@@ -60,7 +67,7 @@ INNER JOIN Store s ON r.Store_ID=s.Store_ID where r.CU_Request_Status='p' and r.
       string Customerid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
 select Customer_ID from [dbo].[Customers]
 Where 
-[User_ID] = '{Userid}'
+[User_ID] = '{userid}'
 "));
 
       string Storeid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"

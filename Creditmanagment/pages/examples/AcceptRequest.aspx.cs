@@ -10,12 +10,19 @@ namespace Creditmanagment.pages
 {
   public partial class AcceptRequest : System.Web.UI.Page
   {
-    string Userid ;
+    string Userid;
     string Storeid;
     DataTable dtStoreDetails = new DataTable();
     protected void Page_Load(object sender, EventArgs e)
     {
-      Userid = Session["User_ID"].ToString();
+      try
+      {
+        Userid = Session["User_ID"].ToString();
+      }
+      catch (Exception)
+      {
+        Response.Redirect("SessionErrorMessage.aspx");
+      }
       //Event
       btnAccept_YS.Click += BtnAccept_YS_Click_YS;
       btnReject_YS.Click += BtnReject_YS_Click_YS;
@@ -77,7 +84,7 @@ select Store_ID from [dbo].[Store] where User_ID='{Userid}'"));
       CommanFile.ExcuteNonQuery_YS(_sql);
       Guid Store_Customers_ID = Guid.NewGuid();
       string Customer_ID = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select Customer_ID from Store_Customer_Request where Store_Customer_Request_ID='{ddCustomerRequest.SelectedValue.ToString()}'"));
-      
+
 
       _sql = $@"INSERT INTO [dbo].[Store_Customers]
            ([Store_Customers_ID]

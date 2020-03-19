@@ -55,7 +55,7 @@
                     <!-- Main content -->
                     <section class="content">
                         <div class="row">
-                            <div class="col-12">
+                            <div class="col-10">
                                 <div class="card">
                                     <div class="card-header">
                                         <h3 class="card-title">Items</h3>
@@ -69,6 +69,7 @@
                                 </div>
                             </div>
                         </div>
+                      </section>
                 </div>
            
             <!-- /.card -->

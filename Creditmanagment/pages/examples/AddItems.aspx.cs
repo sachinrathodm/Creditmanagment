@@ -10,13 +10,19 @@ namespace Creditmanagment.pages.examples
   public partial class AddItems : System.Web.UI.Page
   {
     public Guid Storeitemid = Guid.NewGuid();
-    public string User_id_YS;
+    public string userid;
     protected void Page_Load(object sender, EventArgs e)
     {
       //Events
       btnAddItem_YS.Click += BtnAddItem_YS_Click_YS;
-      User_id_YS=Session["User_ID"].ToString();
-      
+      try
+      {
+        userid = Session["User_ID"].ToString();
+      }
+      catch (Exception)
+      {
+        Response.Redirect("SessionErrorMessage.aspx");
+      }
     }
 
     private void BtnAddItem_YS_Click_YS(object sender, EventArgs e)
@@ -24,7 +30,7 @@ namespace Creditmanagment.pages.examples
       string Strore_ID_YS = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
 select Store_ID from [dbo].[Store] 
 Where 
-[User_ID] = '{User_id_YS}'
+[User_ID] = '{userid}'
 "));
       string insertItem = $@"
 INSERT INTO [dbo].[Store_Item]

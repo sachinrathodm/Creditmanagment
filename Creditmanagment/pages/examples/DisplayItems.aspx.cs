@@ -10,9 +10,17 @@ namespace Creditmanagment.pages.examples
 {
   public partial class DisplayItems : System.Web.UI.Page
   {
+    string userid;
     protected void Page_Load(object sender, EventArgs e)
     {
-      string userid = Session["User_Id"].ToString();
+      try
+      {
+        userid = Session["User_ID"].ToString();
+      }
+      catch (Exception)
+      {
+        Response.Redirect("pages/examples/LoginPage.aspx");
+      }
       if (Session["User_ID"] != null)
       {
         string storeid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"

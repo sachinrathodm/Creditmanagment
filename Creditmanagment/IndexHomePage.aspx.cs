@@ -9,12 +9,19 @@ namespace Creditmanagment
 {
   public partial class IndexHomePage : System.Web.UI.Page
   {
+    string userid;
     protected void Page_Load(object sender, EventArgs e)
     {
-      string userid = Session["User_Id"].ToString();
+      
       try
       {
-        if (Session["User_ID"] != null)
+        userid = Session["User_Id"].ToString();
+      }
+      catch (Exception)
+      {
+        Response.Redirect("pages/examples/LoginPage.aspx");
+      }
+      if (Session["User_ID"] != null)
         {
           string storeid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
 SELECT[Store_ID]
@@ -32,11 +39,7 @@ where Store_ID = '{storeid}'
         }
         else
           Response.Redirect("pages/examples/LoginPage.aspx");
-      }
-      catch (Exception)
-      {
-        Response.Redirect("pages/examples/LoginPage.aspx");
-      }
+      
 
     }
   }

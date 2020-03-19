@@ -253,6 +253,9 @@
     <Content Include="pages\examples\invoice-print.html" />
     <Content Include="pages\examples\Invoice.aspx" />
     <Content Include="pages\examples\invoice.html" />
+    <Content Include="pages\examples\Invoice_Print_Click_User.aspx" />
+    <Content Include="pages\examples\Invoice_print_User.aspx" />
+    <Content Include="pages\examples\Invoice_User.aspx" />
     <Content Include="pages\examples\language-menu.html" />
     <Content Include="pages\examples\legacy-user-menu.html" />
     <Content Include="pages\examples\lockscreen.html" />
@@ -262,6 +265,7 @@
     <Content Include="pages\examples\recover-password.html" />
     <Content Include="pages\examples\Registration.aspx" />
     <Content Include="pages\examples\SendRequestUser.aspx" />
+    <Content Include="pages\examples\SessionErrorMessage.aspx" />
     <Content Include="pages\widgets.html" />
     <Content Include="plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.css" />
     <Content Include="plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.min.css" />
@@ -1918,6 +1922,27 @@
     <Compile Include="pages\examples\Invoice.aspx.designer.cs">
       <DependentUpon>Invoice.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pages\examples\Invoice_Print_Click_User.aspx.cs">
+      <DependentUpon>Invoice_Print_Click_User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\examples\Invoice_Print_Click_User.aspx.designer.cs">
+      <DependentUpon>Invoice_Print_Click_User.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\examples\Invoice_print_User.aspx.cs">
+      <DependentUpon>Invoice_print_User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\examples\Invoice_print_User.aspx.designer.cs">
+      <DependentUpon>Invoice_print_User.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\examples\Invoice_User.aspx.cs">
+      <DependentUpon>Invoice_User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\examples\Invoice_User.aspx.designer.cs">
+      <DependentUpon>Invoice_User.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\examples\LoginPage.aspx.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1945,6 +1970,13 @@
     </Compile>
     <Compile Include="pages\examples\SendRequestUser.aspx.designer.cs">
       <DependentUpon>SendRequestUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\examples\SessionErrorMessage.aspx.cs">
+      <DependentUpon>SessionErrorMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\examples\SessionErrorMessage.aspx.designer.cs">
+      <DependentUpon>SessionErrorMessage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserBlankPage.Master.cs">

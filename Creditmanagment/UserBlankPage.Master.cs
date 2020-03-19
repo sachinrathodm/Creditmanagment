@@ -9,15 +9,28 @@ namespace Creditmanagment
 {
   public partial class UserBlankPage : System.Web.UI.MasterPage
   {
+    string userid;
     protected void Page_Load(object sender, EventArgs e)
     {
-      string UserGUID = Session["User_ID"].ToString();
+
+      try
+      {
+        userid = Session["User_ID"].ToString();
+      }
+      catch (Exception ex)
+      {
+        if ((ex is System.Threading.ThreadExceptionEventArgs))
+        {
+          Response.Redirect("SessionErrorMessage.aspx");
+        }
+
+      }
       if (Session["User_ID"] != null && Session["Display_Name"] != null)
       {
         lblName_YS.Text = Session["Display_Name"].ToString();
 
       }
-      imgUserImage_YS.ImageUrl = $@"{("~/Images/" + UserGUID + ".jpg")}";
+      imgUserImage_YS.ImageUrl = $@"{("~/Images/" + userid + ".jpg")}";
     }
   }
 }
