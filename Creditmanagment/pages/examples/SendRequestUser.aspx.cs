@@ -20,29 +20,29 @@ namespace Creditmanagment.pages.examples
         userid = Session["User_ID"].ToString();
       }
       catch (Exception)
-    {
+      {
         Response.Redirect("SessionErrorMessage.aspx");
       }
       //Events
       btnSend_YS.Click += BtnSend_YS_Click_YS;
 
-        if (!Page.IsPostBack)
+      if (!Page.IsPostBack)
+      {
+        if (Session["User_ID"] != null)
         {
-          if (Session["User_ID"] != null)
-          {
-            DataTable dtStoreDetails = new DataTable();
-            CommanFile.GetDataTable_YS(dtStoreDetails, "select * from [dbo].[Store]");
-            ddStoreName_YS.DataTextField = "Store_Name";
-            ddStoreName_YS.DataValueField = "Store_ID";
-            ddStoreName_YS.DataSource = dtStoreDetails.DefaultView;
-            ddStoreName_YS.DataBind();
-          }
-          else
-            Response.Redirect("pages/examples/LoginPage.aspx");
+          DataTable dtStoreDetails = new DataTable();
+          CommanFile.GetDataTable_YS(dtStoreDetails, "select * from [dbo].[Store]");
+          ddStoreName_YS.DataTextField = "Store_Name";
+          ddStoreName_YS.DataValueField = "Store_ID";
+          ddStoreName_YS.DataSource = dtStoreDetails.DefaultView;
+          ddStoreName_YS.DataBind();
         }
-        get_Request_Details_YS();
+        else
+          Response.Redirect("pages/examples/LoginPage.aspx");
       }
+      get_Request_Details_YS();
     }
+
 
     #region Get Request Details Method
     protected void get_Request_Details_YS()

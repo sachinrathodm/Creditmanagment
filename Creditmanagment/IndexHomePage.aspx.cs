@@ -18,7 +18,7 @@ namespace Creditmanagment
       }
       else
       {
-        string userid = Session["User_Id"].ToString();
+        userid = Session["User_Id"].ToString();
         try
         {
           if (Session["User_ID"] != null)

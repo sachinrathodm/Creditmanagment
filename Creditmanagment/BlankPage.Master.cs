@@ -12,13 +12,13 @@ namespace Creditmanagment.pages.examples
     string userid;
     protected void Page_Load(object sender, EventArgs e)
     {
-      if(userid == null)
+      try
       { 
-        Response.Redirect("SessionErrorMessage.aspx");
-      }
-     else
-      {
         userid = Session["User_ID"].ToString();
+      }
+     catch(Exception)
+      {
+        Response.Redirect("SessionErrorMessage.aspx");
       }
 
       if (Session["User_ID"] != null && Session["Display_Name"] != null)

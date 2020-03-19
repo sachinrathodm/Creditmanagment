@@ -31,7 +31,7 @@ namespace Creditmanagment.pages.examples
       {
         //Events
         btnAddItem_YS.Click += BtnAddItem_YS_Click_YS;
-        User_id_YS = Session["User_ID"].ToString();
+       
       }
 
     }

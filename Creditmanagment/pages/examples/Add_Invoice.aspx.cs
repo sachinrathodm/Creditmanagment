@@ -32,9 +32,7 @@ namespace Creditmanagment.pages.examples
         {
           Response.Redirect("SessionErrorMessage.aspx");
         }
-        storeid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
-
-      userid = Session["User_Id"].ToString();
+       
       storeid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
 SELECT[Store_ID]
   FROM [CreditManagement].[dbo].[Store]
@@ -156,6 +154,8 @@ where Store_ID = '{storeid}' and Store_Customers_ID='{store_Customer_ID}'
         int count = Convert.ToInt32(CommanFile.ExcuteScalar_YS($@"select Count(*) from Voucher where Voucher_ID='{(Guid)Session["Voucher_ID"]}'"));
         if (count <= 0)
         {
+          string store_Customer_ID = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select Store_Customers_ID from Store_Customers where Store_ID='{storeid}' and Customer_ID='{ddCustomerName_YS.SelectedValue}';"));
+
           string sql_de = $@"INSERT INTO [dbo].[Voucher]
            ([Voucher_ID]
            ,[Store_Customers_ID]
@@ -210,6 +210,8 @@ WHERE Voucher_ID ='{(Guid)Session["Voucher_ID"]}'";
         CommanFile.ExcuteNonQuery_YS(updatequery);
         get_Customer_Invoice_YS();
       }
+      string store_CustomerID = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select Store_Customers_ID from Store_Customers where Store_ID='{storeid}' and Customer_ID='{ddCustomerName_YS.SelectedValue}';"));
+
       string customerstoreid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select Store_Customers_ID from Store_Customers 
 where Customer_ID = '{ddCustomerName_YS.SelectedValue}'
 and Store_ID = '{storeid}'"));
@@ -217,7 +219,7 @@ and Store_ID = '{storeid}'"));
       string updatecreditused = $@"
 UPDATE Store_Customers
 SET Credit_Used ={Creditused}
-WHERE Store_Customers_ID = '{store_Customer_ID}'";
+WHERE Store_Customers_ID = '{store_CustomerID}'";
       CommanFile.ExcuteNonQuery_YS(updatecreditused);
 
     }

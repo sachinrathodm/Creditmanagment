@@ -19,7 +19,7 @@ namespace Creditmanagment.pages.examples
       }
       catch (Exception)
       {
-        Response.Redirect("pages/examples/LoginPage.aspx");
+        Response.Redirect("LoginPage.aspx");
       }
       if (Session["User_ID"] != null)
       {
@@ -40,8 +40,8 @@ where store.Store_ID = '{storeid}'
           gdDisplayUsers.DataBind();
         }
         else
-          Response.Redirect("pages/examples/LoginPage.aspx");
+          Response.Redirect("LoginPage.aspx");
       }
     }
   }
-}
+
