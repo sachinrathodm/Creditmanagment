@@ -13,6 +13,8 @@ namespace Creditmanagment.pages.examples
     {
       if (Session["User_ID"] != null)
       {
+        Session.Clear();
+        Session.Abandon();
         Session.RemoveAll();
         Response.Redirect("LoginPage.aspx");
       }

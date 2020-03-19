@@ -15,25 +15,34 @@ namespace Creditmanagment.pages.examples
 
     protected void Page_Load(object sender, EventArgs e)
     {
-      Userid = Session["User_ID"].ToString();
-      //Events
-      btnSend_YS.Click += BtnSend_YS_Click_YS;
-
-      if (!Page.IsPostBack)
+      if (string.IsNullOrEmpty(Session["User_ID"].ToString()))
       {
-        if (Session["User_ID"] != null)
-        {
-          DataTable dtStoreDetails = new DataTable();
-          CommanFile.GetDataTable_YS(dtStoreDetails, "select * from [dbo].[Store]");
-          ddStoreName_YS.DataTextField = "Store_Name";
-          ddStoreName_YS.DataValueField = "Store_ID";
-          ddStoreName_YS.DataSource = dtStoreDetails.DefaultView;
-          ddStoreName_YS.DataBind();  
-        }
-        else
-          Response.Redirect("pages/examples/LoginPage.aspx");
+        Response.Redirect("LoginPage.aspx");
       }
-      get_Request_Details_YS();
+      else
+      {
+
+
+        Userid = Session["User_ID"].ToString();
+        //Events
+        btnSend_YS.Click += BtnSend_YS_Click_YS;
+
+        if (!Page.IsPostBack)
+        {
+          if (Session["User_ID"] != null)
+          {
+            DataTable dtStoreDetails = new DataTable();
+            CommanFile.GetDataTable_YS(dtStoreDetails, "select * from [dbo].[Store]");
+            ddStoreName_YS.DataTextField = "Store_Name";
+            ddStoreName_YS.DataValueField = "Store_ID";
+            ddStoreName_YS.DataSource = dtStoreDetails.DefaultView;
+            ddStoreName_YS.DataBind();
+          }
+          else
+            Response.Redirect("pages/examples/LoginPage.aspx");
+        }
+        get_Request_Details_YS();
+      }
     }
 
     #region Get Request Details Method
@@ -56,7 +65,7 @@ INNER JOIN Store s ON r.Store_ID=s.Store_ID where r.CU_Request_Status='p' and r.
 
     #region Events
     private void BtnSend_YS_Click_YS(object sender, EventArgs e)
-     {
+    {
       string Customerid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
 select Customer_ID from [dbo].[Customers]
 Where 
