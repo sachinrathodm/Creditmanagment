@@ -2,6 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+ <form runat="server">
   <!-- Content Header (Page header) -->
       <div class="container-fluid">
         <div class="row mb-2">
@@ -109,14 +111,15 @@
                   <button type="button" class="btn btn-success float-right"><i class="far fa-credit-card"></i> Submit
                     Payment
                   </button>
-                  <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
-                    <i class="fas fa-download"></i> Generate PDF
-                  </button>
+                  <asp:Button  runat="server" ID="btnGenratePDF"  class="btn btn-primary float-right" Text="Generate PDF" style="margin-right: 5px;"/>
+                    
+                  
                 </div>
               </div>
             </div>
             <!-- /.invoice -->
           </div>
+   </form>
   <!-- /.col -->
   <%--<script type="text/javascript"> 
   window.addEventListener("load", window.print());

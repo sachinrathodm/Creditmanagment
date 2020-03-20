@@ -13,6 +13,8 @@ namespace Creditmanagment.pages.examples
     public string userid;
     protected void Page_Load(object sender, EventArgs e)
     {
+      //Events
+      btnAddItem_YS.Click += BtnAddItem_YS_Click_YS;
       try
       {
         userid = Session["User_ID"].ToString();
@@ -57,7 +59,7 @@ INSERT INTO [dbo].[Store_Item]
            ('{Storeitemid}'
 ,'{Strore_ID_YS}'
 ,'{txtItemname_YS.Text}'
-,'{txtRate_YS.Text}')
+,{txtRate_YS.Text})
 ";
         CommanFile.ExcuteNonQuery_YS(insertItem);
         txtItemname_YS.Text = null;
