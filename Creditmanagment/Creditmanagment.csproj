@@ -254,7 +254,6 @@
     <Content Include="pages\examples\Invoice.aspx" />
     <Content Include="pages\examples\invoice.html" />
     <Content Include="pages\examples\Invoice_Print_Click_User.aspx" />
-    <Content Include="pages\examples\Invoice_print_User.aspx" />
     <Content Include="pages\examples\Invoice_User.aspx" />
     <Content Include="pages\examples\language-menu.html" />
     <Content Include="pages\examples\legacy-user-menu.html" />
@@ -1928,13 +1927,6 @@
     </Compile>
     <Compile Include="pages\examples\Invoice_Print_Click_User.aspx.designer.cs">
       <DependentUpon>Invoice_Print_Click_User.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pages\examples\Invoice_print_User.aspx.cs">
-      <DependentUpon>Invoice_print_User.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pages\examples\Invoice_print_User.aspx.designer.cs">
-      <DependentUpon>Invoice_print_User.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\examples\Invoice_User.aspx.cs">
       <DependentUpon>Invoice_User.aspx</DependentUpon>
