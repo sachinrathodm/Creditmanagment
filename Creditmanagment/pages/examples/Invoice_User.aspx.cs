@@ -21,16 +21,8 @@ namespace Creditmanagment.pages.examples
       }
       catch (Exception ex)
       {
-        List<SessionErrorMessage> sessionErrorMessages = null;
-        if (sessionErrorMessages == null)
-        {
           Response.Redirect("SessionErrorMessage.aspx");
-        }
-        
       }
-
-      
-
       if (Session["User_ID"] != null && Session["Display_Name"] != null)
       {
 //        storeid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
@@ -47,7 +39,6 @@ Where
         {
           if (Session["User_ID"] != null)
           {
-
             DataTable dtStoreDetails = new DataTable();
             CommanFile.GetDataTable_YS(dtStoreDetails, $@"SELECT *
 FROM Store_Customers
@@ -58,9 +49,8 @@ INNER JOIN Store ON Store.Store_ID = Store_Customers.Store_ID where Store_Custom
             ddStoreName_YS.DataBind();
           }
           else
-            Response.Redirect("pages/examples/LoginPage.aspx");
+            Response.Redirect("LoginPage.aspx");
         }
-
       }
     }
 
@@ -68,7 +58,7 @@ INNER JOIN Store ON Store.Store_ID = Store_Customers.Store_ID where Store_Custom
     {
       Button btn = (Button)sender;
       Session["voucherid"] = btn.CommandArgument;
-      Response.Redirect("Invoice_print_User.aspx");
+      Response.Redirect("Invoice_print_User_Store.aspx");
     }
 
     private void BtnOk_YS_Click_YS(object sender, EventArgs e)
@@ -84,7 +74,6 @@ INNER JOIN Store ON Store.Store_ID = Store_Customers.Store_ID where Store_Custom
         CommanFile.GetDataTable_YS(dtUserRequest, $@"select Voucher_ID,Description,Amount,Voucher_Date from Voucher
 where Store_ID = '{ddStoreName_YS.SelectedValue}'
 ");
-
         gdInvoic_YS.DataSource = dtUserRequest.DefaultView;
         gdInvoic_YS.DataBind();
       }

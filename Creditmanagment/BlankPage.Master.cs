@@ -32,6 +32,9 @@ SELECT[Store_ID]
   FROM [CreditManagement].[dbo].[Store]
   where User_ID = '{userid}'
 "));
+        //int isquickmode = Convert.ToInt32(CommanFile.ExcuteScalar_YS($@"select Is_Voucher_QuickMode from Store where Store_ID='{storeid}'"));
+
+        //Session["isquickmode"] = isquickmode.ToString();
 
         int countrequest = Convert.ToInt32(CommanFile.ExcuteScalar_YS($@"
 select count(*) FRom Store_Customer_Request

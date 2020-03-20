@@ -19,7 +19,7 @@ namespace Creditmanagment.pages.examples
       }
       catch (Exception)
       {
-        Response.Redirect("LoginPage.aspx");
+        Response.Redirect("SessionErrorMessage.aspx");
       }
       if (Session["User_ID"] != null)
       {

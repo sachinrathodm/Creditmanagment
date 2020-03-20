@@ -13,8 +13,6 @@ namespace Creditmanagment.pages.examples
     public string userid;
     protected void Page_Load(object sender, EventArgs e)
     {
-      //Events
-      btnAddItem_YS.Click += BtnAddItem_YS_Click_YS;
       try
       {
         userid = Session["User_ID"].ToString();
@@ -31,19 +29,25 @@ namespace Creditmanagment.pages.examples
       {
         //Events
         btnAddItem_YS.Click += BtnAddItem_YS_Click_YS;
-       
       }
-
     }
 
     private void BtnAddItem_YS_Click_YS(object sender, EventArgs e)
     {
-      string Strore_ID_YS = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
+      if (string.IsNullOrEmpty(txtItemname_YS.Text) ||
+            string.IsNullOrEmpty(txtRate_YS.Text))
+      {
+        Response.Write("<script>alert('Please Enter all fileds');</script>");
+        return;
+      }
+      else
+      {
+        string Strore_ID_YS = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
 select Store_ID from [dbo].[Store] 
 Where 
 [User_ID] = '{userid}'
 "));
-      string insertItem = $@"
+        string insertItem = $@"
 INSERT INTO [dbo].[Store_Item]
            ([Store_Item_ID]
            ,[Store_ID]
@@ -55,9 +59,10 @@ INSERT INTO [dbo].[Store_Item]
 ,'{txtItemname_YS.Text}'
 ,'{txtRate_YS.Text}')
 ";
-      CommanFile.ExcuteNonQuery_YS(insertItem);
-      txtItemname_YS.Text = null;
-      txtRate_YS.Text = null;
+        CommanFile.ExcuteNonQuery_YS(insertItem);
+        txtItemname_YS.Text = null;
+        txtRate_YS.Text = null;
+      }
+      }
     }
   }
-}

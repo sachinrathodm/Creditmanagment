@@ -12,13 +12,25 @@ namespace Creditmanagment
     string userid;
     protected void Page_Load(object sender, EventArgs e)
     {
-      if (string.IsNullOrEmpty( Session["User_ID"].ToString()))
+      try
+      {
+        if (string.IsNullOrEmpty(Session["User_ID"].ToString()))
+        {
+          Response.Redirect("LoginPage.aspx");
+        }
+        userid = Session["User_Id"].ToString();
+      }
+      catch (Exception)
+      {
+        Response.Redirect("/pages/examples/LoginPage.aspx");
+      }
+      if (string.IsNullOrEmpty(Session["User_ID"].ToString()))
       {
         Response.Redirect("LoginPage.aspx");
       }
       else
       {
-        userid = Session["User_Id"].ToString();
+        
         try
         {
           if (Session["User_ID"] != null)

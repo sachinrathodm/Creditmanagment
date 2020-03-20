@@ -16,9 +16,7 @@
             </div>
         </div>
         <div class="col-sm-5">
-
             <div class="card card-info">
-
                 <form class="form-horizontal" runat="server" id="form1">
                     <div class="card-header">
                         <h3 class="card-title">Display Invoice</h3>
@@ -46,10 +44,10 @@
         </div>
 
         <!-- /.card-footer -->
-        <div class="content-wrapper col-lg-5">
+        <div class="content-wrapper col-lg-9">
             <!-- Main content -->
             <div class="row">
-                <div class="col-11">
+                <div class="col-10">
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Invoic</h3>

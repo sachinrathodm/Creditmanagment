@@ -40,9 +40,18 @@
                             </div>
                         </div>
                     </div>
+                   <div class="input-group mb-3">
+                        <asp:TextBox ID="txtUserid_YS" runat="server" type="text" class="form-control" placeholder="User ID"></asp:TextBox>
+                        <%--<input type="email" class="form-control" placeholder="Email">--%>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-id-card"></span>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary btn-block">Request new password</button>
+                           <asp:Button ID="btnSubmit_YS" runat="server" Text="Request new password" class="btn btn-primary btn-block" />
                         </div>
                         <!-- /.col -->
                     </div>

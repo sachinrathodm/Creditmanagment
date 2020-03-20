@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/UserBlankPage.Master" AutoEventWireup="true" CodeBehind="Invoice_print_User.aspx.cs" Inherits="Creditmanagment.pages.examples.Invoice_print_User" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/UserBlankPage.Master" AutoEventWireup="true" CodeBehind="Invoice_print_User1.aspx.cs" Inherits="Creditmanagment.pages.examples.Invoice_print_User" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

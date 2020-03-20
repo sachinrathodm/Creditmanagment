@@ -10,33 +10,51 @@
 namespace Creditmanagment.pages.examples {
     
     
-    public partial class ForgotPasswordPage {
+    public partial class Payment {
         
         /// <summary>
-        /// txtEmail_YS control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail_YS;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// txtUserid_YS control.
+        /// ddCustomerName_YS control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUserid_YS;
+        protected global::System.Web.UI.WebControls.DropDownList ddCustomerName_YS;
         
         /// <summary>
-        /// btnSubmit_YS control.
+        /// txtPayrs_YS control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit_YS;
+        protected global::System.Web.UI.WebControls.TextBox txtPayrs_YS;
+        
+        /// <summary>
+        /// btnCancle_YS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancle_YS;
+        
+        /// <summary>
+        /// btnPayment_YS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPayment_YS;
     }
 }

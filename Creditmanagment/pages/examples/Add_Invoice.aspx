@@ -2,7 +2,17 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   <div class="col-lg-6" >
+            <div class="col-sm-6">
+                <h1>Invoice</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="../../IndexHomePage.aspx">Home</a></li>
+                    <li class="breadcrumb-item active"><a href="Add_Invoice.aspx">Add Invoice</a></li>
+                </ol>
+        </div>
+
+   <div class="col-lg-5" >
                 <div class="card card-info" >
                     <div class="card-header"  >
                         <h3 class="card-title">Add Invoice</h3>
@@ -51,7 +61,8 @@
                         <!-- /.card-footer -->
                 </div>
             </div>
-                <div class="content-wrapper col-lg-9">
+    </div>
+                <div class="content-wrapper col-lg-4">
                     <!-- Main content -->
                     <section class="content">
                         <div class="row">
@@ -76,5 +87,4 @@
     
     <!-- /.card -->
   </form>
-    </div>
 </asp:Content>

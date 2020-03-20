@@ -1,6 +1,5 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="BlankPage.master.cs" Inherits="Creditmanagment.pages.examples.BlankPage" %>
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -461,6 +460,9 @@
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview">
+                                 <%--  <% int a = Convert.ToInt32(Session["isquickmode"].ToString());
+                                       if (a > 0)
+                                       {%>--%>
                                     <li class="nav-item">
                                         <a href="../../pages/examples/AddItems.aspx" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
@@ -473,10 +475,23 @@
                                             <p>Display Items</p>
                                         </a>
                                     </li>
+                                 <%-- <%}%>--%>
+                                  <li class="nav-item">
+                                        <a href="../../pages/examples/Invoice.aspx" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Invoice</p>
+                                        </a>
+                                    </li>
                                   <li class="nav-item">
                                         <a href="../../pages/examples/Add_Invoice.aspx" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Add Invoice</p>
+                                        </a>
+                                    </li>
+                                  <li class="nav-item">
+                                        <a href="../../pages/examples/Payment.aspx" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Payment</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
