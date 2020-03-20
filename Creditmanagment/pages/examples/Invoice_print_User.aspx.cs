@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace Creditmanagment.pages.examples
 {
   public partial class Invoice_print_User : System.Web.UI.Page
@@ -19,25 +20,20 @@ namespace Creditmanagment.pages.examples
         voucherid = Session["voucherid"].ToString();
         userid = Session["User_ID"].ToString();
       }
-      catch (Exception ex)
+      catch (Exception)
       {
-        List<SessionErrorMessage> sessionErrorMessages = null;
-        if (sessionErrorMessages == null)
-        {
-          Response.Redirect("SessionErrorMessage.aspx");
-        }
-
-
-       
+        Response.Redirect("SessionErrorMessage.aspx");
       }
+     
+
       if (Session["User_ID"] != null && Session["Display_Name"] != null)
       {
         DataTable dt = new DataTable();
-        CommanFile.GetDataTable_YS(dt,$@"
+        CommanFile.GetDataTable_YS(dt, $@"
 Select Store_ID,Voucher_Date From Voucher  where Voucher_ID = '{voucherid}'");
 
-        string storeid = dt.Rows[0][0].ToString() ;
-        lblDate_YS.Text = dt.Rows[0][1].ToString() ;
+        string storeid = dt.Rows[0][0].ToString();
+        lblDate_YS.Text = dt.Rows[0][1].ToString();
 
         DataTable storedetail = new DataTable();
         CommanFile.GetDataTable_YS(storedetail, $@"
@@ -46,8 +42,8 @@ left outer join [User] u on s.User_ID = u.User_ID
  where Store_ID = '{storeid}'");
 
         lblStorename_YS.Text = storedetail.Rows[0][0].ToString();
-        lblAddress_YS.Text = storedetail.Rows[0][1].ToString()+"<br> Email: " + storedetail.Rows[0][3].ToString() + "<br> Phone: " + storedetail.Rows[0][4].ToString();
-        lblStorekeepname_YS.Text = storedetail.Rows[0][2].ToString() ;
+        lblAddress_YS.Text = storedetail.Rows[0][1].ToString() + "<br> Email: " + storedetail.Rows[0][3].ToString() + "<br> Phone: " + storedetail.Rows[0][4].ToString();
+        lblStorekeepname_YS.Text = storedetail.Rows[0][2].ToString();
 
         DataTable cousomerdetail = new DataTable();
         CommanFile.GetDataTable_YS(cousomerdetail, $@"select u.Display_Name,c.Address,u.Mobile_No,u.Email_ID from Customers c
@@ -55,12 +51,12 @@ left outer join [User] u on s.User_ID = u.User_ID
  where u.User_ID ='{userid}'");
 
         lblCustomername_YS.Text = cousomerdetail.Rows[0][0].ToString();
-        lblCustomerAddress_YS.Text = cousomerdetail.Rows[0][1].ToString() +"<br> Phone: "+ cousomerdetail.Rows[0][2].ToString() + "<br> Email: " + cousomerdetail.Rows[0][3].ToString();
+        lblCustomerAddress_YS.Text = cousomerdetail.Rows[0][1].ToString() + "<br> Phone: " + cousomerdetail.Rows[0][2].ToString() + "<br> Email: " + cousomerdetail.Rows[0][3].ToString();
         lblInvoiceid_YS.Text = voucherid;
 
         DataTable voucherdetail = new DataTable();
-        
-        CommanFile.GetDataTable_YS(voucherdetail,$@"
+
+        CommanFile.GetDataTable_YS(voucherdetail, $@"
  select Description,Amount from Voucher
 where Voucher_ID = '{voucherid}'");
 
@@ -95,5 +91,7 @@ where Voucher_ID = '{voucherid}'");
 
       }
     }
+
+    
   }
 }
