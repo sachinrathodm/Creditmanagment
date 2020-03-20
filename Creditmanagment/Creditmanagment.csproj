@@ -255,8 +255,7 @@
     <Content Include="pages\examples\invoice.html" />
     <Content Include="pages\examples\Invoice_DetailMode_print_User_Store_.aspx" />
     <Content Include="pages\examples\Invoice_Print_Click_User.aspx" />
-    <Content Include="pages\examples\Invoice_print_User1.aspx" />
-    <Content Include="pages\examples\Invoice_print_User_Store.aspx" />
+    <Content Include="pages\examples\Invoice_print_User.aspx" />
     <Content Include="pages\examples\Invoice_User.aspx" />
     <Content Include="pages\examples\language-menu.html" />
     <Content Include="pages\examples\legacy-user-menu.html" />
@@ -1939,19 +1938,12 @@
     <Compile Include="pages\examples\Invoice_Print_Click_User.aspx.designer.cs">
       <DependentUpon>Invoice_Print_Click_User.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pages\examples\Invoice_print_User1.aspx.cs">
-      <DependentUpon>Invoice_print_User1.aspx</DependentUpon>
+    <Compile Include="pages\examples\Invoice_print_User.aspx.cs">
+      <DependentUpon>Invoice_print_User.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\examples\Invoice_print_User1.aspx.designer.cs">
-      <DependentUpon>Invoice_print_User1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pages\examples\Invoice_print_User_Store.aspx.cs">
-      <DependentUpon>Invoice_print_User_Store.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pages\examples\Invoice_print_User_Store.aspx.designer.cs">
-      <DependentUpon>Invoice_print_User_Store.aspx</DependentUpon>
+    <Compile Include="pages\examples\Invoice_print_User.aspx.designer.cs">
+      <DependentUpon>Invoice_print_User.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\examples\Invoice_User.aspx.cs">
       <DependentUpon>Invoice_User.aspx</DependentUpon>
