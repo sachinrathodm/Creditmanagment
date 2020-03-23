@@ -21,6 +21,18 @@ namespace Creditmanagment.pages.examples
         Response.Redirect("SessionErrorMessage.aspx");
       }
 
+      Boolean isquickmode = Convert.ToBoolean(CommanFile.ExcuteScalar_YS($@"
+select Is_Voucher_QuickMode From [Store] 
+where User_ID = '{userid}'
+"));
+      Session["isquickmode"] = isquickmode;
+
+      Boolean isstorekeeper = Convert.ToBoolean(CommanFile.ExcuteScalar_YS($@"
+select Is_Storekeeper From [User] 
+where User_ID = '{userid}'
+"));
+      Session["isstorekeeper"] = isstorekeeper;
+
       if (Session["User_ID"] != null && Session["Display_Name"] != null)
       {
         lblName_YS.Text = Session["Display_Name"].ToString();

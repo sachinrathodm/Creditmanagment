@@ -33,7 +33,7 @@ SELECT[Store_ID]
       {
         if (Session["User_ID"] != null)
         {
-   
+
 
           DataTable dtCustomerDetails = new DataTable();
           CommanFile.GetDataTable_YS(dtCustomerDetails, $@"
@@ -60,14 +60,14 @@ where Store_Customers.Store_ID = '{storeid}'
 select Is_Voucher_QuickMode From [Store] 
 where User_ID = '{userid}'
 "));
-      if (isquickmode)
-      {
-        Response.Redirect("Invoice_print_User_Store.aspx");
-      }
-      else
-      {
-        Response.Redirect("Invoice_DetailMode_print_User_Store_.aspx");
-      }
+        if (isquickmode)
+        {
+          Response.Redirect("Invoice_print_User_Store.aspx");
+        }
+        else
+        {
+          Response.Redirect("Invoice_DetailMode_print_User_Store_.aspx");
+        }
     }
 
     private void BtnOk_YS_Click_YS(object sender, EventArgs e)

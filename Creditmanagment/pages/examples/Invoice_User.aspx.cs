@@ -10,26 +10,26 @@ namespace Creditmanagment.pages.examples
 {
   public partial class Invoice_User : System.Web.UI.Page
   {
-    string userid;
+    string userid, storeid;
     protected void Page_Load(object sender, EventArgs e)
     {
       btnOk_YS.Click += BtnOk_YS_Click_YS;
-      
+
       try
       {
         userid = Session["User_ID"].ToString();
       }
       catch (Exception ex)
       {
-          Response.Redirect("SessionErrorMessage.aspx");
+        Response.Redirect("SessionErrorMessage.aspx");
       }
       if (Session["User_ID"] != null && Session["Display_Name"] != null)
       {
-//        storeid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
-//SELECT[Store_ID]
-//  FROM [CreditManagement].[dbo].[Store]
-//  where User_ID = '{userid}'
-//"));
+        storeid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
+SELECT[Store_ID]
+  FROM [CreditManagement].[dbo].[Store]
+  where User_ID = '{userid}'
+"));
         string customerid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
 select Customer_ID from [dbo].[Customers]
 Where 
@@ -58,7 +58,18 @@ INNER JOIN Store ON Store.Store_ID = Store_Customers.Store_ID where Store_Custom
     {
       Button btn = (Button)sender;
       Session["voucherid"] = btn.CommandArgument;
-      Response.Redirect("Invoice_print_User_Store.aspx");
+
+      Boolean isquickmode = Convert.ToBoolean(CommanFile.ExcuteScalar_YS($@"
+select Is_Voucher_QuickMode From [Store] 
+where Store_ID = '{ddStoreName_YS.SelectedValue}'"));
+      if (isquickmode)
+      {
+        Response.Redirect("Invoice_print_User_Store.aspx");
+      }
+      else
+      {
+        Response.Redirect("Invoice_DetailMode_print_User_Store_.aspx");
+      }
     }
 
     private void BtnOk_YS_Click_YS(object sender, EventArgs e)

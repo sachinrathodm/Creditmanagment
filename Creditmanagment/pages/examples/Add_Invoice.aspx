@@ -12,7 +12,7 @@
                 </ol>
         </div>
 
-   <div class="col-lg-5" >
+   <div class="col-lg-6" >
                 <div class="card card-info" >
                     <div class="card-header"  >
                         <h3 class="card-title">Add Invoice</h3>
@@ -55,14 +55,14 @@
                         <div class="card-footer">
                             <%--<button id="btnAddItem_YS" runat="server" type="submit" class="btn btn-info">Add</button>
                     <button type="submit" class="btn btn-default float-right">Cancel</button>--%>
-                            <asp:Button ID="btnAddNewItem_YS" runat="server" type="submit" class="btn btn-info" Text="Add NewItem" />
-                            <asp:Button ID="btnAdd_YS" runat="server" Text="Add" class="btn btn-default float-right" />
+                            <asp:Button ID="btnAdd_YS" runat="server"  class="btn btn-info" Text="Add Invoice" />
+                            <asp:Button ID="btnAddNewItem_YS" runat="server" type="submit" Text="Add NewItem" class="btn btn-default float-right" />
                         </div>
                         <!-- /.card-footer -->
                 </div>
             </div>
     </div>
-                <div class="content-wrapper col-lg-4">
+                <div class="content-wrapper col-lg-5">
                     <!-- Main content -->
                     <section class="content">
                         <div class="row">

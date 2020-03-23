@@ -460,9 +460,9 @@
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview">
-                                 <%--  <% int a = Convert.ToInt32(Session["isquickmode"].ToString());
-                                       if (a > 0)
-                                       {%>--%>
+                                   <% Boolean a = Convert.ToBoolean(Session["isquickmode"].ToString());
+                                       if (!a)
+                                       {%>
                                     <li class="nav-item">
                                         <a href="../../pages/examples/AddItems.aspx" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
@@ -475,7 +475,7 @@
                                             <p>Display Items</p>
                                         </a>
                                     </li>
-                                 <%-- <%}%>--%>
+                                  <%}%>
                                   <li class="nav-item">
                                         <a href="../../pages/examples/Invoice.aspx" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>

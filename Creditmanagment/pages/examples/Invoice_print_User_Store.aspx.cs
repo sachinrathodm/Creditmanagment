@@ -16,7 +16,6 @@ namespace Creditmanagment.pages.examples
     {
       try
       {
-        storecustomerid = Session["storecustomerid"].ToString();
         voucherid = Session["voucherid"].ToString();
         userid = Session["User_ID"].ToString();
       }
@@ -25,35 +24,51 @@ namespace Creditmanagment.pages.examples
         Response.Redirect("SessionErrorMessage.aspx");
       }
 
+      Boolean isstorekeeper = Convert.ToBoolean(CommanFile.ExcuteScalar_YS($@"
+select Is_Storekeeper From [User] 
+where User_ID = '{userid}'
+"));
       if (Session["User_ID"] != null && Session["Display_Name"] != null)
       {
-        lblName_YS.Text = Session["Display_Name"].ToString();
-        login_YS.Visible = false;
-        imgStoremg_YS.ImageUrl = $@"{"~/Images/" + userid + ".jpg"}";
+        if (isstorekeeper)
+        {
+          lblName_YS.Text = Session["Display_Name"].ToString();
+          login_YS.Visible = false;
+          imgStoremg_YS.ImageUrl = $@"{"~/Images/" + userid + ".jpg"}";
 
-        string storeid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
+          string storeid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
 SELECT[Store_ID]
   FROM [CreditManagement].[dbo].[Store]
   where User_ID = '{userid}'
 "));
 
-        int countrequest = Convert.ToInt32(CommanFile.ExcuteScalar_YS($@"
+          int countrequest = Convert.ToInt32(CommanFile.ExcuteScalar_YS($@"
 select count(*) FRom Store_Customer_Request
 where Store_ID ='{storeid}' and CU_Request_Status='p'"));
 
-        int totalrequest = countrequest;
+          int totalrequest = countrequest;
 
-        if (totalrequest > 0)
-        {
-          lbltotalrequest_YS.Text = Convert.ToString(totalrequest);
-        }
-        if (countrequest > 0)
-        {
-          lblgetrequest_YS.Text = Convert.ToString(countrequest + " Cutomer requests");
+          if (totalrequest > 0)
+          {
+            lbltotalrequest_YS.Text = Convert.ToString(totalrequest);
+          }
+          if (countrequest > 0)
+          {
+            lblgetrequest_YS.Text = Convert.ToString(countrequest + " Cutomer requests");
+          }
+          else
+          {
+            lblgetrequest_YS.Text = "No any Request";
+          }
         }
         else
         {
-          lblgetrequest_YS.Text = "No any Request";
+          if (Session["User_ID"] != null && Session["Display_Name"] != null)
+          {
+            lblName_YS.Text = Session["Display_Name"].ToString();
+
+          }
+          imgStoremg_YS.ImageUrl = $@"{("~/Images/" + userid + ".jpg")}";
         }
 
       }
@@ -62,10 +77,6 @@ where Store_ID ='{storeid}' and CU_Request_Status='p'"));
       if (Session["User_ID"] != null && Session["Display_Name"] != null)
       {
 
-        Boolean isstorekeeper = Convert.ToBoolean(CommanFile.ExcuteScalar_YS($@"
-select Is_Storekeeper From [User] 
-where User_ID = '{userid}'
-"));
         if (isstorekeeper)
         {
           string voucherdate = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
@@ -86,6 +97,15 @@ select Store_Name,Display_Name,Address,Mobile_No,Email_ID from [User]
           lblAddress_YS.Text = dtstoredetail.Rows[0][2].ToString()
                                 + "<br> Phone:" + dtstoredetail.Rows[0][3].ToString()
                                 + "<br> Email :" + dtstoredetail.Rows[0][4].ToString();
+
+          try
+          {
+            storecustomerid = Session["storecustomerid"].ToString();
+          }
+          catch (Exception)
+          {
+            Response.Redirect("SessionErrorMessage.aspx");
+          }
 
           string customerid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
 select Customer_ID From Store_Customers
@@ -144,6 +164,7 @@ left outer join [User] u on s.User_ID = u.User_ID
           //string[] yash = voucherdetail.Rows[0].ItemArray.Select(x => x.ToString()).ToArray();
           //Session["yash1"] = yash;
         }
+
 
         DataTable voucherdetail = new DataTable();
         CommanFile.GetDataTable_YS(voucherdetail, $@"

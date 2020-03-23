@@ -14,7 +14,7 @@
                 </ol>
             </div>
         </div>
-        <div class="col-sm-5">
+        <div class="col-sm-6">
             <div class="card card-info">
                 <form class="form-horizontal" runat="server" id="form1">
                     <div class="card-header">

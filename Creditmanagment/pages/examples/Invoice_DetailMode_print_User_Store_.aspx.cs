@@ -149,7 +149,7 @@ inner join Voucher v on v.Voucher_ID =vd.Voucher_ID
  where v.Voucher_ID = '{voucherid}'");
 
         StringBuilder sb = new StringBuilder();
-        sb.Append(@"<table class= table table-striped>");
+        sb.Append(@"<table class="" table table-striped"">");
         sb.Append("<tr>");
         foreach (DataColumn column in voucherdetail.Columns)
         {

@@ -208,18 +208,22 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="../../pages/examples/AddItems.aspx" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Add Item</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../../pages/examples/DisplayItems.aspx" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Display Items</p>
-                                    </a>
-                                </li>
+                                <% Boolean a = Convert.ToBoolean(Session["isquickmode"].ToString());
+                                       if (!a)
+                                       {%>
+                                    <li class="nav-item">
+                                        <a href="../../pages/examples/AddItems.aspx" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Add Item</p>
+                                        </a>
+                                    </li>
+                                  <li class="nav-item">
+                                        <a href="../../pages/examples/DisplayItems.aspx" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Display Items</p>
+                                        </a>
+                                    </li>
+                                  <%}%>
                                 <li class="nav-item">
                                     <a href="../../pages/examples/Invoice.aspx" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
@@ -339,7 +343,7 @@
                         <!-- Table row -->
                         <div class="row">
                             <div class="col-12 table-responsive">
-                                <table class="table table-striped">
+                                <table class="table">
                                     <tr>
                                         <td>
                                             <asp:Literal ID="ltVoucherdetail_YS" runat="server"></asp:Literal>

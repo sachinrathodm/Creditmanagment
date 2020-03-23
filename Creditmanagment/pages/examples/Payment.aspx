@@ -25,7 +25,7 @@
                     <div class="form-group row">
                         <label class="col-sm-4 col-form-label">Select Customer Name</label>
                         <div style="-ms-flex: 0 0 60%; flex: 0 0 250%; max-width: 60%;">
-                            <asp:DropDownList ID="ddCustomerName_YS" runat="server" class="form-control" ToolTip="Select Customer Name" AutoPostBack="true" ></asp:DropDownList><br />
+                          <asp:DropDownList ID="ddCustomerName_YS" runat="server" class="form-control" ToolTip="Select Customer Name" AutoPostBack="true" OnSelectedIndexChanged="ddCustomerName_YS_SelectedIndexChanged" ></asp:DropDownList><br />
                         </div>
 
                         <label class="col-sm-4 col-form-label">Pay RS. </label>

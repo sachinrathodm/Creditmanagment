@@ -19,11 +19,7 @@ namespace Creditmanagment
       }
       catch (Exception ex)
       {
-        if ((ex is System.Threading.ThreadExceptionEventArgs))
-        {
           Response.Redirect("SessionErrorMessage.aspx");
-        }
-
       }
       if (Session["User_ID"] != null && Session["Display_Name"] != null)
       {
@@ -31,6 +27,13 @@ namespace Creditmanagment
 
       }
       imgUserImage_YS.ImageUrl = $@"{("~/Images/" + userid + ".jpg")}";
+
+      Boolean isstorekeeper = Convert.ToBoolean(CommanFile.ExcuteScalar_YS($@"
+select Is_Storekeeper From [User] 
+where User_ID = '{userid}'
+"));
+      Session["isstorekeeper"] = isstorekeeper;
+
     }
   }
 }
