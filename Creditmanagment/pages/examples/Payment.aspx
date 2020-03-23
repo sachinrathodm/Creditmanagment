@@ -34,7 +34,7 @@
                             <asp:TextBox ID="txtPayrs_YS" runat="server" class="form-control" ToolTip="Enter Rupees" TextMode="Number"></asp:TextBox><br />
                         </div>
 
-                      <label class="col-sm-4 col-form-label">Pay RS. </label>
+                      <label class="col-sm-4 col-form-label">Description</label>
                         <div style="-ms-flex: 0 0 60%; flex: 0 0 250%; max-width: 60%;">
                             <asp:TextBox ID="txtDescription" runat="server" class="form-control" ToolTip="Enter Rupees" TextMode="MultiLine"></asp:TextBox><br />
                         </div>
