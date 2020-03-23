@@ -49,6 +49,15 @@ namespace Creditmanagment.pages.examples {
         protected global::System.Web.UI.WebControls.TextBox txtPayrs_YS;
         
         /// <summary>
+        /// txtDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDescription;
+        
+        /// <summary>
         /// btnCancle_YS control.
         /// </summary>
         /// <remarks>

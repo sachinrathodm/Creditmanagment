@@ -73,7 +73,7 @@ where Customer_ID = '{ddCustomerName_YS.SelectedValue}' and Store_ID='{storeid}'
 ,'{storeid}'
 ,'{txtPayrs_YS.Text}'
 ,GETDATE()
-,'getPayment'
+,'{txtDescription.Text}'
 ,'R'
 ,'-{txtPayrs_YS.Text}')");
          string currentcredit=Convert.ToString(CommanFile.ExcuteScalar_YS($@"select SUM(Amount_Effect) from Voucher Where [Store_Customers_ID]='{storecustomerid}' and store_id='{storeid}'"));
