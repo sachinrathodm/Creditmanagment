@@ -25,12 +25,18 @@
                     <div class="form-group row">
                         <label class="col-sm-4 col-form-label">Select Customer Name</label>
                         <div style="-ms-flex: 0 0 60%; flex: 0 0 250%; max-width: 60%;">
-                          <asp:DropDownList ID="ddCustomerName_YS" runat="server" class="form-control" ToolTip="Select Customer Name" AutoPostBack="true" OnSelectedIndexChanged="ddCustomerName_YS_SelectedIndexChanged" ></asp:DropDownList><br />
+                            <asp:DropDownList ID="ddCustomerName_YS" runat="server" class="form-control" OnSelectedIndexChanged="ddCustomerName_YS_SelectedIndexChanged" ToolTip="Select Customer Name" AutoPostBack="true" ></asp:DropDownList><br />
+                        <asp:Label ID="lblCredit" runat="server" Text="Label"></asp:Label>
                         </div>
 
                         <label class="col-sm-4 col-form-label">Pay RS. </label>
                         <div style="-ms-flex: 0 0 60%; flex: 0 0 250%; max-width: 60%;">
                             <asp:TextBox ID="txtPayrs_YS" runat="server" class="form-control" ToolTip="Enter Rupees" TextMode="Number"></asp:TextBox><br />
+                        </div>
+
+                      <label class="col-sm-4 col-form-label">Description</label>
+                        <div style="-ms-flex: 0 0 60%; flex: 0 0 250%; max-width: 60%;">
+                            <asp:TextBox ID="txtDescription" runat="server" class="form-control" ToolTip="Enter Rupees" TextMode="MultiLine"></asp:TextBox><br />
                         </div>
                     </div>
                   </div>
