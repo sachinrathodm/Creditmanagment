@@ -12,8 +12,6 @@ namespace Creditmanagment.pages.examples
   {
     string userid, storeid;
 
-
-
     protected void Page_Load(object sender, EventArgs e)
     {
       try
