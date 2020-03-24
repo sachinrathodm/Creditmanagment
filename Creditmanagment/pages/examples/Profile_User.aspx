@@ -12,7 +12,7 @@
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../../IndexHomePage_User.aspx">Home</a></li>
                     <li class="breadcrumb-item active">User Profile</li>
                 </ol>
             </div>
@@ -21,11 +21,9 @@
     <!-- /.container-fluid -->
 
     <!-- Main content -->
-    <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-3">
-
+                <div class="col-md-4">
                     <!-- Profile Image -->
                     <div class="card card-primary card-outline">
                         <div class="card-body box-profile">
@@ -56,45 +54,44 @@
                         <!-- /.card-body -->
                     </div>
                     <!-- /.card -->
-
-                  
                 </div>
                 <!-- /.col -->
-                <div class="col-md-9">
-                    <div class="card">
                         <!-- Post -->
-                        <div class="post">
-
-
-
-
-                        </div>
-                        <!-- /.row -->
-                    </div>
-                    <!-- /.post -->
-                    </div>
-                            <!-- /.tab-pane -->
-                    <div class="tab-pane" id="timeline">
-                        <!-- The timeline -->
-                        <div class="timeline timeline-inverse">
-                            <div>
-                                <div class="timeline-item">
-                                    <div class="timeline-body">
-                                        Take me to your leader!
-                            Switzerland is small and neutral!
-                            We are more like Germany, ambitious and misunderstood!
-                                    </div>
+                            <!-- About Me Box -->
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <h3 class="card-title">About Me</h3>
                                 </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <strong><i class="fas fa-book mr-1"></i>Education</strong>
+                                    <p class="text-muted">
+                                        B.S. in Computer Science from the University of Tennessee at Knoxville
+                                    </p>
+                                    <hr>
+                                    <strong><i class="fas fa-map-marker-alt mr-1"></i>Location</strong>
+                                    <p class="text-muted">Malibu, California</p>
+                                    <hr>
+                                    <strong><i class="fas fa-pencil-alt mr-1"></i>Skills</strong>
+                                    <p class="text-muted">
+                                        <span class="tag tag-danger">UI Design</span>
+                                        <span class="tag tag-success">Coding</span>
+                                        <span class="tag tag-info">Javascript</span>
+                                        <span class="tag tag-warning">PHP</span>
+                                        <span class="tag tag-primary">Node.js</span>
+                                    </p>
+                                    <hr>
+                                    <strong><i class="far fa-file-alt mr-1"></i>Notes</strong>
+                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+                                </div>
+                                <!-- /.card-body -->
                             </div>
-                        </div>
-                    </div>
-                    <!-- /.tab-pane -->
-
-                    </form>
                 </div>
-                <!-- /.tab-pane -->
+                </form>
             </div>
-            <!-- /.tab-content -->
+            <!-- /.tab-pane -->
+        </div>
+        <!-- /.tab-content -->
         </div>
         <!-- /.card-body -->
         </div>
@@ -104,7 +101,6 @@
         </div>
         <!-- /.row -->
         </div><!-- /.container-fluid -->
-    </section>
     <!-- /.content -->
     </div>
   <!-- /.content-wrapper -->
