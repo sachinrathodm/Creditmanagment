@@ -11,6 +11,7 @@ namespace Creditmanagment.pages.examples
   public partial class Payment : System.Web.UI.Page
   {
     string userid, storeid;
+
     protected void Page_Load(object sender, EventArgs e)
     {
       try
