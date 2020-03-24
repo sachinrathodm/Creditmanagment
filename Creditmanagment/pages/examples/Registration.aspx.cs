@@ -47,13 +47,13 @@ namespace Creditmanagment.pages.examples
         _CustomerControl.Add(ltrBirthdate_YS);
         _CustomerControl.Add(txtAdharcardno_YS);
 
-        foreach (var control in _CommanControlList)
-          control.Visible = false;
-        foreach (var control in _CustomerControl)
-          control.Visible = false;
-        foreach (var control in _StoreKeeperControl)
-          control.Visible = false;
-        #endregion
+      foreach (var control in _CommanControlList)
+        control.Visible = false;
+      foreach (var control in _CustomerControl)
+        control.Visible = false;
+      foreach (var control in _StoreKeeperControl)
+        control.Visible = false;
+      #endregion
 
         #region Events
         rdCustomers_YS.CheckedChanged += rdStoreKeeper_YS_CheckedChanged_YS;
@@ -87,7 +87,7 @@ Where
             string.IsNullOrEmpty(txtEmail_YS.Text) ||
             string.IsNullOrEmpty(txtPassword_YS.Text) ||
             string.IsNullOrEmpty(txtRetypepassword_YS.Text) ||
-            string.IsNullOrEmpty(txtAddress_YS.Text)||
+            string.IsNullOrEmpty(txtAddress_YS.Text) ||
             string.IsNullOrEmpty(txtAdharcardno_YS.Text))
         {
           Response.Write("<script>alert('Please Enter all fileds');</script>");
@@ -230,6 +230,3 @@ INSERT INTO [dbo].[User](
     #endregion
   }
 }
-
-
-

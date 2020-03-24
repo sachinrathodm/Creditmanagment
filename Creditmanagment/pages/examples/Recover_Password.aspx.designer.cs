@@ -10,42 +10,42 @@
 namespace Creditmanagment.pages.examples {
     
     
-    public partial class ForgotPasswordPage {
+    public partial class Recover_Password {
         
         /// <summary>
-        /// txtEmail_YS control.
+        /// txtpassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail_YS;
+        protected global::System.Web.UI.WebControls.TextBox txtpassword;
         
         /// <summary>
-        /// txtUserid_YS control.
+        /// txtconfirmpassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUserid_YS;
+        protected global::System.Web.UI.WebControls.TextBox txtconfirmpassword;
         
         /// <summary>
-        /// btnrequestpassword control.
+        /// btnsubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnrequestpassword;
+        protected global::System.Web.UI.WebControls.Button btnsubmit;
         
         /// <summary>
-        /// lblCheckuserid control.
+        /// lblcheck_YS control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCheckuserid;
+        protected global::System.Web.UI.WebControls.Label lblcheck_YS;
     }
 }

@@ -32,6 +32,7 @@ namespace Creditmanagment.pages.examples
         btnAdd_YS.Click += BtnAdd_YS_Click_YS;
         btnAddNewItem_YS.Click += BtnAddNewItem_YS_Click_YS;
 
+
         storeid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
 SELECT[Store_ID]
   FROM [CreditManagement].[dbo].[Store]
