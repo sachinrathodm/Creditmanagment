@@ -14,7 +14,7 @@ namespace Creditmanagment.pages.examples
     protected void Page_Load(object sender, EventArgs e)
     {
       lblNullmessega.Visible = true;
-      lblNullmessega.InnerText = "No any recode";
+      lblNullmessega.InnerText = "No any record";
       btnOk_YS.Click += BtnOk_YS_Click_YS;
       try
       {
@@ -45,6 +45,7 @@ where Store_Customers.Store_ID = '{storeid}'
           ddCusomerName_YS.DataValueField = "Customer_ID";
           ddCusomerName_YS.DataSource = dtCustomerDetails.DefaultView;
           ddCusomerName_YS.DataBind();
+          ddCusomerName_YS.Items.Insert(0, "--Please Select--");
         }
         else
           Response.Redirect("LoginPage.aspx");
@@ -60,32 +61,28 @@ where Store_Customers.Store_ID = '{storeid}'
 select Is_Voucher_QuickMode From [Store] 
 where User_ID = '{userid}'
 "));
-        if (isquickmode)
-        {
-          Response.Redirect("Invoice_print_User_Store.aspx");
-        }
-        else
-        {
-          Response.Redirect("Invoice_DetailMode_print_User_Store_.aspx");
-        }
+      if (isquickmode)
+      {
+        Response.Redirect("Invoice_print_User_Store.aspx");
+      }
+      else
+      {
+        Response.Redirect("Invoice_DetailMode_print_User_Store_.aspx");
+      }
     }
 
     private void BtnOk_YS_Click_YS(object sender, EventArgs e)
     {
       gdInvoic_YS.DataSource = new string[] { };
-      if (string.IsNullOrEmpty(ddCusomerName_YS.SelectedValue))
-      {
-
-      }
-      else
+      if (!ddCusomerName_YS.SelectedItem.Text.Equals("--Please Select--"))
       {
         string storecustomerid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select * From Store_Customers
 where Customer_ID = '{ddCusomerName_YS.SelectedValue}' and Store_ID='{storeid}'"));
 
         Session["storecustomerid"] = storecustomerid;
 
-//        string store_Customer_ID = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select Store_Customers_ID from Store_Customers 
-//where Store_ID='{storeid}' and Customer_ID='{ddCusomerName_YS.SelectedValue}'"));
+        //        string store_Customer_ID = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select Store_Customers_ID from Store_Customers 
+        //where Store_ID='{storeid}' and Customer_ID='{ddCusomerName_YS.SelectedValue}'"));
 
         DataTable dtCustomerinvoice = new DataTable();
         CommanFile.GetDataTable_YS(dtCustomerinvoice, $@"

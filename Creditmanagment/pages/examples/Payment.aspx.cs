@@ -37,12 +37,14 @@ SELECT[Store_ID]
           CommanFile.GetDataTable_YS(dtCustomerDetails, $@"
 SELECT First_Name+' '+Last_Name as Customer_Name,Store_Customers.Customer_ID FROM Store_Customers  
 INNER JOIN Customers ON Customers.Customer_ID = Store_Customers.Customer_ID 
-where Store_Customers.Store_ID = '{storeid}'
+where Store_Customers.Store_ID = '{storeid} '
  ");
           ddCustomerName_YS.DataTextField = "Customer_Name";
           ddCustomerName_YS.DataValueField = "Customer_ID";
+
           ddCustomerName_YS.DataSource = dtCustomerDetails.DefaultView;
           ddCustomerName_YS.DataBind();
+          ddCustomerName_YS.Items.Insert(0, "--Please Select--");
         }
         else
           Response.Redirect("LoginPage.aspx");
@@ -51,12 +53,13 @@ where Store_Customers.Store_ID = '{storeid}'
 
     private void BtnPayment_YS_Click_YS(object sender, EventArgs e)
     {
-      if (!string.IsNullOrEmpty(ddCustomerName_YS.SelectedValue) && !string.IsNullOrEmpty(txtPayrs_YS.Text))
-      {
-        string storecustomerid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select * From Store_Customers
+      if (!ddCustomerName_YS.SelectedItem.Text.Equals("--Please Select--"))
+        if (!string.IsNullOrEmpty(ddCustomerName_YS.SelectedValue) && !string.IsNullOrEmpty(txtPayrs_YS.Text))
+        {
+          string storecustomerid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select * From Store_Customers
 where Customer_ID = '{ddCustomerName_YS.SelectedValue}' and Store_ID='{storeid}'"));
-        Guid Voucherid = Guid.NewGuid();
-        CommanFile.ExcuteScalar_YS($@"INSERT INTO [dbo].[Voucher]
+          Guid Voucherid = Guid.NewGuid();
+          CommanFile.ExcuteScalar_YS($@"INSERT INTO [dbo].[Voucher]
            ([Voucher_ID]
            ,[Store_Customers_ID]
            ,[Store_ID]
@@ -74,23 +77,27 @@ where Customer_ID = '{ddCustomerName_YS.SelectedValue}' and Store_ID='{storeid}'
 ,'{txtDescription.Text}'
 ,'R'
 ,'-{txtPayrs_YS.Text}')");
-        string currentcredit = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select SUM(Amount_Effect) from Voucher Where [Store_Customers_ID]='{storecustomerid}' and store_id='{storeid}'"));
-        CommanFile.ExcuteNonQuery_YS($@"
+          string currentcredit = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select SUM(Amount_Effect) from Voucher Where [Store_Customers_ID]='{storecustomerid}' and store_id='{storeid}'"));
+          CommanFile.ExcuteNonQuery_YS($@"
 UPDATE [dbo].[Store_Customers]
    SET
       [Credit_Used] = '{currentcredit}'
  WHERE Store_Customers_ID = '{storecustomerid}'");
-        txtPayrs_YS.Text = "";
-        ddCustomerName_YS_SelectedIndexChanged(null, null);
-      }
+          txtPayrs_YS.Text = "";
+          ddCustomerName_YS_SelectedIndexChanged(null, null);
+        }
     }
 
     protected void ddCustomerName_YS_SelectedIndexChanged(object sender, EventArgs e)
     {
-      lblCredit.Text = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
+      if (!ddCustomerName_YS.SelectedItem.Text.Equals("--Please Select--"))
+      {
+        lblCredit.Text = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
 select Credit_Used from Store_Customers 
 where Store_ID='{storeid}' 
 and Customer_ID='{ddCustomerName_YS.SelectedValue}'"));
+      }
+
     }
   }
 }

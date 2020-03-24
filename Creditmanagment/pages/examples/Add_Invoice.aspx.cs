@@ -61,6 +61,7 @@ INNER JOIN Customers c ON c.Customer_ID=sc.Customer_ID where sc.Store_ID='{store
             ddCustomerName_YS.DataValueField = "Customer_ID";
             ddCustomerName_YS.DataSource = dtCustomers.DefaultView;
             ddCustomerName_YS.DataBind();
+            ddCustomerName_YS.Items.Insert(0, "--Please Select--");
 
             dtItems = new DataTable();
             CommanFile.GetDataTable_YS(dtItems, $@"select * from Store_Item where Store_ID='{storeid}'");
@@ -68,6 +69,7 @@ INNER JOIN Customers c ON c.Customer_ID=sc.Customer_ID where sc.Store_ID='{store
             ddItemName_YS.DataValueField = "Store_Item_ID";
             ddItemName_YS.DataSource = dtItems.DefaultView;
             ddItemName_YS.DataBind();
+            ddItemName_YS.Items.Insert(0, "--Please Select--");
             get_Customer_Invoice_YS();
           }
           else
@@ -90,37 +92,41 @@ INNER JOIN Customers c ON c.Customer_ID=sc.Customer_ID where sc.Store_ID='{store
       }
       else
       {
-        string store_Customer_ID = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select Store_Customers_ID from Store_Customers 
+        if (!ddCustomerName_YS.SelectedItem.Text.Equals("--Please Select--") && !ddItemName_YS.SelectedItem.Text.Equals("--Please Select--"))
+        {
+          string store_Customer_ID = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select Store_Customers_ID from Store_Customers 
 where Store_ID='{storeid}' and Customer_ID='{ddCustomerName_YS.SelectedValue}'"));
-
-        DataTable dtUserRequest = new DataTable();
-        CommanFile.GetDataTable_YS(dtUserRequest, $@"select Description,Amount,Voucher_Date from Voucher
+          DataTable dtUserRequest = new DataTable();
+          CommanFile.GetDataTable_YS(dtUserRequest, $@"select Description,Amount,Voucher_Date from Voucher
 where Store_ID = '{storeid}' and Store_Customers_ID='{store_Customer_ID}'
 ");
 
-        decimal rate = Convert.ToDecimal(CommanFile.ExcuteScalar_YS($@"select rate from Store_Item where Store_Item_ID='{ddItemName_YS.SelectedValue}'"));
-        txtValue_YS.Text = rate.ToString();
-        // gdUserRequest.Visible = true;
-        gdUserRequest.DataSource = dtUserRequest.DefaultView;
-        gdUserRequest.DataBind();
+          decimal rate = Convert.ToDecimal(CommanFile.ExcuteScalar_YS($@"select rate from Store_Item where Store_Item_ID='{ddItemName_YS.SelectedValue}'"));
+          txtValue_YS.Text = rate.ToString();
+          // gdUserRequest.Visible = true;
+          gdUserRequest.DataSource = dtUserRequest.DefaultView;
+          gdUserRequest.DataBind();
+        }
       }
     }
 
     #region Event
     private void BtnAdd_YS_Click_YS(object sender, EventArgs e)
     {
-      int isquickmode = Convert.ToInt32(CommanFile.ExcuteScalar_YS($@"select Is_Voucher_QuickMode from Store where Store_ID='{storeid}'"));
-      if (isquickmode > 0)
+      if (!ddCustomerName_YS.SelectedItem.Text.Equals("--Please Select--"))
       {
-        if (string.IsNullOrEmpty(ddCustomerName_YS.Text) ||
-          string.IsNullOrEmpty(txtValue_YS.Text) ||
-          string.IsNullOrEmpty(txtDescription.Text))
+        int isquickmode = Convert.ToInt32(CommanFile.ExcuteScalar_YS($@"select Is_Voucher_QuickMode from Store where Store_ID='{storeid}'"));
+        if (isquickmode > 0)
         {
-          Response.Write("<script>alert('please Select All Fields');</script>");
-          return;
-        }
-        string store_Customer_ID = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select Store_Customers_ID from Store_Customers where Store_ID='{storeid}' and Customer_ID='{ddCustomerName_YS.SelectedValue}';"));
-        string sql_de = $@"INSERT INTO [dbo].[Voucher]
+          if (string.IsNullOrEmpty(ddCustomerName_YS.Text) ||
+            string.IsNullOrEmpty(txtValue_YS.Text) ||
+            string.IsNullOrEmpty(txtDescription.Text))
+          {
+            Response.Write("<script>alert('please Select All Fields');</script>");
+            return;
+          }
+          string store_Customer_ID = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select Store_Customers_ID from Store_Customers where Store_ID='{storeid}' and Customer_ID='{ddCustomerName_YS.SelectedValue}';"));
+          string sql_de = $@"INSERT INTO [dbo].[Voucher]
            ([Voucher_ID]
            ,[Store_Customers_ID]
            ,[Store_ID]
@@ -138,31 +144,31 @@ where Store_ID = '{storeid}' and Store_Customers_ID='{store_Customer_ID}'
 ,'{txtDescription.Text}'
 ,'S'
 ,+{txtValue_YS.Text})";
-        CommanFile.ExcuteNonQuery_YS(sql_de);
-        get_Customer_Invoice_YS();
+          CommanFile.ExcuteNonQuery_YS(sql_de);
+          get_Customer_Invoice_YS();
 
-        txtDescription.Text = null;
-        txtValue_YS.Text = null;
-      }
-      else
-      {
-
-        Guid Voucher_Detail_ID = Guid.NewGuid();
-        if (string.IsNullOrEmpty(ddCustomerName_YS.Text)
-          || string.IsNullOrEmpty(txtValue_YS.Text)
-          || string.IsNullOrEmpty(txtQty_YS.Text)
-          || string.IsNullOrEmpty(txtDescription.Text)
-          || string.IsNullOrEmpty(ddItemName_YS.Text))
-        {
-          Response.Write("<script>alert('please Select All Fields');</script>");
-          return;
+          txtDescription.Text = null;
+          txtValue_YS.Text = null;
         }
-        int count = Convert.ToInt32(CommanFile.ExcuteScalar_YS($@"select Count(*) from Voucher where Voucher_ID='{(Guid)Session["Voucher_ID"]}'"));
-        if (count <= 0)
+        else
         {
-          string store_Customer_ID = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select Store_Customers_ID from Store_Customers where Store_ID='{storeid}' and Customer_ID='{ddCustomerName_YS.SelectedValue}';"));
 
-          string sql_de = $@"INSERT INTO [dbo].[Voucher]
+          Guid Voucher_Detail_ID = Guid.NewGuid();
+          if (string.IsNullOrEmpty(ddCustomerName_YS.Text)
+            || string.IsNullOrEmpty(txtValue_YS.Text)
+            || string.IsNullOrEmpty(txtQty_YS.Text)
+            || string.IsNullOrEmpty(txtDescription.Text)
+            || string.IsNullOrEmpty(ddItemName_YS.Text))
+          {
+            Response.Write("<script>alert('please Select All Fields');</script>");
+            return;
+          }
+          int count = Convert.ToInt32(CommanFile.ExcuteScalar_YS($@"select Count(*) from Voucher where Voucher_ID='{(Guid)Session["Voucher_ID"]}'"));
+          if (count <= 0)
+          {
+            string store_Customer_ID = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select Store_Customers_ID from Store_Customers where Store_ID='{storeid}' and Customer_ID='{ddCustomerName_YS.SelectedValue}';"));
+
+            string sql_de = $@"INSERT INTO [dbo].[Voucher]
            ([Voucher_ID]
            ,[Store_Customers_ID]
            ,[Store_ID]
@@ -180,14 +186,14 @@ where Store_ID = '{storeid}' and Store_Customers_ID='{store_Customer_ID}'
 ,'{txtDescription.Text}'
 ,'S'
 ,+{0})";
-          CommanFile.ExcuteNonQuery_YS(sql_de);
-        }
+            CommanFile.ExcuteNonQuery_YS(sql_de);
+          }
 
-        string Storecustomerid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select Store_Customers_ID from Store_Customers 
+          string Storecustomerid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select Store_Customers_ID from Store_Customers 
 where Customer_ID = '{ddCustomerName_YS.SelectedValue}'
 and Store_ID = '{storeid}'"));
-        decimal rate = Convert.ToDecimal(CommanFile.ExcuteScalar_YS($@"select rate from Store_Item where Store_Item_ID='{ddItemName_YS.SelectedValue}'"));
-        string sql = $@"INSERT INTO [dbo].[Voucher_Detail]
+          decimal rate = Convert.ToDecimal(CommanFile.ExcuteScalar_YS($@"select rate from Store_Item where Store_Item_ID='{ddItemName_YS.SelectedValue}'"));
+          string sql = $@"INSERT INTO [dbo].[Voucher_Detail]
            ([Voucher_Detail_ID]
            ,[Voucher_ID]
            ,[Store_Customers_ID]
@@ -205,39 +211,36 @@ and Store_ID = '{storeid}'"));
 ,{Convert.ToInt32(txtQty_YS.Text) * Convert.ToInt32(rate)}
 ,'{ddItemName_YS.SelectedValue}'
 ,'{txtDescription.Text}')";
-        CommanFile.ExcuteNonQuery_YS(sql);
-        int sumofvoucher = Convert.ToInt32(CommanFile.ExcuteScalar_YS($@"select SUM(Amount) from Voucher_Detail where Voucher_ID='{(Guid)Session["Voucher_ID"]}'"));
-        string description = Convert.ToString(CommanFile.ExcuteScalar_YS($@"DECLARE @dec VARCHAR(8000)   SELECT @dec = COALESCE(@dec + ', ', '') + Description_detai FROM Voucher_Detail where Voucher_ID='{(Guid)Session["Voucher_ID"]}' select @dec"));
-        string updatequery = $@"UPDATE Voucher
+          CommanFile.ExcuteNonQuery_YS(sql);
+          int sumofvoucher = Convert.ToInt32(CommanFile.ExcuteScalar_YS($@"select SUM(Amount) from Voucher_Detail where Voucher_ID='{(Guid)Session["Voucher_ID"]}'"));
+          string description = Convert.ToString(CommanFile.ExcuteScalar_YS($@"DECLARE @dec VARCHAR(8000)   SELECT @dec = COALESCE(@dec + ', ', '') + Description_detai FROM Voucher_Detail where Voucher_ID='{(Guid)Session["Voucher_ID"]}' select @dec"));
+          string updatequery = $@"UPDATE Voucher
 SET Amount = {sumofvoucher}
 , Amount_Effect={sumofvoucher}
 , Description='{description}'
 WHERE Voucher_ID ='{(Guid)Session["Voucher_ID"]}'";
-        CommanFile.ExcuteNonQuery_YS(updatequery);
-        get_Customer_Invoice_YS();
-      }
-      string store_CustomerID = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select Store_Customers_ID from Store_Customers where Store_ID='{storeid}' and Customer_ID='{ddCustomerName_YS.SelectedValue}';"));
+          CommanFile.ExcuteNonQuery_YS(updatequery);
+          get_Customer_Invoice_YS();
+        }
+        string store_CustomerID = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select Store_Customers_ID from Store_Customers where Store_ID='{storeid}' and Customer_ID='{ddCustomerName_YS.SelectedValue}';"));
 
-      string customerstoreid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select Store_Customers_ID from Store_Customers 
+        string customerstoreid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select Store_Customers_ID from Store_Customers 
 where Customer_ID = '{ddCustomerName_YS.SelectedValue}'
 and Store_ID = '{storeid}'"));
-      decimal Creditused = Convert.ToDecimal(CommanFile.ExcuteScalar_YS($@"select Sum(Amount_Effect) from Voucher Where Store_Customers_ID='{customerstoreid}'"));
-      string updatecreditused = $@"
+        decimal Creditused = Convert.ToDecimal(CommanFile.ExcuteScalar_YS($@"select Sum(Amount_Effect) from Voucher Where Store_Customers_ID='{customerstoreid}'"));
+        string updatecreditused = $@"
 UPDATE Store_Customers
 SET Credit_Used ={Creditused}
 WHERE Store_Customers_ID = '{store_CustomerID}'";
-      CommanFile.ExcuteNonQuery_YS(updatecreditused);
+        CommanFile.ExcuteNonQuery_YS(updatecreditused);
 
+      }
     }
     #endregion
 
     private void get_Customer_Invoice_YS()
     {
-      if (string.IsNullOrEmpty(ddCustomerName_YS.SelectedValue))
-      {
-
-      }
-      else
+      if (!ddCustomerName_YS.SelectedItem.Text.Equals("--Please Select--"))
       {
         string store_Customer_ID = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select Store_Customers_ID from Store_Customers 
 where Store_ID='{storeid}' and Customer_ID='{ddCustomerName_YS.SelectedValue}';"));

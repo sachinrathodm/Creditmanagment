@@ -47,6 +47,7 @@ INNER JOIN Store ON Store.Store_ID = Store_Customers.Store_ID where Store_Custom
             ddStoreName_YS.DataValueField = "Store_ID";
             ddStoreName_YS.DataSource = dtStoreDetails.DefaultView;
             ddStoreName_YS.DataBind();
+            ddStoreName_YS.Items.Insert(0, "--Please Select--");
           }
           else
             Response.Redirect("LoginPage.aspx");
@@ -75,11 +76,7 @@ where Store_ID = '{ddStoreName_YS.SelectedValue}'"));
     private void BtnOk_YS_Click_YS(object sender, EventArgs e)
     {
 
-      if (string.IsNullOrEmpty(ddStoreName_YS.SelectedValue))
-      {
-
-      }
-      else
+      if (!ddStoreName_YS.SelectedItem.Text.Equals("--Please Select--"))
       {
         DataTable dtUserRequest = new DataTable();
         CommanFile.GetDataTable_YS(dtUserRequest, $@"select Voucher_ID,Description,Amount,Voucher_Date from Voucher
