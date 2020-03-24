@@ -108,7 +108,6 @@
                         <div class="dropdown-divider"></div>
                         <a href="#" class="dropdown-item">
                             <i class="fas fa-file mr-2"></i>3 new reports
-           
                                     <span class="float-right text-muted text-sm">2 days</span>
                         </a>
                         <div class="dropdown-divider"></div>
@@ -239,12 +238,12 @@
                                         <p>Add Invoice</p>
                                     </a>
                                 </li>
-                              <li class="nav-item">
-                                        <a href="../../pages/examples/Payment.aspx" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Payment</p>
-                                        </a>
-                                    </li>
+                                <li class="nav-item">
+                                    <a href="../../pages/examples/Payment.aspx" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Payment</p>
+                                    </a>
+                                </li>
                                 <li class="nav-item">
                                     <a href="../../pages/examples/AcceptRequest.aspx" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
@@ -253,19 +252,19 @@
                                 </li>
                                 <% }%>
                                 <%else
-                                {%>
-                                 <li class="nav-item">
-                                        <a href="../../pages/examples/SendRequestUser.aspx" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Send Request</p>
-                                        </a>
-                                    </li>
-                                  <li class="nav-item">
-                                        <a href="../../pages/examples/invoice_User.aspx" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Invoice</p>
-                                        </a>
-                                    </li>
+                                    {%>
+                                <li class="nav-item">
+                                    <a href="../../pages/examples/SendRequestUser.aspx" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Send Request</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../../pages/examples/invoice_User.aspx" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Invoice</p>
+                                    </a>
+                                </li>
                                 <%} %>
 
                                 <% if (Session["User_ID"] != null)

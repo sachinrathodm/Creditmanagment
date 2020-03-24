@@ -27,11 +27,11 @@
 
     <script type="text/javascript" src="../../plugins/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script type="text/javascript">  
-        function alertMessage() {  
-            alert('You alredy send request');  
-        }  
-    </script>  
+    <script type="text/javascript">  
+        function alertMessage() {
+            alert('You alredy send request');
+        }
+    </script>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -78,7 +78,7 @@
                         </a>
                         <%} %>
                         <%else
-                        {%>
+                            {%>
                         <a href="pages/examples/LoginPage.aspx">
                             <label id="login_YS" runat="server">Login</label>
                         </a>
@@ -197,8 +197,8 @@
                     <!-- Sidebar user (optional) -->
                     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                         <div class="image">
-                          <asp:Image ID="imgUserImage_YS" runat="server" class="img-circle elevation-2" alt="Store Image"/>
-                           <%-- <img src="../../dist/img/user2-160x160.jpg" id="imgUserImage_YS" runat="server" class="img-circle elevation-2" alt="User Image">--%>
+                            <asp:Image ID="imgUserImage_YS" runat="server" class="img-circle elevation-2" alt="Store Image" />
+                            <%-- <img src="../../dist/img/user2-160x160.jpg" id="imgUserImage_YS" runat="server" class="img-circle elevation-2" alt="User Image">--%>
                         </div>
                         <div class="info">
                             <a href="#" class="d-block">
@@ -400,7 +400,7 @@
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview">
-                                   <%-- <li class="nav-item">
+                                    <%-- <li class="nav-item">
                                         <a href="../../examples/invoice.html" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Invoice</p>
@@ -460,13 +460,32 @@
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="../../pages/examples/invoice_User.aspx" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Invoice</p>
+                                        </a>
+                                       
+                                    </li>
+                                  <li class="nav-item">
+                                        <a href="../../pages/examples/Profile_User.aspx" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Profile</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="../../pages/examples/SendRequestUser.aspx" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Send Request</p>
+                                        </a>
+                                    </li>
                                     <%-- <li class="nav-item">
                                         <a href="pages/examples/AddItems.aspx" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Add Item</p>
                                         </a>
                                     </li>--%>
-                                     <% if (Session["User_ID"] != null)
+                                    <% if (Session["User_ID"] != null)
                                         {%>
                                     <li class="nav-item">
                                         <a href="../../pages/examples/LoginPage.aspx" class="nav-link">
@@ -496,18 +515,7 @@
                                             <p>Forgot Password</p>
                                         </a>
                                     </li>--%>
-                                    <li class="nav-item">
-                                        <a href="../../pages/examples/SendRequestUser.aspx" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Send Request</p>
-                                        </a>
-                                    </li>
-                                  <li class="nav-item">
-                                        <a href="../../pages/examples/invoice_User.aspx" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Invoice</p>
-                                        </a>
-                                    </li>
+
                                     <%--  <li class="nav-item">
                                         <a href="../examples/recover-password.html" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
@@ -532,7 +540,7 @@
                                             <p>Language Menu</p>
                                         </a>
                                     </li>--%>
-                                   <%-- <li class="nav-item">
+                                    <%-- <li class="nav-item">
                                         <a href="../examples/404.html" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Error 404</p>

@@ -19,15 +19,6 @@ namespace Creditmanagment.pages.examples
 
     protected void Page_Load(object sender, EventArgs e)
     {
-      if (string.IsNullOrEmpty(Session["User_ID"].ToString()))
-      {
-        Response.Redirect("LoginPage.aspx");
-      }
-      else
-      {
-
-
-
         #region Controls
         //CommanControl
         _CommanControlList.Add(txtFirstname_YS);
@@ -69,7 +60,6 @@ namespace Creditmanagment.pages.examples
         rdStoreKeeper_YS.CheckedChanged += rdStoreKeeper_YS_CheckedChanged_YS;
         btnRegister_YS.Click += BtnRegister_YS_Click_YS;
         #endregion
-      }
     }
 
     string _Sql;

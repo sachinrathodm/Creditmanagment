@@ -13,12 +13,21 @@ namespace Creditmanagment {
     public partial class IndexHomePage_User {
         
         /// <summary>
-        /// lblNumberofuser1_YS control.
+        /// lblNumberofuser_YS control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNumberofuser1_YS;
+        protected global::System.Web.UI.WebControls.Label lblNumberofuser_YS;
+        
+        /// <summary>
+        /// lblCustomerCredit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCustomerCredit;
     }
 }
