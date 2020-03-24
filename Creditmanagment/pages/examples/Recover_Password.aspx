@@ -1,11 +1,11 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ForgotPasswordPage.aspx.cs" Inherits="Creditmanagment.pages.examples.ForgotPasswordPage" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Recover_Password.aspx.cs" Inherits="Creditmanagment.pages.examples.Recover_Password" %>
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Credit Management | Forgot Password</title>
+    <title>Credit Management | Recover Password</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,43 +21,46 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition login-page">
+
     <div class="login-box">
         <div class="login-logo">
-            <a href="../../IndexHomePage.aspx"><b>Credit </b>Managment</a>
+            <a href="../../IndexHomePage.aspx"><b>Admin</b>LTE</a>
         </div>
         <!-- /.login-logo -->
-        <div class="card ml-5 mr-5">
+        <div class="card">
             <div class="card-body login-card-body">
-                <p class="login-box-msg">You forgot your password? Here you can easily retrieve a new password.</p>
+                <p class="login-box-msg">You are only one step a way from your new password, recover your password now.</p>
 
-                <form  method="post" runat="server">
+                <form runat="server">
                     <div class="input-group mb-3">
-                        <asp:TextBox ID="txtEmail_YS" runat="server" type="email" class="form-control" placeholder="Email"></asp:TextBox>
-                        <%--<input type="email" class="form-control" placeholder="Email">--%>
+                        <asp:TextBox ID="txtpassword" TextMode="Password" class="form-control" placeholder="Password" runat="server"></asp:TextBox>
                         <div class="input-group-append">
                             <div class="input-group-text">
-                                <span class="fas fa-envelope"></span>
+                                <span class="fas fa-lock"></span>
                             </div>
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <asp:TextBox ID="txtUserid_YS" runat="server" type="text" class="form-control" placeholder="User ID"></asp:TextBox>
-                        <%--<input type="email" class="form-control" placeholder="Email">--%>
+                        <asp:TextBox ID="txtconfirmpassword" TextMode="Password" class="form-control" placeholder="Confirm Password" runat="server" />
+
+
                         <div class="input-group-append">
                             <div class="input-group-text">
-                                <span class="fas fa-id-card"></span>
+                                <span class="fas fa-lock"></span>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <asp:Button ID="btnrequestpassword" runat="server" Text="Request new password" class="btn btn-primary btn-block" />
+                            <asp:Button ID="btnsubmit" runat="server" Text="Change password" type="submit" class="btn btn-primary btn-block" />
+
                         </div>
                         <!-- /.col -->
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <asp:Label ID="lblCheckuserid" ForeColor="Red" runat="server" ></asp:Label>
+                            <asp:Label ID="lblcheck_YS" ForeColor="Red" runat="server" Text="Label"></asp:Label>
+
                         </div>
                         <!-- /.col -->
                     </div>
@@ -65,9 +68,6 @@
 
                 <p class="mt-3 mb-1">
                     <a href="LoginPage.aspx">Login</a>
-                </p>
-                <p class="mb-0">
-                    <a href="Registration.aspx" class="text-center">Register a new membership</a>
                 </p>
             </div>
             <!-- /.login-card-body -->
@@ -84,4 +84,3 @@
 
 </body>
 </html>
-

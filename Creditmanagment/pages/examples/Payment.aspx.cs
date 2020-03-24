@@ -11,9 +11,6 @@ namespace Creditmanagment.pages.examples
   public partial class Payment : System.Web.UI.Page
   {
     string userid, storeid;
-
-
-
     protected void Page_Load(object sender, EventArgs e)
     {
       try
@@ -53,7 +50,7 @@ where Store_Customers.Store_ID = '{storeid}'
 
     private void BtnPayment_YS_Click_YS(object sender, EventArgs e)
     {
-      if (!string.IsNullOrEmpty(ddCustomerName_YS.SelectedValue)&&!string.IsNullOrEmpty( txtPayrs_YS.Text))
+      if (!string.IsNullOrEmpty(ddCustomerName_YS.SelectedValue) && !string.IsNullOrEmpty(txtPayrs_YS.Text))
       {
         string storecustomerid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select * From Store_Customers
 where Customer_ID = '{ddCustomerName_YS.SelectedValue}' and Store_ID='{storeid}'"));
@@ -76,7 +73,7 @@ where Customer_ID = '{ddCustomerName_YS.SelectedValue}' and Store_ID='{storeid}'
 ,'{txtDescription.Text}'
 ,'R'
 ,'-{txtPayrs_YS.Text}')");
-         string currentcredit=Convert.ToString(CommanFile.ExcuteScalar_YS($@"select SUM(Amount_Effect) from Voucher Where [Store_Customers_ID]='{storecustomerid}' and store_id='{storeid}'"));
+        string currentcredit = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select SUM(Amount_Effect) from Voucher Where [Store_Customers_ID]='{storecustomerid}' and store_id='{storeid}'"));
         CommanFile.ExcuteNonQuery_YS($@"
 UPDATE [dbo].[Store_Customers]
    SET
@@ -85,7 +82,6 @@ UPDATE [dbo].[Store_Customers]
         txtPayrs_YS.Text = "";
         ddCustomerName_YS_SelectedIndexChanged(null, null);
       }
-     
     }
 
     protected void ddCustomerName_YS_SelectedIndexChanged(object sender, EventArgs e)
@@ -95,6 +91,5 @@ select Credit_Used from Store_Customers
 where Store_ID='{storeid}' 
 and Customer_ID='{ddCustomerName_YS.SelectedValue}'"));
     }
-
   }
 }

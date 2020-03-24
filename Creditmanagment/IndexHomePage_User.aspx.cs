@@ -11,6 +11,14 @@ namespace Creditmanagment
   {
     protected void Page_Load(object sender, EventArgs e)
     {
+      try
+      {
+        string userid = Session["User_ID"].ToString();
+      }
+      catch (Exception)
+      {
+        Response.Redirect("SessionErrorMessage.aspx");
+      }
       if (string.IsNullOrEmpty(Session["User_ID"].ToString()))
       {
         Response.Redirect("LoginPage.aspx");
