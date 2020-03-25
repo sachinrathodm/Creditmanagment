@@ -10,6 +10,7 @@ namespace Creditmanagment
 {
   public partial class IndexHomePage_User : System.Web.UI.Page
   {
+    string customerid;
     protected void Page_Load(object sender, EventArgs e)
     {
       try

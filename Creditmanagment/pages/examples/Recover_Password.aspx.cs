@@ -24,17 +24,17 @@ namespace Creditmanagment.pages.examples
 
     private void Btnsubmit_Click_YS(object sender, EventArgs e)
     {
-      if (string.IsNullOrEmpty(txtpassword.Text) && string.IsNullOrEmpty(txtconfirmpassword.Text))
+      if (string.IsNullOrEmpty(txtPassword_YS.Text) && string.IsNullOrEmpty(txtRetypepassword_YS.Text))
       {
         lblcheck_YS.Text = "Please Fill The Password..";
       }
-      if (!txtpassword.Text.Equals(txtconfirmpassword.Text))
+      if (!txtPassword_YS.Text.Equals(txtRetypepassword_YS.Text))
       {
         lblcheck_YS.Text = "Password Are Not Matched...";
       }
       else
       {
-        CommanFile.ExcuteNonQuery_YS($@"UPDATE [dbo].[User] SET [Password] ='{CommanFile.encryptionpass(txtpassword.Text)}' WHERE User_ID='{Session["Recover_Paasword"]}';");
+        CommanFile.ExcuteNonQuery_YS($@"UPDATE [dbo].[User] SET [Password] ='{CommanFile.encryptionpass(txtPassword_YS.Text)}' WHERE User_ID='{Session["Recover_Paasword"]}';");
         lblcheck_YS.Text = "";
       }
     }
