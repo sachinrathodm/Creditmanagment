@@ -57,7 +57,7 @@
                     <div class="row-1">
                         <div class="row">
                             <div class="col-12">
-                                <asp:Button ID="btnsubmit" runat="server" Text="Change password" type="submit" class="btn btn-primary btn-block" />
+                                <asp:Button ID="btnsubmit_Click_YS" runat="server" Text="Change password" type="submit" class="btn btn-primary btn-block" />
                             </div>
                             <!-- /.col -->
                         </div>

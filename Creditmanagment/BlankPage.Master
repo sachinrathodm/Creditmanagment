@@ -503,7 +503,7 @@
                                     <% if (Session["User_ID"] != null)
                                         {%>
                                     <li class="nav-item">
-                                        <a href="../../pages/examples/LoginPage.aspx" class="nav-link">
+                                        <a href="../../pages/examples/LogoutPage.aspx" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Logout</p>
                                         </a>
