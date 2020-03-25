@@ -37,7 +37,7 @@ namespace Creditmanagment.pages.examples
         CommanFile.ExcuteNonQuery_YS($@"UPDATE [dbo].[User] SET [Password] ='{CommanFile.encryptionpass(txtPassword_YS.Text)}' WHERE User_ID='{Session["Recover_Paasword"]}';");
         lblcheck_YS.Text = "";
         Response.Write("<script>alert('Password is successfully change');</script>");
-        return;
+        Response.Redirect("LoginPage.aspx");
       }
     }
   }

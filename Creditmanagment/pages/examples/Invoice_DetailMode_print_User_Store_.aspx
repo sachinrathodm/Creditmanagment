@@ -83,38 +83,38 @@
                     </a>
                     <%} %>
                 </li>
-            
+
                 <!-- Notifications Dropdown Menu -->
                 <li class="nav-item dropdown">
-                        <a class="nav-link" data-toggle="dropdown" href="#">
-                            <i class="far fa-bell"></i>
-                                <asp:Label ID="lbltotalrequest_YS" runat="server" class="badge badge-warning navbar-badge"></asp:Label>
-                            <%--<span class="badge badge-warning navbar-badge">15</span>--%>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                            <span class="dropdown-item dropdown-header">15 Notifications</span>
-                            <div class="dropdown-divider"></div>
-                            <a href="#" class="dropdown-item">
-                                <i class="fas fa-envelope mr-2"></i>4 new messages
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                        <i class="far fa-bell"></i>
+                        <asp:Label ID="lbltotalrequest_YS" runat="server" class="badge badge-warning navbar-badge"></asp:Label>
+                        <%--<span class="badge badge-warning navbar-badge">15</span>--%>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <span class="dropdown-item dropdown-header">15 Notifications</span>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-envelope mr-2"></i>4 new messages
            
                                     <span class="float-right text-muted text-sm">3 mins</span>
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a href="../../pages/examples/AcceptRequest.aspx" class="dropdown-item">
-                                <i class="fas fa-users mr-2"></i>
-                                  <asp:Label ID="lblgetrequest_YS" runat="server" ></asp:Label>
-                                    <%--<span class="float-right text-muted text-sm">12 hours</span>--%>
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a href="#" class="dropdown-item">
-                                <i class="fas fa-file mr-2"></i>3 new reports
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="../../pages/examples/AcceptRequest.aspx" class="dropdown-item">
+                            <i class="fas fa-users mr-2"></i>
+                            <asp:Label ID="lblgetrequest_YS" runat="server"></asp:Label>
+                            <%--<span class="float-right text-muted text-sm">12 hours</span>--%>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-file mr-2"></i>3 new reports
            
                                     <span class="float-right text-muted text-sm">2 days</span>
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-                        </div>
-                    </li>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+                    </div>
+                </li>
 
                 <li class="nav-item">
                     <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
@@ -209,21 +209,21 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <% Boolean a = Convert.ToBoolean(Session["isquickmode"].ToString());
-                                       if (!a)
-                                       {%>
-                                    <li class="nav-item">
-                                        <a href="../../pages/examples/AddItems.aspx" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Add Item</p>
-                                        </a>
-                                    </li>
-                                  <li class="nav-item">
-                                        <a href="../../pages/examples/DisplayItems.aspx" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Display Items</p>
-                                        </a>
-                                    </li>
-                                  <%}%>
+                                    if (!a)
+                                    {%>
+                                <li class="nav-item">
+                                    <a href="../../pages/examples/AddItems.aspx" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Item</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../../pages/examples/DisplayItems.aspx" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Display Items</p>
+                                    </a>
+                                </li>
+                                <%}%>
                                 <li class="nav-item">
                                     <a href="../../pages/examples/Invoice.aspx" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
@@ -391,7 +391,7 @@
                         <!-- this row will not appear when printing -->
                         <div class="row no-print">
                             <div class="col-12">
-                                <a href="Invoice_Print_Click_User.aspx" target="_blank" class="btn btn-default"><i class="fas fa-print"></i>Print</a>
+                                <a href="Invoice_DetailMode_print_User_Store_.aspx" target="_blank" class="btn btn-default"><i class="fas fa-print"></i>Print</a>
                                 <button type="button" class="btn btn-success float-right">
                                     <i class="far fa-credit-card"></i>Submit
                     Payment
@@ -406,15 +406,15 @@
                 </div>
                 <!-- /.col -->
             </section>
-           <!-- /.content-wrapper -->
-   
+            <!-- /.content-wrapper -->
+
         </div>
         <!-- /.row -->
     </div>
     <!-- /.container-fluid -->
     <!-- /.content -->
 
-   
+
 
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
@@ -431,6 +431,9 @@
     <script src="../../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
+  <script type="text/javascript"> 
+      window.addEventListener("load", window.print(), "width=600,height=400");
+</script>
 </body>
 </html>
 <%-- <footer class="main-footer no-print">

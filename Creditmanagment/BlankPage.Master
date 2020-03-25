@@ -530,6 +530,12 @@
                                             <p>Forgot Password</p>
                                         </a>
                                     </li>
+                                  <li class="nav-item">
+                                        <a href="../../pages/examples/Change_Password.aspx" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Change Password</p>
+                                        </a>
+                                    </li>
                                     <%--  <li class="nav-item">
                                         <a href="../examples/recover-password.html" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>

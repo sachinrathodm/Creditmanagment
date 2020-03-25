@@ -1,8 +1,9 @@
 <%@ Page Title="" Language="C#" MasterPageFile="~/BlankPage.Master" AutoEventWireup="true" CodeBehind="Invoice.aspx.cs" Inherits="Creditmanagment.pages.examples.Invoice" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
- <div class="container-fluid">
+    <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
                 <h1>Invoice</h1>
@@ -59,6 +60,7 @@
                                     <asp:TemplateField HeaderText="Create Invoice">
                                         <ItemTemplate>
                                             <asp:Button ID="btnInvoice_YS" runat="server" CommandArgument='<%# Eval("Voucher_ID") %>' Text="Invoice" OnClick="btnInvoice_YS_Click" />
+
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                 </Columns>

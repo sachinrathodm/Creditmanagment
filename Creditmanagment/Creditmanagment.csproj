@@ -241,6 +241,7 @@
     <Content Include="pages\examples\AddItems.aspx" />
     <Content Include="pages\examples\Add_Invoice.aspx" />
     <Content Include="pages\examples\blank.html" />
+    <Content Include="pages\examples\Change_Password.aspx" />
     <Content Include="pages\examples\Contacts.aspx" />
     <Content Include="pages\examples\contacts.html" />
     <Content Include="pages\examples\ContactsUser.aspx" />
@@ -1877,6 +1878,13 @@
     </Compile>
     <Compile Include="pages\examples\Add_Invoice.aspx.designer.cs">
       <DependentUpon>Add_Invoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\examples\Change_Password.aspx.cs">
+      <DependentUpon>Change_Password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\examples\Change_Password.aspx.designer.cs">
+      <DependentUpon>Change_Password.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\examples\Contacts.aspx.cs">
       <DependentUpon>Contacts.aspx</DependentUpon>
