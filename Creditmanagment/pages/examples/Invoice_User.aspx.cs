@@ -75,9 +75,10 @@ where Store_ID = '{ddStoreName_YS.SelectedValue}'"));
 
     private void BtnOk_YS_Click_YS(object sender, EventArgs e)
     {
-
+      gdInvoic_YS.RowDataBound += GdInvoic_YS_RowDataBound_YS;
       if (!ddStoreName_YS.SelectedItem.Text.Equals("--Please Select--"))
       {
+
         DataTable dtUserRequest = new DataTable();
         CommanFile.GetDataTable_YS(dtUserRequest, $@"select Voucher_ID,Description,Amount,Voucher_Date from Voucher
 where Store_ID = '{ddStoreName_YS.SelectedValue}'
@@ -85,6 +86,11 @@ where Store_ID = '{ddStoreName_YS.SelectedValue}'
         gdInvoic_YS.DataSource = dtUserRequest.DefaultView;
         gdInvoic_YS.DataBind();
       }
+    }
+
+    private void GdInvoic_YS_RowDataBound_YS(object sender, GridViewRowEventArgs e)
+    {
+      e.Row.Cells[1].Visible = false;
     }
   }
 }

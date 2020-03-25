@@ -90,6 +90,7 @@ select Voucher_ID,Description,Amount,Voucher_Date from Voucher Where Store_Custo
 ");
         if (dtCustomerinvoice != null && dtCustomerinvoice.Rows.Count > 0)
         {
+          gdInvoic_YS.RowDataBound += GdInvoic_YS_RowDataBound;
           gdInvoic_YS.Visible = true;
           lblNullmessega.Visible = false;
           gdInvoic_YS.DataSource = dtCustomerinvoice.DefaultView;
@@ -103,5 +104,14 @@ select Voucher_ID,Description,Amount,Voucher_Date from Voucher Where Store_Custo
         }
       }
     }
+
+    private void GdInvoic_YS_RowDataBound(object sender, GridViewRowEventArgs e)
+    {
+      e.Row.Cells[1].Visible = false;
+    }
+
+
   }
+
 }
+
