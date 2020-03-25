@@ -266,6 +266,8 @@
     <Content Include="pages\examples\profile.html" />
     <Content Include="pages\examples\Recover_Password.aspx" />
     <Content Include="pages\examples\Recover_Password.html" />
+    <Content Include="pages\examples\Profile_User.aspx" />
+    <Content Include="pages\examples\recover-password.html" />
     <Content Include="pages\examples\Registration.aspx" />
     <Content Include="pages\examples\SendRequestUser.aspx" />
     <Content Include="pages\examples\SessionErrorMessage.aspx" />
@@ -1973,6 +1975,13 @@
     </Compile>
     <Compile Include="pages\examples\Payment.aspx.designer.cs">
       <DependentUpon>Payment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\examples\Profile_User.aspx.cs">
+      <DependentUpon>Profile_User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\examples\Profile_User.aspx.designer.cs">
+      <DependentUpon>Profile_User.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\examples\Recover_Password.aspx.cs">
       <DependentUpon>Recover_Password.aspx</DependentUpon>

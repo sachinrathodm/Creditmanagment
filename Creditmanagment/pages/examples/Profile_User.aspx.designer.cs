@@ -7,27 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Creditmanagment {
+namespace Creditmanagment.pages.examples {
     
     
-    public partial class IndexHomePage_User {
+    public partial class Profile_User {
         
         /// <summary>
-        /// lblNumberofuser_YS control.
+        /// imgUserImage_YS control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNumberofuser_YS;
-        
-        /// <summary>
-        /// lblCustomerCredit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCustomerCredit;
+        protected global::System.Web.UI.WebControls.Image imgUserImage_YS;
     }
 }

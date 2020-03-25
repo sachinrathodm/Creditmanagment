@@ -457,80 +457,80 @@
                                     Extras
                
                                             <i class="fas fa-angle-left right"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <% Boolean a = Convert.ToBoolean(Session["isquickmode"].ToString());
-                                    if (!a)
-                                    {%>
-                                <li class="nav-item">
-                                    <a href="../../pages/examples/AddItems.aspx" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Add Item</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../../pages/examples/DisplayItems.aspx" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Display Items</p>
-                                    </a>
-                                </li>
-                                <%}%>
-                                <li class="nav-item">
-                                    <a href="../../pages/examples/Invoice.aspx" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Invoice</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../../pages/examples/Add_Invoice.aspx" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Add Invoice</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../../pages/examples/Payment.aspx" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Payment</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../../pages/examples/AcceptRequest.aspx" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Accept Request</p>
-                                    </a>
-                                </li>
-                                <% if (Session["User_ID"] != null)
-                                    {%>
-                                <li class="nav-item">
-                                    <a href="../../pages/examples/LoginPage.aspx" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Logout</p>
-                                    </a>
-                                </li>
-                                <%} %>
-                                <%else
-                                    { %>
-                                <li class="nav-item">
-                                    <a href="../../pages/examples/LoginPage.aspx" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Login</p>
-                                    </a>
-                                </li>
-                                <%} %>
-                                <li class="nav-item">
-                                    <a href="../../pages/examples/Registration.aspx" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Register</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../../pages/examples/ForgotPasswordPage.aspx" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Forgot Password</p>
-                                    </a>
-                                </li>
-                                <%--  <li class="nav-item">
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                   <% Boolean a = Convert.ToBoolean(Session["isquickmode"].ToString());
+                                       if (!a)
+                                       {%>
+                                    <li class="nav-item">
+                                        <a href="../../pages/examples/AddItems.aspx" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Add Item</p>
+                                        </a>
+                                    </li>
+                                  <li class="nav-item">
+                                        <a href="../../pages/examples/DisplayItems.aspx" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Display Items</p>
+                                        </a>
+                                    </li>
+                                  <%}%>
+                                  <li class="nav-item">
+                                        <a href="../../pages/examples/Invoice.aspx" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Invoice</p>
+                                        </a>
+                                    </li>
+                                  <li class="nav-item">
+                                        <a href="../../pages/examples/Add_Invoice.aspx" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Add Invoice</p>
+                                        </a>
+                                    </li>
+                                  <li class="nav-item">
+                                        <a href="../../pages/examples/Payment.aspx" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Payment</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="../../pages/examples/AcceptRequest.aspx" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Accept Request</p>
+                                        </a>
+                                    </li>
+                                    <% if (Session["User_ID"] != null)
+                                        {%>
+                                    <li class="nav-item">
+                                        <a href="../../pages/examples/LogoutPage.aspx" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Logout</p>
+                                        </a>
+                                    </li>
+                                    <%} %>
+                                    <%else
+                                        { %>
+                                    <li class="nav-item">
+                                        <a href="../../pages/examples/LoginPage.aspx" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Login</p>
+                                        </a>
+                                    </li>
+                                    <%} %>
+                                    <li class="nav-item">
+                                        <a href="../../pages/examples/Registration.aspx" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Register</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="../../pages/examples/ForgotPasswordPage.aspx" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Forgot Password</p>
+                                        </a>
+                                    </li>
+                                    <%--  <li class="nav-item">
                                         <a href="../examples/recover-password.html" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Recover Password</p>

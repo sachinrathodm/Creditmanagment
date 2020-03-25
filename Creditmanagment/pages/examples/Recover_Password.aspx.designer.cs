@@ -13,31 +13,31 @@ namespace Creditmanagment.pages.examples {
     public partial class Recover_Password {
         
         /// <summary>
-        /// txtpassword control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtpassword;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// txtconfirmpassword control.
+        /// txtPassword_YS control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtconfirmpassword;
+        protected global::System.Web.UI.WebControls.TextBox txtPassword_YS;
         
         /// <summary>
-        /// btnsubmit control.
+        /// txtRetypepassword_YS control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnsubmit;
+        protected global::System.Web.UI.WebControls.TextBox txtRetypepassword_YS;
         
         /// <summary>
         /// lblcheck_YS control.
@@ -47,5 +47,14 @@ namespace Creditmanagment.pages.examples {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblcheck_YS;
+        
+        /// <summary>
+        /// btnsubmit_Click_YS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnsubmit_Click_YS;
     }
 }

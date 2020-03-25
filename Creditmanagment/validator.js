@@ -102,6 +102,23 @@ $(document).ready(function () {
           }
         }
       },
+      txtConfirmPassword_YS: {
+        message: 'Password is not valid',
+        validators: {
+          notEmpty: {
+            message: 'Password is required'
+          },
+          stringLength: {
+            min: 6,
+            max: 10,
+            message: 'Password must be more than 6 and less than 10 characters long'
+          },
+          regexp: {
+            regexp: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{6,10}$/,
+            message: 'Password in 1 number, 1 lowarcase, 1 upparcase, 1 special character is required'
+          }
+        }
+      },
       txtAddress_YS: {
         message: 'Address is not valid',
         validators: {

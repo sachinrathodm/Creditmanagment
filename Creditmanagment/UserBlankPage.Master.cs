@@ -12,12 +12,11 @@ namespace Creditmanagment
     string userid;
     protected void Page_Load(object sender, EventArgs e)
     {
-
       try
       {
         userid = Session["User_ID"].ToString();
       }
-      catch (Exception ex)
+      catch (Exception)
       {
           Response.Redirect("SessionErrorMessage.aspx");
       }
@@ -33,7 +32,6 @@ select Is_Storekeeper From [User]
 where User_ID = '{userid}'
 "));
       Session["isstorekeeper"] = isstorekeeper;
-
     }
   }
 }
