@@ -31,6 +31,7 @@
 
 </head>
 <body class="hold-transition register-page">
+
     <form runat="server" id="form1">
         <div class="register-box">
             <div class="register-logo">
@@ -142,18 +143,12 @@
                     </div>
 
                     <div class="ml-2 mr-2">
-                        <!-- Date dd/mm/yyyy -->
-                        <%--<div class="form-group">--%>
                         <asp:Label ID="lblBirthDate_YS" runat="server" Text="Label">Date Of Birth</asp:Label>
-                        <%--<label>Date Of Birth</label>--%>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <asp:Label ID="ltrBirthdate_YS" runat="server" class="input-group-text"><i class="far fa-calendar-alt"></i></asp:Label>
-                                <%--<span class="input-group-text"><i class="far fa-calendar-alt"></i></span>--%>
                             </div>
                             <asp:TextBox ID="txtBirthDate_YS" runat="server" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask > </asp:TextBox>
-                            <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="BirthDate is required" ControlToValidate="txtBirthDate_YS"></asp:RequiredFieldValidator>--%>
-                          <%--<input type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>--%>
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -163,8 +158,6 @@
                     <div class="input-group-append col-7">
                         <div class="icheck-primary d-inline ml-4">
                             <asp:CheckBox ID="chkAgree" runat="server" value="agree" />
-                            <%--<asp:Label ID="lblAgree" runat="server" for="chkAgree">I agree to the <a href="#">terms</a></asp:Label>--%>
-
                             <label for="chkAgree" id="lblAgree" runat="server">
                                 I agree to the <a href="#">terms</a>
                             </label>
@@ -182,7 +175,6 @@
             </div>
         </div>
     </form>
-
 
     <!-- jQuery -->
     <script src="../../plugins/jquery/jquery.min.js"></script>

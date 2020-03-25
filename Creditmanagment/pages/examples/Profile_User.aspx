@@ -29,26 +29,28 @@
                             <%--<img class="profile-user-img img-fluid img-circle"
                                 src="../../dist/img/user4-128x128.jpg"
                                 alt="User profile picture">--%>
-                             <asp:Image ID="imgUserImage_YS" runat="server" class="img-circle elevation-2" alt="Store Image" />
+                            <asp:Image ID="imgUserImage_YS" runat="server" class="img-circle elevation-2" alt="Store Image" />
                         </div>
 
-                        <h3 class="profile-username text-center">Nina Mcintire</h3>
-
-                        <p class="text-muted text-center">Software Engineer</p>
+                        <h3 class="profile-username text-center">
+                            <asp:Label ID="lblDisplayname_YS" runat="server"></asp:Label></h3>
 
                         <ul class="list-group list-group-unbordered mb-3">
                             <li class="list-group-item">
-                                <b>Followers</b> <a class="float-right">1,322</a>
+                                <b>First Name</b> <a class="float-right">
+                                    <asp:Label ID="lblFirstname_YS" runat="server"></asp:Label></a>
                             </li>
                             <li class="list-group-item">
-                                <b>Following</b> <a class="float-right">543</a>
+                                <b>Last Name</b> <a class="float-right">
+                                    <asp:Label ID="lblLastname_YS" runat="server"></asp:Label></a>
                             </li>
                             <li class="list-group-item">
-                                <b>Friends</b> <a class="float-right">13,287</a>
+                                <b>Mobile No.</b> <a class="float-right">
+                                    <asp:Label ID="lblMobileno_YS" runat="server"></asp:Label></a>
                             </li>
                         </ul>
 
-                        <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+                        <a href="../../pages/examples/Edit_Profile_User.aspx" class="btn btn-primary btn-block"><b>Edit</b></a>
                     </div>
                     <!-- /.card-body -->
                 </div>
@@ -57,36 +59,40 @@
             <!-- /.col -->
             <!-- Post -->
             <!-- About Me Box -->
-            <div class="card card-primary">
+            <div class="card card-primary col-5">
                 <div class="card-header">
                     <h3 class="card-title">About Me</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <strong><i class="fas fa-book mr-1"></i>Education</strong>
+                    <strong><i class="fas fa-envelope mr-1"></i>Email </strong>
                     <p class="text-muted">
-                        B.S. in Computer Science from the University of Tennessee at Knoxville
+                        <asp:Label ID="lblEmail_YS" runat="server"></asp:Label>
                     </p>
                     <hr>
+                  <strong><i class="fas fa-birthday-cake mr-1"></i>Birth Date </strong>
+                    <p class="text-muted">
+                        <asp:Label ID="lblBirtdate_YS" runat="server"></asp:Label>
+                    </p>
+                    <hr>
+                   <%--<strong><i class="fas fa-phone mr-1"></i>Phone No. </strong>
+                    <p class="text-muted">
+                        <asp:Label ID="lblPhoneno_YS" runat="server"></asp:Label>
+                    </p>
+                    <hr>--%>
                     <strong><i class="fas fa-map-marker-alt mr-1"></i>Location</strong>
-                    <p class="text-muted">Malibu, California</p>
-                    <hr>
-                    <strong><i class="fas fa-pencil-alt mr-1"></i>Skills</strong>
                     <p class="text-muted">
-                        <span class="tag tag-danger">UI Design</span>
-                        <span class="tag tag-success">Coding</span>
-                        <span class="tag tag-info">Javascript</span>
-                        <span class="tag tag-warning">PHP</span>
-                        <span class="tag tag-primary">Node.js</span>
+                        <asp:Label ID="lblAddress_YS" runat="server"></asp:Label>
                     </p>
                     <hr>
-                    <strong><i class="far fa-file-alt mr-1"></i>Notes</strong>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+                    <strong><i class="fas fa-address-card mr-1"></i>Adhar Card No.</strong>
+                    <p class="text-muted">
+                        <asp:Label ID="lblAdharno_YS" runat="server"></asp:Label>
+                    </p>
                 </div>
                 <!-- /.card-body -->
             </div>
         </div>
-        </form>
     </div>
     <!-- /.tab-pane -->
 </asp:Content>

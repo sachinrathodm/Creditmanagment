@@ -360,36 +360,6 @@
                                 </ul>
                             </li>--%>
                             <li class="nav-header">EXAMPLES</li>
-                            <%--<li class="nav-item has-treeview">
-                                <a href="#" class="nav-link">
-                                    <i class="nav-icon far fa-envelope"></i>
-                                    <p>
-                                        Mailbox
-               
-                                            <i class="fas fa-angle-left right"></i>
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="../mailbox/mailbox.html" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Inbox</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="../mailbox/compose.html" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Compose</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="../mailbox/read-mail.html" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Read</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>--%>
                             <li class="nav-item has-treeview">
                                 <a href="#" class="nav-link">
                                     <i class="nav-icon fas fa-book"></i>
@@ -400,48 +370,6 @@
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview">
-                                    <%-- <li class="nav-item">
-                                        <a href="../../examples/invoice.html" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Invoice</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="../examples/profile.html" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Profile</p>
-                                        </a>
-                                    </li>--%>
-                                    <%-- <li class="nav-item">
-                                        <a href="../examples/e_commerce.html" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>E-commerce</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="../examples/projects.html" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Projects</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="../examples/project_add.html" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Project Add</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="../examples/project_edit.html" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Project Edit</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="../examples/project_detail.html" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Project Detail</p>
-                                        </a>
-                                    </li>--%>
                                     <li class="nav-item">
                                         <a href="../../pages/examples/contactsUser.aspx" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
@@ -488,7 +416,7 @@
                                     <% if (Session["User_ID"] != null)
                                         {%>
                                     <li class="nav-item">
-                                        <a href="../../pages/examples/LoginPage.aspx" class="nav-link">
+                                        <a href="../../pages/examples/Logoutpage.aspx" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Logout</p>
                                         </a>
@@ -509,162 +437,8 @@
                                             <p>Register</p>
                                         </a>
                                     </li>
-                                    <%--<li class="nav-item">
-                                        <a href="pages/examples/ForgotPasswordPage.aspx" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Forgot Password</p>
-                                        </a>
-                                    </li>--%>
-
-                                    <%--  <li class="nav-item">
-                                        <a href="../examples/recover-password.html" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Recover Password</p>
-                                        </a>
-                                    </li>--%>
-                                    <%--<li class="nav-item">
-                                        <a href="../examples/lockscreen.html" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Lockscreen</p>
-                                        </a>
-                                    </li>--%>
-                                    <%-- <li class="nav-item">
-                                        <a href="../examples/legacy-user-menu.html" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Legacy User Menu</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="../examples/language-menu.html" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Language Menu</p>
-                                        </a>
-                                    </li>--%>
-                                    <%-- <li class="nav-item">
-                                        <a href="../examples/404.html" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Error 404</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="../examples/500.html" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Error 500</p>
-                                        </a>
-                                    </li>--%>
-                                    <%--<li class="nav-item">
-                                        <a href="../examples/pace.html" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Pace</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="../examples/blank.html" class="nav-link active">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Blank Page</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="../../starter.html" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Starter Page</p>
-                                        </a>
-                                    </li>--%>
                                 </ul>
                             </li>
-                            <%--<li class="nav-header">MISCELLANEOUS</li>
-                            <li class="nav-item">
-                                <a href="https://Credit Management/docs/3.0" class="nav-link">
-                                    <i class="nav-icon fas fa-file"></i>
-                                    <p>Documentation</p>
-                                </a>
-                            </li>--%>
-                            <%-- <li class="nav-header">MULTI LEVEL EXAMPLE</li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="fas fa-circle nav-icon"></i>
-                                    <p>Level 1</p>
-                                </a>
-                            </li>
-                            <li class="nav-item has-treeview">
-                                <a href="#" class="nav-link">
-                                    <i class="nav-icon fas fa-circle"></i>
-                                    <p>
-                                        Level 1
-               
-                                            <i class="right fas fa-angle-left"></i>
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Level 2</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item has-treeview">
-                                        <a href="#" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>
-                                                Level 2
-                   
-                                                    <i class="right fas fa-angle-left"></i>
-                                            </p>
-                                        </a>
-                                        <ul class="nav nav-treeview">
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">
-                                                    <i class="far fa-dot-circle nav-icon"></i>
-                                                    <p>Level 3</p>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">
-                                                    <i class="far fa-dot-circle nav-icon"></i>
-                                                    <p>Level 3</p>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">
-                                                    <i class="far fa-dot-circle nav-icon"></i>
-                                                    <p>Level 3</p>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Level 2</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="fas fa-circle nav-icon"></i>
-                                    <p>Level 1</p>
-                                </a>
-                            </li>--%>
-                            <%-- <li class="nav-header">LABELS</li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="nav-icon far fa-circle text-danger"></i>
-                                    <p class="text">Important</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="nav-icon far fa-circle text-warning"></i>
-                                    <p>Warning</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="nav-icon far fa-circle text-info"></i>
-                                    <p>Informational</p>
-                                </a>
-                            </li>--%>
                         </ul>
                     </nav>
                     <!-- /.sidebar-menu -->
@@ -734,7 +508,7 @@
                 <div class="float-right d-none d-sm-block">
                     <b>Version</b> 3.0.1
                 </div>
-                <strong>Copyright &copy; 2014-2019 <a href="http://CreditManagement">Credit Management</a>.</strong> All rights
+                <strong>Copyright &copy; 2019-2020 <a href="http://CreditManagement">Credit Management</a>.</strong> All rights
     reserved.
  
             </footer>
@@ -746,16 +520,106 @@
             <!-- /.control-sidebar -->
         </div>
         <!-- ./wrapper -->
+      <!-- jQuery -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- bs-custom-file-input -->
+    <script src="../../plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../../dist/js/demo.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            bsCustomFileInput.init();
+        });
+    </script>
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
 
-        <!-- jQuery -->
-        <script src="../../plugins/jquery/jquery.min.js"></script>
-        <!-- Bootstrap 4 -->
-        <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <!-- AdminLTE App -->
-        <script src="../../dist/js/adminlte.min.js"></script>
+    <!-- Select2 -->
+    <script src="../../plugins/select2/js/select2.full.min.js"></script>
+    <!-- Bootstrap4 Duallistbox -->
+    <script src="../../plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+    <!-- InputMask -->
+    <script src="../../plugins/moment/moment.min.js"></script>
+    <script src="../../plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+    <!-- date-range-picker -->
+    <script src="../../plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- bootstrap color picker -->
+    <script src="../../plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="../../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Bootstrap Switch -->
+    <script src="../../plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../../dist/js/demo.js"></script>
 
 
-        <script src="../../validator.js"></script>
-    </form>
+    <!-- jQuery validator -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.js"></script>
+    <script src="../../validator.js"></script>
+
+    <!-- Page script -->
+    <script>
+        $(function () {
+            //Initialize Select2 Elements
+            $('.select2').select2()
+
+            //Initialize Select2 Elements
+            $('.select2bs4').select2({
+                theme: 'bootstrap4'
+            })
+
+            //Datemask dd/mm/yyyy
+            $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+            //Datemask2 mm/dd/yyyy
+            $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
+            //Money Euro
+            $('[data-mask]').inputmask()
+
+            //Date range picker
+            $('#reservation').daterangepicker()
+            //Date range picker with time picker
+            $('#reservationtime').daterangepicker({
+                timePicker: true,
+                timePickerIncrement: 30,
+                locale: {
+                    format: 'MM/DD/YYYY hh:mm A'
+                }
+            })
+            //Date range as a button
+            $('#daterange-btn').daterangepicker(
+                {
+                    ranges: {
+                        'Today': [moment(), moment()],
+                        'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                        'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                        'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                        'This Month': [moment().startOf('month'), moment().endOf('month')],
+                        'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                    },
+                    startDate: moment().subtract(29, 'days'),
+                    endDate: moment()
+                },
+                function (start, end) {
+                    $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
+                }
+            )
+
+            //Bootstrap Duallistbox
+            $('.duallistbox').bootstrapDualListbox()
+
+            $("input[data-bootstrap-switch]").each(function () {
+                $(this).bootstrapSwitch('state', $(this).prop('checked'));
+            });
+        })
+    </script>
 </body>
 </html>

@@ -10,87 +10,123 @@
 namespace Creditmanagment.pages.examples {
     
     
-    public partial class Profile_User {
+    public partial class Edit_Profile_User {
         
         /// <summary>
-        /// imgUserImage_YS control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgUserImage_YS;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lblDisplayname_YS control.
+        /// txtFirstname_YS control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDisplayname_YS;
+        protected global::System.Web.UI.WebControls.TextBox txtFirstname_YS;
         
         /// <summary>
-        /// lblFirstname_YS control.
+        /// txtLastname_YS control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFirstname_YS;
+        protected global::System.Web.UI.WebControls.TextBox txtLastname_YS;
         
         /// <summary>
-        /// lblLastname_YS control.
+        /// txtMobileno_YS control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLastname_YS;
+        protected global::System.Web.UI.WebControls.TextBox txtMobileno_YS;
         
         /// <summary>
-        /// lblMobileno_YS control.
+        /// txtEmail_YS control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMobileno_YS;
+        protected global::System.Web.UI.WebControls.TextBox txtEmail_YS;
         
         /// <summary>
-        /// lblEmail_YS control.
+        /// lblinputfile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEmail_YS;
+        protected global::System.Web.UI.WebControls.Label lblinputfile;
         
         /// <summary>
-        /// lblBirtdate_YS control.
+        /// InputFile_YS control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBirtdate_YS;
+        protected global::System.Web.UI.WebControls.FileUpload InputFile_YS;
         
         /// <summary>
-        /// lblAddress_YS control.
+        /// ltrinputfile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAddress_YS;
+        protected global::System.Web.UI.WebControls.Label ltrinputfile;
         
         /// <summary>
-        /// lblAdharno_YS control.
+        /// txtAddress_YS control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAdharno_YS;
+        protected global::System.Web.UI.WebControls.TextBox txtAddress_YS;
+        
+        /// <summary>
+        /// txtAdharcardno_YS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAdharcardno_YS;
+        
+        /// <summary>
+        /// lblBirthDate_YS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBirthDate_YS;
+        
+        /// <summary>
+        /// ltrBirthdate_YS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ltrBirthdate_YS;
+        
+        /// <summary>
+        /// txtBirthDate_YS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtBirthDate_YS;
     }
 }
