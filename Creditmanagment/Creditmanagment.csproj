@@ -271,7 +271,6 @@
     <Content Include="pages\examples\Recover_Password.aspx" />
     <Content Include="pages\examples\Recover_Password.html" />
     <Content Include="pages\examples\Profile_User.aspx" />
-    <Content Include="pages\examples\recover-password.html" />
     <Content Include="pages\examples\Registration.aspx" />
     <Content Include="pages\examples\SendRequestUser.aspx" />
     <Content Include="pages\examples\SessionErrorMessage.aspx" />
