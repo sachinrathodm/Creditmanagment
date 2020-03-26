@@ -19,7 +19,7 @@ namespace Creditmanagment.pages.examples
       {
         userid = Session["User_ID"].ToString();
       }
-      catch (Exception ex)
+      catch (Exception)
       {
         Response.Redirect("SessionErrorMessage.aspx");
       }

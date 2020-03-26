@@ -248,6 +248,7 @@
     <Content Include="pages\examples\DisplayItems.aspx" />
     <Content Include="pages\examples\DisplayStoresList_User.aspx" />
     <Content Include="pages\examples\DisplayUsersList.aspx" />
+    <Content Include="pages\examples\Edit_Profile_Store.aspx" />
     <Content Include="pages\examples\Edit_Profile_User.aspx" />
     <Content Include="pages\examples\e_commerce.html" />
     <Content Include="pages\examples\forgot-password.html" />
@@ -266,6 +267,7 @@
     <Content Include="pages\examples\LogoutPage.aspx" />
     <Content Include="pages\examples\Payment.aspx" />
     <Content Include="pages\examples\profile.html" />
+    <Content Include="pages\examples\Profile_Store.aspx" />
     <Content Include="pages\examples\Recover_Password.aspx" />
     <Content Include="pages\examples\Recover_Password.html" />
     <Content Include="pages\examples\Profile_User.aspx" />
@@ -1922,6 +1924,13 @@
     <Compile Include="pages\examples\DisplayUsersList.aspx.designer.cs">
       <DependentUpon>DisplayUsersList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pages\examples\Edit_Profile_Store.aspx.cs">
+      <DependentUpon>Edit_Profile_Store.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\examples\Edit_Profile_Store.aspx.designer.cs">
+      <DependentUpon>Edit_Profile_Store.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\examples\Edit_Profile_User.aspx.cs">
       <DependentUpon>Edit_Profile_User.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1991,6 +2000,13 @@
     </Compile>
     <Compile Include="pages\examples\Payment.aspx.designer.cs">
       <DependentUpon>Payment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\examples\Profile_Store.aspx.cs">
+      <DependentUpon>Profile_Store.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\examples\Profile_Store.aspx.designer.cs">
+      <DependentUpon>Profile_Store.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\examples\Profile_User.aspx.cs">
       <DependentUpon>Profile_User.aspx</DependentUpon>

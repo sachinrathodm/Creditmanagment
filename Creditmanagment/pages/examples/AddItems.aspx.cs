@@ -14,7 +14,6 @@ namespace Creditmanagment.pages.examples
     protected void Page_Load(object sender, EventArgs e)
     {
       //Events
-      btnAddItem_YS.Click += BtnAddItem_YS_Click_YS;
       try
       {
         userid = Session["User_ID"].ToString();

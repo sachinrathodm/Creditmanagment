@@ -14,7 +14,7 @@ namespace Creditmanagment.pages.examples
     protected void Page_Load(object sender, EventArgs e)
     {
       lblNullmessega.Visible = true;
-      lblNullmessega.InnerText = "No any record";
+      lblNullmessega.InnerText = "No any recode";
       btnOk_YS.Click += BtnOk_YS_Click_YS;
       try
       {

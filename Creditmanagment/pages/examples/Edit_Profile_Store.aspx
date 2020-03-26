@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/UserBlankPage.Master" AutoEventWireup="true" CodeBehind="Edit_Profile_User.aspx.cs" Inherits="Creditmanagment.pages.examples.Edit_Profile_User" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/BlankPage.Master" AutoEventWireup="true" CodeBehind="Edit_Profile_Store.aspx.cs" Inherits="Creditmanagment.pages.examples.Edit_Profile_Store" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -10,7 +10,7 @@
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="../../IndexHomePage_User.aspx">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../../IndexHomePage.aspx">Home</a></li>
                     <li class="breadcrumb-item active">Edit Profile</li>
                 </ol>
             </div>
@@ -20,6 +20,7 @@
                 <div class="card-header">
                     <h3 class="card-title">Edit Profile</h3>
                 </div>
+
                 <form runat="server" id="form1">
                     <div class="card-body">
                         <div class="input-group-append">
@@ -55,21 +56,18 @@
                             </div>
                         </div>
                         <div class="input-group-append">
-                            <div style="width: 415px;" class="ml-2 mr-2 mt-2 form-group">
-                                <asp:TextBox ID="txtE_Adharcardno_YS" class="form-control" placeholder="Adhar card number" runat="server" />
+                            <div class="m-2 form-group" style="text-align: left; width: 200px">
+                                <asp:TextBox ID="txtE_Storename_YS" class="form-control" placeholder="Store Name" runat="server" />
+                            </div>
+                            <div style="width: 200px;" class="m-2 form-group">
+                                <asp:TextBox ID="txtE_Storecategory_YS" class="form-control" placeholder="Store Category" runat="server" />
                             </div>
                         </div>
-                        <div class="ml-2 mr-2">
-                            <asp:Label ID="lblBirthDate_YS" runat="server" Text="Label">Date Of Birth</asp:Label>
-                            <div class="input-group" style="width: 415px;">
-                                <div class="input-group-prepend">
-                                    <asp:Label ID="ltrBirthdate_YS" runat="server" class="input-group-text"><i class="far fa-calendar-alt"></i></asp:Label>
-                                </div>
-                                <asp:TextBox ID="txtE_BirthDate_YS" runat="server" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask> </asp:TextBox>
+                        <div class="input-group-append">
+                            <div style="width: 415px;" class="m-2 form-group">
+                                <asp:TextBox ID="txtE_Helplineno" class="form-control" placeholder="Helpline No." TextMode="Number" runat="server" />
                             </div>
-                            <!-- /.input group -->
                         </div>
-
                         <div class="input-group-append">
                             <div class="m-2 form-group" style="text-align: left; width: 200px">
                                 <asp:Button ID="btnSave_YS" runat="server" class="btn btn-info" Text="Save" />
@@ -82,4 +80,5 @@
                 </form>
             </div>
         </div>
+    </div>
 </asp:Content>

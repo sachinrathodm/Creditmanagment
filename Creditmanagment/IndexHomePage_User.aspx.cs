@@ -10,16 +10,16 @@ namespace Creditmanagment
 {
   public partial class IndexHomePage_User : System.Web.UI.Page
   {
-    string customerid;
+    string customerid, userid;
     protected void Page_Load(object sender, EventArgs e)
     {
       try
       {
-        string userid = Session["User_ID"].ToString();
+        userid = Session["User_ID"].ToString();
       }
       catch (Exception)
       {
-        Response.Redirect("SessionErrorMessage.aspx");
+        Response.Redirect("/pages/examples/LoginPage.aspx");
       }
       if (string.IsNullOrEmpty(Session["User_ID"].ToString()))
       {

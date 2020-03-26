@@ -10,7 +10,7 @@
 namespace Creditmanagment.pages.examples {
     
     
-    public partial class Edit_Profile_User {
+    public partial class Edit_Profile_Store {
         
         /// <summary>
         /// form1 control.
@@ -94,40 +94,31 @@ namespace Creditmanagment.pages.examples {
         protected global::System.Web.UI.WebControls.TextBox txtE_Address_YS;
         
         /// <summary>
-        /// txtE_Adharcardno_YS control.
+        /// txtE_Storename_YS control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtE_Adharcardno_YS;
+        protected global::System.Web.UI.WebControls.TextBox txtE_Storename_YS;
         
         /// <summary>
-        /// lblBirthDate_YS control.
+        /// txtE_Storecategory_YS control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBirthDate_YS;
+        protected global::System.Web.UI.WebControls.TextBox txtE_Storecategory_YS;
         
         /// <summary>
-        /// ltrBirthdate_YS control.
+        /// txtE_Helplineno control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ltrBirthdate_YS;
-        
-        /// <summary>
-        /// txtE_BirthDate_YS control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtE_BirthDate_YS;
+        protected global::System.Web.UI.WebControls.TextBox txtE_Helplineno;
         
         /// <summary>
         /// btnSave_YS control.

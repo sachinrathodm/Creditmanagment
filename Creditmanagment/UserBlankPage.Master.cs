@@ -23,7 +23,7 @@ namespace Creditmanagment
       if (Session["User_ID"] != null && Session["Display_Name"] != null)
       {
         lblName_YS.Text = Session["Display_Name"].ToString();
-
+        lblcustomername_YS.Text = Session["Display_Name"].ToString();
       }
       imgUserImage_YS.ImageUrl = $@"{("~/Images/" + userid + ".jpg")}";
 

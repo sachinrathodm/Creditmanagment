@@ -36,7 +36,8 @@ where User_ID = '{userid}'
       if (Session["User_ID"] != null && Session["Display_Name"] != null)
       {
         lblName_YS.Text = Session["Display_Name"].ToString();
-        login_YS.Visible = false;
+        lblStorekeepername_YS.Text = Session["Display_Name"].ToString();
+
         imgStoremg_YS.ImageUrl = $@"{"~/Images/" + userid + ".jpg"}";
 
         string storeid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"

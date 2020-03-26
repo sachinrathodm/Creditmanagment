@@ -86,12 +86,7 @@ INNER JOIN Customers c ON c.Customer_ID=sc.Customer_ID where sc.Store_ID='{store
     protected void ddItemName_YS_SelectedIndexChanged(object sender, EventArgs e)
     {
       // gdUserRequest.Visible = false;
-      if (storeid.ToString() != "1")
-      {
-
-      }
-      else
-      {
+      
         if (!ddCustomerName_YS.SelectedItem.Text.Equals("--Please Select--") && !ddItemName_YS.SelectedItem.Text.Equals("--Please Select--"))
         {
           string store_Customer_ID = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select Store_Customers_ID from Store_Customers 
@@ -107,7 +102,6 @@ where Store_ID = '{storeid}' and Store_Customers_ID='{store_Customer_ID}'
           gdUserRequest.DataSource = dtUserRequest.DefaultView;
           gdUserRequest.DataBind();
         }
-      }
     }
 
     #region Event
