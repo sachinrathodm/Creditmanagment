@@ -230,7 +230,9 @@
     <Content Include="docs\_layouts\home.html" />
     <Content Include="docs\_layouts\page.html" />
     <Content Include="docs\_layouts\post.html" />
-    <Content Include="Images\5c7f71d4-d114-401f-862c-7c3da1fe7b72.jpg" />
+    <Content Include="Images\1b64c338-dcd5-45cd-a84b-767dc755bcdc.jpg" />
+    <Content Include="Images\765acf78-ba58-44a9-8f60-404bd56092aa.jpg" />
+    <Content Include="Images\dc625ad2-9f6c-4ca9-b28c-80b522ec58dc.jpg" />
     <Content Include="index.html" />
     <Content Include="indexhome1.aspx" />
     <Content Include="IndexHomePage.aspx" />

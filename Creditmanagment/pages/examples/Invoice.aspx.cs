@@ -16,6 +16,7 @@ namespace Creditmanagment.pages.examples
       lblNullmessega.Visible = true;
       lblNullmessega.InnerText = "No any recode";
       btnOk_YS.Click += BtnOk_YS_Click_YS;
+      
       try
       {
         userid = Session["User_ID"].ToString();
@@ -52,28 +53,10 @@ where Store_Customers.Store_ID = '{storeid}'
       }
     }
 
-    protected void btnInvoice_YS_Click(object sender, EventArgs e)
-    {
-      Button btn = (Button)sender;
-      Session["voucherid"] = btn.CommandArgument;
-
-      Boolean isquickmode = Convert.ToBoolean(CommanFile.ExcuteScalar_YS($@"
-select Is_Voucher_QuickMode From [Store] 
-where User_ID = '{userid}'
-"));
-      if (isquickmode)
-      {
-        Response.Redirect("Invoice_print_User_Store.aspx");
-      }
-      else
-      {
-        Response.Redirect("Invoice_DetailMode_print_User_Store_.aspx");
-      }
-    }
-
+   
     private void BtnOk_YS_Click_YS(object sender, EventArgs e)
     {
-      gdInvoic_YS.DataSource = new string[] { };
+      //gdInvoic_YS.DataSource = new string[] { };
       if (!ddCusomerName_YS.SelectedItem.Text.Equals("--Please Select--"))
       {
         string storecustomerid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"select * From Store_Customers
@@ -93,7 +76,7 @@ select Voucher_ID,Description,Amount,Voucher_Date from Voucher Where Store_Custo
           gdInvoic_YS.RowDataBound += GdInvoic_YS_RowDataBound;
           gdInvoic_YS.Visible = true;
           lblNullmessega.Visible = false;
-          gdInvoic_YS.DataSource = dtCustomerinvoice.DefaultView;
+          gdInvoic_YS.DataSource =dtCustomerinvoice.DefaultView;
           gdInvoic_YS.DataBind();
         }
         else
@@ -105,12 +88,42 @@ select Voucher_ID,Description,Amount,Voucher_Date from Voucher Where Store_Custo
       }
     }
 
+    protected void btnInvoice_YS_Click(object sender, EventArgs e)
+    {
+     
+    }
+
     private void GdInvoic_YS_RowDataBound(object sender, GridViewRowEventArgs e)
     {
       e.Row.Cells[1].Visible = false;
     }
 
+    protected void SuppliersProducts_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+      if (e.CommandName.CompareTo("Voucher_ID") == 0)
+      {
+        // The Increase Price or Decrease Price Button has been clicked
+        // Determine the ID of the product whose price was adjusted
+        Guid productID =
+            (Guid)gdInvoic_YS.DataKeys[Convert.ToInt32(e.CommandArgument)].Value;
 
+        //Button btn = (Button)sender;
+        Session["voucherid"] = productID;
+
+        Boolean isquickmode = Convert.ToBoolean(CommanFile.ExcuteScalar_YS($@"
+select Is_Voucher_QuickMode From [Store] 
+where User_ID = '{userid}'
+"));
+        if (isquickmode)
+        {
+          Response.Redirect("Invoice_print_User_Store.aspx");
+        }
+        else
+        {
+          Response.Redirect("Invoice_DetailMode_print_User_Store_.aspx");
+        }
+      }
+    }
   }
 
 }
