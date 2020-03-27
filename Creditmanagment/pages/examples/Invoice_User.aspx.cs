@@ -13,8 +13,6 @@ namespace Creditmanagment.pages.examples
     string userid, storeid;
     protected void Page_Load(object sender, EventArgs e)
     {
-      btnOk_YS.Click += BtnOk_YS_Click_YS;
-
       try
       {
         userid = Session["User_ID"].ToString();
@@ -51,7 +49,10 @@ INNER JOIN Store ON Store.Store_ID = Store_Customers.Store_ID where Store_Custom
           }
           else
             Response.Redirect("LoginPage.aspx");
+
+
         }
+        btnOk_YS.Click += BtnOk_YS_Click_YS;
       }
     }
 
@@ -60,7 +61,7 @@ INNER JOIN Store ON Store.Store_ID = Store_Customers.Store_ID where Store_Custom
       Button btn = (Button)sender;
       Session["voucherid"] = btn.CommandArgument;
 
-      Boolean isquickmode = Convert.ToBoolean(CommanFile.ExcuteScalar_YS($@"
+      bool isquickmode = Convert.ToBoolean(CommanFile.ExcuteScalar_YS($@"
 select Is_Voucher_QuickMode From [Store] 
 where Store_ID = '{ddStoreName_YS.SelectedValue}'"));
       if (isquickmode)
