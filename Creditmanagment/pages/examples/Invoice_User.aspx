@@ -11,7 +11,7 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="../../IndexHomePage_User.aspx">Home</a></li>
-                    <li class="breadcrumb-item active"><a href="Invoice_User.aspx">Invoice</a></li>
+                    <li class="breadcrumb-item active">Invoice</li>
                 </ol>
             </div>
         </div>
@@ -55,13 +55,12 @@
                         <!-- /.card-header -->
                         <div class="card-body">
 
-                            <asp:GridView ID="gdInvoic_YS" runat="server" CellPadding="10" AutoPostBack="true">
+                            <asp:GridView ID="gdInvoic_YS" runat="server" DataKeyNames="Voucher_ID"  CellPadding="10" AutoPostBack="true" AutoGenerateColumns="false" OnRowCommand="SuppliersProducts_RowCommand">
                                 <Columns>
-                                    <asp:TemplateField HeaderText="Create Invoice">
-                                        <ItemTemplate>
-                                            <asp:Button ID="btnInvoice_YS" runat="server" CommandArgument='<%# Eval("Voucher_ID") %>' Text="Invoice" OnClick="btnInvoice_YS_Click" />
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
+                                     <asp:ButtonField ButtonType="Button" HeaderText="Create invoice" CommandName="Voucher_ID" Text="invoice" />
+                                  <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
+                                  <asp:BoundField DataField="Amount" HeaderText="Amount" SortExpression="Amount" />
+                                  <asp:BoundField DataField="Voucher_Date" HeaderText="Voucher_Date" SortExpression="Voucher_Date" />
                                 </Columns>
                             </asp:GridView>
                         </div>

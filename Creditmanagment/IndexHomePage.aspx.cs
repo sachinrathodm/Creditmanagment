@@ -30,7 +30,6 @@ namespace Creditmanagment
       }
       else
       {
-        
         try
         {
           if (Session["User_ID"] != null)
@@ -47,7 +46,6 @@ where Store_ID = '{storeid}'
 "));
 
             lblNumberofuser_YS.Text = totalcoustomers;
-
           }
           else
             Response.Redirect("pages/examples/LoginPage.aspx");
@@ -57,7 +55,6 @@ where Store_ID = '{storeid}'
           Response.Redirect("pages/examples/LoginPage.aspx");
         }
       }
-
     }
   }
 }

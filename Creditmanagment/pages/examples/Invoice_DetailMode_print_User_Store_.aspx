@@ -37,8 +37,12 @@
 </head>
 <body class="hold-transition sidebar-mini">
 
-    <!-- Site wrapper -->
     <div class="wrapper">
+        <!-- Site wrapper -->
+        <% Boolean isstorekeeper = Convert.ToBoolean(Session["isstorekeeper"].ToString());
+            if (isstorekeeper)
+            {
+     %>
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
@@ -68,21 +72,6 @@
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
-                <li>
-                    <%if (Session["User_ID"] != null)
-                        {%>
-
-                    <a href="../../pages/examples/LogoutPage.aspx">
-                        <label id="logout_YS" runat="server">Logout</label>
-                    </a>
-                    <%} %>
-                    <%else
-                        {%>
-                    <a href="pages/examples/LoginPage.aspx">
-                        <label id="login_YS" runat="server">Login</label>
-                    </a>
-                    <%} %>
-                </li>
 
                 <!-- Notifications Dropdown Menu -->
                 <li class="nav-item dropdown">
@@ -115,11 +104,28 @@
                         <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
                     </div>
                 </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
-                        <i class="fas fa-th-large"></i>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                        <i class="far fa-user-circle"></i>
+                        <asp:Label ID="Label1" runat="server" class="badge badge-warning navbar-badge"></asp:Label>
+                        <%--<span class="badge badge-warning navbar-badge">15</span>--%>
                     </a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <asp:Label ID="lblStorekeepername_YS" runat="server" class="dropdown-item dropdown-header"></asp:Label>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-divider"></div>
+                        <a href="../../pages/examples/Profile_Store.aspx" class="dropdown-item">
+                            <i class="fas fa-users mr-2"></i>
+                            <asp:Label ID="Label2" runat="server">Profile</asp:Label>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="../../pages/examples/LogoutPage.aspx" class="dropdown-item">
+                            <i class="fas fa-file mr-2"></i>
+                            <span>Logout</span>
+                        </a>
+                        <%--<div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>--%>
+                    </div>
                 </li>
             </ul>
         </nav>
@@ -245,7 +251,7 @@
                                 <% if (Session["User_ID"] != null)
                                     {%>
                                 <li class="nav-item">
-                                    <a href="../../pages/examples/LoginPage.aspx" class="nav-link">
+                                    <a href="../../pages/examples/Logoutpage.aspx" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Logout</p>
                                     </a>
@@ -279,6 +285,238 @@
             <!-- /.sidebar -->
         </aside>
 
+      
+        <%} %>
+        <%else
+            {%>
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="../../IndexHomePage_USer.aspx" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="#" class="nav-link">Contact</a>
+                </li>
+            </ul>
+
+            <!-- SEARCH FORM -->
+            <form class="form-inline ml-2">
+                <div class="input-group input-group-sm">
+                    <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                    <div class="input-group-append">
+                        <button class="btn btn-navbar" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+
+                <!-- Notifications Dropdown Menu -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                        <i class="far fa-bell"></i>
+                        <asp:Label ID="Label3" runat="server" class="badge badge-warning navbar-badge"></asp:Label>
+                        <%--<span class="badge badge-warning navbar-badge">15</span>--%>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <span class="dropdown-item dropdown-header">15 Notifications</span>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-envelope mr-2"></i>4 new messages
+           
+                                    <span class="float-right text-muted text-sm">3 mins</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="../../pages/examples/AcceptRequest.aspx" class="dropdown-item">
+                            <i class="fas fa-users mr-2"></i>
+                            <asp:Label ID="Label4" runat="server"></asp:Label>
+                            <%--<span class="float-right text-muted text-sm">12 hours</span>--%>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-file mr-2"></i>3 new reports
+           
+                                    <span class="float-right text-muted text-sm">2 days</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                        <i class="far fa-user-circle"></i>
+                        <asp:Label ID="Label5" runat="server" class="badge badge-warning navbar-badge"></asp:Label>
+                        <%--<span class="badge badge-warning navbar-badge">15</span>--%>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <asp:Label ID="lblCustomername" runat="server" class="dropdown-item dropdown-header"></asp:Label>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-divider"></div>
+                        <a href="../../pages/examples/Profile_User.aspx" class="dropdown-item">
+                            <i class="fas fa-users mr-2"></i>
+                            <asp:Label ID="Label7" runat="server">Profile</asp:Label>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="../../pages/examples/LogoutPage.aspx" class="dropdown-item">
+                            <i class="fas fa-file mr-2"></i>
+                            <span>Logout</span>
+                        </a>
+                        <%--<div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>--%>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+
+            <a href="../../IndexHomePage_User.aspx" class="brand-link">
+                <img src="../../dist/img/CM_LOGO.png"
+                    alt="Credit Management Logo"
+                    class="brand-image img-circle elevation-3"
+                    style="opacity: .8">
+                <span class="brand-text font-weight-light">Credit Management</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user (optional) -->
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <asp:Image ID="imgUserImage_YS" runat="server" class="img-circle elevation-2" alt="Store Image" />
+                        <%-- <img src="../../dist/img/user2-160x160.jpg" id="imgUserImage_YS" runat="server" class="img-circle elevation-2" alt="User Image">--%>
+                    </div>
+                    <div class="info">
+                        <a href="../../pages/examples/Profile_User.aspx" class="d-block">
+                            <asp:Label ID="lblUsername_YS" runat="server" ToolTip="See your profile "></asp:Label></a>
+                    </div>
+                </div>
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+                        <li class="nav-item has-treeview">
+                            <a href="../../IndexHomePage_User.aspx" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Dashboard
+               
+                                            <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <%-- <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../../IndexHomePage.aspx" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Home</p>
+                                    </a>
+                                </li>
+                            </ul>--%>
+                        </li>
+                        <li class="nav-header">EXAMPLES</li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>
+                                    Pages
+                <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../../pages/examples/invoice_User.aspx" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Invoice</p>
+                                    </a>
+                                </li>
+                                <%--<li class="nav-item">
+                                    <a href="../examples/contacts.aspx" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Contacts</p>
+                                    </a>
+                                </li>--%>
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview menu-open">
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon far fa-plus-square"></i>
+                                <p>
+                                    Extras
+               
+                                            <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../../pages/examples/invoice_User.aspx" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Invoice</p>
+                                    </a>
+
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../../pages/examples/SendRequestUser.aspx" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Send Request</p>
+                                    </a>
+                                </li>
+                                <% if (Session["User_ID"] != null)
+                                    {%>
+                                <li class="nav-item">
+                                    <a href="../../pages/examples/Logoutpage.aspx" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Logout</p>
+                                    </a>
+                                </li>
+                                <%} %>
+                                <%else
+                                    { %>
+                                <li class="nav-item">
+                                    <a href="../../pages/examples/LoginPage.aspx" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Login</p>
+                                    </a>
+                                </li>
+                                <%} %>
+                                <li class="nav-item">
+                                    <a href="../../pages/examples/Registration.aspx" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Register</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../../pages/examples/ForgotPasswordPage.aspx" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Forgot Password</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../../pages/examples/Change_Password.aspx" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Change Password</p>
+                                    </a>
+                                </li>
+                            </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+        <%} %>
+
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
 
@@ -293,7 +531,7 @@
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="../../IndexHomePage.aspx">Home</a></li>
                                 <li class="breadcrumb-item active"><a href="Invoice.aspx">Invoice</a></li>
-                                <li class="breadcrumb-item active"><a href="Invoice_print_User_Store.aspx">Invoice print</a></li>
+                                <li class="breadcrumb-item active">Invoice print</li>
                             </ol>
                         </div>
                     </div>
@@ -415,31 +653,49 @@
     <!-- /.content -->
 
 
-
+    <%--    <!-- jQuery -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>--%>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- bs-custom-file-input -->
+    <script src="../../plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../../dist/js/demo.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            bsCustomFileInput.init();
+        });
+    </script>
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
         <!-- Control sidebar content goes here -->
     </aside>
     <!-- /.control-sidebar -->
-    <!-- ./wrapper -->
 
-    <!-- jQuery -->
-    <script src="../../plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Select2 -->
+    <script src="../../plugins/select2/js/select2.full.min.js"></script>
+    <!-- Bootstrap4 Duallistbox -->
+    <script src="../../plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+    <!-- InputMask -->
+    <script src="../../plugins/moment/moment.min.js"></script>
+    <script src="../../plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+    <!-- date-range-picker -->
+    <script src="../../plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- bootstrap color picker -->
+    <script src="../../plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="../../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Bootstrap Switch -->
+    <script src="../../plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
     <!-- AdminLTE App -->
     <script src="../../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
-  <script type="text/javascript"> 
-      window.addEventListener("load", window.print(), "width=600,height=400");
-</script>
+
+    <script type="text/javascript"> 
+        window.addEventListener("load", window.print(), "width=600,height=400");
+    </script>
 </body>
 </html>
-<%-- <footer class="main-footer no-print">
-        <div class="float-right d-none d-sm-block">
-            <b>Version</b> 3.0.1
-        </div>
-        <strong>Copyright &copy; 2019-2020 <a href="http://CreditManagement">Credit Management</a>.</strong> All rights
-    reserved.
-    </footer>--%>

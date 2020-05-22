@@ -41,6 +41,7 @@ Where
             CommanFile.GetDataTable_YS(dtStoreDetails, $@"SELECT *
 FROM Store_Customers
 INNER JOIN Store ON Store.Store_ID = Store_Customers.Store_ID where Store_Customers.Customer_ID = '{customerid}'");
+            Session["storecustomerid"] = dtStoreDetails.Rows[0][0].ToString();
             ddStoreName_YS.DataTextField = "Store_Name";
             ddStoreName_YS.DataValueField = "Store_ID";
             ddStoreName_YS.DataSource = dtStoreDetails.DefaultView;
@@ -56,27 +57,8 @@ INNER JOIN Store ON Store.Store_ID = Store_Customers.Store_ID where Store_Custom
       }
     }
 
-    protected void btnInvoice_YS_Click(object sender, EventArgs e)
-    {
-      Button btn = (Button)sender;
-      Session["voucherid"] = btn.CommandArgument;
-
-      bool isquickmode = Convert.ToBoolean(CommanFile.ExcuteScalar_YS($@"
-select Is_Voucher_QuickMode From [Store] 
-where Store_ID = '{ddStoreName_YS.SelectedValue}'"));
-      if (isquickmode)
-      {
-        Response.Redirect("Invoice_print_User_Store.aspx");
-      }
-      else
-      {
-        Response.Redirect("Invoice_DetailMode_print_User_Store_.aspx");
-      }
-    }
-
     private void BtnOk_YS_Click_YS(object sender, EventArgs e)
     {
-      gdInvoic_YS.RowDataBound += GdInvoic_YS_RowDataBound_YS;
       if (!ddStoreName_YS.SelectedItem.Text.Equals("--Please Select--"))
       {
 
@@ -88,10 +70,42 @@ where Store_ID = '{ddStoreName_YS.SelectedValue}'
         gdInvoic_YS.DataBind();
       }
     }
-
-    private void GdInvoic_YS_RowDataBound_YS(object sender, GridViewRowEventArgs e)
+    protected void SuppliersProducts_RowCommand(object sender, GridViewCommandEventArgs e)
     {
-      e.Row.Cells[1].Visible = false;
+      if (e.CommandName.CompareTo("Voucher_ID") == 0)
+      {
+        // The Increase Price or Decrease Price Button has been clicked
+        // Determine the ID of the product whose price was adjusted
+        Guid productID =
+            (Guid)gdInvoic_YS.DataKeys[Convert.ToInt32(e.CommandArgument)].Value;
+
+        //Button btn = (Button)sender;
+        Session["voucherid"] = productID;
+
+        string customerid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
+   select Customer_ID From Customers c  
+   inner join [User] u on c.User_ID = u.User_ID
+   where u.User_ID='{userid}'
+"));
+
+        string storeid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
+select Store_ID From Customers c  
+   inner join Store_Customers sc on c.Customer_ID = sc.Customer_ID
+   where c.Customer_ID='{customerid}'
+"));
+        Boolean isquickmode = Convert.ToBoolean(CommanFile.ExcuteScalar_YS($@"
+select Is_Voucher_QuickMode From [Store] 
+where Store_ID = '{storeid}'
+"));
+        if (isquickmode)
+        {
+          Response.Redirect("Invoice_print_User_Store.aspx");
+        }
+        else
+        {
+          Response.Redirect("Invoice_DetailMode_print_User_Store_.aspx");
+        }
+      }
     }
   }
 }

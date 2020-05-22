@@ -32,6 +32,26 @@ select Is_Storekeeper From [User]
 where User_ID = '{userid}'
 "));
       Session["isstorekeeper"] = isstorekeeper;
+
+      int storenotification = Convert.ToInt32(CommanFile.ExcuteScalar_YS($@"
+select count(*) FRom Store_Customer_Request
+where Customer_ID ='{userid}' and CU_Request_Status='A' or CU_Request_Status='R'
+"));
+
+      int totalrequest = storenotification;
+
+      if (totalrequest > 0)
+      {
+        lbltotalrequest_YS.Text = Convert.ToString(totalrequest);
+      }
+      if (storenotification > 0)
+      {
+        lblgetrequest_YS.Text = Convert.ToString(storenotification + " Store Notification");
+      }
+      else
+      {
+        lblgetrequest_YS.Text = "No any Request";
+      }
     }
   }
 }

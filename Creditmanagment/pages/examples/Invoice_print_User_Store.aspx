@@ -68,7 +68,7 @@
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
-                <li>
+                <%--<li>
                     <%if (Session["User_ID"] != null)
                         {%>
 
@@ -82,7 +82,7 @@
                         <label id="login_YS" runat="server">Login</label>
                     </a>
                     <%} %>
-                </li>
+                </li>--%>
 
                 <!-- Notifications Dropdown Menu -->
                 <li class="nav-item dropdown">
@@ -115,10 +115,28 @@
                     </div>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
-                        <i class="fas fa-th-large"></i>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                        <i class="far fa-user-circle"></i>
+                        <asp:Label ID="Label1" runat="server" class="badge badge-warning navbar-badge"></asp:Label>
+                        <%--<span class="badge badge-warning navbar-badge">15</span>--%>
                     </a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <asp:Label ID="lblUsername_YS" runat="server" class="dropdown-item dropdown-header"></asp:Label>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-divider"></div>
+                        <a href="../../pages/examples/Profile_Store.aspx" class="dropdown-item">
+                            <i class="fas fa-users mr-2"></i>
+                            <asp:Label ID="Label3" runat="server">Profile</asp:Label>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="../../pages/examples/LogoutPage.aspx" class="dropdown-item">
+                            <i class="fas fa-file mr-2"></i>
+                            <span>Logout</span>
+                        </a>
+                        <%--<div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>--%>
+                    </div>
                 </li>
             </ul>
         </nav>
@@ -452,8 +470,8 @@
     <!-- /.control-sidebar -->
     <!-- ./wrapper -->
 
-    <!-- jQuery -->
-    <script src="../../plugins/jquery/jquery.min.js"></script>
+   <%-- <!-- jQuery -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>--%>
     <!-- Bootstrap 4 -->
     <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->

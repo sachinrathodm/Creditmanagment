@@ -55,12 +55,12 @@
                         <!-- /.card-header -->
                         <div class="card-body">
                             <label id="lblNullmessega" visible="false" runat="server" text="" class="col-sm-4 col-form-label"></label>
-                             <asp:GridView ID="gdInvoic_YS" runat="server" DataKeyNames="Voucher_ID"  CellPadding="10" AutoPostBack="true" OnRowCommand="SuppliersProducts_RowCommand">
+                             <asp:GridView ID="gdInvoic_YS" runat="server" DataKeyNames="Voucher_ID"  CellPadding="10" AutoPostBack="true" AutoGenerateColumns="false" OnRowCommand="SuppliersProducts_RowCommand">
                                 <Columns>
                                   <asp:ButtonField ButtonType="Button" HeaderText="Create invoice" CommandName="Voucher_ID" Text="invoice" />
-                                  <%--<asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
+                                  <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
                                   <asp:BoundField DataField="Amount" HeaderText="Amount" SortExpression="Amount" />
-                                  <asp:BoundField DataField="Voucher_Date" HeaderText="Voucher_Date" SortExpression="Voucher_Date" />--%>
+                                  <asp:BoundField DataField="Voucher_Date" HeaderText="Voucher_Date" SortExpression="Voucher_Date" />
                                 </Columns>
                             </asp:GridView>
                         </div>

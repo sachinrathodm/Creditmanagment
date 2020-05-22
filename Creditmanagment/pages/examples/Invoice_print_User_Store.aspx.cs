@@ -32,8 +32,9 @@ where User_ID = '{userid}'
       {
         if (isstorekeeper)
         {
+          lblUsername_YS.Text = Session["Display_Name"].ToString();
           lblName_YS.Text = Session["Display_Name"].ToString();
-          login_YS.Visible = false;
+          //login_YS.Visible = false;
           imgStoremg_YS.ImageUrl = $@"{"~/Images/" + userid + ".jpg"}";
 
           string storeid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
@@ -66,6 +67,7 @@ where Store_ID ='{storeid}' and CU_Request_Status='p'"));
           if (Session["User_ID"] != null && Session["Display_Name"] != null)
           {
             lblName_YS.Text = Session["Display_Name"].ToString();
+            lblUsername_YS.Text = Session["Display_Name"].ToString();
 
           }
           imgStoremg_YS.ImageUrl = $@"{("~/Images/" + userid + ".jpg")}";
@@ -190,6 +192,7 @@ where Voucher_ID = '{voucherid}'");
           ltVoucherdetail_YS.Text = sb.ToString();
         }
         sb.Append("</table>");
+        lblTotalamount_YS.Text = voucherdetail.Rows[0][1].ToString();
       }
       else
       {
