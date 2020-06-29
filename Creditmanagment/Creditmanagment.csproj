@@ -233,8 +233,6 @@
     <Content Include="Images\1b64c338-dcd5-45cd-a84b-767dc755bcdc.jpg" />
     <Content Include="Images\765acf78-ba58-44a9-8f60-404bd56092aa.jpg" />
     <Content Include="Images\dc625ad2-9f6c-4ca9-b28c-80b522ec58dc.jpg" />
-    <Content Include="index.html" />
-    <Content Include="indexhome1.aspx" />
     <Content Include="IndexHomePage.aspx" />
     <Content Include="IndexHomePage_User.aspx" />
     <Content Include="pages\examples\AcceptRequest.aspx" />
@@ -242,41 +240,28 @@
     <Content Include="pages\examples\500.html" />
     <Content Include="pages\examples\AddItems.aspx" />
     <Content Include="pages\examples\Add_Invoice.aspx" />
-    <Content Include="pages\examples\blank.html" />
     <Content Include="pages\examples\Change_Password.aspx" />
     <Content Include="pages\examples\Contacts.aspx" />
-    <Content Include="pages\examples\contacts.html" />
     <Content Include="pages\examples\ContactsUser.aspx" />
     <Content Include="pages\examples\DisplayItems.aspx" />
     <Content Include="pages\examples\DisplayStoresList_User.aspx" />
     <Content Include="pages\examples\DisplayUsersList.aspx" />
     <Content Include="pages\examples\Edit_Profile_Store.aspx" />
     <Content Include="pages\examples\Edit_Profile_User.aspx" />
-    <Content Include="pages\examples\e_commerce.html" />
-    <Content Include="pages\examples\forgot-password.html" />
     <Content Include="pages\examples\ForgotPasswordPage.aspx" />
-    <Content Include="pages\examples\invoice-print.html" />
     <Content Include="pages\examples\Invoice.aspx" />
-    <Content Include="pages\examples\invoice.html" />
-    <Content Include="pages\examples\Invoice_DetailMode_print_User_Store_.aspx" />
-    <Content Include="pages\examples\Invoice_Print_Click_User.aspx" />
-    <Content Include="pages\examples\Invoice_print_User_Store.aspx" />
     <Content Include="pages\examples\Invoice_User.aspx" />
-    <Content Include="pages\examples\language-menu.html" />
-    <Content Include="pages\examples\legacy-user-menu.html" />
-    <Content Include="pages\examples\lockscreen.html" />
     <Content Include="pages\examples\LoginPage.aspx" />
     <Content Include="pages\examples\LogoutPage.aspx" />
     <Content Include="pages\examples\Payment.aspx" />
-    <Content Include="pages\examples\profile.html" />
+    <Content Include="pages\examples\Print_PDF.aspx" />
+    <Content Include="pages\examples\Print_PDF_Quick_Mode.aspx" />
     <Content Include="pages\examples\Profile_Store.aspx" />
     <Content Include="pages\examples\Recover_Password.aspx" />
-    <Content Include="pages\examples\Recover_Password.html" />
     <Content Include="pages\examples\Profile_User.aspx" />
     <Content Include="pages\examples\Registration.aspx" />
     <Content Include="pages\examples\SendRequestUser.aspx" />
     <Content Include="pages\examples\SessionErrorMessage.aspx" />
-    <Content Include="pages\widgets.html" />
     <Content Include="plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.css" />
     <Content Include="plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.min.css" />
     <Content Include="plugins\bootstrap-colorpicker\js\bootstrap-colorpicker.js" />
@@ -1841,13 +1826,6 @@
       <DependentUpon>BlankPage.Master</DependentUpon>
     </Compile>
     <Compile Include="CommanFile.cs" />
-    <Compile Include="indexhome1.aspx.cs">
-      <DependentUpon>indexhome1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="indexhome1.aspx.designer.cs">
-      <DependentUpon>indexhome1.aspx</DependentUpon>
-    </Compile>
     <Compile Include="IndexHomePage.aspx.cs">
       <DependentUpon>IndexHomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1953,27 +1931,6 @@
     <Compile Include="pages\examples\Invoice.aspx.designer.cs">
       <DependentUpon>Invoice.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pages\examples\Invoice_DetailMode_print_User_Store_.aspx.cs">
-      <DependentUpon>Invoice_DetailMode_print_User_Store_.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pages\examples\Invoice_DetailMode_print_User_Store_.aspx.designer.cs">
-      <DependentUpon>Invoice_DetailMode_print_User_Store_.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pages\examples\Invoice_Print_Click_User.aspx.cs">
-      <DependentUpon>Invoice_Print_Click_User.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pages\examples\Invoice_Print_Click_User.aspx.designer.cs">
-      <DependentUpon>Invoice_Print_Click_User.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pages\examples\Invoice_print_User_Store.aspx.cs">
-      <DependentUpon>Invoice_print_User_Store.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pages\examples\Invoice_print_User_Store.aspx.designer.cs">
-      <DependentUpon>Invoice_print_User_Store.aspx</DependentUpon>
-    </Compile>
     <Compile Include="pages\examples\Invoice_User.aspx.cs">
       <DependentUpon>Invoice_User.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2001,6 +1958,20 @@
     </Compile>
     <Compile Include="pages\examples\Payment.aspx.designer.cs">
       <DependentUpon>Payment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\examples\Print_PDF.aspx.cs">
+      <DependentUpon>Print_PDF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\examples\Print_PDF.aspx.designer.cs">
+      <DependentUpon>Print_PDF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\examples\Print_PDF_Quick_Mode.aspx.cs">
+      <DependentUpon>Print_PDF_Quick_Mode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\examples\Print_PDF_Quick_Mode.aspx.designer.cs">
+      <DependentUpon>Print_PDF_Quick_Mode.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\examples\Profile_Store.aspx.cs">
       <DependentUpon>Profile_Store.aspx</DependentUpon>

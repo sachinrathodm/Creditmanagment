@@ -220,6 +220,24 @@ namespace Creditmanagment.pages.examples {
         protected global::System.Web.UI.WebControls.TextBox txtBirthDate_YS;
         
         /// <summary>
+        /// btnGetOtp_YS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGetOtp_YS;
+        
+        /// <summary>
+        /// txtpasscode_YS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtpasscode_YS;
+        
+        /// <summary>
         /// chkAgree control.
         /// </summary>
         /// <remarks>

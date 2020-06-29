@@ -11,6 +11,7 @@ namespace Creditmanagment.pages.examples
 {
   public partial class Registration : System.Web.UI.Page
   {
+    public int randomnumber;
     Guid UserGUID = Guid.NewGuid();
     string encryptpassword;
     List<Control> _CommanControlList = new List<Control>();
@@ -19,33 +20,36 @@ namespace Creditmanagment.pages.examples
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        #region Controls
-        //CommanControl
-        _CommanControlList.Add(txtFirstname_YS);
-        _CommanControlList.Add(txtLastname_YS);
-        _CommanControlList.Add(txtEmail_YS);
-        _CommanControlList.Add(txtPassword_YS);
-        _CommanControlList.Add(txtRetypepassword_YS);
-        _CommanControlList.Add(txtMobileno_YS);
-        _CommanControlList.Add(InputFile_YS);
-        _CommanControlList.Add(lblinputfile);
-        //_CommanControlList.Add(lblUpload_YS);
-        _CommanControlList.Add(ltrinputfile);
-        _CommanControlList.Add(txtAddress_YS);
-        _CommanControlList.Add(btnRegister_YS);
-        _CommanControlList.Add(chkAgree);
-        _CommanControlList.Add(lblismember_YS);
-        _CommanControlList.Add(lblAgree);
-        //StoreKeeperControl
-        _StoreKeeperControl.Add(txtStorecategory_YS);
-        _StoreKeeperControl.Add(txtStorename_YS);
-        _StoreKeeperControl.Add(ddtVouchermode_YS);
-        _StoreKeeperControl.Add(txtHelplineno_YS);
-        //CustomerControl
-        _CustomerControl.Add(lblBirthDate_YS);
-        _CustomerControl.Add(txtBirthDate_YS);
-        _CustomerControl.Add(ltrBirthdate_YS);
-        _CustomerControl.Add(txtAdharcardno_YS);
+
+      #region Controls
+      //CommanControl
+      _CommanControlList.Add(txtFirstname_YS);
+      _CommanControlList.Add(txtLastname_YS);
+      _CommanControlList.Add(txtEmail_YS);
+      _CommanControlList.Add(txtPassword_YS);
+      _CommanControlList.Add(txtRetypepassword_YS);
+      _CommanControlList.Add(txtMobileno_YS);
+      _CommanControlList.Add(InputFile_YS);
+      _CommanControlList.Add(lblinputfile);
+      _CommanControlList.Add(btnGetOtp_YS);
+      _CommanControlList.Add(txtpasscode_YS);
+      //_CommanControlList.Add(lblUpload_YS);
+      _CommanControlList.Add(ltrinputfile);
+      _CommanControlList.Add(txtAddress_YS);
+      _CommanControlList.Add(btnRegister_YS);
+      _CommanControlList.Add(chkAgree);
+      _CommanControlList.Add(lblismember_YS);
+      _CommanControlList.Add(lblAgree);
+      //StoreKeeperControl
+      _StoreKeeperControl.Add(txtStorecategory_YS);
+      _StoreKeeperControl.Add(txtStorename_YS);
+      _StoreKeeperControl.Add(ddtVouchermode_YS);
+      _StoreKeeperControl.Add(txtHelplineno_YS);
+      //CustomerControl
+      _CustomerControl.Add(lblBirthDate_YS);
+      _CustomerControl.Add(txtBirthDate_YS);
+      _CustomerControl.Add(ltrBirthdate_YS);
+      _CustomerControl.Add(txtAdharcardno_YS);
 
       foreach (var control in _CommanControlList)
         control.Visible = false;
@@ -55,16 +59,20 @@ namespace Creditmanagment.pages.examples
         control.Visible = false;
       #endregion
 
-        #region Events
-        rdCustomers_YS.CheckedChanged += rdStoreKeeper_YS_CheckedChanged_YS;
-        rdStoreKeeper_YS.CheckedChanged += rdStoreKeeper_YS_CheckedChanged_YS;
-        btnRegister_YS.Click += BtnRegister_YS_Click_YS;
-        #endregion
+      #region Events
+      rdCustomers_YS.CheckedChanged += rdStoreKeeper_YS_CheckedChanged_YS;
+      rdStoreKeeper_YS.CheckedChanged += rdStoreKeeper_YS_CheckedChanged_YS;
+      btnRegister_YS.Click += BtnRegister_YS_Click_YS;
+      btnGetOtp_YS.Click += BtnGetOtp_YS_Click_YS;
+      #endregion
     }
+
 
     string _Sql;
     private void BtnRegister_YS_Click_YS(object sender, EventArgs e)
     {
+
+
       int IsEmail = Convert.ToInt32(CommanFile.ExcuteScalar_YS($@"
 select count(*) from[dbo].[User] 
 Where 
@@ -75,18 +83,21 @@ Where
         Response.Write("<script>alert('Please Select Another Emailid');</script>");
         return;
       }
+      if (txtpasscode_YS.Text != Session["rendomnumber"].ToString())
+      {
+        Response.Write("<script>alert('Please enter right OTP.');</script>");
+        return;
+      }
 
-      encryptpassword = CommanFile.encryptionpass(txtPassword_YS.Text);
+      encryptpassword = CommanFile.encryptionpass(Session["Password_YS"].ToString());
 
       if (rdCustomers_YS.Checked)
       {
-
+        txtPassword_YS.Text = txtRetypepassword_YS.Text = Session["Password_YS"].ToString();
         if (string.IsNullOrEmpty(txtFirstname_YS.Text) ||
             string.IsNullOrEmpty(txtLastname_YS.Text) ||
             string.IsNullOrEmpty(txtMobileno_YS.Text) ||
             string.IsNullOrEmpty(txtEmail_YS.Text) ||
-            string.IsNullOrEmpty(txtPassword_YS.Text) ||
-            string.IsNullOrEmpty(txtRetypepassword_YS.Text) ||
             string.IsNullOrEmpty(txtAddress_YS.Text) ||
             string.IsNullOrEmpty(txtAdharcardno_YS.Text))
         {
@@ -130,8 +141,6 @@ INSERT INTO [dbo].[Customers]
            string.IsNullOrEmpty(txtLastname_YS.Text) ||
            string.IsNullOrEmpty(txtMobileno_YS.Text) ||
            string.IsNullOrEmpty(txtEmail_YS.Text) ||
-           string.IsNullOrEmpty(txtPassword_YS.Text) ||
-           string.IsNullOrEmpty(txtRetypepassword_YS.Text) ||
            string.IsNullOrEmpty(txtAddress_YS.Text) ||
            string.IsNullOrEmpty(txtStorename_YS.Text) ||
            string.IsNullOrEmpty(txtStorecategory_YS.Text) ||
@@ -226,7 +235,21 @@ INSERT INTO [dbo].[User](
 
       #endregion
     }
+    private void BtnGetOtp_YS_Click_YS(object sender, EventArgs e)
+    {
+      Random generator = new Random();
+      Session["rendomnumber"] = generator.Next(100000, 1000000);
+      Session["Password_YS"] = txtPassword_YS.Text;
+      try
+      {
+        CommanFile.sendVerificationEmail_YS(txtEmail_YS.Text, Session["rendomnumber"].ToString());
+        btnRegister_YS.Visible = true;
+      }
+      catch (Exception ex)
+      {
 
+      }
+    }
     #endregion
   }
 }

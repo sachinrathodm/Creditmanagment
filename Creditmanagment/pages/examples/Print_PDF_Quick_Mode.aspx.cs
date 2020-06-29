@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace Creditmanagment.pages.examples
 {
-  public partial class Invoice_print_User_Store : System.Web.UI.Page
+  public partial class Print_PDF_Quick_Mode : System.Web.UI.Page
   {
     string userid, voucherid, storecustomerid;
     protected void Page_Load(object sender, EventArgs e)
@@ -28,52 +28,6 @@ namespace Creditmanagment.pages.examples
 select Is_Storekeeper From [User] 
 where User_ID = '{userid}'
 "));
-      if (Session["User_ID"] != null && Session["Display_Name"] != null)
-      {
-        if (isstorekeeper)
-        {
-          lblUsername_YS.Text = Session["Display_Name"].ToString();
-          lblName_YS.Text = Session["Display_Name"].ToString();
-          //login_YS.Visible = false;
-          imgStoremg_YS.ImageUrl = $@"{"~/Images/" + userid + ".jpg"}";
-
-          string storeid = Convert.ToString(CommanFile.ExcuteScalar_YS($@"
-SELECT[Store_ID]
-  FROM [CreditManagement].[dbo].[Store]
-  where User_ID = '{userid}'
-"));
-
-          int countrequest = Convert.ToInt32(CommanFile.ExcuteScalar_YS($@"
-select count(*) FRom Store_Customer_Request
-where Store_ID ='{storeid}' and CU_Request_Status='p'"));
-
-          int totalrequest = countrequest;
-
-          if (totalrequest > 0)
-          {
-            lbltotalrequest_YS.Text = Convert.ToString(totalrequest);
-          }
-          if (countrequest > 0)
-          {
-            lblgetrequest_YS.Text = Convert.ToString(countrequest + " Cutomer requests");
-          }
-          else
-          {
-            lblgetrequest_YS.Text = "No any Request";
-          }
-        }
-        else
-        {
-          if (Session["User_ID"] != null && Session["Display_Name"] != null)
-          {
-            lblName_YS.Text = Session["Display_Name"].ToString();
-            lblUsername_YS.Text = Session["Display_Name"].ToString();
-
-          }
-          imgStoremg_YS.ImageUrl = $@"{("~/Images/" + userid + ".jpg")}";
-        }
-
-      }
 
 
       if (Session["User_ID"] != null && Session["Display_Name"] != null)
@@ -167,28 +121,43 @@ left outer join [User] u on s.User_ID = u.User_ID
           //Session["yash1"] = yash;
         }
 
-
+        int count=0;
         DataTable voucherdetail = new DataTable();
         CommanFile.GetDataTable_YS(voucherdetail, $@"
  select Description,Amount from Voucher
 where Voucher_ID = '{voucherid}'");
         StringBuilder sb = new StringBuilder();
-        sb.Append(@"<table class= ""table table-striped"">");
-        sb.Append("<tr>");
+        sb.Append(@"<table class="" table table-striped"" style=""width:100%;padding:.75rem;vertical-align: top"">");
+        sb.Append(@"<tr style=""background-color:#dee2e6;    text-align: left"">");
         foreach (DataColumn column in voucherdetail.Columns)
         {
-          sb.Append("<th>" + column.ColumnName + "</th>");
+          sb.Append(@"<th style=""padding: 15px"">" + column.ColumnName + "</th>");
         }
         sb.Append("</tr>");
 
         foreach (DataRow row in voucherdetail.Rows)
         {
-          sb.Append("<tr>");
+          count = count % 2;
+          if (count == 0)
+          {
+            sb.Append("<tr>");
           foreach (DataColumn column in voucherdetail.Columns)
           {
-            sb.Append("<td>" + row[column.ColumnName].ToString() + "</td>");
+            sb.Append(@"<td style=""padding: 15px"">" + row[column.ColumnName].ToString() + "</td>");
           }
           sb.Append("</tr>");
+            count++;
+          }
+          else
+          {
+            sb.Append(@"<tr style=""background-color:#dee2e6"">");
+            foreach (DataColumn column in voucherdetail.Columns)
+            {
+              sb.Append(@"<td style=""padding: 15px"">" + row[column.ColumnName].ToString() + "</td>");
+            }
+            sb.Append("</tr>");
+            count++;
+          }
           ltVoucherdetail_YS.Text = sb.ToString();
         }
         sb.Append("</table>");
@@ -201,3 +170,4 @@ where Voucher_ID = '{voucherid}'");
     }
   }
 }
+

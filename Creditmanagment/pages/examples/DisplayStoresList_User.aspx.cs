@@ -29,9 +29,10 @@ SELECT[Customer_ID]
   where User_ID = '{userid}'
 "));
           DataTable dtstoredata_YS = new DataTable();
-          dtstoredata_YS = (CommanFile.GetDataTable_YS(dtstoredata_YS, $@"SELECT Store_Name,First_Name+Last_Name as StoreKeeperName,Helpline_No,Address
-FROM Store_Customer_Request
-Left outer JOIN Store ON Store.Store_ID =Store_Customer_Request.Store_ID 
+          dtstoredata_YS = (CommanFile.GetDataTable_YS(dtstoredata_YS, $@"SELECT Store_Name,First_Name+ ' ' +Last_Name as StoreKeeperName,Mobile_No,Address  
+FROM Store_Customer_Request  Left outer JOIN Store 
+ON Store.Store_ID =Store_Customer_Request.Store_ID Left outer Join [User]
+ON Store.User_ID = [User].User_ID 
  where Customer_ID = '{customerid}' and CU_Request_Status = 'A'
 "));
 

@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="Creditmanagment.pages.examples.Registration" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registration.aspx.cs"  Inherits="Creditmanagment.pages.examples.Registration" %>
 
 <!DOCTYPE html>
 <html>
@@ -19,7 +19,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
     <link rel="stylesheet" href="../../dist/css/textboxvalidation.css">
-   <!-- Google Font: Source Sans Pro -->
+    <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
     <link rel="stylesheet" href="../../dist/css/textboxvalidation.css">
@@ -37,7 +37,7 @@
             <div class="register-logo">
                 <a href="../../IndexHomePage.aspx"><b>Credit Management</b></a>
             </div>
-          
+
             <div class="card ml-5 mr-5 aspNetHidden">
                 <div class="card-body register-card-body">
                     <p class="login-box-msg">Register a new membership</p>
@@ -102,7 +102,7 @@
                                 <%--<label class="custom-file-label" for="exampleInputFile">Choose file</label>--%>
                             </div>
                             <div class="input-group-append">
-                              <%--  <asp:Button ID="lblUpload_YS" runat="server" runat="server" class="input-group-text" Text="Upload" />--%>
+                                <%--  <asp:Button ID="lblUpload_YS" runat="server" runat="server" class="input-group-text" Text="Upload" />--%>
                                 <%--<asp:Label ID="lblUpload_YS" runat="server" class="input-group-text">Upload</asp:Label>--%>
                                 <%--<span class="input-group-text" id="">Upload</span>--%>
                             </div>
@@ -148,11 +148,19 @@
                             <div class="input-group-prepend">
                                 <asp:Label ID="ltrBirthdate_YS" runat="server" class="input-group-text"><i class="far fa-calendar-alt"></i></asp:Label>
                             </div>
-                            <asp:TextBox ID="txtBirthDate_YS" runat="server" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask > </asp:TextBox>
+                            <asp:TextBox ID="txtBirthDate_YS" runat="server" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask> </asp:TextBox>
                         </div>
                         <!-- /.input group -->
                     </div>
 
+                    <div class="input-group-append">
+                        <div class="m-2 form-group" style="text-align: left; width: 200px">
+                            <asp:Button ID="btnGetOtp_YS" class="btn btn-primary btn-block" UseSubmitBehavior="false" runat="server" Text="Get OTP" />
+                        </div>
+                        <div style="width: 200px;" class="m-2 form-group">
+                            <asp:TextBox ID="txtpasscode_YS" class="form-control" placeholder="Write OTP" runat="server" />
+                        </div>
+                    </div>
                 </div>
                 <div class="row ml-1">
                     <div class="input-group-append col-7">

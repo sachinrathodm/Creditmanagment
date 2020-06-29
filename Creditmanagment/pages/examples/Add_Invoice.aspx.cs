@@ -51,6 +51,7 @@ SELECT[Store_ID]
               lblqty.Visible = false;
               ddItemName_YS.Visible = false;
               txtQty_YS.Visible = false;
+              btnAddNewItem_YS.Visible = false;
             }
 
             dtCustomers = new DataTable();

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net.Mail;
 using System.Security.Cryptography;
 using System.Text;
 using System.Web;
@@ -13,7 +14,7 @@ namespace Creditmanagment
   {
 
     public static string connetionString = @"Data Source=DESKTOP-M7QNTA0\SQLEXPRESS;Initial Catalog=CreditManagement;User ID=sa;Password=sqladmin";
-    //public static string connetionString = @"Data Source=DESKTOP-7CMFN8V\SP_17;Initial Catalog=CreditManagement;User ID=sa;Password=sqladmin";
+    //public static string connetionString = @"Data Source=Sachinpc\SACHINPC;Initial Catalog=CreditManagement;User ID=sa;Password=Sql@admin";
 
     public static int ExcuteNonQuery_YS(string Query)
     {
@@ -65,6 +66,32 @@ namespace Creditmanagment
       encode = Encoding.UTF8.GetBytes(password);
       msg = Convert.ToBase64String(encode);
       return msg;
+    }
+    public static string sendVerificationEmail_YS(string fromEmailAddress, string Randomcode)
+    {
+      try
+      {
+
+        MailMessage mail = new MailMessage();
+        SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+        SmtpServer.EnableSsl = true;
+        mail.From = new MailAddress("creditmanagementys@gmail.com");
+        mail.To.Add(fromEmailAddress);
+        mail.Subject = "Verification Code";
+
+        mail.Body = "Your Verification Code is " + Randomcode;
+        SmtpServer.UseDefaultCredentials = true;
+        SmtpServer.Port = 587;
+        SmtpServer.Credentials = new System.Net.NetworkCredential("creditmanagementys@gmail.com", "Sachin@123");
+        SmtpServer.EnableSsl = true;
+
+        SmtpServer.Send(mail);
+        return "Mail Sent Your Email Please Check Your Email" + fromEmailAddress;
+      }
+      catch (Exception ex)
+      {
+        return ex.Message;
+      }
     }
   }
 }

@@ -111,11 +111,12 @@ where User_ID = '{userid}'
 "));
         if (isquickmode)
         {
-          Response.Redirect("Invoice_print_User_Store.aspx");
+          Response.Redirect("Print_PDF_Quick_Mode.aspx");
         }
         else
         {
-          Response.Redirect("Invoice_DetailMode_print_User_Store_.aspx");
+          //Response.Redirect("Invoice_DetailMode_print_User_Store_.aspx");
+          Response.Redirect("Print_PDF.aspx");
         }
       }
     }

@@ -177,8 +177,8 @@ $(document).ready(function () {
           //  message: 'The lastname must be more than 6 and less than 30 characters long'
           //},
           regexp: {
-            regexp: /(^[0-9_]{13})+$/,
-            message: 'Helpline no in use only number or 10 digit'
+            regexp: /(^[0-9_]{10})+$/,
+            message: 'Mobile no in use only number or 10 digit'
           }
         }
       },
