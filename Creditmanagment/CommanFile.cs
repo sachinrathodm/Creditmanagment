@@ -18,54 +18,90 @@ namespace Creditmanagment
 
     public static int ExcuteNonQuery_YS(string Query)
     {
-      SqlConnection con;
-      con = new SqlConnection(connetionString);
-      con.Open();
-      SqlCommand cmd = new SqlCommand(Query, con);
-      int i = cmd.ExecuteNonQuery();
-      con.Close();
-      return i;
+      try
+      {
+        SqlConnection con;
+        con = new SqlConnection(connetionString);
+        con.Open();
+        SqlCommand cmd = new SqlCommand(Query, con);
+        int i = cmd.ExecuteNonQuery();
+        con.Close();
+        return i;
+      }
+      catch (Exception e)
+      {
+        return 0;
+      }
     }
 
     public static Object ExcuteScalar_YS(string Query)
     {
-      SqlConnection con;
-      con = new SqlConnection(connetionString);
-      con.Open();
-      SqlCommand cmd = new SqlCommand(Query, con);
-      object i = cmd.ExecuteScalar();
-      con.Close();
-      return i;
+      try
+      {
+        SqlConnection con;
+        con = new SqlConnection(connetionString);
+        con.Open();
+        SqlCommand cmd = new SqlCommand(Query, con);
+        object i = cmd.ExecuteScalar();
+        con.Close();
+        return i;
+      }
+      catch (Exception r)
+      {
+
+        return 0;
+      }
     }
 
     public static DataTable SqlDataAdapter_YS(string Query)
     {
-      SqlConnection con;
-      con = new SqlConnection(connetionString);
-      con.Open();
-      SqlDataAdapter adpt = new SqlDataAdapter(Query, con);
-      DataTable dt = new DataTable();
-      adpt.Fill(dt);
-      return dt;
+        DataTable dt = new DataTable();
+      try
+      {
+        SqlConnection con;
+        con = new SqlConnection(connetionString);
+        con.Open();
+        SqlDataAdapter adpt = new SqlDataAdapter(Query, con);
+        adpt.Fill(dt);
+        return dt;
+      }
+      catch (Exception e)
+      {
+        return dt;
+      }
     }
 
     public static DataTable GetDataTable_YS(DataTable dt, string Query)
     {
-      SqlConnection conn = new SqlConnection(connetionString);
-      conn.Open();
-      SqlCommand cmd = new SqlCommand(Query, conn);
-      dt.Load(cmd.ExecuteReader());
-      conn.Close();
-      return dt;
+      try
+      {
+        SqlConnection conn = new SqlConnection(connetionString);
+        conn.Open();
+        SqlCommand cmd = new SqlCommand(Query, conn);
+        dt.Load(cmd.ExecuteReader());
+        conn.Close();
+        return dt;
+      }
+      catch (Exception e)
+      {
+        return dt;
+      }
     }
 
     public static string encryptionpass(string password)
     {
-      string msg = "";
-      byte[] encode = new byte[password.Length];
-      encode = Encoding.UTF8.GetBytes(password);
-      msg = Convert.ToBase64String(encode);
-      return msg;
+      try
+      {
+        string msg = "";
+        byte[] encode = new byte[password.Length];
+        encode = Encoding.UTF8.GetBytes(password);
+        msg = Convert.ToBase64String(encode);
+        return msg;
+      }
+      catch (Exception e)
+      {
+        return "";
+      }
     }
     public static string sendVerificationEmail_YS(string fromEmailAddress, string Randomcode)
     {
